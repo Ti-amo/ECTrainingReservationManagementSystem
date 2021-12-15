@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\ExamItem.cs" />
+    <Compile Include="Entity\PatientEntity.cs" />
+    <Compile Include="Entity\ReservationEntity.cs" />
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,7 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAO\" />
-    <Folder Include="Entity\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
