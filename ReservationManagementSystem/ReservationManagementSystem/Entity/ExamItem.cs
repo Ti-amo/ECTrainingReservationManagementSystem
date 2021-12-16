@@ -4,18 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReservationManagementSystem.Entity
-{
-    public class ExamItem
-    {
+namespace ReservationManagementSystem.Entity {
+    public class ExamItem {
         /// <summary>
-        ///　診療項目ID
+        /// 診療大項目ID
         /// </summary>
-        public string ExamId { get; set; }
+        public int MajorExamId { get; set; }
+
         /// <summary>
-        ///　診療項目名
+        /// 診療大項目名
         /// </summary>
-        public string Name { get; set; }
+        public string MajorExamName { get; set; }
+
+        /// <summary>
+        /// 診療小項目ID
+        /// </summary>
+        public int SubExamId { get; set; }
+
+        /// <summary>
+        /// 診療小項目名
+        /// </summary>
+        public string SubExamName { get; set; }
     }
 }
-
