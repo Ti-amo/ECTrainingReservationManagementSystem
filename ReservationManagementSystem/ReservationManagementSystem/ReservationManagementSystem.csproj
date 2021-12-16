@@ -64,6 +64,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PatientRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientRegisterForm.Designer.cs">
+      <DependentUpon>PatientRegisterForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +82,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PatientRegisterForm.resx">
+      <DependentUpon>PatientRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
