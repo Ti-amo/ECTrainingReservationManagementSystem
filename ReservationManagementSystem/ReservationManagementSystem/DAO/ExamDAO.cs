@@ -85,7 +85,7 @@ namespace ReservationManagementSystem.DAO {
             // データを１行ずつ抽出する
             while (dataReader.Read()) {
                 ExamItem subExamItem = new ExamItem {
-                    MajorExamId = (int)dataReader["se.major_id"],
+                    MajorExamId = (int)dataReader["major_id"],
                     MajorExamName = (string)dataReader["major_name"],
                     SubExamId = (int)dataReader["sub_id"],
                     SubExamName = (string)dataReader["sub_name"]

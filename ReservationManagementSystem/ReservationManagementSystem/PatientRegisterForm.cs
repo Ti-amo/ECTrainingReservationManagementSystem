@@ -33,13 +33,13 @@ namespace ReservationManagementSystem
             ComboBoxMajorExam.DisplayMember = "Text";
             ComboBoxMajorExam.ValueMember = "Value";
             ComboBoxMajorExam.DataSource = items;
-            ComboBoxMajorExam.SelectedIndex = 0;
+            //ComboBoxMajorExam.SelectedIndex = 0;
         }
 
         private void MajorExamChanged(object sender, EventArgs e)
         {
-            ComboBoxSubExam.Items.Clear();
-            List<ExamItem> listSubExam = examDAO.GetSubExamList(1);
+            ComboBoxSubExam.DataSource = null;
+            List<ExamItem> listSubExam = examDAO.GetSubExamList(int.Parse(ComboBoxMajorExam.SelectedValue.ToString()));
             List<Object> items = new List<Object>();
             foreach (var item in listSubExam)
             {
@@ -48,8 +48,7 @@ namespace ReservationManagementSystem
             ComboBoxSubExam.DisplayMember = "Text";
             ComboBoxSubExam.ValueMember = "Value";
             ComboBoxSubExam.DataSource = items;
-            ComboBoxSubExam.SelectedIndex = 0;
-            MessageBox.Show(ComboBoxMajorExam.SelectedValue.ToString());
+            //ComboBoxSubExam.SelectedIndex = 0;
         }
     }
 }

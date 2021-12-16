@@ -53,7 +53,8 @@ namespace ReservationManagementSystem
         /// <param name="e"></param>
         private void ButtonPatientRegister_Click(object sender, EventArgs e)
         {
-
+            PatientRegisterForm patientRegisterForm = new PatientRegisterForm();
+            patientRegisterForm.Show();
         }
         /// <summary>
         /// 

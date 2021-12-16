@@ -105,7 +105,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(445, 272);
+            this.label5.Location = new System.Drawing.Point(86, 318);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 7;
@@ -121,7 +121,9 @@
             // 
             // DatetimePickerBirthDate
             // 
+            this.DatetimePickerBirthDate.CustomFormat = "yyyy/MM/dd";
             this.DatetimePickerBirthDate.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DatetimePickerBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DatetimePickerBirthDate.Location = new System.Drawing.Point(208, 162);
             this.DatetimePickerBirthDate.Name = "DatetimePickerBirthDate";
             this.DatetimePickerBirthDate.Size = new System.Drawing.Size(200, 27);
@@ -129,7 +131,9 @@
             // 
             // DateTimePickerReservationDate
             // 
+            this.DateTimePickerReservationDate.CustomFormat = "yyyy/MM/dd";
             this.DateTimePickerReservationDate.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTimePickerReservationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateTimePickerReservationDate.Location = new System.Drawing.Point(208, 220);
             this.DateTimePickerReservationDate.Name = "DateTimePickerReservationDate";
             this.DateTimePickerReservationDate.Size = new System.Drawing.Size(200, 27);
@@ -149,15 +153,16 @@
             // 
             this.ComboBoxSubExam.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxSubExam.FormattingEnabled = true;
-            this.ComboBoxSubExam.Location = new System.Drawing.Point(550, 269);
+            this.ComboBoxSubExam.ItemHeight = 20;
+            this.ComboBoxSubExam.Location = new System.Drawing.Point(208, 315);
             this.ComboBoxSubExam.Name = "ComboBoxSubExam";
-            this.ComboBoxSubExam.Size = new System.Drawing.Size(200, 28);
+            this.ComboBoxSubExam.Size = new System.Drawing.Size(466, 28);
             this.ComboBoxSubExam.TabIndex = 12;
             // 
             // ButtonReserve
             // 
             this.ButtonReserve.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonReserve.Location = new System.Drawing.Point(639, 363);
+            this.ButtonReserve.Location = new System.Drawing.Point(713, 359);
             this.ButtonReserve.Name = "ButtonReserve";
             this.ButtonReserve.Size = new System.Drawing.Size(111, 33);
             this.ButtonReserve.TabIndex = 13;
@@ -168,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 444);
+            this.ClientSize = new System.Drawing.Size(882, 444);
             this.Controls.Add(this.ButtonReserve);
             this.Controls.Add(this.ComboBoxSubExam);
             this.Controls.Add(this.ComboBoxMajorExam);
