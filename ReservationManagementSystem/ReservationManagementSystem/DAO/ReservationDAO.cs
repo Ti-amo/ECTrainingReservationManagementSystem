@@ -70,9 +70,14 @@ namespace ReservationManagementSystem.DAO {
                     ReservationDate = Convert.ToDateTime(dataReader["reservation_date"]).ToString("yyyy-MM-dd"),
                     PatientId = (string)dataReader["combined_id"],
                     PatientName = (string)dataReader["name"],
-                    Status = (string)dataReader["status_name"],
-                    MajorExam = (string)dataReader["major_name"],
-                    SubExam = (string)dataReader["sub_name"]
+                    StatusId = (int)dataReader["status_id"],
+                    StatusName = (string)dataReader["status_name"]
+                };
+                reservationEntity.Exam = new ExamItem {
+                    MajorExamId = (int)dataReader["major_id"],
+                    MajorExamName = (string)dataReader["major_name"],
+                    SubExamId = (int)dataReader["sub_id"],
+                    SubExamName = (string)dataReader["sub_name"]
                 };
 
                 // 予約をリストに格納する
@@ -117,9 +122,14 @@ namespace ReservationManagementSystem.DAO {
                     ReservationDate = Convert.ToDateTime(dataReader["reservation_date"]).ToString("yyyy-MM-dd"),
                     PatientId = (string)dataReader["combined_id"],
                     PatientName = (string)dataReader["name"],
-                    Status = (string)dataReader["status_name"],
-                    MajorExam = (string)dataReader["major_name"],
-                    SubExam = (string)dataReader["sub_name"]
+                    StatusId = (int)dataReader["status_id"],
+                    StatusName = (string)dataReader["status_name"]
+                };
+                reservationEntity.Exam = new ExamItem {
+                    MajorExamId = (int)dataReader["major_id"],
+                    MajorExamName = (string)dataReader["major_name"],
+                    SubExamId = (int)dataReader["sub_id"],
+                    SubExamName = (string)dataReader["sub_name"]
                 };
 
                 // 予約をリストに格納する
@@ -149,7 +159,7 @@ namespace ReservationManagementSystem.DAO {
             command = new SqlCommand(query, connection, transaction);
             command.Parameters.AddWithValue("@patient_id", reservationEntity.PatientId);
             command.Parameters.AddWithValue("@reservation_date", reservationEntity.ReservationDate);
-            command.Parameters.AddWithValue("@sub_id", int.Parse(reservationEntity.SubExam));
+            command.Parameters.AddWithValue("@sub_id", reservationEntity.Exam.SubExamId);
 
             int recordNumber = command.ExecuteNonQuery(); // 挿入されたレコード数
             transaction.Commit();
@@ -177,7 +187,7 @@ namespace ReservationManagementSystem.DAO {
             command = new SqlCommand(query, connection, transaction);
             command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
             command.Parameters.AddWithValue("@reservation_date", reservationEntity.ReservationDate);
-            command.Parameters.AddWithValue("@sub_id", int.Parse(reservationEntity.SubExam));
+            command.Parameters.AddWithValue("@sub_id", reservationEntity.Exam.SubExamId);
 
             int recordNumber = command.ExecuteNonQuery(); // 更新されたレコード数
             transaction.Commit();
@@ -229,7 +239,7 @@ namespace ReservationManagementSystem.DAO {
             // コマンドの作成
             command = new SqlCommand(query, connection, transaction);
             command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
-            command.Parameters.AddWithValue("@status_id", int.Parse(reservationEntity.Status));
+            command.Parameters.AddWithValue("@status_id", reservationEntity.StatusId);
 
             int recordNumber = command.ExecuteNonQuery(); // 更新されたレコード数
             transaction.Commit();
