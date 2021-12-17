@@ -27,18 +27,18 @@ namespace ReservationManagementSystem.Entity {
         public string PatientName { get; set; }
 
         /// <summary>
-        /// 予約状態
+        /// 予約状態ID
         /// </summary>
-        public string Status { get; set; }
+        public int StatusId { get; set; }
 
         /// <summary>
-        /// 診療大項目
+        /// 予約状態名
         /// </summary>
-        public string MajorExam { get; set; }
+        public string StatusName { get; set; }
 
         /// <summary>
-        /// 診療小項目
+        /// 診療項目
         /// </summary>
-        public string SubExam { get; set; }
+        public ExamItem Exam { get; set; }
     }
 }
