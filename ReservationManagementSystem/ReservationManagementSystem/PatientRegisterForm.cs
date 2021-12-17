@@ -14,14 +14,16 @@ namespace ReservationManagementSystem
 {
     public partial class PatientRegisterForm : Form
     {
-        private ExamDAO examDAO = new ExamDAO();
+        private readonly ExamDAO examDAO = new ExamDAO();
 
         public PatientRegisterForm()
         {
             InitializeComponent();
             FillDataComboBoxMajorItem();
         }
-
+        /// <summary>
+        /// 診療項目を設定する
+        /// </summary>
         private void FillDataComboBoxMajorItem()
         {
             List<ExamItem> listMajorExam = examDAO.GetMajorExamList();
@@ -35,7 +37,11 @@ namespace ReservationManagementSystem
             ComboBoxMajorExam.DataSource = items;
             //ComboBoxMajorExam.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// 診療項目が変わると、小項目を設定する
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MajorExamChanged(object sender, EventArgs e)
         {
             ComboBoxSubExam.DataSource = null;
@@ -49,6 +55,22 @@ namespace ReservationManagementSystem
             ComboBoxSubExam.ValueMember = "Value";
             ComboBoxSubExam.DataSource = items;
             //ComboBoxSubExam.SelectedIndex = 0;
+        }
+        /// <summary>
+        /// 予約する
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonReserve_Click(object sender, EventArgs e)
+        {
+            PatientEntity patientEntity = new PatientEntity();
+            ReservationEntity reservationEntity = new ReservationEntity();  
+
+            patientEntity.Name = TextBoxName.Text;
+            patientEntity.BirthDate = DatetimePickerBirthDate.Value.ToString("yyyy-MM-dd");
+            reservationEntity.ReservationDate = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
+
+            MessageBox.Show(patientEntity.Name + patientEntity.BirthDate + reservationEntity.ReservationDate);
         }
     }
 }
