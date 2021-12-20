@@ -15,5 +15,11 @@ namespace ReservationManagementSystem
         {
             label1.Text = PatientId;
         }
+
+        private void ButtonReserve_Click(object sender, EventArgs e)
+        {
+            ReserveRegisterForm reserveRegisterForm = new ReserveRegisterForm();
+            reserveRegisterForm.Show();
+        }
     }
 }
