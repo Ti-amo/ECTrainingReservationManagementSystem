@@ -45,6 +45,8 @@ namespace ReservationManagementSystem {
             this.LabelReservationDate = new System.Windows.Forms.Label();
             this.LabelMajorExam = new System.Windows.Forms.Label();
             this.LabelSubExam = new System.Windows.Forms.Label();
+            this.ButtonCompleteUpdate = new System.Windows.Forms.Button();
+            this.ButtonCancelUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelTitle
@@ -66,7 +68,7 @@ namespace ReservationManagementSystem {
             this.ComboBoxSubExam.Location = new System.Drawing.Point(183, 300);
             this.ComboBoxSubExam.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBoxSubExam.Name = "ComboBoxSubExam";
-            this.ComboBoxSubExam.Size = new System.Drawing.Size(350, 24);
+            this.ComboBoxSubExam.Size = new System.Drawing.Size(324, 24);
             this.ComboBoxSubExam.TabIndex = 22;
             this.ComboBoxSubExam.Visible = false;
             // 
@@ -80,6 +82,7 @@ namespace ReservationManagementSystem {
             this.ComboBoxMajorExam.Size = new System.Drawing.Size(151, 24);
             this.ComboBoxMajorExam.TabIndex = 21;
             this.ComboBoxMajorExam.Visible = false;
+            this.ComboBoxMajorExam.SelectedIndexChanged += new System.EventHandler(this.ComboBoxMajorExam_SelectedIndexChanged);
             // 
             // DateTimePickerReservationDate
             // 
@@ -131,12 +134,12 @@ namespace ReservationManagementSystem {
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(91, 138);
+            this.label2.Location = new System.Drawing.Point(107, 138);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 16);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 14;
-            this.label2.Text = "患者名：";
+            this.label2.Text = "患者：";
             // 
             // label1
             // 
@@ -161,6 +164,7 @@ namespace ReservationManagementSystem {
             // 
             // ButtonUpdate
             // 
+            this.ButtonUpdate.Enabled = false;
             this.ButtonUpdate.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonUpdate.Location = new System.Drawing.Point(33, 376);
             this.ButtonUpdate.Margin = new System.Windows.Forms.Padding(2);
@@ -174,16 +178,18 @@ namespace ReservationManagementSystem {
             // ButtonExport
             // 
             this.ButtonExport.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonExport.Location = new System.Drawing.Point(144, 376);
+            this.ButtonExport.Location = new System.Drawing.Point(145, 376);
             this.ButtonExport.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonExport.Name = "ButtonExport";
             this.ButtonExport.Size = new System.Drawing.Size(83, 34);
             this.ButtonExport.TabIndex = 27;
             this.ButtonExport.Text = "出力";
             this.ButtonExport.UseVisualStyleBackColor = true;
+            this.ButtonExport.Click += new System.EventHandler(this.ButtonExport_Click);
             // 
             // ButtonCompleteReception
             // 
+            this.ButtonCompleteReception.Enabled = false;
             this.ButtonCompleteReception.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonCompleteReception.Location = new System.Drawing.Point(254, 376);
             this.ButtonCompleteReception.Margin = new System.Windows.Forms.Padding(2);
@@ -192,9 +198,11 @@ namespace ReservationManagementSystem {
             this.ButtonCompleteReception.TabIndex = 28;
             this.ButtonCompleteReception.Text = "受付完了";
             this.ButtonCompleteReception.UseVisualStyleBackColor = true;
+            this.ButtonCompleteReception.Click += new System.EventHandler(this.ButtonCompleteReception_Click);
             // 
             // ButtonCompleteTreatment
             // 
+            this.ButtonCompleteTreatment.Enabled = false;
             this.ButtonCompleteTreatment.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonCompleteTreatment.Location = new System.Drawing.Point(387, 376);
             this.ButtonCompleteTreatment.Margin = new System.Windows.Forms.Padding(2);
@@ -203,6 +211,7 @@ namespace ReservationManagementSystem {
             this.ButtonCompleteTreatment.TabIndex = 29;
             this.ButtonCompleteTreatment.Text = "診療完了";
             this.ButtonCompleteTreatment.UseVisualStyleBackColor = true;
+            this.ButtonCompleteTreatment.Click += new System.EventHandler(this.ButtonCompleteTreatment_Click);
             // 
             // ButtonDelete
             // 
@@ -214,6 +223,7 @@ namespace ReservationManagementSystem {
             this.ButtonDelete.TabIndex = 30;
             this.ButtonDelete.Text = "削除";
             this.ButtonDelete.UseVisualStyleBackColor = true;
+            this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
             // LabelReservationID
             // 
@@ -269,11 +279,39 @@ namespace ReservationManagementSystem {
             this.LabelSubExam.Size = new System.Drawing.Size(0, 16);
             this.LabelSubExam.TabIndex = 36;
             // 
+            // ButtonCompleteUpdate
+            // 
+            this.ButtonCompleteUpdate.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCompleteUpdate.Location = new System.Drawing.Point(498, 87);
+            this.ButtonCompleteUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonCompleteUpdate.Name = "ButtonCompleteUpdate";
+            this.ButtonCompleteUpdate.Size = new System.Drawing.Size(102, 34);
+            this.ButtonCompleteUpdate.TabIndex = 37;
+            this.ButtonCompleteUpdate.Text = "完了";
+            this.ButtonCompleteUpdate.UseVisualStyleBackColor = true;
+            this.ButtonCompleteUpdate.Visible = false;
+            this.ButtonCompleteUpdate.Click += new System.EventHandler(this.ButtonCompleteUpdate_Click);
+            // 
+            // ButtonCancelUpdate
+            // 
+            this.ButtonCancelUpdate.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCancelUpdate.Location = new System.Drawing.Point(498, 138);
+            this.ButtonCancelUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonCancelUpdate.Name = "ButtonCancelUpdate";
+            this.ButtonCancelUpdate.Size = new System.Drawing.Size(102, 34);
+            this.ButtonCancelUpdate.TabIndex = 38;
+            this.ButtonCancelUpdate.Text = "キャンセル";
+            this.ButtonCancelUpdate.UseVisualStyleBackColor = true;
+            this.ButtonCancelUpdate.Visible = false;
+            this.ButtonCancelUpdate.Click += new System.EventHandler(this.ButtonCancelUpdate_Click);
+            // 
             // ReservationDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 450);
+            this.Controls.Add(this.ButtonCancelUpdate);
+            this.Controls.Add(this.ButtonCompleteUpdate);
             this.Controls.Add(this.LabelSubExam);
             this.Controls.Add(this.LabelMajorExam);
             this.Controls.Add(this.LabelReservationDate);
@@ -285,15 +323,15 @@ namespace ReservationManagementSystem {
             this.Controls.Add(this.ButtonCompleteReception);
             this.Controls.Add(this.ButtonExport);
             this.Controls.Add(this.ButtonUpdate);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.ComboBoxSubExam);
             this.Controls.Add(this.ComboBoxMajorExam);
             this.Controls.Add(this.DateTimePickerReservationDate);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.LabelTitle);
             this.Name = "ReservationDetailForm";
             this.Text = "ReservationDetailForm";
@@ -308,11 +346,11 @@ namespace ReservationManagementSystem {
         private System.Windows.Forms.ComboBox ComboBoxSubExam;
         private System.Windows.Forms.ComboBox ComboBoxMajorExam;
         private System.Windows.Forms.DateTimePicker DateTimePickerReservationDate;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button ButtonUpdate;
         private System.Windows.Forms.Button ButtonExport;
@@ -325,5 +363,7 @@ namespace ReservationManagementSystem {
         private System.Windows.Forms.Label LabelReservationDate;
         private System.Windows.Forms.Label LabelMajorExam;
         private System.Windows.Forms.Label LabelSubExam;
+        private System.Windows.Forms.Button ButtonCompleteUpdate;
+        private System.Windows.Forms.Button ButtonCancelUpdate;
     }
 }
