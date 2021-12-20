@@ -82,6 +82,32 @@ namespace ReservationManagementSystem.DAO {
             return reservationEntity;
         }
 
+        public int FindLatestReservation()
+        {
+            // SQL文：SELECT句
+            string query = @"SELECT TOP 1 *
+                            FROM m_reservation 
+                            ORDER BY created DESC";
+
+            // コマンドの作成
+            command = new SqlCommand(query, connection);
+
+            // データリーダーの作成
+            dataReader = command.ExecuteReader();
+
+            int reservationId = 1;
+            // データを１行ずつ抽出する
+            while (dataReader.Read())
+            {
+                reservationId = (int)dataReader["reservation_id"];
+            }
+
+            command.Dispose();
+            dataReader.Close();
+
+            return reservationId;
+        }
+
         /// <summary>
         /// 患者IDによるすべての予約を抽出する
         /// </summary>
@@ -196,6 +222,9 @@ namespace ReservationManagementSystem.DAO {
         /// <param name="reservationEntity">挿入された予約</param>
         /// <returns>挿入されたレコード数</returns>
         public int Insert(ReservationEntity reservationEntity) {
+            // 「EC」と「0」を削除して、intに変換する
+            int id = int.Parse(reservationEntity.PatientId.Remove(0, 2));
+
             // SQL文：INSERT句
             string query = @"INSERT INTO m_reservation (patient_id, reservation_date, sub_id)
 							VALUES (@patient_id, CAST(@reservation_date AS Date), @sub_id)";
@@ -205,7 +234,7 @@ namespace ReservationManagementSystem.DAO {
 
             // コマンドの作成
             command = new SqlCommand(query, connection, transaction);
-            command.Parameters.AddWithValue("@patient_id", reservationEntity.PatientId);
+            command.Parameters.AddWithValue("@patient_id", id);
             command.Parameters.AddWithValue("@reservation_date", reservationEntity.ReservationDate);
             command.Parameters.AddWithValue("@sub_id", reservationEntity.Exam.SubExamId);
 

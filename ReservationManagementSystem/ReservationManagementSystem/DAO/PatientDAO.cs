@@ -154,6 +154,35 @@ namespace ReservationManagementSystem.DAO {
 
             return patientEntity;
         }
+        /// <summary>
+        /// 最新の患者IDを見つける
+        /// </summary>
+        /// <returns></returns>
+        public string FindLatestPatient()
+        {
+            // SQL文：SELECT句
+            string query = @"SELECT TOP 1 *
+                             FROM m_patient
+                             ORDER BY created DESC";
+
+            // コマンドの作成
+            command = new SqlCommand(query, connection);
+
+            // データリーダーの作成
+            dataReader = command.ExecuteReader();
+
+            string patientId = null;
+            // データを１行ずつ抽出する
+            while (dataReader.Read())
+            {
+                patientId = (string)dataReader["combined_id"];
+            }
+
+            command.Dispose();
+            dataReader.Close();
+
+            return patientId;
+        }
 
         /// <summary>
         /// 指定した患者を挿入する

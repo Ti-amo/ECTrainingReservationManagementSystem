@@ -121,7 +121,7 @@
             // 
             // DatetimePickerBirthDate
             // 
-            this.DatetimePickerBirthDate.CustomFormat = "yyyy/MM/dd";
+            this.DatetimePickerBirthDate.CustomFormat = "yyyy-MM-dd";
             this.DatetimePickerBirthDate.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatetimePickerBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DatetimePickerBirthDate.Location = new System.Drawing.Point(208, 162);
@@ -131,7 +131,7 @@
             // 
             // DateTimePickerReservationDate
             // 
-            this.DateTimePickerReservationDate.CustomFormat = "yyyy/MM/dd";
+            this.DateTimePickerReservationDate.CustomFormat = "yyyy-MM-dd";
             this.DateTimePickerReservationDate.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTimePickerReservationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateTimePickerReservationDate.Location = new System.Drawing.Point(208, 220);
@@ -168,6 +168,7 @@
             this.ButtonReserve.TabIndex = 13;
             this.ButtonReserve.Text = "予約";
             this.ButtonReserve.UseVisualStyleBackColor = true;
+            this.ButtonReserve.Click += new System.EventHandler(this.ButtonReserve_Click);
             // 
             // PatientRegisterForm
             // 
