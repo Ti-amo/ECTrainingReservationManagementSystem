@@ -57,20 +57,84 @@ namespace ReservationManagementSystem
             //ComboBoxSubExam.SelectedIndex = 0;
         }
         /// <summary>
+        /// バリデート生年月日
+        /// </summary>
+        /// <returns></returns>
+        private bool ValidateBirthDate()
+        {
+            DateTime birthDate = DateTime.Parse(DatetimePickerBirthDate.Text);
+            DateTime localDate = DateTime.Now;
+
+            if (birthDate < localDate)
+            {
+                return true;
+            }
+            return false;
+        }
+        /// <summary>
+        /// バリデート予約日付
+        /// </summary>
+        /// <returns></returns>
+        private bool ValidateReservationDate()
+        {
+            DateTime reservationDate = DateTime.Parse(DateTimePickerReservationDate.Text).Date;
+            DateTime localDate = DateTime.Now.Date;
+
+            if (reservationDate >= localDate)
+            {
+                return true;
+            }
+            return false;
+        }
+        /// <summary>
         /// 予約する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonReserve_Click(object sender, EventArgs e)
         {
+            PatientDAO patientDAO = new PatientDAO();   
+            ReservationDAO reservationDAO = new ReservationDAO();   
             PatientEntity patientEntity = new PatientEntity();
-            ReservationEntity reservationEntity = new ReservationEntity();  
+            ReservationEntity reservationEntity = new ReservationEntity();
+            PatientEntity registedPatientEntity = new PatientEntity();
 
             patientEntity.Name = TextBoxName.Text;
             patientEntity.BirthDate = DatetimePickerBirthDate.Value.ToString("yyyy-MM-dd");
-            reservationEntity.ReservationDate = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
+            
+            if (String.IsNullOrWhiteSpace(TextBoxName.Text))
+            {
+                MessageBox.Show("患者名を入力してください。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!ValidateBirthDate()) {
+                MessageBox.Show("生年月日は本日より後でいけません。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if (!ValidateReservationDate()) {
+                MessageBox.Show("本日の後に予約日付を入力してください。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                //患者登録
+                patientDAO.Insert(patientEntity);
+                registedPatientEntity = patientDAO.FindLatestPatient();
 
-            MessageBox.Show(patientEntity.Name + patientEntity.BirthDate + reservationEntity.ReservationDate);
+                //予約登録
+                reservationEntity.PatientId = registedPatientEntity.PatientId;
+                reservationEntity.ReservationDate = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
+                ExamItem examItem = new ExamItem
+                {
+                    SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString())
+                };
+                reservationEntity.Exam = examItem;
+                reservationDAO.Insert(reservationEntity);
+                string message = "予約登録が成功しました。";
+                string title = "成功";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+
         }
     }
 }
