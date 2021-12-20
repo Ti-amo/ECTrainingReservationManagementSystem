@@ -10,11 +10,11 @@ namespace ReservationManagementSystem
 {
     public partial class PatientDetailInfoForm : Form
     {
-        public string PatientId { get; set; }
-        private PatientEntity patient = new PatientEntity();
-        private int pageNumber = 1;
-        private IPagedList<ReservationEntity> reservationPagedList;
-        private List<ReservationEntity> reservations = new List<ReservationEntity>();
+        public string PatientId { get; set; }                                          // 患者ID
+        private PatientEntity patient = new PatientEntity();                           // 患者
+        private int pageNumber = 1;                                                    // ページ番号
+        private IPagedList<ReservationEntity> reservationPagedList;                    // ページ一覧     
+        private List<ReservationEntity> reservations = new List<ReservationEntity>();　// 予約一覧
         public PatientDetailInfoForm()
         {
             InitializeComponent();
@@ -40,14 +40,20 @@ namespace ReservationManagementSystem
 
             SetupControls();
         }
-
+        /// <summary>
+        /// テキストボックスにデータを入力する
+        /// </summary>
         private void FillData()
         {
             TextboxId.Text = patient.PatientId;
             TextboxName.Text = patient.Name;
             TextboxDateOfBirth.Text = patient.BirthDate;
         }
-
+        /// <summary>
+        /// ページ付けを実行する
+        /// </summary>
+        /// <param name="pageNumber"></param>
+        /// <param name="pageSize"></param>
         private void PagingReservationtList(int pageNumber = 1, int pageSize = 10)
         {
             reservationPagedList = reservations.ToPagedList(pageNumber, pageSize);
@@ -57,7 +63,9 @@ namespace ReservationManagementSystem
             // fill data to datagridview
             DataGridViewReserveList.DataSource = reservationPagedList.ToList();
         }
-
+        /// <summary>
+        /// コントロールを設定する
+        /// </summary>
         private void SetupControls()
         {
             // set up headertext of columns in dgv
@@ -79,7 +87,11 @@ namespace ReservationManagementSystem
             // handle event click button detail
             DataGridViewReserveList.CellContentClick += ButtonDetail_Click;
         }
-
+        /// <summary>
+        /// 予約詳細画面に遷移する
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonDetail_Click(object sender, DataGridViewCellEventArgs e)
         {
             var dgvReservetList = (DataGridView)sender;
@@ -89,7 +101,11 @@ namespace ReservationManagementSystem
                 
             }
         }
-
+        /// <summary>
+        /// 前のページを表示する
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonPrevious_Click(object sender, EventArgs e)
         {
             if (reservationPagedList.HasPreviousPage)
@@ -97,7 +113,11 @@ namespace ReservationManagementSystem
                 PagingReservationtList(--pageNumber);
             }
         }
-
+        /// <summary>
+        /// 次のページを表示する
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonNext_Click(object sender, EventArgs e)
         {
             if (reservationPagedList.HasNextPage)
@@ -105,10 +125,15 @@ namespace ReservationManagementSystem
                 PagingReservationtList(--pageNumber);
             }
         }
-
+        /// <summary>
+        /// 予約登録画面に遷移する
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonReserve_Click(object sender, EventArgs e)
         {
             ReserveRegisterForm reserveRegisterForm = new ReserveRegisterForm();
+            reserveRegisterForm.PatientId = this.PatientId;
             reserveRegisterForm.Show();
         }
     }
