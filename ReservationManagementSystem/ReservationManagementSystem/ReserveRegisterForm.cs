@@ -64,9 +64,15 @@ namespace ReservationManagementSystem
         private void ButtonReserve_Click(object sender, EventArgs e)
         {
             if (IsValidDate())
-                MessageBox.Show("予約登録失敗しました。予約日は本日より後でなければなりません。");
+                MessageBox.Show("予約登録失敗しました。本日の後に予約日付を入力してください。");
             else
-            MessageBox.Show("予約登録完了しました。");
+            {
+                MessageBox.Show("予約登録完了しました。");
+                ReservationDetailForm reservationDetailForm = new ReservationDetailForm(1);
+                reservationDetailForm.Show();
+
+            }
+
         }
 
         private bool IsValidDate()
