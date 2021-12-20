@@ -35,7 +35,6 @@ namespace ReservationManagementSystem
             ComboBoxMajorExam.DisplayMember = "Text";
             ComboBoxMajorExam.ValueMember = "Value";
             ComboBoxMajorExam.DataSource = items;
-            //ComboBoxMajorExam.SelectedIndex = 0;
         }
         /// <summary>
         /// 診療項目が変わると、小項目を設定する
@@ -54,7 +53,6 @@ namespace ReservationManagementSystem
             ComboBoxSubExam.DisplayMember = "Text";
             ComboBoxSubExam.ValueMember = "Value";
             ComboBoxSubExam.DataSource = items;
-            //ComboBoxSubExam.SelectedIndex = 0;
         }
         /// <summary>
         /// バリデート生年月日
@@ -62,8 +60,8 @@ namespace ReservationManagementSystem
         /// <returns></returns>
         private bool ValidateBirthDate()
         {
-            DateTime birthDate = DateTime.Parse(DatetimePickerBirthDate.Text);
-            DateTime localDate = DateTime.Now;
+            DateTime birthDate = DateTime.Parse(DatetimePickerBirthDate.Text).Date;
+            DateTime localDate = DateTime.Now.Date;
 
             if (birthDate < localDate)
             {
@@ -97,7 +95,6 @@ namespace ReservationManagementSystem
             ReservationDAO reservationDAO = new ReservationDAO();   
             PatientEntity patientEntity = new PatientEntity();
             ReservationEntity reservationEntity = new ReservationEntity();
-            PatientEntity registedPatientEntity = new PatientEntity();
 
             patientEntity.Name = TextBoxName.Text;
             patientEntity.BirthDate = DatetimePickerBirthDate.Value.ToString("yyyy-MM-dd");
@@ -114,10 +111,9 @@ namespace ReservationManagementSystem
             {
                 //患者登録
                 patientDAO.Insert(patientEntity);
-                registedPatientEntity = patientDAO.FindLatestPatient();
 
                 //予約登録
-                reservationEntity.PatientId = registedPatientEntity.PatientId;
+                reservationEntity.PatientId = patientDAO.FindLatestPatient();
                 reservationEntity.ReservationDate = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
                 ExamItem examItem = new ExamItem
                 {
@@ -132,6 +128,9 @@ namespace ReservationManagementSystem
                 if (result == DialogResult.OK)
                 {
                     this.Close();
+                    //予約詳細画面に進め
+                    ReservationDetailForm reservationDetailForm = new ReservationDetailForm(reservationDAO.FindLatestReservation());
+                    reservationDetailForm.Show();
                 }
             }
 

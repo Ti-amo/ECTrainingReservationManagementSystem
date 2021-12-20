@@ -154,8 +154,11 @@ namespace ReservationManagementSystem.DAO {
 
             return patientEntity;
         }
-
-        public PatientEntity FindLatestPatient()
+        /// <summary>
+        /// 最新の患者IDを見つける
+        /// </summary>
+        /// <returns></returns>
+        public string FindLatestPatient()
         {
             // SQL文：SELECT句
             string query = @"SELECT TOP 1 *
@@ -168,26 +171,17 @@ namespace ReservationManagementSystem.DAO {
             // データリーダーの作成
             dataReader = command.ExecuteReader();
 
-            ReservationDAO reservationDAO = new ReservationDAO();
-
-            PatientEntity patientEntity = null;
+            string patientId = null;
             // データを１行ずつ抽出する
             while (dataReader.Read())
             {
-                // １患者ずつ抽出する
-                patientEntity = new PatientEntity
-                {
-                    PatientId = (string)dataReader["combined_id"],
-                    Name = (string)dataReader["name"],
-                    BirthDate = Convert.ToDateTime(dataReader["birth_date"]).ToString("yyyy-MM-dd")
-                };
-                patientEntity.ReservationList = reservationDAO.FindByPatient(patientEntity.PatientId);
+                patientId = (string)dataReader["combined_id"];
             }
 
             command.Dispose();
             dataReader.Close();
 
-            return patientEntity;
+            return patientId;
         }
 
         /// <summary>

@@ -82,6 +82,32 @@ namespace ReservationManagementSystem.DAO {
             return reservationEntity;
         }
 
+        public int FindLatestReservation()
+        {
+            // SQL文：SELECT句
+            string query = @"SELECT TOP 1 *
+                            FROM m_reservation 
+                            ORDER BY created DESC";
+
+            // コマンドの作成
+            command = new SqlCommand(query, connection);
+
+            // データリーダーの作成
+            dataReader = command.ExecuteReader();
+
+            int reservationId = 1;
+            // データを１行ずつ抽出する
+            while (dataReader.Read())
+            {
+                reservationId = (int)dataReader["reservation_id"];
+            }
+
+            command.Dispose();
+            dataReader.Close();
+
+            return reservationId;
+        }
+
         /// <summary>
         /// 患者IDによるすべての予約を抽出する
         /// </summary>
