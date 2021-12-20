@@ -35,6 +35,54 @@ namespace ReservationManagementSystem.DAO {
         }
 
         /// <summary>
+        /// 予約IDによる予約を抽出する
+        /// </summary>
+        /// <param name="reservationId">予約ID</param>
+        /// <returns>予約</returns>
+        public ReservationEntity FindById(int reservationId) {
+            // SQL文：SELECT句
+            string query = @"SELECT * 
+                            FROM m_reservation r 
+                            INNER JOIN m_patient p ON p.patient_id = r.patient_id 
+                            INNER JOIN m_status s ON s.status_id = r.status_id 
+                            INNER JOIN m_sub_examination se ON se.sub_id = r.sub_id 
+                            INNER JOIN m_major_examination me ON me.major_id = se.major_id 
+                            WHERE reservation_id = @reservation_id";
+
+            // コマンドの作成
+            command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@reservation_id", reservationId);
+
+            // データリーダーの作成
+            dataReader = command.ExecuteReader();
+
+            ReservationEntity reservationEntity = null;
+            // データを１行ずつ抽出する
+            while (dataReader.Read()) {
+                // １予約ずつ抽出する
+                reservationEntity = new ReservationEntity {
+                    ReservationId = (int)dataReader["reservation_id"],
+                    ReservationDate = Convert.ToDateTime(dataReader["reservation_date"]).ToString("yyyy-MM-dd"),
+                    PatientId = (string)dataReader["combined_id"],
+                    PatientName = (string)dataReader["name"],
+                    StatusId = (int)dataReader["status_id"],
+                    StatusName = (string)dataReader["status_name"]
+                };
+                reservationEntity.Exam = new ExamItem {
+                    MajorExamId = (int)dataReader["major_id"],
+                    MajorExamName = (string)dataReader["major_name"],
+                    SubExamId = (int)dataReader["sub_id"],
+                    SubExamName = (string)dataReader["sub_name"]
+                };
+            }
+
+            command.Dispose();
+            dataReader.Close();
+
+            return reservationEntity;
+        }
+
+        /// <summary>
         /// 患者IDによるすべての予約を抽出する
         /// </summary>
         /// <param name="patientId">患者ID</param>
