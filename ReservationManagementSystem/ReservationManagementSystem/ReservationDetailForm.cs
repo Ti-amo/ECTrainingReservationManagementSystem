@@ -16,12 +16,12 @@ namespace ReservationManagementSystem {
         private ReservationDAO reservationDAO;
         private ExamDAO examDAO;
 
-        public ReservationDetailForm(ReservationEntity reservationEntity) {
+        public ReservationDetailForm(int reservationId) {
             InitializeComponent();
 
             reservationDAO = new ReservationDAO();
             examDAO = new ExamDAO();
-            this.reservationEntity = reservationEntity;
+            reservationEntity = reservationDAO.FindById(reservationId);
 
             InitializeControl();
         }
