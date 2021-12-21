@@ -91,6 +91,12 @@
     <Compile Include="ReservationDetailForm.Designer.cs">
       <DependentUpon>ReservationDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReservationListByDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservationListByDateForm.Designer.cs">
+      <DependentUpon>ReservationListByDateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReserveRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationDetailForm.resx">
       <DependentUpon>ReservationDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservationListByDateForm.resx">
+      <DependentUpon>ReservationListByDateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReserveRegisterForm.resx">
       <DependentUpon>ReserveRegisterForm.cs</DependentUpon>
