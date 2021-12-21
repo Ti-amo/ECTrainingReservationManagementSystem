@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientDetailInfoForm));
             this.ContainerPatientInfo = new System.Windows.Forms.Panel();
             this.ButtonReserve = new System.Windows.Forms.Button();
             this.LabelLine = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             this.ButtonPrevious = new System.Windows.Forms.Button();
             this.DataGridViewReserveList = new System.Windows.Forms.DataGridView();
             this.LabelHistory = new System.Windows.Forms.Label();
+            this.ButtonEditDoB = new System.Windows.Forms.Button();
+            this.ButtonEditName = new System.Windows.Forms.Button();
             this.ContainerPatientInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReserveList)).BeginInit();
@@ -51,6 +54,8 @@
             // 
             // ContainerPatientInfo
             // 
+            this.ContainerPatientInfo.Controls.Add(this.ButtonEditDoB);
+            this.ContainerPatientInfo.Controls.Add(this.ButtonEditName);
             this.ContainerPatientInfo.Controls.Add(this.ButtonReserve);
             this.ContainerPatientInfo.Controls.Add(this.LabelLine);
             this.ContainerPatientInfo.Controls.Add(this.TextboxDateOfBirth);
@@ -94,7 +99,7 @@
             // TextboxDateOfBirth
             // 
             this.TextboxDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.TextboxDateOfBirth.BackColor = System.Drawing.Color.White;
+            this.TextboxDateOfBirth.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TextboxDateOfBirth.Location = new System.Drawing.Point(373, 136);
             this.TextboxDateOfBirth.Margin = new System.Windows.Forms.Padding(2);
             this.TextboxDateOfBirth.Name = "TextboxDateOfBirth";
@@ -117,7 +122,7 @@
             // TextboxName
             // 
             this.TextboxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.TextboxName.BackColor = System.Drawing.Color.White;
+            this.TextboxName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TextboxName.Location = new System.Drawing.Point(373, 100);
             this.TextboxName.Margin = new System.Windows.Forms.Padding(2);
             this.TextboxName.Name = "TextboxName";
@@ -140,7 +145,7 @@
             // TextboxId
             // 
             this.TextboxId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.TextboxId.BackColor = System.Drawing.Color.White;
+            this.TextboxId.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TextboxId.Location = new System.Drawing.Point(373, 64);
             this.TextboxId.Margin = new System.Windows.Forms.Padding(2);
             this.TextboxId.Name = "TextboxId";
@@ -250,10 +255,41 @@
             this.LabelHistory.TabIndex = 0;
             this.LabelHistory.Text = "診療履歴";
             // 
+            // ButtonEditDoB
+            // 
+            this.ButtonEditDoB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.ButtonEditDoB.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonEditDoB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonEditDoB.BackgroundImage")));
+            this.ButtonEditDoB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ButtonEditDoB.FlatAppearance.BorderSize = 0;
+            this.ButtonEditDoB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEditDoB.Location = new System.Drawing.Point(559, 142);
+            this.ButtonEditDoB.Name = "ButtonEditDoB";
+            this.ButtonEditDoB.Size = new System.Drawing.Size(14, 14);
+            this.ButtonEditDoB.TabIndex = 11;
+            this.ButtonEditDoB.UseVisualStyleBackColor = false;
+            this.ButtonEditDoB.Click += new System.EventHandler(this.ButtonEditDoB_Click);
+            // 
+            // ButtonEditName
+            // 
+            this.ButtonEditName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.ButtonEditName.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonEditName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonEditName.BackgroundImage")));
+            this.ButtonEditName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ButtonEditName.FlatAppearance.BorderSize = 0;
+            this.ButtonEditName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEditName.Location = new System.Drawing.Point(559, 104);
+            this.ButtonEditName.Name = "ButtonEditName";
+            this.ButtonEditName.Size = new System.Drawing.Size(14, 14);
+            this.ButtonEditName.TabIndex = 10;
+            this.ButtonEditName.UseVisualStyleBackColor = false;
+            this.ButtonEditName.Click += new System.EventHandler(this.ButtonEditName_Click);
+            // 
             // PatientDetailInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(709, 470);
             this.Controls.Add(this.LabelTitleInfo);
             this.Controls.Add(this.panel2);
@@ -289,5 +325,7 @@
         private System.Windows.Forms.Label LabelLine;
         private System.Windows.Forms.Label LabelPageNumber;
         private System.Windows.Forms.Button ButtonReserve;
+        private System.Windows.Forms.Button ButtonEditDoB;
+        private System.Windows.Forms.Button ButtonEditName;
     }
 }

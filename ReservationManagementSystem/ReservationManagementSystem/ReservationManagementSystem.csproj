@@ -165,6 +165,8 @@
     <Content Include="Assets\background.jpg" />
     <Content Include="Assets\Boom.png" />
     <Content Include="Assets\close.png" />
+    <Content Include="Assets\done.png" />
+    <Content Include="Assets\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
