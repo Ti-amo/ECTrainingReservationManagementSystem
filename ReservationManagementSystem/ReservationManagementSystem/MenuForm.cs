@@ -26,7 +26,7 @@ namespace ReservationManagementSystem
             patientListForm.Show();
         }
         /// <summary>
-        /// 
+        /// 患者登録を表示する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -36,13 +36,14 @@ namespace ReservationManagementSystem
             patientRegisterForm.Show();
         }
         /// <summary>
-        /// 
+        /// 予約日付ごとに患者一覧を表示する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonReservationList_Click(object sender, EventArgs e)
         {
-
+            ReservationListByDateForm reservationListByDateForm = new ReservationListByDateForm();  
+            reservationListByDateForm.Show();
         }
     }
 }
