@@ -1,14 +1,15 @@
-﻿using ReservationManagementSystem.DAO;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using ReservationManagementSystem.DAO;
 using ReservationManagementSystem.Entity;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Font = iTextSharp.text.Font;
 
 namespace ReservationManagementSystem {
     public partial class ReservationDetailForm : Form {
@@ -57,7 +58,72 @@ namespace ReservationManagementSystem {
         }
 
         private void ButtonExport_Click(object sender, EventArgs e) {
+            SaveFileDialog sfd = new SaveFileDialog {
+                Filter = "PDF (*.pdf)|*.pdf",
+                FileName = "【予約票・" + reservationEntity.ReservationId + "】" + reservationEntity.PatientName + "様・" + reservationEntity.ReservationDate + ".pdf"
+            };
+            bool fileError = false;
+            if (sfd.ShowDialog() == DialogResult.OK) {
+                if (File.Exists(sfd.FileName)) {
+                    try {
+                        File.Delete(sfd.FileName);
+                    } catch (IOException) {
+                        fileError = true;
+                        MessageBox.Show("予約票が既に存在します。", "出力失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                if (!fileError) {
+                    try {
+                        string fontPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Resources\MS Gothic.ttf";
+                        BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
+                        Font fontTitle = new Font(baseFont, 25, iTextSharp.text.Font.NORMAL);
+                        Paragraph pdfTitle = new Paragraph("予約票", fontTitle) {
+                            Alignment = Element.ALIGN_CENTER,
+                            SpacingAfter = 25
+                        };
+
+                        PdfPTable pdfTable = new PdfPTable(2);
+                        pdfTable.DefaultCell.Padding = 5;
+                        pdfTable.WidthPercentage = 100;
+                        pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                        Font fontTable = new Font(baseFont, 16, iTextSharp.text.Font.NORMAL);
+
+                        pdfTable.AddCell(new Phrase("予約ID", fontTable));
+                        pdfTable.AddCell(new Phrase(reservationEntity.ReservationId.ToString(), fontTable));
+
+                        pdfTable.AddCell(new Phrase("患者ID", fontTable));
+                        pdfTable.AddCell(new Phrase(reservationEntity.PatientId, fontTable));
+
+                        pdfTable.AddCell(new Phrase("患者名", fontTable));
+                        pdfTable.AddCell(new Phrase(reservationEntity.PatientName, fontTable));
+
+                        pdfTable.AddCell(new Phrase("予約日付", fontTable));
+                        pdfTable.AddCell(new Phrase(reservationEntity.ReservationDate, fontTable));
+
+                        pdfTable.AddCell(new Phrase("診療大項目", fontTable));
+                        pdfTable.AddCell(new Phrase(reservationEntity.Exam.MajorExamName, fontTable));
+
+                        pdfTable.AddCell(new Phrase("診療小項目", fontTable));
+                        pdfTable.AddCell(new Phrase(reservationEntity.Exam.SubExamName, fontTable));
+
+                        using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create)) {
+                            Document pdfDoc = new Document(PageSize.A6.Rotate(), 20f, 20f, 20f, 20f);
+                            PdfWriter.GetInstance(pdfDoc, stream);
+                            pdfDoc.Open();
+                            pdfDoc.Add(pdfTitle);
+                            pdfDoc.Add(pdfTable);
+                            pdfDoc.Close();
+                            stream.Close();
+                        }
+
+                        MessageBox.Show("予約票を出力しました。", "出力成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    } catch (Exception) {
+                        MessageBox.Show("予約票を出力できません。", "出力失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void ButtonCompleteReception_Click(object sender, EventArgs e) {
@@ -94,7 +160,7 @@ namespace ReservationManagementSystem {
         }
 
         private void ButtonCompleteUpdate_Click(object sender, EventArgs e) {
-            if (DateTimePickerReservationDate.Value >= DateTime.Today) {
+            if (DateTimePickerReservationDate.Text.Equals(reservationEntity.ReservationDate) || DateTimePickerReservationDate.Value >= DateTime.Today) {
                 reservationEntity.ReservationDate = DateTimePickerReservationDate.Text;
                 reservationEntity.Exam.MajorExamId = int.Parse(ComboBoxMajorExam.SelectedValue.ToString());
                 reservationEntity.Exam.MajorExamName = ComboBoxMajorExam.Text;
@@ -102,12 +168,12 @@ namespace ReservationManagementSystem {
                 reservationEntity.Exam.SubExamName = ComboBoxSubExam.Text;
 
                 reservationDAO.Update(reservationEntity);
-                MessageBox.Show("予約を編集しました。", "予約編集", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("予約を編集しました。", "編集成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                CompleteUpdate();
             } else {
                 MessageBox.Show("本日の後に予約日付を入力してください。", "編集失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            CompleteUpdate();
         }
 
         private void ButtonCancelUpdate_Click(object sender, EventArgs e) {

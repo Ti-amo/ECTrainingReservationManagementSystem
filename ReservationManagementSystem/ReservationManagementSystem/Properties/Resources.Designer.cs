@@ -89,5 +89,15 @@ namespace ReservationManagementSystem.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] MS_Gothic {
+            get {
+                object obj = ResourceManager.GetObject("MS_Gothic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
