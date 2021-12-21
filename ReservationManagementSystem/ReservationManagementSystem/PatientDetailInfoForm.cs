@@ -33,6 +33,8 @@ namespace ReservationManagementSystem
             LabelLine.AutoSize = false;
             LabelLine.Height = 3;
             LabelLine.Width = DataGridViewReserveList.Width;
+            // to remove the Focus from textbox id 
+            this.ActiveControl = LabelTitleInfo;
 
             FillData();
 
@@ -98,7 +100,9 @@ namespace ReservationManagementSystem
             if (dgvReservetList.Columns[e.ColumnIndex] is DataGridViewButtonColumn
                 && e.RowIndex >= 0)
             {
-                
+                int reservationId = (int)dgvReservetList.Rows[e.RowIndex].Cells["ReservationId"].Value;
+                ReservationDetailForm reservationDetailForm = new ReservationDetailForm(reservationId);
+                reservationDetailForm.Show();
             }
         }
         /// <summary>
@@ -134,6 +138,8 @@ namespace ReservationManagementSystem
         {
             ReserveRegisterForm reserveRegisterForm = new ReserveRegisterForm();
             reserveRegisterForm.PatientId = this.PatientId;
+            this.Hide();
+            reserveRegisterForm.FormClosed += (s, args) => this.Close();
             reserveRegisterForm.Show();
         }
     }
