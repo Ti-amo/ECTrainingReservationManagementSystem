@@ -10,10 +10,12 @@ namespace ReservationManagementSystem
 {
     public partial class PatientListForm : Form
     {
-        private List<PatientEntity> patients = new List<PatientEntity>();　// 患者一覧
-        private int pageNumber = 1;                                     　 // ページ番号
-        private IPagedList<PatientEntity> patientList;                     // ページ一覧
-        private PatientDAO patientDAO = new PatientDAO();                  // 患者DAOインストール
+        private List<PatientEntity> patients = new List<PatientEntity>();　   // DBから取り出した患者一覧
+        private List<PatientEntity> patientList = new List<PatientEntity>();　// ページネーションの患者リスト
+        private int pageNumber = 1;                                     　    // ページ番号
+        private IPagedList<PatientEntity> patientPagedList;                   // ページ一覧
+        private PatientDAO patientDAO = new PatientDAO();                     // 患者DAOインストール
+        private Button buttonClear = new Button();                            // ボタンクリア
         public PatientListForm()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace ReservationManagementSystem
         private void PatientListForm_Load(object sender, EventArgs e)
         {
             patients = patientDAO.FindAll();
+            patientList = patients;
             SetupControls();
         }
         /// <summary>
@@ -32,19 +35,19 @@ namespace ReservationManagementSystem
         /// <param name="pageSize"></param>
         private void PagingPatientList(List<PatientEntity> patients, int pageNumber = 1, int pageSize = 10)
         {
-            patientList = patients.ToPagedList(pageNumber, pageSize);
-            ButtonPrevious.Enabled = patientList.HasPreviousPage;
-            ButtonNext.Enabled = patientList.HasNextPage;
-            LabelPageNumber.Text = string.Format("{0}/{1}", pageNumber, patientList.PageCount);
+            patientPagedList = patients.ToPagedList(pageNumber, pageSize);
+            ButtonPrevious.Enabled = patientPagedList.HasPreviousPage;
+            ButtonNext.Enabled = patientPagedList.HasNextPage;
+            LabelPageNumber.Text = string.Format("{0}/{1}", pageNumber, patientPagedList.PageCount);
             // fill data to datagridview
-            DataGridViewPatientList.DataSource = patientList.ToList();
+            DataGridViewPatientList.DataSource = patientPagedList.ToList();
         }
         /// <summary>
         /// コントロールの設定
         /// </summary>
         private void SetupControls()
         {
-            PagingPatientList(patients);
+            PagingPatientList(patientList);
             // set up headertext of dgv
             DataGridViewPatientList.Columns["PatientId"].HeaderText = "患者ID";
             DataGridViewPatientList.Columns["Name"].HeaderText = "氏名";
@@ -58,6 +61,52 @@ namespace ReservationManagementSystem
             DataGridViewPatientList.Columns.Add(buttonDetail);
             // handle event click button detail
             DataGridViewPatientList.CellContentClick += ButtonDetail_Click;
+            // add button clear to textbox search
+            buttonClear.Size = new System.Drawing.Size(10, 10);
+            buttonClear.Location = new System.Drawing.Point(TextboxSearch.ClientSize.Width - buttonClear.Width - 5, (TextboxSearch.ClientSize.Height - buttonClear.Height)/2);
+            buttonClear.Cursor = Cursors.Default;
+            buttonClear.BackgroundImage = Properties.Resources.close;
+            buttonClear.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonClear.FlatStyle = FlatStyle.Flat;
+            buttonClear.FlatAppearance.BorderSize = 0;
+            TextboxSearch.Controls.Add(buttonClear);
+            SendMessage(TextboxSearch.Handle, 0xd3, (IntPtr)2, (IntPtr)(buttonClear.Width << 16));
+            buttonClear.Visible = false;
+            // handle event text changed in textbox search
+            TextboxSearch.TextChanged += TextboxSearch_TextChanged;
+            // handle event click button clear
+            buttonClear.Click += ButtonClear_Click;
+        }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wp, IntPtr lp);
+        /// <summary>
+        /// ボタンクリアのVisibleプロパティを設定する
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextboxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(TextboxSearch.Text))
+            {
+                buttonClear.Visible = true;
+            }
+            else
+            {
+                buttonClear.Visible = false;
+            }
+        }
+        /// <summary>
+        /// テキストボックスのキーワードをクリアする
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonClear_Click(object sender, EventArgs e)
+        {
+            TextboxSearch.Text = "";
+            pageNumber = 1;
+            patientList = patients;
+            PagingPatientList(patientList);
         }
         /// <summary>
         /// 患者の詳細な情報画面に遷移する
@@ -83,9 +132,9 @@ namespace ReservationManagementSystem
         /// <param name="e"></param>
         private void ButtonPrevious_Click(object sender, EventArgs e)
         {
-            if (patientList.HasPreviousPage)
+            if (patientPagedList.HasPreviousPage)
             {
-                PagingPatientList(patients, --pageNumber);
+                PagingPatientList(patientList, --pageNumber);
             }
         }
         /// <summary>
@@ -95,9 +144,9 @@ namespace ReservationManagementSystem
         /// <param name="e"></param>
         private void ButtonNext_Click(object sender, EventArgs e)
         {
-            if (patientList.HasNextPage)
+            if (patientPagedList.HasNextPage)
             {
-                PagingPatientList(patients, ++pageNumber);
+                PagingPatientList(patientList, ++pageNumber);
             }
         }
         /// <summary>
@@ -107,14 +156,13 @@ namespace ReservationManagementSystem
         /// <param name="e"></param>
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            var resultPatientList = new List<PatientEntity>();
             var keyword = TextboxSearch.Text;
             if (!string.IsNullOrWhiteSpace(keyword))
             {
-                resultPatientList = patientDAO.FindByIdOrName(keyword);
+                patientList = patientDAO.FindByIdOrName(keyword);
+                pageNumber = 1;
+                PagingPatientList(patientList);
             }
-            pageNumber = 1;
-            PagingPatientList(resultPatientList);
         }
     }
 }
