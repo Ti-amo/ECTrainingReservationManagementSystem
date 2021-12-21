@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.ContainerPanel = new System.Windows.Forms.Panel();
+            this.DateTimePickerReservationDate = new System.Windows.Forms.DateTimePicker();
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ButtonNext = new System.Windows.Forms.Button();
             this.LabelPageNumber = new System.Windows.Forms.Label();
             this.ButtonPrevious = new System.Windows.Forms.Button();
-            this.DataGridViewPatientList = new System.Windows.Forms.DataGridView();
+            this.DataGridViewReservationList = new System.Windows.Forms.DataGridView();
             this.LabelTitle = new System.Windows.Forms.Label();
-            this.DateTimePickerReservationDate = new System.Windows.Forms.DateTimePicker();
             this.ContainerPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPatientList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReservationList)).BeginInit();
             this.SuspendLayout();
             // 
             // ContainerPanel
@@ -51,6 +51,16 @@
             this.ContainerPanel.Name = "ContainerPanel";
             this.ContainerPanel.Size = new System.Drawing.Size(800, 57);
             this.ContainerPanel.TabIndex = 1;
+            // 
+            // DateTimePickerReservationDate
+            // 
+            this.DateTimePickerReservationDate.CustomFormat = "yyyy-MM-dd";
+            this.DateTimePickerReservationDate.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTimePickerReservationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateTimePickerReservationDate.Location = new System.Drawing.Point(480, 18);
+            this.DateTimePickerReservationDate.Name = "DateTimePickerReservationDate";
+            this.DateTimePickerReservationDate.Size = new System.Drawing.Size(200, 27);
+            this.DateTimePickerReservationDate.TabIndex = 2;
             // 
             // ButtonSearch
             // 
@@ -69,7 +79,7 @@
             this.panel1.Controls.Add(this.ButtonNext);
             this.panel1.Controls.Add(this.LabelPageNumber);
             this.panel1.Controls.Add(this.ButtonPrevious);
-            this.panel1.Controls.Add(this.DataGridViewPatientList);
+            this.panel1.Controls.Add(this.DataGridViewReservationList);
             this.panel1.Controls.Add(this.LabelTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 57);
@@ -109,18 +119,18 @@
             this.ButtonPrevious.Text = "<";
             this.ButtonPrevious.UseVisualStyleBackColor = true;
             // 
-            // DataGridViewPatientList
+            // DataGridViewReservationList
             // 
-            this.DataGridViewPatientList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DataGridViewReservationList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataGridViewPatientList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DataGridViewPatientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewPatientList.Location = new System.Drawing.Point(29, 71);
-            this.DataGridViewPatientList.Name = "DataGridViewPatientList";
-            this.DataGridViewPatientList.RowHeadersWidth = 51;
-            this.DataGridViewPatientList.Size = new System.Drawing.Size(743, 253);
-            this.DataGridViewPatientList.TabIndex = 1;
+            this.DataGridViewReservationList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridViewReservationList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewReservationList.Location = new System.Drawing.Point(29, 71);
+            this.DataGridViewReservationList.Name = "DataGridViewReservationList";
+            this.DataGridViewReservationList.RowHeadersWidth = 51;
+            this.DataGridViewReservationList.Size = new System.Drawing.Size(743, 253);
+            this.DataGridViewReservationList.TabIndex = 1;
             // 
             // LabelTitle
             // 
@@ -131,17 +141,7 @@
             this.LabelTitle.Name = "LabelTitle";
             this.LabelTitle.Size = new System.Drawing.Size(124, 27);
             this.LabelTitle.TabIndex = 0;
-            this.LabelTitle.Text = "患者一覧";
-            // 
-            // DateTimePickerReservationDate
-            // 
-            this.DateTimePickerReservationDate.CustomFormat = "yyyy-MM-dd";
-            this.DateTimePickerReservationDate.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateTimePickerReservationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerReservationDate.Location = new System.Drawing.Point(480, 18);
-            this.DateTimePickerReservationDate.Name = "DateTimePickerReservationDate";
-            this.DateTimePickerReservationDate.Size = new System.Drawing.Size(200, 27);
-            this.DateTimePickerReservationDate.TabIndex = 2;
+            this.LabelTitle.Text = "予約一覧";
             // 
             // ReservationListByDateForm
             // 
@@ -153,10 +153,11 @@
             this.Name = "ReservationListByDateForm";
             this.Text = "ReservationListByDateForm";
             this.Load += new System.EventHandler(this.ReservationListByDateForm_Load);
+            this.Shown += new System.EventHandler(this.ReservationListByDateForm_Shown);
             this.ContainerPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPatientList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReservationList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,7 +171,7 @@
         private System.Windows.Forms.Button ButtonNext;
         private System.Windows.Forms.Label LabelPageNumber;
         private System.Windows.Forms.Button ButtonPrevious;
-        private System.Windows.Forms.DataGridView DataGridViewPatientList;
+        private System.Windows.Forms.DataGridView DataGridViewReservationList;
         private System.Windows.Forms.Label LabelTitle;
     }
 }

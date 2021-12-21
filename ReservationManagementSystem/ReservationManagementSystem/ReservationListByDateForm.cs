@@ -15,18 +15,32 @@ namespace ReservationManagementSystem
 {
     public partial class ReservationListByDateForm : Form
     {
-        private List<PatientEntity> patients = new List<PatientEntity>();　// 患者一覧
+        private List<ReservationEntity> reservations = new List<ReservationEntity>();　// 患者一覧
         private int pageNumber = 1;                                     　 // ページ番号
-        private IPagedList<PatientEntity> patientList;                     // ページ一覧
-        private PatientDAO patientDAO = new PatientDAO();
+        private IPagedList<ReservationEntity> reservationList;                     // ページ一覧
+        private ReservationDAO reservationDAO = new ReservationDAO();   
         public ReservationListByDateForm()
         {
             InitializeComponent();
         }
         private void ReservationListByDateForm_Load(object sender, EventArgs e)
         {
-            patients = patientDAO.FindAll();
+            reservations = reservationDAO.FindByDate(DateTime.Now.ToString("yyyy-MM-dd"));
             SetupControls();
+        }
+        private void ReservationListByDateForm_Shown(object sender, EventArgs e)
+        {
+            CheckEmptyDataSource(reservations);
+        }
+        /// <summary>
+        /// データーがEMPTYチェックする
+        /// </summary>
+        private void CheckEmptyDataSource(List<ReservationEntity> reservations)
+        {
+            if (reservations.Count == 0)
+            {
+                MessageBox.Show($"{DateTime.Now.Date.ToString("yyyy-MM-dd")}の予約はありません。", "お知らせ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         /// <summary>
         /// ページ付けを実行する
@@ -34,34 +48,38 @@ namespace ReservationManagementSystem
         /// <param name="patients"></param>
         /// <param name="pageNumber"></param>
         /// <param name="pageSize"></param>
-        private void PagingPatientList(List<PatientEntity> patients, int pageNumber = 1, int pageSize = 10)
+        private void PagingReservationList(List<ReservationEntity> reservations, int pageNumber = 1, int pageSize = 10)
         {
-            patientList = patients.ToPagedList(pageNumber, pageSize);
-            ButtonPrevious.Enabled = patientList.HasPreviousPage;
-            ButtonNext.Enabled = patientList.HasNextPage;
-            LabelPageNumber.Text = string.Format("{0}/{1}", pageNumber, patientList.PageCount);
+            reservationList = reservations.ToPagedList(pageNumber, pageSize);
+            ButtonPrevious.Enabled = reservationList.HasPreviousPage;
+            ButtonNext.Enabled = reservationList.HasNextPage;
+            LabelPageNumber.Text = string.Format("{0}/{1}", pageNumber, reservationList.PageCount);
             // fill data to datagridview
-            DataGridViewPatientList.DataSource = patientList.ToList();
+            DataGridViewReservationList.DataSource = reservationList.ToList();
         }
         /// <summary>
         /// コントロールの設定
         /// </summary>
         private void SetupControls()
         {
-            PagingPatientList(patients);
+            PagingReservationList(reservations);
             // set up headertext of dgv
-            DataGridViewPatientList.Columns["PatientId"].HeaderText = "患者ID";
-            DataGridViewPatientList.Columns["Name"].HeaderText = "氏名";
-            DataGridViewPatientList.Columns["BirthDate"].HeaderText = "生年月日";
+            DataGridViewReservationList.Columns["ReservationId"].HeaderText = "予約ID";
+            DataGridViewReservationList.Columns["PatientName"].HeaderText = "患者名";
+            DataGridViewReservationList.Columns["ReservationDate"].HeaderText = "予約日付";
+            DataGridViewReservationList.Columns["StatusName"].HeaderText = "状態";
+            DataGridViewReservationList.Columns["PatientId"].Visible = false;
+            DataGridViewReservationList.Columns["StatusId"].Visible = false;
+            DataGridViewReservationList.Columns["Exam"].Visible = false;
             // add button detail
             DataGridViewButtonColumn buttonDetail = new DataGridViewButtonColumn();
             buttonDetail.Text = "詳細";
             buttonDetail.UseColumnTextForButtonValue = true;
             buttonDetail.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             buttonDetail.Width = 100;
-            DataGridViewPatientList.Columns.Add(buttonDetail);
+            DataGridViewReservationList.Columns.Add(buttonDetail);
             // handle event click button detail
-            DataGridViewPatientList.CellContentClick += ButtonDetail_Click;
+            DataGridViewReservationList.CellContentClick += ButtonDetail_Click;
         }
         /// <summary>
         /// 患者の詳細な情報画面に遷移する
@@ -70,14 +88,13 @@ namespace ReservationManagementSystem
         /// <param name="e"></param>
         private void ButtonDetail_Click(object sender, DataGridViewCellEventArgs e)
         {
-            var dgvPatientList = (DataGridView)sender;
-            if (dgvPatientList.Columns[e.ColumnIndex] is DataGridViewButtonColumn
+            var dgvReservationList = (DataGridView)sender;
+            if (dgvReservationList.Columns[e.ColumnIndex] is DataGridViewButtonColumn
                 && e.RowIndex >= 0)
             {
-                string patientId = (string)dgvPatientList.Rows[e.RowIndex].Cells["PatientId"].Value;
-                PatientDetailInfoForm patientDetailInfoForm = new PatientDetailInfoForm();
-                patientDetailInfoForm.PatientId = patientId;
-                patientDetailInfoForm.Show();
+                int reservationId = (int)dgvReservationList.Rows[e.RowIndex].Cells["ReservationId"].Value;
+                ReservationDetailForm reservationDetailInfoForm = new ReservationDetailForm(reservationId);
+                reservationDetailInfoForm.Show();
             }
         }
         /// <summary>
@@ -87,9 +104,9 @@ namespace ReservationManagementSystem
         /// <param name="e"></param>
         private void ButtonPrevious_Click(object sender, EventArgs e)
         {
-            if (patientList.HasPreviousPage)
+            if (reservationList.HasPreviousPage)
             {
-                PagingPatientList(patients, --pageNumber);
+                PagingReservationList(reservations, --pageNumber);
             }
         }
         /// <summary>
@@ -99,9 +116,9 @@ namespace ReservationManagementSystem
         /// <param name="e"></param>
         private void ButtonNext_Click(object sender, EventArgs e)
         {
-            if (patientList.HasNextPage)
+            if (reservationList.HasNextPage)
             {
-                PagingPatientList(patients, ++pageNumber);
+                PagingReservationList(reservations, ++pageNumber);
             }
         }
         /// <summary>
@@ -111,14 +128,12 @@ namespace ReservationManagementSystem
         /// <param name="e"></param>
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            //var resultPatientList = new List<PatientEntity>();
-            //var keyword = TextboxSearch.Text;
-            //if (!string.IsNullOrWhiteSpace(keyword))
-            //{
-            //    resultPatientList = patientDAO.FindByIdOrName(keyword);
-            //}
-            //pageNumber = 1;
-            //PagingPatientList(resultPatientList);
+            var resultReservationList = new List<ReservationEntity>();
+            string date = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
+            resultReservationList = reservationDAO.FindByDate(date);
+            pageNumber = 1;
+            PagingReservationList(resultReservationList);
+            CheckEmptyDataSource(resultReservationList);
         }
     }
 }

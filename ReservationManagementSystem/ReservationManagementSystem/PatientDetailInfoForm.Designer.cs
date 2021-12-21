@@ -1,5 +1,4 @@
-﻿
-namespace ReservationManagementSystem
+﻿namespace ReservationManagementSystem
 {
     partial class PatientDetailInfoForm
     {
