@@ -77,10 +77,10 @@ namespace ReservationManagementSystem
             // 
             this.LabelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.LabelTitle.AutoSize = true;
-            this.LabelTitle.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTitle.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTitle.Location = new System.Drawing.Point(306, 20);
             this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(98, 21);
+            this.LabelTitle.Size = new System.Drawing.Size(102, 21);
             this.LabelTitle.TabIndex = 0;
             this.LabelTitle.Text = "患者一覧";
             // 
