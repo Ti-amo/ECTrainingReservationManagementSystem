@@ -15,6 +15,7 @@ namespace ReservationManagementSystem
     public partial class ReserveRegisterForm : Form
     {
         private ExamDAO examDAO = new ExamDAO();
+        public string PatientId { get; set; }
 
         public ReserveRegisterForm()
         {
@@ -75,7 +76,7 @@ namespace ReservationManagementSystem
             else
             {
                 //予約登録
-                reservationEntity.PatientId = patientDAO.FindLatestPatient();
+                reservationEntity.PatientId = this.PatientId;
                 reservationEntity.ReservationDate = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
                 ExamItem examItem = new ExamItem
                 {

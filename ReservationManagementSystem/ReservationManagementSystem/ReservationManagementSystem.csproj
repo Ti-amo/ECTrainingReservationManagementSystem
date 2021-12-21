@@ -114,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="PatientRegisterForm.resx">
       <DependentUpon>PatientRegisterForm.cs</DependentUpon>
@@ -147,6 +148,7 @@
   <ItemGroup>
     <Content Include="Assets\background.jpg" />
     <Content Include="Assets\Boom.png" />
+    <Content Include="Assets\close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
