@@ -122,6 +122,8 @@ namespace ReservationManagementSystem
                 string patientId = (string)dgvPatientList.Rows[e.RowIndex].Cells["PatientId"].Value;
                 PatientDetailInfoForm patientDetailInfoForm = new PatientDetailInfoForm();
                 patientDetailInfoForm.PatientId = patientId;
+                this.Hide();
+                patientDetailInfoForm.FormClosed += (s, args) => this.Close();
                 patientDetailInfoForm.Show();
             }
         }

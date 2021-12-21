@@ -29,7 +29,7 @@ namespace ReservationManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ContainerPatientInfo = new System.Windows.Forms.Panel();
             this.ButtonReserve = new System.Windows.Forms.Button();
             this.LabelLine = new System.Windows.Forms.Label();
             this.TextboxDateOfBirth = new System.Windows.Forms.TextBox();
@@ -38,40 +38,40 @@ namespace ReservationManagementSystem
             this.label3 = new System.Windows.Forms.Label();
             this.TextboxId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LabelTitleInfo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LabelPageNumber = new System.Windows.Forms.Label();
             this.ButtonNext = new System.Windows.Forms.Button();
             this.ButtonPrevious = new System.Windows.Forms.Button();
             this.DataGridViewReserveList = new System.Windows.Forms.DataGridView();
             this.LabelHistory = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.ContainerPatientInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReserveList)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // ContainerPatientInfo
             // 
-            this.panel1.Controls.Add(this.ButtonReserve);
-            this.panel1.Controls.Add(this.LabelLine);
-            this.panel1.Controls.Add(this.TextboxDateOfBirth);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.TextboxName);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.TextboxId);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(709, 224);
-            this.panel1.TabIndex = 0;
+            this.ContainerPatientInfo.Controls.Add(this.ButtonReserve);
+            this.ContainerPatientInfo.Controls.Add(this.LabelLine);
+            this.ContainerPatientInfo.Controls.Add(this.TextboxDateOfBirth);
+            this.ContainerPatientInfo.Controls.Add(this.label4);
+            this.ContainerPatientInfo.Controls.Add(this.TextboxName);
+            this.ContainerPatientInfo.Controls.Add(this.label3);
+            this.ContainerPatientInfo.Controls.Add(this.TextboxId);
+            this.ContainerPatientInfo.Controls.Add(this.label2);
+            this.ContainerPatientInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ContainerPatientInfo.Location = new System.Drawing.Point(0, 0);
+            this.ContainerPatientInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.ContainerPatientInfo.Name = "ContainerPatientInfo";
+            this.ContainerPatientInfo.Size = new System.Drawing.Size(709, 248);
+            this.ContainerPatientInfo.TabIndex = 0;
             // 
             // ButtonReserve
             // 
             this.ButtonReserve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonReserve.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonReserve.Location = new System.Drawing.Point(572, 172);
+            this.ButtonReserve.Location = new System.Drawing.Point(572, 183);
             this.ButtonReserve.Name = "ButtonReserve";
             this.ButtonReserve.Size = new System.Drawing.Size(90, 30);
             this.ButtonReserve.TabIndex = 9;
@@ -85,7 +85,7 @@ namespace ReservationManagementSystem
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelLine.AutoSize = true;
-            this.LabelLine.Location = new System.Drawing.Point(48, 209);
+            this.LabelLine.Location = new System.Drawing.Point(48, 232);
             this.LabelLine.Margin = new System.Windows.Forms.Padding(0);
             this.LabelLine.Name = "LabelLine";
             this.LabelLine.Size = new System.Drawing.Size(35, 13);
@@ -161,17 +161,17 @@ namespace ReservationManagementSystem
             this.label2.TabIndex = 1;
             this.label2.Text = "ID";
             // 
-            // label1
+            // LabelTitleInfo
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(305, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "患者情報";
+            this.LabelTitleInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.LabelTitleInfo.AutoSize = true;
+            this.LabelTitleInfo.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTitleInfo.Location = new System.Drawing.Point(305, 22);
+            this.LabelTitleInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelTitleInfo.Name = "LabelTitleInfo";
+            this.LabelTitleInfo.Size = new System.Drawing.Size(102, 21);
+            this.LabelTitleInfo.TabIndex = 0;
+            this.LabelTitleInfo.Text = "患者情報";
             // 
             // panel2
             // 
@@ -182,17 +182,17 @@ namespace ReservationManagementSystem
             this.panel2.Controls.Add(this.LabelHistory);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(0, 224);
+            this.panel2.Location = new System.Drawing.Point(0, 248);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(709, 246);
+            this.panel2.Size = new System.Drawing.Size(709, 222);
             this.panel2.TabIndex = 1;
             // 
             // LabelPageNumber
             // 
             this.LabelPageNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelPageNumber.AutoSize = true;
-            this.LabelPageNumber.Location = new System.Drawing.Point(535, 209);
+            this.LabelPageNumber.Location = new System.Drawing.Point(535, 185);
             this.LabelPageNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelPageNumber.Name = "LabelPageNumber";
             this.LabelPageNumber.Size = new System.Drawing.Size(40, 16);
@@ -203,7 +203,7 @@ namespace ReservationManagementSystem
             // 
             this.ButtonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonNext.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNext.Location = new System.Drawing.Point(589, 202);
+            this.ButtonNext.Location = new System.Drawing.Point(589, 178);
             this.ButtonNext.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonNext.Name = "ButtonNext";
             this.ButtonNext.Size = new System.Drawing.Size(75, 23);
@@ -216,7 +216,7 @@ namespace ReservationManagementSystem
             // 
             this.ButtonPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonPrevious.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPrevious.Location = new System.Drawing.Point(446, 202);
+            this.ButtonPrevious.Location = new System.Drawing.Point(446, 178);
             this.ButtonPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonPrevious.Name = "ButtonPrevious";
             this.ButtonPrevious.Size = new System.Drawing.Size(75, 23);
@@ -236,18 +236,18 @@ namespace ReservationManagementSystem
             this.DataGridViewReserveList.Location = new System.Drawing.Point(46, 55);
             this.DataGridViewReserveList.Margin = new System.Windows.Forms.Padding(2);
             this.DataGridViewReserveList.Name = "DataGridViewReserveList";
-            this.DataGridViewReserveList.Size = new System.Drawing.Size(616, 130);
+            this.DataGridViewReserveList.Size = new System.Drawing.Size(616, 106);
             this.DataGridViewReserveList.TabIndex = 1;
             // 
             // LabelHistory
             // 
             this.LabelHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.LabelHistory.AutoSize = true;
-            this.LabelHistory.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelHistory.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHistory.Location = new System.Drawing.Point(321, 15);
             this.LabelHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelHistory.Name = "LabelHistory";
-            this.LabelHistory.Size = new System.Drawing.Size(98, 21);
+            this.LabelHistory.Size = new System.Drawing.Size(102, 21);
             this.LabelHistory.TabIndex = 0;
             this.LabelHistory.Text = "診療履歴";
             // 
@@ -256,14 +256,14 @@ namespace ReservationManagementSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 470);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LabelTitleInfo);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ContainerPatientInfo);
             this.Name = "PatientDetailInfoForm";
             this.Text = "PatientDetailInfoForm";
             this.Load += new System.EventHandler(this.PatientDetailInfoForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ContainerPatientInfo.ResumeLayout(false);
+            this.ContainerPatientInfo.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReserveList)).EndInit();
@@ -274,14 +274,14 @@ namespace ReservationManagementSystem
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel ContainerPatientInfo;
         private System.Windows.Forms.TextBox TextboxDateOfBirth;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TextboxName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TextboxId;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LabelTitleInfo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button ButtonNext;
         private System.Windows.Forms.Button ButtonPrevious;
