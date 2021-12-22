@@ -90,12 +90,14 @@ namespace ReservationManagementSystem
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DataGridViewPatientList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridViewPatientList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridViewPatientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewPatientList.Location = new System.Drawing.Point(29, 71);
             this.DataGridViewPatientList.Name = "DataGridViewPatientList";
-            this.DataGridViewPatientList.RowHeadersWidth = 51;
-            this.DataGridViewPatientList.Size = new System.Drawing.Size(653, 246);
+            this.DataGridViewPatientList.ReadOnly = true;
+            this.DataGridViewPatientList.Size = new System.Drawing.Size(653, 209);
             this.DataGridViewPatientList.TabIndex = 1;
+            this.DataGridViewPatientList.Paint += new System.Windows.Forms.PaintEventHandler(this.DataGridViewPatientList_Paint);
             // 
             // ButtonNext
             // 

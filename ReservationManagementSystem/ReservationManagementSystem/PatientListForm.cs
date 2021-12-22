@@ -3,6 +3,7 @@ using ReservationManagementSystem.DAO;
 using ReservationManagementSystem.Entity;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -63,7 +64,7 @@ namespace ReservationManagementSystem
             DataGridViewPatientList.CellContentClick += ButtonDetail_Click;
             // add button clear to textbox search
             buttonClear.Size = new System.Drawing.Size(10, 10);
-            buttonClear.Location = new System.Drawing.Point(TextboxSearch.ClientSize.Width - buttonClear.Width - 5, (TextboxSearch.ClientSize.Height - buttonClear.Height)/2);
+            buttonClear.Location = new System.Drawing.Point(TextboxSearch.ClientSize.Width - buttonClear.Width - 5, (TextboxSearch.ClientSize.Height - buttonClear.Height) / 2);
             buttonClear.Cursor = Cursors.Default;
             buttonClear.BackgroundImage = Properties.Resources.close;
             buttonClear.BackgroundImageLayout = ImageLayout.Stretch;
@@ -164,6 +165,23 @@ namespace ReservationManagementSystem
                 patientList = patientDAO.FindByIdOrName(keyword);
                 pageNumber = 1;
                 PagingPatientList(patientList);
+            }
+        }
+        /// <summary>
+        /// 患者を見つけない場合、メッセージを表示する
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridViewPatientList_Paint(object sender, PaintEventArgs e)
+        {
+            DataGridView dgvPatientList = (DataGridView)sender;
+            string emptyResultText = "患者は見つかりませんでした!";
+            if (dgvPatientList.Rows.Count == 0)
+            {
+                using (Graphics grfx = e.Graphics)
+                {
+                    grfx.DrawString(emptyResultText, dgvPatientList.Font, Brushes.Black, new PointF((dgvPatientList.Width - dgvPatientList.Font.Size * emptyResultText.Length) / 2, dgvPatientList.Height / 2));
+                }
             }
         }
     }
