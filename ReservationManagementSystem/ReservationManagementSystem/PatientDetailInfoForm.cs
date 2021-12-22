@@ -15,6 +15,9 @@ namespace ReservationManagementSystem
         private int pageNumber = 1;                                                    // ページ番号
         private IPagedList<ReservationEntity> reservationPagedList;                    // ページ一覧     
         private List<ReservationEntity> reservations = new List<ReservationEntity>();　// 予約一覧
+        private PatientDAO patientDAO = new PatientDAO();
+        private bool editNameStatus = false;
+        private bool editDoBStatus = false;
         public PatientDetailInfoForm()
         {
             InitializeComponent();
@@ -22,7 +25,6 @@ namespace ReservationManagementSystem
 
         private void PatientDetailInfoForm_Load(object sender, EventArgs e)
         {
-            PatientDAO patientDAO = new PatientDAO();
             patient = patientDAO.Find(PatientId);
 
             ReservationDAO reservationDAO = new ReservationDAO();
@@ -88,6 +90,56 @@ namespace ReservationManagementSystem
             DataGridViewReserveList.Columns.Add(buttonDetail);
             // handle event click button detail
             DataGridViewReserveList.CellContentClick += ButtonDetail_Click;
+            // hide textbox cursor
+            TextboxId.Enter += (s, e) => { TextboxId.Parent.Focus(); };
+            TextboxName.Enter += TextboxName_Enter;
+            TextboxDateOfBirth.Enter += TextboxDateOfBirth_Enter;
+            // show button reserve according to reservation's status
+            ButtonReserve.Enabled = !HasReservation();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool HasReservation()
+        {
+            if ((reservations.Find(r => (r.StatusName.Equals("予約"))) != null) || (reservations.Find(r => (r.StatusName.Equals("受付完了"))) != null))
+            {
+                return true;
+            }
+            return false;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextboxName_Enter(object sender, EventArgs e)
+        {
+            if (!editNameStatus)
+            {
+                TextboxName.Parent.Focus();
+            }
+            else
+            {
+                TextboxName.Focus();
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextboxDateOfBirth_Enter(object sender, EventArgs e)
+        {
+            if (!editDoBStatus)
+            {
+                TextboxDateOfBirth.Parent.Focus();
+            }
+            else
+            {
+                TextboxDateOfBirth.Focus();
+            }
         }
         /// <summary>
         /// 予約詳細画面に遷移する
@@ -141,6 +193,78 @@ namespace ReservationManagementSystem
             this.Hide();
             reserveRegisterForm.FormClosed += (s, args) => this.Close();
             reserveRegisterForm.Show();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonEditName_Click(object sender, EventArgs e)
+        {
+            if (!editNameStatus)
+            {
+                editNameStatus = !editNameStatus;
+                TextboxName.BackColor = System.Drawing.Color.White;
+                TextboxName.ReadOnly = false;
+                ButtonEditName.BackgroundImage = Properties.Resources.done;
+            }
+            else
+            {
+                string newName = TextboxName.Text;
+                if (!string.IsNullOrWhiteSpace(newName))
+                {
+                    editNameStatus = !editNameStatus;
+                    patient.Name = newName;
+                    patientDAO.Update(patient);
+                    TextboxName.BackColor = System.Drawing.Color.WhiteSmoke;
+                    TextboxName.ReadOnly = true;
+                    ButtonEditName.BackgroundImage = Properties.Resources.edit;
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("内容を入力してください！", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        TextboxName.Focus();
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonEditDoB_Click(object sender, EventArgs e)
+        {
+            if (!editDoBStatus)
+            {
+                editDoBStatus = !editDoBStatus;
+                TextboxDateOfBirth.BackColor = System.Drawing.Color.White;
+                TextboxDateOfBirth.ReadOnly = false;
+                ButtonEditDoB.BackgroundImage = Properties.Resources.done;
+            }
+            else
+            {
+                string newDoB = TextboxDateOfBirth.Text;
+                if (!string.IsNullOrWhiteSpace(newDoB))
+                {
+                    editDoBStatus = !editDoBStatus;
+                    patient.BirthDate = newDoB;
+                    patientDAO.Update(patient);
+                    TextboxDateOfBirth.BackColor = System.Drawing.Color.WhiteSmoke;
+                    TextboxDateOfBirth.ReadOnly = true;
+                    ButtonEditDoB.BackgroundImage = Properties.Resources.edit;
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("内容を入力してください！", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        TextboxDateOfBirth.Focus();
+                    }
+                }
+            }
         }
     }
 }
