@@ -154,7 +154,7 @@ namespace ReservationManagementSystem
             {
                 int reservationId = (int)dgvReservetList.Rows[e.RowIndex].Cells["ReservationId"].Value;
                 ReservationDetailForm reservationDetailForm = new ReservationDetailForm(reservationId);
-                reservationDetailForm.Show();
+                reservationDetailForm.ShowDialog();
             }
         }
         /// <summary>
@@ -192,7 +192,7 @@ namespace ReservationManagementSystem
             reserveRegisterForm.PatientId = this.PatientId;
             this.Hide();
             reserveRegisterForm.FormClosed += (s, args) => this.Close();
-            reserveRegisterForm.Show();
+            reserveRegisterForm.ShowDialog();
         }
         /// <summary>
         /// 

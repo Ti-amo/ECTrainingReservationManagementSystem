@@ -153,7 +153,7 @@
             this.Controls.Add(this.ContainerPanel);
             this.Name = "ReservationListByDateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReservationListByDateForm";
+            this.Text = "ReservationListByDate";
             this.Load += new System.EventHandler(this.ReservationListByDateForm_Load);
             this.ContainerPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
