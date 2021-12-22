@@ -51,7 +51,7 @@ namespace ReservationManagementSystem
         {
             TextboxId.Text = patient.PatientId;
             TextboxName.Text = patient.Name;
-            TextboxDateOfBirth.Text = patient.BirthDate;
+            DateTimePickerDoB.Text = patient.BirthDate;
         }
         /// <summary>
         /// ページ付けを実行する
@@ -93,7 +93,6 @@ namespace ReservationManagementSystem
             // hide textbox cursor
             TextboxId.Enter += (s, e) => { TextboxId.Parent.Focus(); };
             TextboxName.Enter += TextboxName_Enter;
-            TextboxDateOfBirth.Enter += TextboxDateOfBirth_Enter;
             // show button reserve according to reservation's status
             ButtonReserve.Enabled = !HasReservation();
         }
@@ -123,22 +122,6 @@ namespace ReservationManagementSystem
             else
             {
                 TextboxName.Focus();
-            }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextboxDateOfBirth_Enter(object sender, EventArgs e)
-        {
-            if (!editDoBStatus)
-            {
-                TextboxDateOfBirth.Parent.Focus();
-            }
-            else
-            {
-                TextboxDateOfBirth.Focus();
             }
         }
         /// <summary>
@@ -211,23 +194,27 @@ namespace ReservationManagementSystem
             else
             {
                 string newName = TextboxName.Text;
-                if (!string.IsNullOrWhiteSpace(newName))
+                if (!string.IsNullOrWhiteSpace(newName) && (newName.Length <= 48))
                 {
                     editNameStatus = !editNameStatus;
-                    patient.Name = newName;
-                    patientDAO.Update(patient);
                     TextboxName.BackColor = System.Drawing.Color.WhiteSmoke;
                     TextboxName.ReadOnly = true;
                     ButtonEditName.BackgroundImage = Properties.Resources.edit;
+                    if (!newName.Equals(patient.Name))
+                    {
+                        patient.Name = newName;
+                        patientDAO.Update(patient);
+                        MessageBox.Show("患者の氏名を変更しました。", "変更成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
-                    DialogResult dialogResult = MessageBox.Show("内容を入力してください！", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult dialogResult = MessageBox.Show("患者の氏名（48文字）を入力してください！", "変更失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     if (dialogResult == DialogResult.OK)
                     {
                         TextboxName.Focus();
                     }
-                }
+                } 
             }
         }
         /// <summary>
@@ -240,31 +227,44 @@ namespace ReservationManagementSystem
             if (!editDoBStatus)
             {
                 editDoBStatus = !editDoBStatus;
-                TextboxDateOfBirth.BackColor = System.Drawing.Color.White;
-                TextboxDateOfBirth.ReadOnly = false;
                 ButtonEditDoB.BackgroundImage = Properties.Resources.done;
+                DateTimePickerDoB.Enabled = true;
             }
             else
             {
-                string newDoB = TextboxDateOfBirth.Text;
-                if (!string.IsNullOrWhiteSpace(newDoB))
+                if (isValidDateOfBirth())
                 {
+                    string newDoB = DateTimePickerDoB.Value.ToString("yyyy-MM-dd");
                     editDoBStatus = !editDoBStatus;
-                    patient.BirthDate = newDoB;
-                    patientDAO.Update(patient);
-                    TextboxDateOfBirth.BackColor = System.Drawing.Color.WhiteSmoke;
-                    TextboxDateOfBirth.ReadOnly = true;
+                    DateTimePickerDoB.Enabled = false;
                     ButtonEditDoB.BackgroundImage = Properties.Resources.edit;
+                    if (!newDoB.Equals(patient.BirthDate))
+                    {
+                        patient.BirthDate = newDoB;
+                        patientDAO.Update(patient);
+                        MessageBox.Show("患者の生年月日を変更しました。", "変更成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
-                    DialogResult dialogResult = MessageBox.Show("内容を入力してください！", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    if (dialogResult == DialogResult.OK)
-                    {
-                        TextboxDateOfBirth.Focus();
-                    }
+                    MessageBox.Show("患者の生年月日は本日より後でいけません！", "変更失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
             }
+        }
+        /// <summary>
+        /// 患者生年月日をチェックする
+        /// </summary>
+        /// <returns></returns>
+        private bool isValidDateOfBirth()
+        {
+            DateTime patientDoB = DateTime.Parse(DateTimePickerDoB.Text).Date;
+            DateTime localDate = DateTime.Now.Date;
+            if(patientDoB <= localDate)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
