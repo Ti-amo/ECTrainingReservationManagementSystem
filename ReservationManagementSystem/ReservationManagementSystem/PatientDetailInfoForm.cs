@@ -3,6 +3,7 @@ using ReservationManagementSystem.DAO;
 using ReservationManagementSystem.Entity;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -95,6 +96,8 @@ namespace ReservationManagementSystem
             TextboxName.Enter += TextboxName_Enter;
             // show button reserve according to reservation's status
             ButtonReserve.Enabled = !HasReservation();
+            // set border color for dtp
+            DateTimePickerDoB.BorderColor = Color.Black;
         }
         /// <summary>
         /// 
@@ -265,6 +268,23 @@ namespace ReservationManagementSystem
                 return true;
             }
             return false;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridViewReserveList_Paint(object sender, PaintEventArgs e)
+        {
+            DataGridView dgvReserveList = (DataGridView)sender;
+            string emptyResultText = "診療予約がありません。";
+            if (dgvReserveList.Rows.Count == 0)
+            {
+                using (Graphics grfx = e.Graphics)
+                {
+                    grfx.DrawString(emptyResultText, dgvReserveList.Font, Brushes.Black, new PointF((dgvReserveList.Width - dgvReserveList.Font.Size * emptyResultText.Length) / 2, dgvReserveList.Height / 2));
+                }
+            }
         }
     }
 }
