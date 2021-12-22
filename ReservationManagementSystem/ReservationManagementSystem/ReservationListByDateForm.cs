@@ -28,20 +28,6 @@ namespace ReservationManagementSystem
             reservations = reservationDAO.FindByDate(DateTime.Now.ToString("yyyy-MM-dd"));
             SetupControls();
         }
-        private void ReservationListByDateForm_Shown(object sender, EventArgs e)
-        {
-            CheckEmptyDataSource(reservations);
-        }
-        /// <summary>
-        /// データーがEMPTYチェックする
-        /// </summary>
-        private void CheckEmptyDataSource(List<ReservationEntity> reservations)
-        {
-            if (reservations.Count == 0)
-            {
-                MessageBox.Show($"{DateTime.Now.Date.ToString("yyyy-MM-dd")}の予約はありません。", "お知らせ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
         /// <summary>
         /// ページ付けを実行する
         /// </summary>
@@ -80,6 +66,23 @@ namespace ReservationManagementSystem
             DataGridViewReservationList.Columns.Add(buttonDetail);
             // handle event click button detail
             DataGridViewReservationList.CellContentClick += ButtonDetail_Click;
+        }
+        /// <summary>
+        /// 予約はありません
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridViewReservationList_Paint(object sender, PaintEventArgs e)
+        {
+            DataGridView dgvReservationList = (DataGridView)sender;
+            string emptyResultText = "予約はありませんでした!";
+            if (dgvReservationList.Rows.Count == 0)
+            {
+                using (Graphics grfx = e.Graphics)
+                {
+                    grfx.DrawString(emptyResultText, dgvReservationList.Font, Brushes.Black, new PointF((dgvReservationList.Width - dgvReservationList.Font.Size * emptyResultText.Length) / 2, dgvReservationList.Height / 2));
+                }
+            }
         }
         /// <summary>
         /// 患者の詳細な情報画面に遷移する
@@ -133,7 +136,6 @@ namespace ReservationManagementSystem
             resultReservationList = reservationDAO.FindByDate(date);
             pageNumber = 1;
             PagingReservationList(resultReservationList);
-            CheckEmptyDataSource(resultReservationList);
         }
     }
 }

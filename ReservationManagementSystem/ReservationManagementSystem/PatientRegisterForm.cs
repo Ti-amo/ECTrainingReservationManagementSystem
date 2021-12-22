@@ -15,7 +15,6 @@ namespace ReservationManagementSystem
     public partial class PatientRegisterForm : Form
     {
         private readonly ExamDAO examDAO = new ExamDAO();
-
         public PatientRegisterForm()
         {
             InitializeComponent();
