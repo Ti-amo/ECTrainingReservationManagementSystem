@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservationListByDateForm));
             this.ContainerPanel = new System.Windows.Forms.Panel();
             this.DateTimePickerReservationDate = new System.Windows.Forms.DateTimePicker();
             this.ButtonSearch = new System.Windows.Forms.Button();
@@ -44,116 +45,71 @@
             // 
             // ContainerPanel
             // 
+            resources.ApplyResources(this.ContainerPanel, "ContainerPanel");
             this.ContainerPanel.Controls.Add(this.DateTimePickerReservationDate);
             this.ContainerPanel.Controls.Add(this.ButtonSearch);
-            this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ContainerPanel.Location = new System.Drawing.Point(0, 0);
             this.ContainerPanel.Name = "ContainerPanel";
-            this.ContainerPanel.Size = new System.Drawing.Size(800, 57);
-            this.ContainerPanel.TabIndex = 1;
             // 
             // DateTimePickerReservationDate
             // 
-            this.DateTimePickerReservationDate.CustomFormat = "yyyy-MM-dd";
-            this.DateTimePickerReservationDate.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.DateTimePickerReservationDate, "DateTimePickerReservationDate");
             this.DateTimePickerReservationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerReservationDate.Location = new System.Drawing.Point(480, 18);
             this.DateTimePickerReservationDate.Name = "DateTimePickerReservationDate";
-            this.DateTimePickerReservationDate.Size = new System.Drawing.Size(200, 27);
-            this.DateTimePickerReservationDate.TabIndex = 2;
             // 
             // ButtonSearch
             // 
-            this.ButtonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSearch.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSearch.Location = new System.Drawing.Point(697, 17);
+            resources.ApplyResources(this.ButtonSearch, "ButtonSearch");
             this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.Size = new System.Drawing.Size(75, 28);
-            this.ButtonSearch.TabIndex = 1;
-            this.ButtonSearch.Text = "検索";
             this.ButtonSearch.UseVisualStyleBackColor = true;
             this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.ButtonNext);
             this.panel1.Controls.Add(this.LabelPageNumber);
             this.panel1.Controls.Add(this.ButtonPrevious);
             this.panel1.Controls.Add(this.DataGridViewReservationList);
             this.panel1.Controls.Add(this.LabelTitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 393);
-            this.panel1.TabIndex = 2;
             // 
             // ButtonNext
             // 
-            this.ButtonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonNext.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNext.Location = new System.Drawing.Point(697, 346);
+            resources.ApplyResources(this.ButtonNext, "ButtonNext");
             this.ButtonNext.Name = "ButtonNext";
-            this.ButtonNext.Size = new System.Drawing.Size(75, 23);
-            this.ButtonNext.TabIndex = 4;
-            this.ButtonNext.Text = ">";
             this.ButtonNext.UseVisualStyleBackColor = true;
             // 
             // LabelPageNumber
             // 
-            this.LabelPageNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelPageNumber.AutoSize = true;
-            this.LabelPageNumber.Location = new System.Drawing.Point(624, 353);
+            resources.ApplyResources(this.LabelPageNumber, "LabelPageNumber");
             this.LabelPageNumber.Name = "LabelPageNumber";
-            this.LabelPageNumber.Size = new System.Drawing.Size(32, 16);
-            this.LabelPageNumber.TabIndex = 3;
-            this.LabelPageNumber.Text = "1/10";
             // 
             // ButtonPrevious
             // 
-            this.ButtonPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonPrevious.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPrevious.Location = new System.Drawing.Point(516, 346);
+            resources.ApplyResources(this.ButtonPrevious, "ButtonPrevious");
             this.ButtonPrevious.Name = "ButtonPrevious";
-            this.ButtonPrevious.Size = new System.Drawing.Size(75, 23);
-            this.ButtonPrevious.TabIndex = 2;
-            this.ButtonPrevious.Text = "<";
             this.ButtonPrevious.UseVisualStyleBackColor = true;
             // 
             // DataGridViewReservationList
             // 
-            this.DataGridViewReservationList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.DataGridViewReservationList, "DataGridViewReservationList");
             this.DataGridViewReservationList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridViewReservationList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewReservationList.Location = new System.Drawing.Point(29, 71);
             this.DataGridViewReservationList.Name = "DataGridViewReservationList";
-            this.DataGridViewReservationList.RowHeadersWidth = 51;
-            this.DataGridViewReservationList.Size = new System.Drawing.Size(743, 253);
-            this.DataGridViewReservationList.TabIndex = 1;
             this.DataGridViewReservationList.Paint += new System.Windows.Forms.PaintEventHandler(this.DataGridViewReservationList_Paint);
             // 
             // LabelTitle
             // 
-            this.LabelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.LabelTitle.AutoSize = true;
-            this.LabelTitle.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTitle.Location = new System.Drawing.Point(351, 20);
+            resources.ApplyResources(this.LabelTitle, "LabelTitle");
             this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(124, 27);
-            this.LabelTitle.TabIndex = 0;
-            this.LabelTitle.Text = "予約一覧";
             // 
             // ReservationListByDateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ContainerPanel);
             this.Name = "ReservationListByDateForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReservationListByDate";
             this.Load += new System.EventHandler(this.ReservationListByDateForm_Load);
             this.ContainerPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

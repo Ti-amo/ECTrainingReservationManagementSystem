@@ -118,85 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LabelTitleInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LabelTitleInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="LabelTitleInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="LabelTitleInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 20.25pt, style=Bold</value>
-  </data>
   <data name="LabelTitleInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>303, 22</value>
-  </data>
-  <data name="LabelTitleInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>213, 22</value>
   </data>
   <data name="LabelTitleInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 27</value>
-  </data>
-  <data name="LabelTitleInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>297, 27</value>
   </data>
   <data name="LabelTitleInfo.Text" xml:space="preserve">
-    <value>患者情報</value>
-  </data>
-  <data name="&gt;&gt;LabelTitleInfo.Name" xml:space="preserve">
-    <value>LabelTitleInfo</value>
-  </data>
-  <data name="&gt;&gt;LabelTitleInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTitleInfo.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;LabelTitleInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="DateTimePickerDoB.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="DateTimePickerDoB.CalendarFont" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="DateTimePickerDoB.CustomFormat" xml:space="preserve">
-    <value>yyyy-MM-dd</value>
-  </data>
-  <data name="DateTimePickerDoB.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="DateTimePickerDoB.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="DateTimePickerDoB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 151</value>
-  </data>
-  <data name="DateTimePickerDoB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="DateTimePickerDoB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 23</value>
-  </data>
-  <data name="DateTimePickerDoB.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;DateTimePickerDoB.Name" xml:space="preserve">
-    <value>DateTimePickerDoB</value>
-  </data>
-  <data name="&gt;&gt;DateTimePickerDoB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DateTimePickerDoB.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;DateTimePickerDoB.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ButtonEditDoB.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
+    <value>Patient Information</value>
   </data>
   <data name="ButtonEditDoB.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -297,38 +230,8 @@
         A05W4o2PHBl8AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ButtonEditDoB.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="ButtonEditDoB.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ButtonEditDoB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>469, 156</value>
-  </data>
-  <data name="ButtonEditDoB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="ButtonEditDoB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 11</value>
-  </data>
-  <data name="ButtonEditDoB.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;ButtonEditDoB.Name" xml:space="preserve">
-    <value>ButtonEditDoB</value>
-  </data>
-  <data name="&gt;&gt;ButtonEditDoB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonEditDoB.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;ButtonEditDoB.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ButtonEditName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
+  <data name="ButtonEditDoB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="ButtonEditName.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -429,538 +332,97 @@
         A05W4o2PHBl8AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ButtonEditName.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
+  <data name="ButtonEditName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="ButtonEditName.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ButtonEditName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>469, 115</value>
-  </data>
-  <data name="ButtonEditName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="ButtonEditName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 11</value>
-  </data>
-  <data name="ButtonEditName.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;ButtonEditName.Name" xml:space="preserve">
-    <value>ButtonEditName</value>
-  </data>
-  <data name="&gt;&gt;ButtonEditName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonEditName.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;ButtonEditName.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ButtonReserve.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ButtonReserve.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
+  <data name="ButtonReserve.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="ButtonReserve.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 190</value>
-  </data>
-  <data name="ButtonReserve.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>469, 190</value>
   </data>
   <data name="ButtonReserve.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 35</value>
-  </data>
-  <data name="ButtonReserve.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>194, 35</value>
   </data>
   <data name="ButtonReserve.Text" xml:space="preserve">
-    <value>予約登録</value>
+    <value>Register reservation</value>
   </data>
-  <data name="&gt;&gt;ButtonReserve.Name" xml:space="preserve">
-    <value>ButtonReserve</value>
+  <data name="LabelLine.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;ButtonReserve.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonReserve.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;ButtonReserve.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="LabelLine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="LabelLine.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelLine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 232</value>
-  </data>
-  <data name="LabelLine.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="LabelLine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
-  </data>
-  <data name="LabelLine.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="LabelLine.Text" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;LabelLine.Name" xml:space="preserve">
-    <value>LabelLine</value>
-  </data>
-  <data name="&gt;&gt;LabelLine.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLine.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;LabelLine.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 158</value>
-  </data>
-  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 16</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>88, 16</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>生年月日</value>
+    <value>Birth date</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="TextboxName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="TextboxName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="TextboxName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 111</value>
-  </data>
-  <data name="TextboxName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="TextboxName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 23</value>
-  </data>
-  <data name="TextboxName.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;TextboxName.Name" xml:space="preserve">
-    <value>TextboxName</value>
-  </data>
-  <data name="&gt;&gt;TextboxName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextboxName.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;TextboxName.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 117</value>
-  </data>
-  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 16</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>80, 16</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>氏名</value>
+    <value>Full name</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="LabelPageNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
+  <data name="ButtonNext.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="ButtonPrevious.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="TextboxId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="TextboxId.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="TextboxId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 71</value>
-  </data>
-  <data name="TextboxId.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="TextboxId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 23</value>
-  </data>
-  <data name="TextboxId.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;TextboxId.Name" xml:space="preserve">
-    <value>TextboxId</value>
-  </data>
-  <data name="&gt;&gt;TextboxId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextboxId.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;TextboxId.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 77</value>
-  </data>
-  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 16</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="ContainerPatientInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="ContainerPatientInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ContainerPatientInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="ContainerPatientInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>709, 248</value>
-  </data>
-  <data name="ContainerPatientInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ContainerPatientInfo.Name" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;ContainerPatientInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ContainerPatientInfo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ContainerPatientInfo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LabelPageNumber.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="LabelPageNumber.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelPageNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>534, 185</value>
-  </data>
-  <data name="LabelPageNumber.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="LabelPageNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 16</value>
-  </data>
-  <data name="LabelPageNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="LabelPageNumber.Text" xml:space="preserve">
-    <value>1/10</value>
-  </data>
-  <data name="&gt;&gt;LabelPageNumber.Name" xml:space="preserve">
-    <value>LabelPageNumber</value>
-  </data>
-  <data name="&gt;&gt;LabelPageNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelPageNumber.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;LabelPageNumber.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ButtonNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ButtonNext.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="ButtonNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>588, 178</value>
-  </data>
-  <data name="ButtonNext.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="ButtonNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="ButtonNext.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="ButtonNext.Text" xml:space="preserve">
-    <value>&gt;</value>
-  </data>
-  <data name="&gt;&gt;ButtonNext.Name" xml:space="preserve">
-    <value>ButtonNext</value>
-  </data>
-  <data name="&gt;&gt;ButtonNext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonNext.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;ButtonNext.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ButtonPrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ButtonPrevious.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="ButtonPrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 178</value>
-  </data>
-  <data name="ButtonPrevious.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="ButtonPrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="ButtonPrevious.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ButtonPrevious.Text" xml:space="preserve">
-    <value>&lt;</value>
-  </data>
-  <data name="&gt;&gt;ButtonPrevious.Name" xml:space="preserve">
-    <value>ButtonPrevious</value>
-  </data>
-  <data name="&gt;&gt;ButtonPrevious.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonPrevious.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;ButtonPrevious.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="DataGridViewReserveList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="DataGridViewReserveList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 55</value>
-  </data>
-  <data name="DataGridViewReserveList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="DataGridViewReserveList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>618, 86</value>
-  </data>
-  <data name="DataGridViewReserveList.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;DataGridViewReserveList.Name" xml:space="preserve">
-    <value>DataGridViewReserveList</value>
-  </data>
-  <data name="&gt;&gt;DataGridViewReserveList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataGridViewReserveList.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;DataGridViewReserveList.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LabelHistory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="LabelHistory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelHistory.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 20.25pt, style=Bold</value>
+  <data name="LabelHistory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="LabelHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>303, 15</value>
-  </data>
-  <data name="LabelHistory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>242, 15</value>
   </data>
   <data name="LabelHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 27</value>
-  </data>
-  <data name="LabelHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>237, 27</value>
   </data>
   <data name="LabelHistory.Text" xml:space="preserve">
-    <value>診療履歴</value>
-  </data>
-  <data name="&gt;&gt;LabelHistory.Name" xml:space="preserve">
-    <value>LabelHistory</value>
-  </data>
-  <data name="&gt;&gt;LabelHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelHistory.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;LabelHistory.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panel2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 248</value>
-  </data>
-  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>709, 222</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>709, 470</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+    <value>Medical History</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>患者詳細情報</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>PatientDetailInfoForm</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Patient Detail Information</value>
   </data>
   <data name="Detail" xml:space="preserve">
-    <value>詳細</value>
+    <value>Detail</value>
   </data>
   <data name="EditBirthDateFailureMsg" xml:space="preserve">
-    <value>本日の前に患者の生年月日を入力してください。</value>
+    <value>Please enter the patient's birth date before today.</value>
   </data>
   <data name="EditBirthDateSuccessMsg" xml:space="preserve">
-    <value>患者の生年月日が変更されました。</value>
+    <value>The patient's birth date has changed.</value>
   </data>
   <data name="EditFailureTitle" xml:space="preserve">
-    <value>変更失敗</value>
+    <value>Edit Failure</value>
   </data>
   <data name="EditNameFailureMsg" xml:space="preserve">
-    <value>患者の氏名（48文字以下）を入力してください。</value>
+    <value>Please enter the patient's name (48 characters or less).</value>
   </data>
   <data name="EditNameSuccessMsg" xml:space="preserve">
-    <value>患者の氏名が変更されました。</value>
+    <value>The patient's name has changed.</value>
   </data>
   <data name="EditSuccessTitle" xml:space="preserve">
-    <value>変更成功</value>
+    <value>Edit Success</value>
   </data>
   <data name="ReservationDate" xml:space="preserve">
-    <value>予約日付</value>
+    <value>Reservation date</value>
   </data>
   <data name="ReservationId" xml:space="preserve">
-    <value>予約ID</value>
+    <value>Reservation ID</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>状態</value>
+    <value>Status</value>
   </data>
 </root>
