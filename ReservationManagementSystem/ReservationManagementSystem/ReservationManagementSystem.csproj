@@ -113,6 +113,7 @@
     <Compile Include="ReserveRegisterForm.Designer.cs">
       <DependentUpon>ReserveRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility.cs" />
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>

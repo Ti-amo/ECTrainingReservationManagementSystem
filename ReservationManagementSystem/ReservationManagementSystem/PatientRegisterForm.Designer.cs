@@ -190,7 +190,7 @@
             this.Controls.Add(this.LabelTitle);
             this.Name = "PatientRegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegisterForm";
+            this.Text = "PatientRegister";
             this.ResumeLayout(false);
             this.PerformLayout();
 
