@@ -42,10 +42,10 @@
             this.ImageLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ImageLogo.BackColor = System.Drawing.Color.Transparent;
             this.ImageLogo.Image = global::ReservationManagementSystem.Properties.Resources.Boom;
-            this.ImageLogo.Location = new System.Drawing.Point(159, 3);
+            this.ImageLogo.Location = new System.Drawing.Point(212, 4);
             this.ImageLogo.Margin = new System.Windows.Forms.Padding(0);
             this.ImageLogo.Name = "ImageLogo";
-            this.ImageLogo.Size = new System.Drawing.Size(337, 124);
+            this.ImageLogo.Size = new System.Drawing.Size(449, 153);
             this.ImageLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ImageLogo.TabIndex = 0;
             this.ImageLogo.TabStop = false;
@@ -54,10 +54,10 @@
             // 
             this.ButtonPatientRegister.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ButtonPatientRegister.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPatientRegister.Location = new System.Drawing.Point(261, 224);
+            this.ButtonPatientRegister.Location = new System.Drawing.Point(348, 276);
             this.ButtonPatientRegister.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonPatientRegister.Name = "ButtonPatientRegister";
-            this.ButtonPatientRegister.Size = new System.Drawing.Size(133, 45);
+            this.ButtonPatientRegister.Size = new System.Drawing.Size(177, 55);
             this.ButtonPatientRegister.TabIndex = 2;
             this.ButtonPatientRegister.Text = "患者登録";
             this.ButtonPatientRegister.UseVisualStyleBackColor = true;
@@ -67,10 +67,10 @@
             // 
             this.ButtonReservationList.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ButtonReservationList.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonReservationList.Location = new System.Drawing.Point(261, 295);
+            this.ButtonReservationList.Location = new System.Drawing.Point(348, 363);
             this.ButtonReservationList.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonReservationList.Name = "ButtonReservationList";
-            this.ButtonReservationList.Size = new System.Drawing.Size(133, 45);
+            this.ButtonReservationList.Size = new System.Drawing.Size(177, 55);
             this.ButtonReservationList.TabIndex = 3;
             this.ButtonReservationList.Text = "本日の予約";
             this.ButtonReservationList.UseVisualStyleBackColor = true;
@@ -80,10 +80,10 @@
             // 
             this.ButtonPatientList.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ButtonPatientList.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPatientList.Location = new System.Drawing.Point(261, 153);
+            this.ButtonPatientList.Location = new System.Drawing.Point(348, 188);
             this.ButtonPatientList.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonPatientList.Name = "ButtonPatientList";
-            this.ButtonPatientList.Size = new System.Drawing.Size(133, 45);
+            this.ButtonPatientList.Size = new System.Drawing.Size(177, 55);
             this.ButtonPatientList.TabIndex = 1;
             this.ButtonPatientList.Text = "患者一覧";
             this.ButtonPatientList.UseVisualStyleBackColor = true;
@@ -97,19 +97,21 @@
             this.panel2.Controls.Add(this.ButtonReservationList);
             this.panel2.Controls.Add(this.ButtonPatientRegister);
             this.panel2.Controls.Add(this.ButtonPatientList);
-            this.panel2.Location = new System.Drawing.Point(-2, 0);
+            this.panel2.Location = new System.Drawing.Point(-3, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(655, 364);
+            this.panel2.Size = new System.Drawing.Size(873, 448);
             this.panel2.TabIndex = 5;
             // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 365);
+            this.ClientSize = new System.Drawing.Size(871, 449);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "MenuForm";
             this.Load += new System.EventHandler(this.MenuForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImageLogo)).EndInit();

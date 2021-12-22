@@ -70,7 +70,7 @@ namespace ReservationManagementSystem
             this.TextboxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextboxSearch.Location = new System.Drawing.Point(360, 17);
             this.TextboxSearch.Name = "TextboxSearch";
-            this.TextboxSearch.Size = new System.Drawing.Size(230, 23);
+            this.TextboxSearch.Size = new System.Drawing.Size(230, 27);
             this.TextboxSearch.TabIndex = 0;
             // 
             // LabelTitle
@@ -80,7 +80,7 @@ namespace ReservationManagementSystem
             this.LabelTitle.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTitle.Location = new System.Drawing.Point(306, 20);
             this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(102, 21);
+            this.LabelTitle.Size = new System.Drawing.Size(128, 27);
             this.LabelTitle.TabIndex = 0;
             this.LabelTitle.Text = "患者一覧";
             // 
@@ -93,14 +93,15 @@ namespace ReservationManagementSystem
             this.DataGridViewPatientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewPatientList.Location = new System.Drawing.Point(29, 71);
             this.DataGridViewPatientList.Name = "DataGridViewPatientList";
-            this.DataGridViewPatientList.Size = new System.Drawing.Size(653, 209);
+            this.DataGridViewPatientList.RowHeadersWidth = 51;
+            this.DataGridViewPatientList.Size = new System.Drawing.Size(653, 246);
             this.DataGridViewPatientList.TabIndex = 1;
             // 
             // ButtonNext
             // 
             this.ButtonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonNext.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNext.Location = new System.Drawing.Point(607, 302);
+            this.ButtonNext.Location = new System.Drawing.Point(607, 339);
             this.ButtonNext.Name = "ButtonNext";
             this.ButtonNext.Size = new System.Drawing.Size(75, 23);
             this.ButtonNext.TabIndex = 4;
@@ -118,16 +119,16 @@ namespace ReservationManagementSystem
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(710, 349);
+            this.panel1.Size = new System.Drawing.Size(710, 386);
             this.panel1.TabIndex = 1;
             // 
             // LabelPageNumber
             // 
             this.LabelPageNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelPageNumber.AutoSize = true;
-            this.LabelPageNumber.Location = new System.Drawing.Point(534, 309);
+            this.LabelPageNumber.Location = new System.Drawing.Point(534, 346);
             this.LabelPageNumber.Name = "LabelPageNumber";
-            this.LabelPageNumber.Size = new System.Drawing.Size(40, 16);
+            this.LabelPageNumber.Size = new System.Drawing.Size(49, 20);
             this.LabelPageNumber.TabIndex = 3;
             this.LabelPageNumber.Text = "1/10";
             // 
@@ -135,7 +136,7 @@ namespace ReservationManagementSystem
             // 
             this.ButtonPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonPrevious.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPrevious.Location = new System.Drawing.Point(426, 302);
+            this.ButtonPrevious.Location = new System.Drawing.Point(426, 339);
             this.ButtonPrevious.Name = "ButtonPrevious";
             this.ButtonPrevious.Size = new System.Drawing.Size(75, 23);
             this.ButtonPrevious.TabIndex = 2;
@@ -145,14 +146,15 @@ namespace ReservationManagementSystem
             // 
             // PatientListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 406);
+            this.ClientSize = new System.Drawing.Size(710, 443);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ContainerPanel);
             this.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PatientListForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PatientList";
             this.Load += new System.EventHandler(this.PatientListForm_Load);
             this.ContainerPanel.ResumeLayout(false);

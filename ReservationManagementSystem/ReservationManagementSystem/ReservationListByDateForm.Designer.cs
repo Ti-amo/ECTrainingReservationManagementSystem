@@ -131,6 +131,7 @@
             this.DataGridViewReservationList.RowHeadersWidth = 51;
             this.DataGridViewReservationList.Size = new System.Drawing.Size(743, 253);
             this.DataGridViewReservationList.TabIndex = 1;
+            this.DataGridViewReservationList.Paint += new System.Windows.Forms.PaintEventHandler(this.DataGridViewReservationList_Paint);
             // 
             // LabelTitle
             // 
@@ -151,9 +152,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ContainerPanel);
             this.Name = "ReservationListByDateForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservationListByDateForm";
             this.Load += new System.EventHandler(this.ReservationListByDateForm_Load);
-            this.Shown += new System.EventHandler(this.ReservationListByDateForm_Shown);
             this.ContainerPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

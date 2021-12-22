@@ -13,7 +13,9 @@ namespace ReservationManagementSystem
 
         private void MenuForm_Load(object sender, EventArgs e)
         {
+            this.Location = new Point(-8, 0);
             this.BackgroundImage = Properties.Resources.background;
+            this.Size = new Size(360, Screen.PrimaryScreen.Bounds.Height+10);
         }
         /// <summary>
         /// 患者リストフォームを表示する
