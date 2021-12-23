@@ -69,6 +69,12 @@
     <Compile Include="Entity\ExamItem.cs" />
     <Compile Include="Entity\PatientEntity.cs" />
     <Compile Include="Entity\ReservationEntity.cs" />
+    <Compile Include="FlatDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FlatDateTimePicker.Designer.cs">
+      <DependentUpon>FlatDateTimePicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
