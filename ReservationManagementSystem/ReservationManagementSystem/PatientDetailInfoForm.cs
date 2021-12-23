@@ -172,6 +172,7 @@ namespace ReservationManagementSystem {
                 TextboxName.BackColor = System.Drawing.Color.White;
                 TextboxName.ReadOnly = false;
                 ButtonEditName.BackgroundImage = Properties.Resources.done;
+                ButtonCancelEditName.Visible = true;
             } else {
                 string newName = TextboxName.Text;
                 if (!string.IsNullOrWhiteSpace(newName) && (newName.Length <= 48)) {
@@ -179,6 +180,7 @@ namespace ReservationManagementSystem {
                     TextboxName.BackColor = System.Drawing.Color.WhiteSmoke;
                     TextboxName.ReadOnly = true;
                     ButtonEditName.BackgroundImage = Properties.Resources.edit;
+                    ButtonCancelEditName.Visible = false;
                     if (!newName.Equals(patient.Name)) {
                         patient.Name = newName;
                         patientDAO.Update(patient);
@@ -193,17 +195,28 @@ namespace ReservationManagementSystem {
             }
         }
 
+        private void ButtonCancelEditName_Click(object sender, EventArgs e) {
+            editNameStatus = !editNameStatus;
+            TextboxName.Text = patient.Name;
+            TextboxName.BackColor = System.Drawing.Color.WhiteSmoke;
+            TextboxName.ReadOnly = true;
+            ButtonEditName.BackgroundImage = Properties.Resources.edit;
+            ButtonCancelEditName.Visible = false;
+        }
+
         private void ButtonEditDoB_Click(object sender, EventArgs e) {
             if (!editDoBStatus) {
                 editDoBStatus = !editDoBStatus;
-                ButtonEditDoB.BackgroundImage = Properties.Resources.done;
                 DateTimePickerDoB.Enabled = true;
+                ButtonEditDoB.BackgroundImage = Properties.Resources.done;
+                ButtonCancelEditDoB.Visible = true;
             } else {
                 if (IsValidDateOfBirth()) {
                     string newDoB = DateTimePickerDoB.Value.ToString("yyyy-MM-dd");
                     editDoBStatus = !editDoBStatus;
                     DateTimePickerDoB.Enabled = false;
                     ButtonEditDoB.BackgroundImage = Properties.Resources.edit;
+                    ButtonCancelEditDoB.Visible = false;
                     if (!newDoB.Equals(patient.BirthDate)) {
                         patient.BirthDate = newDoB;
                         patientDAO.Update(patient);
@@ -214,6 +227,14 @@ namespace ReservationManagementSystem {
                 }
 
             }
+        }
+
+        private void ButtonCancelEditDoB_Click(object sender, EventArgs e) {
+            editDoBStatus = !editDoBStatus;
+            DateTimePickerDoB.Text = patient.BirthDate;
+            DateTimePickerDoB.Enabled = false;
+            ButtonEditDoB.BackgroundImage = Properties.Resources.edit;
+            ButtonCancelEditDoB.Visible = false;
         }
 
         /// <summary>
@@ -233,14 +254,11 @@ namespace ReservationManagementSystem {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DataGridViewReserveList_Paint(object sender, PaintEventArgs e)
-        {
+        private void DataGridViewReserveList_Paint(object sender, PaintEventArgs e) {
             DataGridView dgvReserveList = (DataGridView)sender;
             string emptyResultText = "診療予約がありません。";
-            if (dgvReserveList.Rows.Count == 0)
-            {
-                using (Graphics grfx = e.Graphics)
-                {
+            if (dgvReserveList.Rows.Count == 0) {
+                using (Graphics grfx = e.Graphics) {
                     grfx.DrawString(emptyResultText, dgvReserveList.Font, Brushes.Black, new PointF((dgvReserveList.Width - dgvReserveList.Font.Size * emptyResultText.Length) / 2, dgvReserveList.Height / 2));
                 }
             }
