@@ -516,9 +516,9 @@
   <data name="&gt;&gt;ButtonReserve.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -539,23 +539,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="BirthDateFailureMsg" xml:space="preserve">
-    <value>本日の前に患者の生年月日を入力してください。</value>
-  </data>
-  <data name="NameFailureMsg" xml:space="preserve">
-    <value>患者名を入力してください。</value>
-  </data>
-  <data name="RegisterFailureTitle" xml:space="preserve">
-    <value>登録失敗</value>
-  </data>
-  <data name="RegisterSuccessMsg" xml:space="preserve">
-    <value>予約が登録されました。</value>
-  </data>
-  <data name="RegisterSuccessTitle" xml:space="preserve">
-    <value>登録成功</value>
-  </data>
-  <data name="ReservationDateFailureMsg" xml:space="preserve">
-    <value>本日の後に予約日付を入力してください。</value>
   </data>
 </root>

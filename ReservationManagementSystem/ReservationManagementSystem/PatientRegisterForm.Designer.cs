@@ -99,6 +99,7 @@
             // 
             // ComboBoxMajorExam
             // 
+            this.ComboBoxMajorExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.ComboBoxMajorExam, "ComboBoxMajorExam");
             this.ComboBoxMajorExam.FormattingEnabled = true;
             this.ComboBoxMajorExam.Name = "ComboBoxMajorExam";
@@ -106,6 +107,7 @@
             // 
             // ComboBoxSubExam
             // 
+            this.ComboBoxSubExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.ComboBoxSubExam, "ComboBoxSubExam");
             this.ComboBoxSubExam.FormattingEnabled = true;
             this.ComboBoxSubExam.Name = "ComboBoxSubExam";
