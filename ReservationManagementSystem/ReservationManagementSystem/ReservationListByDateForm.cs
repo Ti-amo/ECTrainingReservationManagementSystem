@@ -122,12 +122,8 @@ namespace ReservationManagementSystem {
             }
         }
 
-        /// <summary>
-        /// キーワードで患者を調べる
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSearch_Click(object sender, EventArgs e) {
+        private void DateTimePickerReservationDate_ValueChanged(object sender, EventArgs e)
+        {
             string date = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
             List<ReservationEntity> resultReservationList = reservationDAO.FindByDate(date);
             pageNumber = 1;
