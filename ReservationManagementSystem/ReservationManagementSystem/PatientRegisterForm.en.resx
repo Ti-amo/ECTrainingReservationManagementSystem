@@ -203,7 +203,7 @@
     <value>Please enter the patient's birth date before today.</value>
   </data>
   <data name="NameFailureMsg" xml:space="preserve">
-    <value>Please enter the patient's name.</value>
+    <value>Please enter the patient's name (48 characters or less).</value>
   </data>
   <data name="RegisterFailureTitle" xml:space="preserve">
     <value>Register Failure</value>
