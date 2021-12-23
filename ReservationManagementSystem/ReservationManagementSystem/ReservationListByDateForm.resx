@@ -429,4 +429,22 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Detail" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="EmptySearchMsg" xml:space="preserve">
+    <value>予約はありませんでした。</value>
+  </data>
+  <data name="PatientName" xml:space="preserve">
+    <value>患者名</value>
+  </data>
+  <data name="ReservationDate" xml:space="preserve">
+    <value>予約日付</value>
+  </data>
+  <data name="ReservationId" xml:space="preserve">
+    <value>予約ID</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状態</value>
+  </data>
 </root>
