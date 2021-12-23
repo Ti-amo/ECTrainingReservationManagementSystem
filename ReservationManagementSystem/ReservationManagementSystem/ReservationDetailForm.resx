@@ -855,4 +855,73 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="DeleteConfirmMsg" xml:space="preserve">
+    <value>この予約を削除してもよろしいですか？</value>
+  </data>
+  <data name="DeleteSuccessMsg" xml:space="preserve">
+    <value>予約が削除されました。</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>予約削除</value>
+  </data>
+  <data name="EditFailureTitle" xml:space="preserve">
+    <value>編集失敗</value>
+  </data>
+  <data name="EditSuccessMsg" xml:space="preserve">
+    <value>予約が編集されました。</value>
+  </data>
+  <data name="EditSuccessTitle" xml:space="preserve">
+    <value>編集成功</value>
+  </data>
+  <data name="ExportFailureMsg" xml:space="preserve">
+    <value>予約票は出力できません。</value>
+  </data>
+  <data name="ExportFailureTitle" xml:space="preserve">
+    <value>出力失敗</value>
+  </data>
+  <data name="ExportSuccessMsg" xml:space="preserve">
+    <value>予約票が出力されました。</value>
+  </data>
+  <data name="ExportSuccessTitle" xml:space="preserve">
+    <value>出力成功</value>
+  </data>
+  <data name="FileExistsMsg" xml:space="preserve">
+    <value>予約票が既に存在します。</value>
+  </data>
+  <data name="MajorExam" xml:space="preserve">
+    <value>診療大項目</value>
+  </data>
+  <data name="PatientId" xml:space="preserve">
+    <value>患者ID</value>
+  </data>
+  <data name="PatientName" xml:space="preserve">
+    <value>患者名</value>
+  </data>
+  <data name="ReceptionMsg" xml:space="preserve">
+    <value>受付を完了しました。</value>
+  </data>
+  <data name="ReceptionTitle" xml:space="preserve">
+    <value>受付完了</value>
+  </data>
+  <data name="ReservationDate" xml:space="preserve">
+    <value>予約日付</value>
+  </data>
+  <data name="ReservationDateFailureMsg" xml:space="preserve">
+    <value>本日の後に予約日付を入力してください。</value>
+  </data>
+  <data name="ReservationId" xml:space="preserve">
+    <value>予約ID</value>
+  </data>
+  <data name="ReservationTicket" xml:space="preserve">
+    <value>予約票</value>
+  </data>
+  <data name="SubExam" xml:space="preserve">
+    <value>診療小項目</value>
+  </data>
+  <data name="TreatmentMsg" xml:space="preserve">
+    <value>診療を完了しました。</value>
+  </data>
+  <data name="TreatmentTitle" xml:space="preserve">
+    <value>診療完了</value>
+  </data>
 </root>
