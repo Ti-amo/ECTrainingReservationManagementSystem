@@ -8,20 +8,6 @@ namespace ReservationManagementSystem
 {
     internal static class Program
     {
-        public static bool CheckFormIsOpen(string formName)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Text == formName)
-                {
-                    IsOpen = true;
-                    f.BringToFront();
-                    break;
-                }
-            }
-            return IsOpen;
-        }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

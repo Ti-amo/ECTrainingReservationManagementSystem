@@ -113,21 +113,33 @@
     <Compile Include="ReservationListByDateForm.Designer.cs">
       <DependentUpon>ReservationListByDateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReserveRegisterForm.cs">
+    <Compile Include="ReservationRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReserveRegisterForm.Designer.cs">
-      <DependentUpon>ReserveRegisterForm.cs</DependentUpon>
+    <Compile Include="ReservationRegisterForm.Designer.cs">
+      <DependentUpon>ReservationRegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="MenuForm.en.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientDetailInfoForm.en.resx">
+      <DependentUpon>PatientDetailInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientDetailInfoForm.resx">
       <DependentUpon>PatientDetailInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PatientListForm.en.resx">
+      <DependentUpon>PatientListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PatientListForm.resx">
       <DependentUpon>PatientListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientRegisterForm.en.resx">
+      <DependentUpon>PatientRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,14 +154,23 @@
     <EmbeddedResource Include="PatientRegisterForm.resx">
       <DependentUpon>PatientRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReservationDetailForm.en.resx">
+      <DependentUpon>ReservationDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReservationDetailForm.resx">
       <DependentUpon>ReservationDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservationListByDateForm.en.resx">
+      <DependentUpon>ReservationListByDateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationListByDateForm.resx">
       <DependentUpon>ReservationListByDateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReserveRegisterForm.resx">
-      <DependentUpon>ReserveRegisterForm.cs</DependentUpon>
+    <EmbeddedResource Include="ReservationRegisterForm.en.resx">
+      <DependentUpon>ReservationRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservationRegisterForm.resx">
+      <DependentUpon>ReservationRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

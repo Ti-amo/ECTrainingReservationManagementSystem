@@ -117,4 +117,104 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 34</value>
+  </data>
+  <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 27</value>
+  </data>
+  <data name="LabelTitle.Text" xml:space="preserve">
+    <value>Register Patient</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 96</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 16</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Full name:</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 139</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 16</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Birth date:</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 184</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 16</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Reservation date:</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 219</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 16</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Major exam:</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 259</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Sub exam:</value>
+  </data>
+  <data name="TextBoxName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 93</value>
+  </data>
+  <data name="DatetimePickerBirthDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 134</value>
+  </data>
+  <data name="DateTimePickerReservationDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 177</value>
+  </data>
+  <data name="ComboBoxMajorExam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 216</value>
+  </data>
+  <data name="ComboBoxSubExam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 256</value>
+  </data>
+  <data name="ButtonReserve.Location" type="System.Drawing.Point, System.Drawing">
+    <value>520, 292</value>
+  </data>
+  <data name="ButtonReserve.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 27</value>
+  </data>
+  <data name="ButtonReserve.Text" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Register Patient</value>
+  </data>
+  <data name="BirthDateFailureMsg" xml:space="preserve">
+    <value>Please enter the patient's birth date before today.</value>
+  </data>
+  <data name="NameFailureMsg" xml:space="preserve">
+    <value>Please enter the patient's name.</value>
+  </data>
+  <data name="RegisterFailureTitle" xml:space="preserve">
+    <value>Register Failure</value>
+  </data>
+  <data name="RegisterSuccessMsg" xml:space="preserve">
+    <value>The reservation has been registered.</value>
+  </data>
+  <data name="RegisterSuccessTitle" xml:space="preserve">
+    <value>Register Success</value>
+  </data>
+  <data name="ReservationDateFailureMsg" xml:space="preserve">
+    <value>Please enter reservation date after today.</value>
+  </data>
 </root>

@@ -5,37 +5,36 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Windows.Forms;
 
-namespace ReservationManagementSystem
-{
-    public partial class PatientListForm : Form
-    {
+namespace ReservationManagementSystem {
+    public partial class PatientListForm : Form {
         private List<PatientEntity> patients = new List<PatientEntity>();　   // DBから取り出した患者一覧
         private List<PatientEntity> patientList = new List<PatientEntity>();　// ページネーションの患者リスト
         private int pageNumber = 1;                                     　    // ページ番号
         private IPagedList<PatientEntity> patientPagedList;                   // ページ一覧
         private PatientDAO patientDAO = new PatientDAO();                     // 患者DAOインストール
         private Button buttonClear = new Button();                            // ボタンクリア
-        public PatientListForm()
-        {
+        ResourceManager rm = new ResourceManager(typeof(PatientListForm));
+
+        public PatientListForm() {
             InitializeComponent();
         }
 
-        private void PatientListForm_Load(object sender, EventArgs e)
-        {
+        private void PatientListForm_Load(object sender, EventArgs e) {
             patients = patientDAO.FindAll();
             patientList = patients;
             SetupControls();
         }
+
         /// <summary>
         /// ページ付けを実行する
         /// </summary>
         /// <param name="patients"></param>
         /// <param name="pageNumber"></param>
         /// <param name="pageSize"></param>
-        private void PagingPatientList(List<PatientEntity> patients, int pageNumber = 1, int pageSize = 10)
-        {
+        private void PagingPatientList(List<PatientEntity> patients, int pageNumber = 1, int pageSize = 10) {
             patientPagedList = patients.ToPagedList(pageNumber, pageSize);
             ButtonPrevious.Enabled = patientPagedList.HasPreviousPage;
             ButtonNext.Enabled = patientPagedList.HasNextPage;
@@ -43,22 +42,23 @@ namespace ReservationManagementSystem
             // fill data to datagridview
             DataGridViewPatientList.DataSource = patientPagedList.ToList();
         }
+
         /// <summary>
         /// コントロールの設定
         /// </summary>
-        private void SetupControls()
-        {
+        private void SetupControls() {
             PagingPatientList(patientList);
             // set up headertext of dgv
-            DataGridViewPatientList.Columns["PatientId"].HeaderText = "患者ID";
-            DataGridViewPatientList.Columns["Name"].HeaderText = "氏名";
-            DataGridViewPatientList.Columns["BirthDate"].HeaderText = "生年月日";
+            DataGridViewPatientList.Columns["PatientId"].HeaderText = rm.GetString("PatientId");
+            DataGridViewPatientList.Columns["Name"].HeaderText = rm.GetString("Name");
+            DataGridViewPatientList.Columns["BirthDate"].HeaderText = rm.GetString("BirthDate");
             // add button detail
-            DataGridViewButtonColumn buttonDetail = new DataGridViewButtonColumn();
-            buttonDetail.Text = "詳細";
-            buttonDetail.UseColumnTextForButtonValue = true;
-            buttonDetail.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            buttonDetail.Width = 100;
+            DataGridViewButtonColumn buttonDetail = new DataGridViewButtonColumn {
+                Text = rm.GetString("Detail"),
+                UseColumnTextForButtonValue = true,
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.None,
+                Width = 100
+            };
             DataGridViewPatientList.Columns.Add(buttonDetail);
             // handle event click button detail
             DataGridViewPatientList.CellContentClick += ButtonDetail_Click;
@@ -86,100 +86,91 @@ namespace ReservationManagementSystem
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TextboxSearch_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(TextboxSearch.Text))
-            {
+        private void TextboxSearch_TextChanged(object sender, EventArgs e) {
+            if (!string.IsNullOrWhiteSpace(TextboxSearch.Text)) {
                 buttonClear.Visible = true;
-            }
-            else
-            {
+            } else {
                 buttonClear.Visible = false;
             }
         }
+
         /// <summary>
         /// テキストボックスのキーワードをクリアする
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClear_Click(object sender, EventArgs e)
-        {
+        private void ButtonClear_Click(object sender, EventArgs e) {
             TextboxSearch.Text = "";
             pageNumber = 1;
             patientList = patients;
             PagingPatientList(patientList);
         }
+
         /// <summary>
         /// 患者の詳細な情報画面に遷移する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonDetail_Click(object sender, DataGridViewCellEventArgs e)
-        {
+        private void ButtonDetail_Click(object sender, DataGridViewCellEventArgs e) {
             var dgvPatientList = (DataGridView)sender;
             if (dgvPatientList.Columns[e.ColumnIndex] is DataGridViewButtonColumn
-                && e.RowIndex >= 0)
-            {
+                && e.RowIndex >= 0) {
                 string patientId = (string)dgvPatientList.Rows[e.RowIndex].Cells["PatientId"].Value;
-                PatientDetailInfoForm patientDetailInfoForm = new PatientDetailInfoForm();
-                patientDetailInfoForm.PatientId = patientId;
+                PatientDetailInfoForm patientDetailInfoForm = new PatientDetailInfoForm {
+                    PatientId = patientId
+                };
                 this.Hide();
                 patientDetailInfoForm.FormClosed += (s, args) => this.Close();
                 patientDetailInfoForm.Show();
             }
         }
+
         /// <summary>
         /// 前のページを表示する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonPrevious_Click(object sender, EventArgs e)
-        {
-            if (patientPagedList.HasPreviousPage)
-            {
+        private void ButtonPrevious_Click(object sender, EventArgs e) {
+            if (patientPagedList.HasPreviousPage) {
                 PagingPatientList(patientList, --pageNumber);
             }
         }
+
         /// <summary>
         /// 次のページを表示する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonNext_Click(object sender, EventArgs e)
-        {
-            if (patientPagedList.HasNextPage)
-            {
+        private void ButtonNext_Click(object sender, EventArgs e) {
+            if (patientPagedList.HasNextPage) {
                 PagingPatientList(patientList, ++pageNumber);
             }
         }
+
         /// <summary>
         /// キーワードで患者を調べる
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonSearch_Click(object sender, EventArgs e)
-        {
+        private void ButtonSearch_Click(object sender, EventArgs e) {
             var keyword = TextboxSearch.Text;
-            if (!string.IsNullOrWhiteSpace(keyword))
-            {
+            if (!string.IsNullOrWhiteSpace(keyword)) {
                 patientList = patientDAO.FindByIdOrName(keyword);
                 pageNumber = 1;
                 PagingPatientList(patientList);
             }
         }
+
         /// <summary>
         /// 患者を見つけない場合、メッセージを表示する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DataGridViewPatientList_Paint(object sender, PaintEventArgs e)
-        {
+        private void DataGridViewPatientList_Paint(object sender, PaintEventArgs e) {
             DataGridView dgvPatientList = (DataGridView)sender;
-            string emptyResultText = "患者は見つかりませんでした!";
-            if (dgvPatientList.Rows.Count == 0)
-            {
-                using (Graphics grfx = e.Graphics)
-                {
+            string emptyResultText = rm.GetString("EmptySearchMsg");
+            if (dgvPatientList.Rows.Count == 0) {
+                using (Graphics grfx = e.Graphics) {
                     grfx.DrawString(emptyResultText, dgvPatientList.Font, Brushes.Black, new PointF((dgvPatientList.Width - dgvPatientList.Font.Size * emptyResultText.Length) / 2, dgvPatientList.Height / 2));
                 }
             }

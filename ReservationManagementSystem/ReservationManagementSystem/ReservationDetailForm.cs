@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace ReservationManagementSystem {
         private ReservationEntity reservationEntity;
         private ReservationDAO reservationDAO;
         private ExamDAO examDAO;
+        ResourceManager rm = new ResourceManager(typeof(ReservationDetailForm));
 
         public ReservationDetailForm(int reservationId) {
             InitializeComponent();
@@ -60,7 +62,7 @@ namespace ReservationManagementSystem {
         private void ButtonExport_Click(object sender, EventArgs e) {
             SaveFileDialog sfd = new SaveFileDialog {
                 Filter = "PDF (*.pdf)|*.pdf",
-                FileName = "【予約票・" + reservationEntity.ReservationId + "】" + reservationEntity.PatientName + "様・" + reservationEntity.ReservationDate + ".pdf"
+                FileName = "【" + rm.GetString("ReservationTicket") + "・" + reservationEntity.ReservationId + "】" + reservationEntity.PatientName + "・" + reservationEntity.ReservationDate + ".pdf"
             };
             bool fileError = false;
             if (sfd.ShowDialog() == DialogResult.OK) {
@@ -69,7 +71,7 @@ namespace ReservationManagementSystem {
                         File.Delete(sfd.FileName);
                     } catch (IOException) {
                         fileError = true;
-                        MessageBox.Show("予約票が既に存在します。", "出力失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(rm.GetString("FileExistsMsg"), rm.GetString("ExportFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 if (!fileError) {
@@ -78,7 +80,7 @@ namespace ReservationManagementSystem {
                         BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
                         Font fontTitle = new Font(baseFont, 25, iTextSharp.text.Font.NORMAL);
-                        Paragraph pdfTitle = new Paragraph("予約票", fontTitle) {
+                        Paragraph pdfTitle = new Paragraph(rm.GetString("ReservationTicket"), fontTitle) {
                             Alignment = Element.ALIGN_CENTER,
                             SpacingAfter = 25
                         };
@@ -90,22 +92,22 @@ namespace ReservationManagementSystem {
 
                         Font fontTable = new Font(baseFont, 16, iTextSharp.text.Font.NORMAL);
 
-                        pdfTable.AddCell(new Phrase("予約ID", fontTable));
+                        pdfTable.AddCell(new Phrase(rm.GetString("ReservationId"), fontTable));
                         pdfTable.AddCell(new Phrase(reservationEntity.ReservationId.ToString(), fontTable));
 
-                        pdfTable.AddCell(new Phrase("患者ID", fontTable));
+                        pdfTable.AddCell(new Phrase(rm.GetString("PatientId"), fontTable));
                         pdfTable.AddCell(new Phrase(reservationEntity.PatientId, fontTable));
 
-                        pdfTable.AddCell(new Phrase("患者名", fontTable));
+                        pdfTable.AddCell(new Phrase(rm.GetString("PatientName"), fontTable));
                         pdfTable.AddCell(new Phrase(reservationEntity.PatientName, fontTable));
 
-                        pdfTable.AddCell(new Phrase("予約日付", fontTable));
+                        pdfTable.AddCell(new Phrase(rm.GetString("ReservationDate"), fontTable));
                         pdfTable.AddCell(new Phrase(reservationEntity.ReservationDate, fontTable));
 
-                        pdfTable.AddCell(new Phrase("診療大項目", fontTable));
+                        pdfTable.AddCell(new Phrase(rm.GetString("MajorExam"), fontTable));
                         pdfTable.AddCell(new Phrase(reservationEntity.Exam.MajorExamName, fontTable));
 
-                        pdfTable.AddCell(new Phrase("診療小項目", fontTable));
+                        pdfTable.AddCell(new Phrase(rm.GetString("SubExam"), fontTable));
                         pdfTable.AddCell(new Phrase(reservationEntity.Exam.SubExamName, fontTable));
 
                         using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create)) {
@@ -118,9 +120,9 @@ namespace ReservationManagementSystem {
                             stream.Close();
                         }
 
-                        MessageBox.Show("予約票を出力しました。", "出力成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(rm.GetString("ExportSuccessMsg"), rm.GetString("ExportSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } catch (Exception) {
-                        MessageBox.Show("予約票を出力できません。", "出力失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(rm.GetString("ExportFailureMsg"), rm.GetString("ExportFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -136,7 +138,7 @@ namespace ReservationManagementSystem {
             ButtonCompleteReception.Enabled = false;
             ButtonCompleteTreatment.Enabled = true;
 
-            MessageBox.Show("受付を完了しました。", "受付完了", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(rm.GetString("ReceptionMsg"), rm.GetString("ReceptionTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ButtonCompleteTreatment_Click(object sender, EventArgs e) {
@@ -147,14 +149,14 @@ namespace ReservationManagementSystem {
             LabelStatus.Text = reservationEntity.StatusName;
             ButtonCompleteTreatment.Enabled = false;
 
-            MessageBox.Show("診療を完了しました。", "診療完了", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(rm.GetString("TreatmentMsg"), rm.GetString("TreatmentTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e) {
-            DialogResult result = MessageBox.Show("この予約を削除してもよろしいですか？", "予約削除", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show(rm.GetString("DeleteConfirmMsg"), rm.GetString("DeleteTitle"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes) {
                 reservationDAO.Delete(reservationEntity);
-                MessageBox.Show("予約を削除しました。", "予約削除", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(rm.GetString("DeleteSuccessMsg"), rm.GetString("DeleteTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }
@@ -168,11 +170,11 @@ namespace ReservationManagementSystem {
                 reservationEntity.Exam.SubExamName = ComboBoxSubExam.Text;
 
                 reservationDAO.Update(reservationEntity);
-                MessageBox.Show("予約を編集しました。", "編集成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(rm.GetString("EditSuccessMsg"), rm.GetString("EditSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 CompleteUpdate();
             } else {
-                MessageBox.Show("本日の後に予約日付を入力してください。", "編集失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("ReservationDateFailureMsg"), rm.GetString("EditFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
