@@ -25,6 +25,10 @@ namespace ReservationManagementSystem {
         }
 
         private void PatientDetailInfoForm_Load(object sender, EventArgs e) {
+            LoadForm();
+        }
+
+        private void LoadForm() {
             patient = patientDAO.Find(PatientId);
 
             ReservationDAO reservationDAO = new ReservationDAO();
@@ -43,6 +47,13 @@ namespace ReservationManagementSystem {
             PagingReservationtList(reservations);
 
             SetupControls();
+        }
+
+        public void ReloadForm() {
+            this.Controls.Clear();
+            InitializeComponent();
+
+            LoadForm();
         }
 
         /// <summary>
@@ -125,7 +136,7 @@ namespace ReservationManagementSystem {
             if (dgvReservetList.Columns[e.ColumnIndex] is DataGridViewButtonColumn
                 && e.RowIndex >= 0) {
                 int reservationId = (int)dgvReservetList.Rows[e.RowIndex].Cells["ReservationId"].Value;
-                ReservationDetailForm reservationDetailForm = new ReservationDetailForm(reservationId);
+                ReservationDetailForm reservationDetailForm = new ReservationDetailForm(this, reservationId);
                 reservationDetailForm.ShowDialog();
             }
         }
