@@ -158,9 +158,9 @@ namespace ReservationManagementSystem.DAO {
         }
 
         /// <summary>
-        /// 最新の患者IDを見つける
+        /// 最新の患者IDを抽出する
         /// </summary>
-        /// <returns></returns>
+        /// <returns>最新の患者ID</returns>
         public string FindLatestPatient() {
             // SQL文：SELECT句
             string query = @"SELECT TOP 1 * 

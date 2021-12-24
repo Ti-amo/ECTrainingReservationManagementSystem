@@ -142,7 +142,7 @@
   <data name="Detail" xml:space="preserve">
     <value>Detail</value>
   </data>
-  <data name="EmptySearchMsg" xml:space="preserve">
+  <data name="EmptyReservationMsg" xml:space="preserve">
     <value>There was no reservation.</value>
   </data>
   <data name="PatientName" xml:space="preserve">

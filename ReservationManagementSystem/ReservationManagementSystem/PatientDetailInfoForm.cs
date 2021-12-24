@@ -112,7 +112,7 @@ namespace ReservationManagementSystem {
         }
 
         private bool HasReservation() {
-            if ((reservations.Find(r => (r.StatusName.Equals("予約"))) != null) || (reservations.Find(r => (r.StatusName.Equals("受付完了"))) != null)) {
+            if ((reservations.Find(r => (r.StatusId == 1)) != null) || (reservations.Find(r => (r.StatusId == 2)) != null)) {
                 return true;
             }
             return false;
@@ -267,7 +267,7 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void DataGridViewReserveList_Paint(object sender, PaintEventArgs e) {
             DataGridView dgvReserveList = (DataGridView)sender;
-            string emptyResultText = "診療予約がありません。";
+            string emptyResultText = rm.GetString("EmptyReservationMsg");
             if (dgvReserveList.Rows.Count == 0) {
                 using (Graphics grfx = e.Graphics) {
                     grfx.DrawString(emptyResultText, dgvReserveList.Font, Brushes.Black, new PointF((dgvReserveList.Width - dgvReserveList.Font.Size * emptyResultText.Length) / 2, dgvReserveList.Height / 2));

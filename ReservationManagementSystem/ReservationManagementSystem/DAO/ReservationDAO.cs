@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ReservationManagementSystem.DAO {
@@ -65,15 +66,21 @@ namespace ReservationManagementSystem.DAO {
                     ReservationDate = Convert.ToDateTime(dataReader["reservation_date"]).ToString("yyyy-MM-dd"),
                     PatientId = (string)dataReader["combined_id"],
                     PatientName = (string)dataReader["name"],
-                    StatusId = (int)dataReader["status_id"],
-                    StatusName = (string)dataReader["status_name"]
+                    StatusId = (int)dataReader["status_id"]
                 };
                 reservationEntity.Exam = new ExamItem {
                     MajorExamId = (int)dataReader["major_id"],
-                    MajorExamName = (string)dataReader["major_name"],
-                    SubExamId = (int)dataReader["sub_id"],
-                    SubExamName = (string)dataReader["sub_name"]
+                    SubExamId = (int)dataReader["sub_id"]
                 };
+                if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
+                    reservationEntity.StatusName = (string)dataReader["status_name"];
+                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name"];
+                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name"];
+                } else {
+                    reservationEntity.StatusName = (string)dataReader["status_name_en"];
+                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name_en"];
+                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name_en"];
+                }
             }
 
             command.Dispose();
@@ -82,8 +89,11 @@ namespace ReservationManagementSystem.DAO {
             return reservationEntity;
         }
 
-        public int FindLatestReservation()
-        {
+        /// <summary>
+        /// 最新の予約IDを抽出する
+        /// </summary>
+        /// <returns>予約ID</returns>
+        public int FindLatestReservation() {
             // SQL文：SELECT句
             string query = @"SELECT TOP 1 *
                             FROM m_reservation 
@@ -97,8 +107,7 @@ namespace ReservationManagementSystem.DAO {
 
             int reservationId = 1;
             // データを１行ずつ抽出する
-            while (dataReader.Read())
-            {
+            while (dataReader.Read()) {
                 reservationId = (int)dataReader["reservation_id"];
             }
 
@@ -144,15 +153,21 @@ namespace ReservationManagementSystem.DAO {
                     ReservationDate = Convert.ToDateTime(dataReader["reservation_date"]).ToString("yyyy-MM-dd"),
                     PatientId = (string)dataReader["combined_id"],
                     PatientName = (string)dataReader["name"],
-                    StatusId = (int)dataReader["status_id"],
-                    StatusName = (string)dataReader["status_name"]
+                    StatusId = (int)dataReader["status_id"]
                 };
                 reservationEntity.Exam = new ExamItem {
                     MajorExamId = (int)dataReader["major_id"],
-                    MajorExamName = (string)dataReader["major_name"],
-                    SubExamId = (int)dataReader["sub_id"],
-                    SubExamName = (string)dataReader["sub_name"]
+                    SubExamId = (int)dataReader["sub_id"]
                 };
+                if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
+                    reservationEntity.StatusName = (string)dataReader["status_name"];
+                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name"];
+                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name"];
+                } else {
+                    reservationEntity.StatusName = (string)dataReader["status_name_en"];
+                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name_en"];
+                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name_en"];
+                }
 
                 // 予約をリストに格納する
                 reservationList.Add(reservationEntity);
@@ -196,15 +211,21 @@ namespace ReservationManagementSystem.DAO {
                     ReservationDate = Convert.ToDateTime(dataReader["reservation_date"]).ToString("yyyy-MM-dd"),
                     PatientId = (string)dataReader["combined_id"],
                     PatientName = (string)dataReader["name"],
-                    StatusId = (int)dataReader["status_id"],
-                    StatusName = (string)dataReader["status_name"]
+                    StatusId = (int)dataReader["status_id"]
                 };
                 reservationEntity.Exam = new ExamItem {
                     MajorExamId = (int)dataReader["major_id"],
-                    MajorExamName = (string)dataReader["major_name"],
-                    SubExamId = (int)dataReader["sub_id"],
-                    SubExamName = (string)dataReader["sub_name"]
+                    SubExamId = (int)dataReader["sub_id"]
                 };
+                if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
+                    reservationEntity.StatusName = (string)dataReader["status_name"];
+                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name"];
+                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name"];
+                } else {
+                    reservationEntity.StatusName = (string)dataReader["status_name_en"];
+                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name_en"];
+                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name_en"];
+                }
 
                 // 予約をリストに格納する
                 reservationList.Add(reservationEntity);

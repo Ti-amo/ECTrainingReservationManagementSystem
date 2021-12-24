@@ -174,7 +174,7 @@
   <data name="&gt;&gt;ButtonNext.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="EmptySearchMsg" xml:space="preserve">
+  <data name="EmptyPatientMsg" xml:space="preserve">
     <value>患者は見つかりませんでした。</value>
   </data>
   <data name="&gt;&gt;ContainerPanel.Parent" xml:space="preserve">
@@ -408,7 +408,7 @@
   <data name="&gt;&gt;ButtonSearch.Parent" xml:space="preserve">
     <value>ContainerPanel</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
 </root>

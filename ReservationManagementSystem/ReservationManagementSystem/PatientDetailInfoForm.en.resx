@@ -425,4 +425,7 @@
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>
+  <data name="EmptyReservationMsg" xml:space="preserve">
+    <value>There was no reservation.</value>
+  </data>
 </root>

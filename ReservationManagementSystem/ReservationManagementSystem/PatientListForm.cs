@@ -168,7 +168,7 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void DataGridViewPatientList_Paint(object sender, PaintEventArgs e) {
             DataGridView dgvPatientList = (DataGridView)sender;
-            string emptyResultText = rm.GetString("EmptySearchMsg");
+            string emptyResultText = rm.GetString("EmptyPatientMsg");
             if (dgvPatientList.Rows.Count == 0) {
                 using (Graphics grfx = e.Graphics) {
                     grfx.DrawString(emptyResultText, dgvPatientList.Font, Brushes.Black, new PointF((dgvPatientList.Width - dgvPatientList.Font.Size * emptyResultText.Length) / 2, dgvPatientList.Height / 2));
