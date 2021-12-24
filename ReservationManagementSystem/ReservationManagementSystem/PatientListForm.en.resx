@@ -139,7 +139,7 @@
   <data name="Detail" xml:space="preserve">
     <value>Detail</value>
   </data>
-  <data name="EmptySearchMsg" xml:space="preserve">
+  <data name="EmptyPatientMsg" xml:space="preserve">
     <value>No patient was found.</value>
   </data>
   <data name="Name" xml:space="preserve">

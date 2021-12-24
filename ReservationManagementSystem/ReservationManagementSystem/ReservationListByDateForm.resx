@@ -399,8 +399,8 @@
   <data name="Detail" xml:space="preserve">
     <value>詳細</value>
   </data>
-  <data name="EmptySearchMsg" xml:space="preserve">
-    <value>予約はありませんでした。</value>
+  <data name="EmptyReservationMsg" xml:space="preserve">
+    <value>予約はありません。</value>
   </data>
   <data name="PatientName" xml:space="preserve">
     <value>患者名</value>

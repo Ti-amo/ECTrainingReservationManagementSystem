@@ -51,10 +51,6 @@ namespace ReservationManagementSystem {
             //ComboBoxSubExam.SelectedIndex = 0;
         }
 
-        private void ComboBoxSubExam_SelectedIndexChanged(object sender, EventArgs e) {
-
-        }
-
         private void ButtonReserve_Click(object sender, EventArgs e) {
             ReservationDAO reservationDAO = new ReservationDAO();
             ReservationEntity reservationEntity = new ReservationEntity();

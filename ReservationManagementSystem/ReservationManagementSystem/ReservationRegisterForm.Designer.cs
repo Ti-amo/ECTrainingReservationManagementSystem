@@ -53,7 +53,6 @@
             resources.ApplyResources(this.ComboBoxSubExam, "ComboBoxSubExam");
             this.ComboBoxSubExam.FormattingEnabled = true;
             this.ComboBoxSubExam.Name = "ComboBoxSubExam";
-            this.ComboBoxSubExam.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSubExam_SelectedIndexChanged);
             // 
             // ComboBoxMajorExam
             // 

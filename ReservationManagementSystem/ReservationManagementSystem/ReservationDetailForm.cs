@@ -14,6 +14,7 @@ using Font = iTextSharp.text.Font;
 
 namespace ReservationManagementSystem {
     public partial class ReservationDetailForm : Form {
+        private int reservationId;
         private ReservationEntity reservationEntity;
         private ReservationDAO reservationDAO;
         private ExamDAO examDAO;
@@ -27,6 +28,7 @@ namespace ReservationManagementSystem {
             reservationDAO = new ReservationDAO();
             examDAO = new ExamDAO();
             reservationEntity = reservationDAO.FindById(reservationId);
+            this.reservationId = reservationId;
 
             InitializeControl();
         }
@@ -47,10 +49,10 @@ namespace ReservationManagementSystem {
             LabelMajorExam.Text = reservationEntity.Exam.MajorExamName;
             LabelSubExam.Text = reservationEntity.Exam.SubExamName;
 
-            if (reservationEntity.StatusName.Equals("予約")) {
+            if (reservationEntity.StatusId == 1) {
                 ButtonUpdate.Enabled = true;
                 ButtonCompleteReception.Enabled = true;
-            } else if (reservationEntity.StatusName.Equals("受付完了")) {
+            } else if (reservationEntity.StatusId == 2) {
                 ButtonCompleteTreatment.Enabled = true;
             }
             ButtonExport.Enabled = true;
@@ -141,9 +143,9 @@ namespace ReservationManagementSystem {
         private void ButtonCompleteReception_Click(object sender, EventArgs e) {
             if (DateTime.Today >= Convert.ToDateTime(reservationEntity.ReservationDate)) {
                 reservationEntity.StatusId = 2;
-                reservationEntity.StatusName = "受付完了";
                 reservationDAO.ChangeStatus(reservationEntity);
 
+                reservationEntity = reservationDAO.FindById(reservationId);
                 LabelStatus.Text = reservationEntity.StatusName;
                 ButtonUpdate.Enabled = false;
                 ButtonCompleteReception.Enabled = false;
@@ -157,9 +159,9 @@ namespace ReservationManagementSystem {
 
         private void ButtonCompleteTreatment_Click(object sender, EventArgs e) {
             reservationEntity.StatusId = 3;
-            reservationEntity.StatusName = "診療完了";
             reservationDAO.ChangeStatus(reservationEntity);
 
+            reservationEntity = reservationDAO.FindById(reservationId);
             LabelStatus.Text = reservationEntity.StatusName;
             ButtonCompleteTreatment.Enabled = false;
 
@@ -178,13 +180,12 @@ namespace ReservationManagementSystem {
         private void ButtonCompleteUpdate_Click(object sender, EventArgs e) {
             if (DateTimePickerReservationDate.Text.Equals(reservationEntity.ReservationDate) || DateTimePickerReservationDate.Value >= DateTime.Today) {
                 reservationEntity.ReservationDate = DateTimePickerReservationDate.Text;
-                reservationEntity.Exam.MajorExamId = int.Parse(ComboBoxMajorExam.SelectedValue.ToString());
-                reservationEntity.Exam.MajorExamName = ComboBoxMajorExam.Text;
                 reservationEntity.Exam.SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString());
-                reservationEntity.Exam.SubExamName = ComboBoxSubExam.Text;
 
                 reservationDAO.Update(reservationEntity);
                 MessageBox.Show(rm.GetString("EditSuccessMsg"), rm.GetString("EditSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                reservationEntity = reservationDAO.FindById(reservationId);
 
                 CompleteUpdate();
             } else {

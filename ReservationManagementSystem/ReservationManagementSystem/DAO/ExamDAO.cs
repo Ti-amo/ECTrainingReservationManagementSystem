@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ReservationManagementSystem.DAO {
@@ -52,6 +53,11 @@ namespace ReservationManagementSystem.DAO {
                     MajorExamId = (int)dataReader["major_id"],
                     MajorExamName = (string)dataReader["major_name"]
                 };
+                if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
+                    majorExamItem.MajorExamName = (string)dataReader["major_name"];
+                } else {
+                    majorExamItem.MajorExamName = (string)dataReader["major_name_en"];
+                }
 
                 majorExamList.Add(majorExamItem);
             }
@@ -86,10 +92,15 @@ namespace ReservationManagementSystem.DAO {
             while (dataReader.Read()) {
                 ExamItem subExamItem = new ExamItem {
                     MajorExamId = (int)dataReader["major_id"],
-                    MajorExamName = (string)dataReader["major_name"],
-                    SubExamId = (int)dataReader["sub_id"],
-                    SubExamName = (string)dataReader["sub_name"]
+                    SubExamId = (int)dataReader["sub_id"]
                 };
+                if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
+                    subExamItem.MajorExamName = (string)dataReader["major_name"];
+                    subExamItem.SubExamName = (string)dataReader["sub_name"];
+                } else {
+                    subExamItem.MajorExamName = (string)dataReader["major_name_en"];
+                    subExamItem.SubExamName = (string)dataReader["sub_name_en"];
+                }
 
                 subExamList.Add(subExamItem);
             }

@@ -86,7 +86,7 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void DataGridViewReservationList_Paint(object sender, PaintEventArgs e) {
             DataGridView dgvReservationList = (DataGridView)sender;
-            string emptyResultText = rm.GetString("EmptySearchMsg");
+            string emptyResultText = rm.GetString("EmptyReservationMsg");
             if (dgvReservationList.Rows.Count == 0) {
                 using (Graphics grfx = e.Graphics) {
                     grfx.DrawString(emptyResultText, dgvReservationList.Font, Brushes.Black, new PointF((dgvReservationList.Width - dgvReservationList.Font.Size * emptyResultText.Length) / 2, dgvReservationList.Height / 2));
