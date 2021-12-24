@@ -31,28 +31,12 @@ namespace ReservationManagementSystem {
             InitializeControl();
         }
 
-        public ReservationDetailForm(PatientDetailInfoForm patientDetailInfoForm, int reservationId) {
-            InitializeComponent();
-
+        public ReservationDetailForm(PatientDetailInfoForm patientDetailInfoForm, int reservationId) : this(reservationId) {
             this.patientDetailInfoForm = patientDetailInfoForm;
-
-            reservationDAO = new ReservationDAO();
-            examDAO = new ExamDAO();
-            reservationEntity = reservationDAO.FindById(reservationId);
-
-            InitializeControl();
         }
 
-        public ReservationDetailForm(ReservationListByDateForm reservationListByDateForm, int reservationId) {
-            InitializeComponent();
-
+        public ReservationDetailForm(ReservationListByDateForm reservationListByDateForm, int reservationId) : this(reservationId) {
             this.reservationListByDateForm = reservationListByDateForm;
-
-            reservationDAO = new ReservationDAO();
-            examDAO = new ExamDAO();
-            reservationEntity = reservationDAO.FindById(reservationId);
-
-            InitializeControl();
         }
 
         private void InitializeControl() {
