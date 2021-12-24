@@ -16,6 +16,7 @@ namespace ReservationManagementSystem {
     public partial class ReservationListByDateForm : Form {
         private List<ReservationEntity> reservations = new List<ReservationEntity>();　// 患者一覧
         private int pageNumber = 1;                                     　 // ページ番号
+        private int pageSize = 6;
         private IPagedList<ReservationEntity> reservationList;                     // ページ一覧
         private ReservationDAO reservationDAO = new ReservationDAO();
         ResourceManager rm = new ResourceManager(typeof(ReservationListByDateForm));
@@ -35,7 +36,7 @@ namespace ReservationManagementSystem {
         /// <param name="patients"></param>
         /// <param name="pageNumber"></param>
         /// <param name="pageSize"></param>
-        private void PagingReservationList(List<ReservationEntity> reservations, int pageNumber = 1, int pageSize = 10) {
+        private void PagingReservationList(List<ReservationEntity> reservations, int pageNumber = 1) {
             reservationList = reservations.ToPagedList(pageNumber, pageSize);
             ButtonPrevious.Enabled = reservationList.HasPreviousPage;
             ButtonNext.Enabled = reservationList.HasNextPage;
@@ -122,16 +123,12 @@ namespace ReservationManagementSystem {
             }
         }
 
-        /// <summary>
-        /// キーワードで患者を調べる
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSearch_Click(object sender, EventArgs e) {
+        private void DateTimePickerReservationDate_ValueChanged(object sender, EventArgs e)
+        {
             string date = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
-            List<ReservationEntity> resultReservationList = reservationDAO.FindByDate(date);
+            reservations = reservationDAO.FindByDate(date);
             pageNumber = 1;
-            PagingReservationList(resultReservationList);
+            PagingReservationList(reservations);
         }
     }
 }

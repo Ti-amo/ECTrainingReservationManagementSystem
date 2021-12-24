@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ContainerPanel = new System.Windows.Forms.Panel();
             this.DateTimePickerReservationDate = new System.Windows.Forms.DateTimePicker();
-            this.ButtonSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ButtonNext = new System.Windows.Forms.Button();
             this.LabelPageNumber = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@
             // ContainerPanel
             // 
             this.ContainerPanel.Controls.Add(this.DateTimePickerReservationDate);
-            this.ContainerPanel.Controls.Add(this.ButtonSearch);
             resources.ApplyResources(this.ContainerPanel, "ContainerPanel");
             this.ContainerPanel.Name = "ContainerPanel";
             // 
@@ -58,13 +56,7 @@
             resources.ApplyResources(this.DateTimePickerReservationDate, "DateTimePickerReservationDate");
             this.DateTimePickerReservationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateTimePickerReservationDate.Name = "DateTimePickerReservationDate";
-            // 
-            // ButtonSearch
-            // 
-            resources.ApplyResources(this.ButtonSearch, "ButtonSearch");
-            this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.UseVisualStyleBackColor = true;
-            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
+            this.DateTimePickerReservationDate.ValueChanged += new System.EventHandler(this.DateTimePickerReservationDate_ValueChanged);
             // 
             // panel1
             // 
@@ -81,6 +73,7 @@
             resources.ApplyResources(this.ButtonNext, "ButtonNext");
             this.ButtonNext.Name = "ButtonNext";
             this.ButtonNext.UseVisualStyleBackColor = true;
+            this.ButtonNext.Click += new System.EventHandler(this.ButtonNext_Click);
             // 
             // LabelPageNumber
             // 
@@ -92,6 +85,7 @@
             resources.ApplyResources(this.ButtonPrevious, "ButtonPrevious");
             this.ButtonPrevious.Name = "ButtonPrevious";
             this.ButtonPrevious.UseVisualStyleBackColor = true;
+            this.ButtonPrevious.Click += new System.EventHandler(this.ButtonPrevious_Click);
             // 
             // DataGridViewReservationList
             // 
@@ -149,7 +143,6 @@
         #endregion
 
         private System.Windows.Forms.Panel ContainerPanel;
-        private System.Windows.Forms.Button ButtonSearch;
         private System.Windows.Forms.DateTimePicker DateTimePickerReservationDate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ButtonNext;

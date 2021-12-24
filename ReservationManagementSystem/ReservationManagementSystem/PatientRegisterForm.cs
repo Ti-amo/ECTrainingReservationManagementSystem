@@ -94,7 +94,7 @@ namespace ReservationManagementSystem {
             patientEntity.Name = TextBoxName.Text;
             patientEntity.BirthDate = DatetimePickerBirthDate.Value.ToString("yyyy-MM-dd");
 
-            if (String.IsNullOrWhiteSpace(TextBoxName.Text)) {
+            if (String.IsNullOrWhiteSpace(TextBoxName.Text) || (TextBoxName.Text.Length > 48)) {
                 MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("RegisterFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else if (!ValidateBirthDate()) {
                 MessageBox.Show(rm.GetString("BirthDateFailureMsg"), rm.GetString("RegisterFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
