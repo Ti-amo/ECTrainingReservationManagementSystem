@@ -213,6 +213,7 @@ namespace ReservationManagementSystem {
             this.Controls.Add(this.label6);
             this.Controls.Add(this.LabelTitle);
             this.Name = "ReservationDetailForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReservationDetailForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

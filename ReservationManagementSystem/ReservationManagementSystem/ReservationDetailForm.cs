@@ -18,6 +18,8 @@ namespace ReservationManagementSystem {
         private ReservationDAO reservationDAO;
         private ExamDAO examDAO;
         ResourceManager rm = new ResourceManager(typeof(ReservationDetailForm));
+        PatientDetailInfoForm patientDetailInfoForm = null;
+        ReservationListByDateForm reservationListByDateForm = null;
 
         public ReservationDetailForm(int reservationId) {
             InitializeComponent();
@@ -27,6 +29,14 @@ namespace ReservationManagementSystem {
             reservationEntity = reservationDAO.FindById(reservationId);
 
             InitializeControl();
+        }
+
+        public ReservationDetailForm(PatientDetailInfoForm patientDetailInfoForm, int reservationId) : this(reservationId) {
+            this.patientDetailInfoForm = patientDetailInfoForm;
+        }
+
+        public ReservationDetailForm(ReservationListByDateForm reservationListByDateForm, int reservationId) : this(reservationId) {
+            this.reservationListByDateForm = reservationListByDateForm;
         }
 
         private void InitializeControl() {
@@ -244,6 +254,13 @@ namespace ReservationManagementSystem {
             ComboBoxSubExam.ValueMember = "Value";
             ComboBoxSubExam.DisplayMember = "Text";
             ComboBoxSubExam.DataSource = subItems;
+        }
+
+        private void ReservationDetailForm_FormClosing(object sender, FormClosingEventArgs e) {
+            if (patientDetailInfoForm != null)
+                patientDetailInfoForm.ReloadForm();
+            if (reservationListByDateForm != null)
+                reservationListByDateForm.ReloadForm();
         }
     }
 }

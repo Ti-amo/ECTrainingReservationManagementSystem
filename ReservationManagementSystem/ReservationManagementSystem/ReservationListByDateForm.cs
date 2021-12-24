@@ -30,6 +30,14 @@ namespace ReservationManagementSystem {
             SetupControls();
         }
 
+        public void ReloadForm() {
+            this.Controls.Clear();
+            InitializeComponent();
+
+            reservations = reservationDAO.FindByDate(DateTime.Now.ToString("yyyy-MM-dd"));
+            SetupControls();
+        }
+
         /// <summary>
         /// ページ付けを実行する
         /// </summary>
@@ -96,7 +104,7 @@ namespace ReservationManagementSystem {
             if (dgvReservationList.Columns[e.ColumnIndex] is DataGridViewButtonColumn
                 && e.RowIndex >= 0) {
                 int reservationId = (int)dgvReservationList.Rows[e.RowIndex].Cells["ReservationId"].Value;
-                ReservationDetailForm reservationDetailInfoForm = new ReservationDetailForm(reservationId);
+                ReservationDetailForm reservationDetailInfoForm = new ReservationDetailForm(this, reservationId);
                 reservationDetailInfoForm.Show();
             }
         }
@@ -123,8 +131,7 @@ namespace ReservationManagementSystem {
             }
         }
 
-        private void DateTimePickerReservationDate_ValueChanged(object sender, EventArgs e)
-        {
+        private void DateTimePickerReservationDate_ValueChanged(object sender, EventArgs e) {
             string date = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
             reservations = reservationDAO.FindByDate(date);
             pageNumber = 1;
