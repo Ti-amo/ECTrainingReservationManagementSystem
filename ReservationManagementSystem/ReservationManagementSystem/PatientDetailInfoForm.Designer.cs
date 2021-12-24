@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientDetailInfoForm));
             this.ContainerPatientInfo = new System.Windows.Forms.Panel();
             this.LabelTitleInfo = new System.Windows.Forms.Label();
-            this.ButtonEditDoB = new System.Windows.Forms.Button();
-            this.ButtonEditName = new System.Windows.Forms.Button();
             this.ButtonReserve = new System.Windows.Forms.Button();
             this.LabelLine = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +44,10 @@
             this.ButtonPrevious = new System.Windows.Forms.Button();
             this.DataGridViewReserveList = new System.Windows.Forms.DataGridView();
             this.LabelHistory = new System.Windows.Forms.Label();
+            this.ButtonCancelEditDoB = new System.Windows.Forms.Button();
+            this.ButtonCancelEditName = new System.Windows.Forms.Button();
+            this.ButtonEditDoB = new System.Windows.Forms.Button();
+            this.ButtonEditName = new System.Windows.Forms.Button();
             this.DateTimePickerDoB = new ReservationManagementSystem.FlatDateTimePicker();
             this.ContainerPatientInfo.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,6 +57,8 @@
             // ContainerPatientInfo
             // 
             this.ContainerPatientInfo.BackColor = System.Drawing.Color.Transparent;
+            this.ContainerPatientInfo.Controls.Add(this.ButtonCancelEditDoB);
+            this.ContainerPatientInfo.Controls.Add(this.ButtonCancelEditName);
             this.ContainerPatientInfo.Controls.Add(this.LabelTitleInfo);
             this.ContainerPatientInfo.Controls.Add(this.DateTimePickerDoB);
             this.ContainerPatientInfo.Controls.Add(this.ButtonEditDoB);
@@ -66,9 +70,6 @@
             this.ContainerPatientInfo.Controls.Add(this.label3);
             this.ContainerPatientInfo.Controls.Add(this.TextboxId);
             this.ContainerPatientInfo.Controls.Add(this.label2);
-            this.ContainerPatientInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ContainerPatientInfo.Location = new System.Drawing.Point(0, 0);
-            this.ContainerPatientInfo.Margin = new System.Windows.Forms.Padding(2);
             resources.ApplyResources(this.ContainerPatientInfo, "ContainerPatientInfo");
             this.ContainerPatientInfo.Name = "ContainerPatientInfo";
             // 
@@ -77,45 +78,8 @@
             resources.ApplyResources(this.LabelTitleInfo, "LabelTitleInfo");
             this.LabelTitleInfo.Name = "LabelTitleInfo";
             // 
-            // DateTimePickerDoB
-            // 
-            resources.ApplyResources(this.DateTimePickerDoB, "DateTimePickerDoB");
-            this.DateTimePickerDoB.CalendarForeColor = System.Drawing.Color.WhiteSmoke;
-            this.DateTimePickerDoB.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.DateTimePickerDoB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerDoB.Name = "DateTimePickerDoB";
-            this.DateTimePickerDoB.Value = new System.DateTime(2021, 12, 22, 0, 0, 0, 0);
-            // 
-            // ButtonEditDoB
-            // 
-            resources.ApplyResources(this.ButtonEditDoB, "ButtonEditDoB");
-            this.ButtonEditDoB.BackColor = System.Drawing.Color.Transparent;
-            this.ButtonEditDoB.FlatAppearance.BorderSize = 0;
-            this.ButtonEditDoB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonEditDoB.Location = new System.Drawing.Point(469, 156);
-            this.ButtonEditDoB.Margin = new System.Windows.Forms.Padding(2);
-            this.ButtonEditDoB.Name = "ButtonEditDoB";
-            this.ButtonEditDoB.UseVisualStyleBackColor = false;
-            this.ButtonEditDoB.Click += new System.EventHandler(this.ButtonEditDoB_Click);
-            // 
-            // ButtonEditName
-            // 
-            resources.ApplyResources(this.ButtonEditName, "ButtonEditName");
-            this.ButtonEditName.BackColor = System.Drawing.Color.Transparent;
-            this.ButtonEditName.FlatAppearance.BorderSize = 0;
-            this.ButtonEditName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonEditName.Location = new System.Drawing.Point(469, 115);
-            this.ButtonEditName.Margin = new System.Windows.Forms.Padding(2);
-            this.ButtonEditName.Name = "ButtonEditName";
-            this.ButtonEditName.UseVisualStyleBackColor = false;
-            this.ButtonEditName.Click += new System.EventHandler(this.ButtonEditName_Click);
-            // 
             // ButtonReserve
             // 
-            this.ButtonReserve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonReserve.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonReserve.Location = new System.Drawing.Point(573, 188);
-            this.ButtonReserve.Margin = new System.Windows.Forms.Padding(2);
             resources.ApplyResources(this.ButtonReserve, "ButtonReserve");
             this.ButtonReserve.Name = "ButtonReserve";
             this.ButtonReserve.UseVisualStyleBackColor = true;
@@ -162,10 +126,6 @@
             this.panel2.Controls.Add(this.ButtonPrevious);
             this.panel2.Controls.Add(this.DataGridViewReserveList);
             this.panel2.Controls.Add(this.LabelHistory);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(0, 248);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
@@ -176,10 +136,6 @@
             // 
             // ButtonNext
             // 
-            this.ButtonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonNext.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNext.Location = new System.Drawing.Point(588, 178);
-            this.ButtonNext.Margin = new System.Windows.Forms.Padding(2);
             resources.ApplyResources(this.ButtonNext, "ButtonNext");
             this.ButtonNext.Name = "ButtonNext";
             this.ButtonNext.UseVisualStyleBackColor = true;
@@ -187,10 +143,6 @@
             // 
             // ButtonPrevious
             // 
-            this.ButtonPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonPrevious.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPrevious.Location = new System.Drawing.Point(445, 178);
-            this.ButtonPrevious.Margin = new System.Windows.Forms.Padding(2);
             resources.ApplyResources(this.ButtonPrevious, "ButtonPrevious");
             this.ButtonPrevious.Name = "ButtonPrevious";
             this.ButtonPrevious.UseVisualStyleBackColor = true;
@@ -203,12 +155,8 @@
             this.DataGridViewReserveList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.DataGridViewReserveList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridViewReserveList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewReserveList.Location = new System.Drawing.Point(45, 55);
-            this.DataGridViewReserveList.Margin = new System.Windows.Forms.Padding(2);
             this.DataGridViewReserveList.Name = "DataGridViewReserveList";
             this.DataGridViewReserveList.ReadOnly = true;
-            this.DataGridViewReserveList.Size = new System.Drawing.Size(618, 86);
-            this.DataGridViewReserveList.TabIndex = 1;
             this.DataGridViewReserveList.Paint += new System.Windows.Forms.PaintEventHandler(this.DataGridViewReserveList_Paint);
             // 
             // LabelHistory
@@ -216,18 +164,53 @@
             resources.ApplyResources(this.LabelHistory, "LabelHistory");
             this.LabelHistory.Name = "LabelHistory";
             // 
+            // ButtonCancelEditDoB
+            // 
+            resources.ApplyResources(this.ButtonCancelEditDoB, "ButtonCancelEditDoB");
+            this.ButtonCancelEditDoB.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonCancelEditDoB.BackgroundImage = global::ReservationManagementSystem.Properties.Resources.close;
+            this.ButtonCancelEditDoB.FlatAppearance.BorderSize = 0;
+            this.ButtonCancelEditDoB.Name = "ButtonCancelEditDoB";
+            this.ButtonCancelEditDoB.UseVisualStyleBackColor = false;
+            this.ButtonCancelEditDoB.Click += new System.EventHandler(this.ButtonCancelEditDoB_Click);
+            // 
+            // ButtonCancelEditName
+            // 
+            resources.ApplyResources(this.ButtonCancelEditName, "ButtonCancelEditName");
+            this.ButtonCancelEditName.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonCancelEditName.BackgroundImage = global::ReservationManagementSystem.Properties.Resources.close;
+            this.ButtonCancelEditName.FlatAppearance.BorderSize = 0;
+            this.ButtonCancelEditName.Name = "ButtonCancelEditName";
+            this.ButtonCancelEditName.UseVisualStyleBackColor = false;
+            this.ButtonCancelEditName.Click += new System.EventHandler(this.ButtonCancelEditName_Click);
+            // 
+            // ButtonEditDoB
+            // 
+            resources.ApplyResources(this.ButtonEditDoB, "ButtonEditDoB");
+            this.ButtonEditDoB.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonEditDoB.FlatAppearance.BorderSize = 0;
+            this.ButtonEditDoB.Name = "ButtonEditDoB";
+            this.ButtonEditDoB.UseVisualStyleBackColor = false;
+            this.ButtonEditDoB.Click += new System.EventHandler(this.ButtonEditDoB_Click);
+            // 
+            // ButtonEditName
+            // 
+            resources.ApplyResources(this.ButtonEditName, "ButtonEditName");
+            this.ButtonEditName.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonEditName.FlatAppearance.BorderSize = 0;
+            this.ButtonEditName.Name = "ButtonEditName";
+            this.ButtonEditName.UseVisualStyleBackColor = false;
+            this.ButtonEditName.Click += new System.EventHandler(this.ButtonEditName_Click);
+            // 
             // DateTimePickerDoB
             // 
-            this.DateTimePickerDoB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            resources.ApplyResources(this.DateTimePickerDoB, "DateTimePickerDoB");
             this.DateTimePickerDoB.BorderColor = System.Drawing.Color.Empty;
-            this.DateTimePickerDoB.CustomFormat = "yyyy-MM-dd";
-            this.DateTimePickerDoB.Enabled = false;
-            this.DateTimePickerDoB.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTimePickerDoB.CalendarForeColor = System.Drawing.Color.WhiteSmoke;
+            this.DateTimePickerDoB.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.DateTimePickerDoB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerDoB.Location = new System.Drawing.Point(330, 151);
             this.DateTimePickerDoB.Name = "DateTimePickerDoB";
-            this.DateTimePickerDoB.Size = new System.Drawing.Size(126, 23);
-            this.DateTimePickerDoB.TabIndex = 13;
+            this.DateTimePickerDoB.Value = new System.DateTime(2021, 12, 22, 0, 0, 0, 0);
             // 
             // PatientDetailInfoForm
             // 
@@ -267,5 +250,7 @@
         private System.Windows.Forms.Button ButtonEditDoB;
         private System.Windows.Forms.Button ButtonEditName;
         private FlatDateTimePicker DateTimePickerDoB;
+        private System.Windows.Forms.Button ButtonCancelEditDoB;
+        private System.Windows.Forms.Button ButtonCancelEditName;
     }
 }

@@ -44,7 +44,8 @@ namespace ReservationManagementSystem.DAO {
 
             // SQL文：SELECT句
             string query = @"SELECT * 
-                            FROM m_patient";
+                            FROM m_patient 
+                            ORDER BY patient_id DESC";
 
             // コマンドの作成
             command = new SqlCommand(query, connection);
@@ -85,7 +86,8 @@ namespace ReservationManagementSystem.DAO {
             // SQL文：SELECT句
             string query = @"SELECT * 
                             FROM m_patient 
-                            WHERE (combined_id LIKE @id OR name LIKE @name)";
+                            WHERE (combined_id LIKE @id OR name LIKE @name) 
+                            ORDER BY patient_id DESC";
 
             // コマンドの作成
             command = new SqlCommand(query, connection);
@@ -154,16 +156,16 @@ namespace ReservationManagementSystem.DAO {
 
             return patientEntity;
         }
+
         /// <summary>
         /// 最新の患者IDを見つける
         /// </summary>
         /// <returns></returns>
-        public string FindLatestPatient()
-        {
+        public string FindLatestPatient() {
             // SQL文：SELECT句
-            string query = @"SELECT TOP 1 *
-                             FROM m_patient
-                             ORDER BY created DESC";
+            string query = @"SELECT TOP 1 * 
+                            FROM m_patient 
+                            ORDER BY created DESC";
 
             // コマンドの作成
             command = new SqlCommand(query, connection);
@@ -173,8 +175,7 @@ namespace ReservationManagementSystem.DAO {
 
             string patientId = null;
             // データを１行ずつ抽出する
-            while (dataReader.Read())
-            {
+            while (dataReader.Read()) {
                 patientId = (string)dataReader["combined_id"];
             }
 
