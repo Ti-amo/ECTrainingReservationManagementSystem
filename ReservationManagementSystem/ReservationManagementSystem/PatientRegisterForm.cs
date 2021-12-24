@@ -60,7 +60,7 @@ namespace ReservationManagementSystem {
             DateTime birthDate = DateTime.Parse(DatetimePickerBirthDate.Text).Date;
             DateTime localDate = DateTime.Now.Date;
 
-            if (birthDate < localDate) {
+            if (birthDate <= localDate) {
                 return true;
             }
             return false;

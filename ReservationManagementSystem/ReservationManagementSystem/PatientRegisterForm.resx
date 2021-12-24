@@ -516,9 +516,9 @@
   <data name="&gt;&gt;ButtonReserve.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -544,7 +544,7 @@
     <value>本日の前に患者の生年月日を入力してください。</value>
   </data>
   <data name="NameFailureMsg" xml:space="preserve">
-    <value>患者名を入力してください。</value>
+    <value>患者の氏名（48文字以下）を入力してください。</value>
   </data>
   <data name="RegisterFailureTitle" xml:space="preserve">
     <value>登録失敗</value>

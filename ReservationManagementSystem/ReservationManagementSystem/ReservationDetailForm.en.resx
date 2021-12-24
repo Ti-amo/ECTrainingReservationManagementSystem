@@ -262,7 +262,7 @@
   <data name="PatientName" xml:space="preserve">
     <value>Patient name</value>
   </data>
-  <data name="ReceptionMsg" xml:space="preserve">
+  <data name="ReceptionSuccessMsg" xml:space="preserve">
     <value>The reception has been completed.</value>
   </data>
   <data name="ReceptionTitle" xml:space="preserve">
@@ -288,5 +288,8 @@
   </data>
   <data name="TreatmentTitle" xml:space="preserve">
     <value>Complete Treatment</value>
+  </data>
+  <data name="ReceptionFailureMsg" xml:space="preserve">
+    <value>The reservation date hasn't come yet.</value>
   </data>
 </root>

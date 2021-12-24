@@ -834,9 +834,9 @@
   <data name="&gt;&gt;ButtonCancelUpdate.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -897,7 +897,7 @@
   <data name="PatientName" xml:space="preserve">
     <value>患者名</value>
   </data>
-  <data name="ReceptionMsg" xml:space="preserve">
+  <data name="ReceptionSuccessMsg" xml:space="preserve">
     <value>受付を完了しました。</value>
   </data>
   <data name="ReceptionTitle" xml:space="preserve">
@@ -923,5 +923,8 @@
   </data>
   <data name="TreatmentTitle" xml:space="preserve">
     <value>診療完了</value>
+  </data>
+  <data name="ReceptionFailureMsg" xml:space="preserve">
+    <value>予約日付はまだ来ていません。</value>
   </data>
 </root>

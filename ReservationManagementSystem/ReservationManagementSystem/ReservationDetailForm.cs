@@ -129,16 +129,20 @@ namespace ReservationManagementSystem {
         }
 
         private void ButtonCompleteReception_Click(object sender, EventArgs e) {
-            reservationEntity.StatusId = 2;
-            reservationEntity.StatusName = "受付完了";
-            reservationDAO.ChangeStatus(reservationEntity);
+            if (DateTime.Today >= Convert.ToDateTime(reservationEntity.ReservationDate)) {
+                reservationEntity.StatusId = 2;
+                reservationEntity.StatusName = "受付完了";
+                reservationDAO.ChangeStatus(reservationEntity);
 
-            LabelStatus.Text = reservationEntity.StatusName;
-            ButtonUpdate.Enabled = false;
-            ButtonCompleteReception.Enabled = false;
-            ButtonCompleteTreatment.Enabled = true;
+                LabelStatus.Text = reservationEntity.StatusName;
+                ButtonUpdate.Enabled = false;
+                ButtonCompleteReception.Enabled = false;
+                ButtonCompleteTreatment.Enabled = true;
 
-            MessageBox.Show(rm.GetString("ReceptionMsg"), rm.GetString("ReceptionTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(rm.GetString("ReceptionSuccessMsg"), rm.GetString("ReceptionTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else {
+                MessageBox.Show(rm.GetString("ReceptionFailureMsg"), rm.GetString("ReceptionTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ButtonCompleteTreatment_Click(object sender, EventArgs e) {

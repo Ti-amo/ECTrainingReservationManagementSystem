@@ -40,7 +40,7 @@ namespace ReservationManagementSystem {
 
             FillData();
 
-            PagingReservationtList();
+            PagingReservationtList(reservations);
 
             SetupControls();
         }
@@ -59,7 +59,7 @@ namespace ReservationManagementSystem {
         /// </summary>
         /// <param name="pageNumber"></param>
         /// <param name="pageSize"></param>
-        private void PagingReservationtList(int pageNumber = 1, int pageSize = 10) {
+        private void PagingReservationtList(List<ReservationEntity> reservations, int pageNumber = 1, int pageSize = 2) {
             reservationPagedList = reservations.ToPagedList(pageNumber, pageSize);
             ButtonPrevious.Enabled = reservationPagedList.HasPreviousPage;
             ButtonNext.Enabled = reservationPagedList.HasNextPage;
@@ -137,7 +137,7 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void ButtonPrevious_Click(object sender, EventArgs e) {
             if (reservationPagedList.HasPreviousPage) {
-                PagingReservationtList(--pageNumber);
+                PagingReservationtList(reservations, --pageNumber);
             }
         }
 
@@ -148,7 +148,7 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void ButtonNext_Click(object sender, EventArgs e) {
             if (reservationPagedList.HasNextPage) {
-                PagingReservationtList(--pageNumber);
+                PagingReservationtList(reservations, ++pageNumber);
             }
         }
 
