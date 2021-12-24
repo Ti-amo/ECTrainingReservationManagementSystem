@@ -16,7 +16,7 @@ namespace ReservationManagementSystem {
     public partial class ReservationListByDateForm : Form {
         private List<ReservationEntity> reservations = new List<ReservationEntity>();　// 患者一覧
         private int pageNumber = 1;                                     　 // ページ番号
-        private int pageSize = 6;
+        private int pageSize = 8;
         private IPagedList<ReservationEntity> reservationList;                     // ページ一覧
         private ReservationDAO reservationDAO = new ReservationDAO();
         ResourceManager rm = new ResourceManager(typeof(ReservationListByDateForm));

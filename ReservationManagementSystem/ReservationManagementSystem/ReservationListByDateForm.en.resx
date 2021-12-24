@@ -117,10 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ButtonSearch.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelPageNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>472, 286</value>
+  </data>
+  <data name="DataGridViewReservationList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 51</value>
+  </data>
+  <data name="DataGridViewReservationList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 220</value>
+  </data>
   <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>178, 13</value>
   </data>

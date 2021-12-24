@@ -34,7 +34,7 @@ namespace ReservationManagementSystem {
         /// <param name="patients"></param>
         /// <param name="pageNumber"></param>
         /// <param name="pageSize"></param>
-        private void PagingPatientList(List<PatientEntity> patients, int pageNumber = 1, int pageSize = 10) {
+        private void PagingPatientList(List<PatientEntity> patients, int pageNumber = 1, int pageSize = 8) {
             patientPagedList = patients.ToPagedList(pageNumber, pageSize);
             ButtonPrevious.Enabled = patientPagedList.HasPreviousPage;
             ButtonNext.Enabled = patientPagedList.HasNextPage;
