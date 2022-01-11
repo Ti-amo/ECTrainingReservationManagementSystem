@@ -117,7 +117,162 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DateTimePickerDoB.CustomFormat" xml:space="preserve">
+    <value>yyyy-MM-dd</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="DateTimePickerDoB.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="DateTimePickerDoB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 151</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DateTimePickerDoB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="DateTimePickerDoB.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="DateTimePickerDoB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DateTimePickerDoB.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="DateTimePickerDoB.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;DateTimePickerDoB.Name" xml:space="preserve">
+    <value>DateTimePickerDoB</value>
+  </data>
+  <data name="&gt;&gt;DateTimePickerDoB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DateTimePickerDoB.Parent" xml:space="preserve">
+    <value>ContainerPatientInfo</value>
+  </data>
+  <data name="&gt;&gt;DateTimePickerDoB.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TextBoxName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="TextBoxName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 112</value>
+  </data>
+  <data name="TextBoxName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 23</value>
+  </data>
+  <data name="TextBoxName.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="TextBoxName.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TextBoxName.Name" xml:space="preserve">
+    <value>TextBoxName</value>
+  </data>
+  <data name="&gt;&gt;TextBoxName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBoxName.Parent" xml:space="preserve">
+    <value>ContainerPatientInfo</value>
+  </data>
+  <data name="&gt;&gt;TextBoxName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelDoB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelDoB.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="LabelDoB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelDoB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 156</value>
+  </data>
+  <data name="LabelDoB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 16</value>
+  </data>
+  <data name="LabelDoB.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;LabelDoB.Name" xml:space="preserve">
+    <value>LabelDoB</value>
+  </data>
+  <data name="&gt;&gt;LabelDoB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelDoB.Parent" xml:space="preserve">
+    <value>ContainerPatientInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelDoB.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LabelName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="LabelName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 115</value>
+  </data>
+  <data name="LabelName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 16</value>
+  </data>
+  <data name="LabelName.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;LabelName.Name" xml:space="preserve">
+    <value>LabelName</value>
+  </data>
+  <data name="&gt;&gt;LabelName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelName.Parent" xml:space="preserve">
+    <value>ContainerPatientInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LabelId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelId.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="LabelId.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 77</value>
+  </data>
+  <data name="LabelId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 16</value>
+  </data>
+  <data name="LabelId.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;LabelId.Name" xml:space="preserve">
+    <value>LabelId</value>
+  </data>
+  <data name="&gt;&gt;LabelId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelId.Parent" xml:space="preserve">
+    <value>ContainerPatientInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelId.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="ButtonCancelEditDoB.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
   </data>
@@ -130,7 +285,6 @@
   <data name="ButtonCancelEditDoB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ButtonCancelEditDoB.Location" type="System.Drawing.Point, System.Drawing">
     <value>496, 156</value>
   </data>
@@ -140,7 +294,6 @@
   <data name="ButtonCancelEditDoB.Size" type="System.Drawing.Size, System.Drawing">
     <value>10, 11</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ButtonCancelEditDoB.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
@@ -157,7 +310,7 @@
     <value>ContainerPatientInfo</value>
   </data>
   <data name="&gt;&gt;ButtonCancelEditDoB.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="ButtonCancelEditName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
@@ -196,7 +349,7 @@
     <value>ContainerPatientInfo</value>
   </data>
   <data name="&gt;&gt;ButtonCancelEditName.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="LabelTitleInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
@@ -235,46 +388,7 @@
     <value>ContainerPatientInfo</value>
   </data>
   <data name="&gt;&gt;LabelTitleInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="DateTimePickerDoB.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="DateTimePickerDoB.CalendarFont" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="DateTimePickerDoB.CustomFormat" xml:space="preserve">
-    <value>yyyy-MM-dd</value>
-  </data>
-  <data name="DateTimePickerDoB.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="DateTimePickerDoB.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="DateTimePickerDoB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 151</value>
-  </data>
-  <data name="DateTimePickerDoB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="DateTimePickerDoB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 23</value>
-  </data>
-  <data name="DateTimePickerDoB.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;DateTimePickerDoB.Name" xml:space="preserve">
-    <value>DateTimePickerDoB</value>
-  </data>
-  <data name="&gt;&gt;DateTimePickerDoB.Type" xml:space="preserve">
-    <value>ReservationManagementSystem.FlatDateTimePicker, ReservationManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;DateTimePickerDoB.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;DateTimePickerDoB.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="ButtonEditDoB.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
@@ -409,7 +523,7 @@
     <value>ContainerPatientInfo</value>
   </data>
   <data name="&gt;&gt;ButtonEditDoB.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="ButtonEditName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
@@ -544,7 +658,7 @@
     <value>ContainerPatientInfo</value>
   </data>
   <data name="&gt;&gt;ButtonEditName.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="ButtonReserve.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -580,7 +694,7 @@
     <value>ContainerPatientInfo</value>
   </data>
   <data name="&gt;&gt;ButtonReserve.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="LabelLine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -616,7 +730,7 @@
     <value>ContainerPatientInfo</value>
   </data>
   <data name="&gt;&gt;LabelLine.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
@@ -631,7 +745,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 158</value>
+    <value>230, 156</value>
   </data>
   <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -655,37 +769,7 @@
     <value>ContainerPatientInfo</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="TextboxName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="TextboxName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="TextboxName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 111</value>
-  </data>
-  <data name="TextboxName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="TextboxName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 23</value>
-  </data>
-  <data name="TextboxName.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;TextboxName.Name" xml:space="preserve">
-    <value>TextboxName</value>
-  </data>
-  <data name="&gt;&gt;TextboxName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextboxName.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;TextboxName.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
@@ -700,7 +784,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 117</value>
+    <value>230, 115</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -724,37 +808,7 @@
     <value>ContainerPatientInfo</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="TextboxId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="TextboxId.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="TextboxId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 71</value>
-  </data>
-  <data name="TextboxId.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="TextboxId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 23</value>
-  </data>
-  <data name="TextboxId.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;TextboxId.Name" xml:space="preserve">
-    <value>TextboxId</value>
-  </data>
-  <data name="&gt;&gt;TextboxId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextboxId.Parent" xml:space="preserve">
-    <value>ContainerPatientInfo</value>
-  </data>
-  <data name="&gt;&gt;TextboxId.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
@@ -793,7 +847,7 @@
     <value>ContainerPatientInfo</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="ContainerPatientInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -821,6 +875,96 @@
   </data>
   <data name="&gt;&gt;ContainerPatientInfo.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelPageNumber.Name" xml:space="preserve">
+    <value>LabelPageNumber</value>
+  </data>
+  <data name="&gt;&gt;LabelPageNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelPageNumber.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;LabelPageNumber.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ButtonNext.Name" xml:space="preserve">
+    <value>ButtonNext</value>
+  </data>
+  <data name="&gt;&gt;ButtonNext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonNext.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;ButtonNext.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ButtonPrevious.Name" xml:space="preserve">
+    <value>ButtonPrevious</value>
+  </data>
+  <data name="&gt;&gt;ButtonPrevious.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonPrevious.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;ButtonPrevious.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewReserveList.Name" xml:space="preserve">
+    <value>DataGridViewReserveList</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewReserveList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewReserveList.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewReserveList.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LabelHistory.Name" xml:space="preserve">
+    <value>LabelHistory</value>
+  </data>
+  <data name="&gt;&gt;LabelHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelHistory.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;LabelHistory.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 248</value>
+  </data>
+  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>709, 222</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="LabelPageNumber.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -996,47 +1140,14 @@
   <data name="&gt;&gt;LabelHistory.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panel2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 248</value>
-  </data>
-  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>709, 222</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>709, 470</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
