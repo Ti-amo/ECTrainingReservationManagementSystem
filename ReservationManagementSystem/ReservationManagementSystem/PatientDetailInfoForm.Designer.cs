@@ -30,13 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientDetailInfoForm));
             this.ContainerPatientInfo = new System.Windows.Forms.Panel();
+            this.ButtonCancelEditDoB = new System.Windows.Forms.Button();
+            this.ButtonCancelEditName = new System.Windows.Forms.Button();
             this.LabelTitleInfo = new System.Windows.Forms.Label();
+            this.ButtonEditDoB = new System.Windows.Forms.Button();
+            this.ButtonEditName = new System.Windows.Forms.Button();
             this.ButtonReserve = new System.Windows.Forms.Button();
             this.LabelLine = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.TextboxName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TextboxId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LabelPageNumber = new System.Windows.Forms.Label();
@@ -44,11 +46,11 @@
             this.ButtonPrevious = new System.Windows.Forms.Button();
             this.DataGridViewReserveList = new System.Windows.Forms.DataGridView();
             this.LabelHistory = new System.Windows.Forms.Label();
-            this.ButtonCancelEditDoB = new System.Windows.Forms.Button();
-            this.ButtonCancelEditName = new System.Windows.Forms.Button();
-            this.ButtonEditDoB = new System.Windows.Forms.Button();
-            this.ButtonEditName = new System.Windows.Forms.Button();
-            this.DateTimePickerDoB = new ReservationManagementSystem.FlatDateTimePicker();
+            this.LabelId = new System.Windows.Forms.Label();
+            this.LabelName = new System.Windows.Forms.Label();
+            this.LabelDoB = new System.Windows.Forms.Label();
+            this.TextBoxName = new System.Windows.Forms.TextBox();
+            this.DateTimePickerDoB = new System.Windows.Forms.DateTimePicker();
             this.ContainerPatientInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReserveList)).BeginInit();
@@ -57,26 +59,66 @@
             // ContainerPatientInfo
             // 
             this.ContainerPatientInfo.BackColor = System.Drawing.Color.Transparent;
+            this.ContainerPatientInfo.Controls.Add(this.DateTimePickerDoB);
+            this.ContainerPatientInfo.Controls.Add(this.TextBoxName);
+            this.ContainerPatientInfo.Controls.Add(this.LabelDoB);
+            this.ContainerPatientInfo.Controls.Add(this.LabelName);
+            this.ContainerPatientInfo.Controls.Add(this.LabelId);
             this.ContainerPatientInfo.Controls.Add(this.ButtonCancelEditDoB);
             this.ContainerPatientInfo.Controls.Add(this.ButtonCancelEditName);
             this.ContainerPatientInfo.Controls.Add(this.LabelTitleInfo);
-            this.ContainerPatientInfo.Controls.Add(this.DateTimePickerDoB);
             this.ContainerPatientInfo.Controls.Add(this.ButtonEditDoB);
             this.ContainerPatientInfo.Controls.Add(this.ButtonEditName);
             this.ContainerPatientInfo.Controls.Add(this.ButtonReserve);
             this.ContainerPatientInfo.Controls.Add(this.LabelLine);
             this.ContainerPatientInfo.Controls.Add(this.label4);
-            this.ContainerPatientInfo.Controls.Add(this.TextboxName);
             this.ContainerPatientInfo.Controls.Add(this.label3);
-            this.ContainerPatientInfo.Controls.Add(this.TextboxId);
             this.ContainerPatientInfo.Controls.Add(this.label2);
             resources.ApplyResources(this.ContainerPatientInfo, "ContainerPatientInfo");
             this.ContainerPatientInfo.Name = "ContainerPatientInfo";
+            // 
+            // ButtonCancelEditDoB
+            // 
+            resources.ApplyResources(this.ButtonCancelEditDoB, "ButtonCancelEditDoB");
+            this.ButtonCancelEditDoB.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonCancelEditDoB.BackgroundImage = global::ReservationManagementSystem.Properties.Resources.close;
+            this.ButtonCancelEditDoB.FlatAppearance.BorderSize = 0;
+            this.ButtonCancelEditDoB.Name = "ButtonCancelEditDoB";
+            this.ButtonCancelEditDoB.UseVisualStyleBackColor = false;
+            this.ButtonCancelEditDoB.Click += new System.EventHandler(this.ButtonCancelEditDoB_Click);
+            // 
+            // ButtonCancelEditName
+            // 
+            resources.ApplyResources(this.ButtonCancelEditName, "ButtonCancelEditName");
+            this.ButtonCancelEditName.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonCancelEditName.BackgroundImage = global::ReservationManagementSystem.Properties.Resources.close;
+            this.ButtonCancelEditName.FlatAppearance.BorderSize = 0;
+            this.ButtonCancelEditName.Name = "ButtonCancelEditName";
+            this.ButtonCancelEditName.UseVisualStyleBackColor = false;
+            this.ButtonCancelEditName.Click += new System.EventHandler(this.ButtonCancelEditName_Click);
             // 
             // LabelTitleInfo
             // 
             resources.ApplyResources(this.LabelTitleInfo, "LabelTitleInfo");
             this.LabelTitleInfo.Name = "LabelTitleInfo";
+            // 
+            // ButtonEditDoB
+            // 
+            resources.ApplyResources(this.ButtonEditDoB, "ButtonEditDoB");
+            this.ButtonEditDoB.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonEditDoB.FlatAppearance.BorderSize = 0;
+            this.ButtonEditDoB.Name = "ButtonEditDoB";
+            this.ButtonEditDoB.UseVisualStyleBackColor = false;
+            this.ButtonEditDoB.Click += new System.EventHandler(this.ButtonEditDoB_Click);
+            // 
+            // ButtonEditName
+            // 
+            resources.ApplyResources(this.ButtonEditName, "ButtonEditName");
+            this.ButtonEditName.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonEditName.FlatAppearance.BorderSize = 0;
+            this.ButtonEditName.Name = "ButtonEditName";
+            this.ButtonEditName.UseVisualStyleBackColor = false;
+            this.ButtonEditName.Click += new System.EventHandler(this.ButtonEditName_Click);
             // 
             // ButtonReserve
             // 
@@ -95,24 +137,10 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // TextboxName
-            // 
-            resources.ApplyResources(this.TextboxName, "TextboxName");
-            this.TextboxName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TextboxName.Name = "TextboxName";
-            this.TextboxName.ReadOnly = true;
-            // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            // 
-            // TextboxId
-            // 
-            resources.ApplyResources(this.TextboxId, "TextboxId");
-            this.TextboxId.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TextboxId.Name = "TextboxId";
-            this.TextboxId.ReadOnly = true;
             // 
             // label2
             // 
@@ -164,53 +192,31 @@
             resources.ApplyResources(this.LabelHistory, "LabelHistory");
             this.LabelHistory.Name = "LabelHistory";
             // 
-            // ButtonCancelEditDoB
+            // LabelId
             // 
-            resources.ApplyResources(this.ButtonCancelEditDoB, "ButtonCancelEditDoB");
-            this.ButtonCancelEditDoB.BackColor = System.Drawing.Color.Transparent;
-            this.ButtonCancelEditDoB.BackgroundImage = global::ReservationManagementSystem.Properties.Resources.close;
-            this.ButtonCancelEditDoB.FlatAppearance.BorderSize = 0;
-            this.ButtonCancelEditDoB.Name = "ButtonCancelEditDoB";
-            this.ButtonCancelEditDoB.UseVisualStyleBackColor = false;
-            this.ButtonCancelEditDoB.Click += new System.EventHandler(this.ButtonCancelEditDoB_Click);
+            resources.ApplyResources(this.LabelId, "LabelId");
+            this.LabelId.Name = "LabelId";
             // 
-            // ButtonCancelEditName
+            // LabelName
             // 
-            resources.ApplyResources(this.ButtonCancelEditName, "ButtonCancelEditName");
-            this.ButtonCancelEditName.BackColor = System.Drawing.Color.Transparent;
-            this.ButtonCancelEditName.BackgroundImage = global::ReservationManagementSystem.Properties.Resources.close;
-            this.ButtonCancelEditName.FlatAppearance.BorderSize = 0;
-            this.ButtonCancelEditName.Name = "ButtonCancelEditName";
-            this.ButtonCancelEditName.UseVisualStyleBackColor = false;
-            this.ButtonCancelEditName.Click += new System.EventHandler(this.ButtonCancelEditName_Click);
+            resources.ApplyResources(this.LabelName, "LabelName");
+            this.LabelName.Name = "LabelName";
             // 
-            // ButtonEditDoB
+            // LabelDoB
             // 
-            resources.ApplyResources(this.ButtonEditDoB, "ButtonEditDoB");
-            this.ButtonEditDoB.BackColor = System.Drawing.Color.Transparent;
-            this.ButtonEditDoB.FlatAppearance.BorderSize = 0;
-            this.ButtonEditDoB.Name = "ButtonEditDoB";
-            this.ButtonEditDoB.UseVisualStyleBackColor = false;
-            this.ButtonEditDoB.Click += new System.EventHandler(this.ButtonEditDoB_Click);
+            resources.ApplyResources(this.LabelDoB, "LabelDoB");
+            this.LabelDoB.Name = "LabelDoB";
             // 
-            // ButtonEditName
+            // TextBoxName
             // 
-            resources.ApplyResources(this.ButtonEditName, "ButtonEditName");
-            this.ButtonEditName.BackColor = System.Drawing.Color.Transparent;
-            this.ButtonEditName.FlatAppearance.BorderSize = 0;
-            this.ButtonEditName.Name = "ButtonEditName";
-            this.ButtonEditName.UseVisualStyleBackColor = false;
-            this.ButtonEditName.Click += new System.EventHandler(this.ButtonEditName_Click);
+            resources.ApplyResources(this.TextBoxName, "TextBoxName");
+            this.TextBoxName.Name = "TextBoxName";
             // 
             // DateTimePickerDoB
             // 
             resources.ApplyResources(this.DateTimePickerDoB, "DateTimePickerDoB");
-            this.DateTimePickerDoB.BorderColor = System.Drawing.Color.Empty;
-            this.DateTimePickerDoB.CalendarForeColor = System.Drawing.Color.WhiteSmoke;
-            this.DateTimePickerDoB.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.DateTimePickerDoB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateTimePickerDoB.Name = "DateTimePickerDoB";
-            this.DateTimePickerDoB.Value = new System.DateTime(2021, 12, 22, 0, 0, 0, 0);
             // 
             // PatientDetailInfoForm
             // 
@@ -234,9 +240,7 @@
 
         private System.Windows.Forms.Panel ContainerPatientInfo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TextboxName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TextboxId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LabelTitleInfo;
         private System.Windows.Forms.Panel panel2;
@@ -249,8 +253,12 @@
         private System.Windows.Forms.Button ButtonReserve;
         private System.Windows.Forms.Button ButtonEditDoB;
         private System.Windows.Forms.Button ButtonEditName;
-        private FlatDateTimePicker DateTimePickerDoB;
         private System.Windows.Forms.Button ButtonCancelEditDoB;
         private System.Windows.Forms.Button ButtonCancelEditName;
+        private System.Windows.Forms.Label LabelId;
+        private System.Windows.Forms.Label LabelDoB;
+        private System.Windows.Forms.Label LabelName;
+        private System.Windows.Forms.TextBox TextBoxName;
+        private System.Windows.Forms.DateTimePicker DateTimePickerDoB;
     }
 }

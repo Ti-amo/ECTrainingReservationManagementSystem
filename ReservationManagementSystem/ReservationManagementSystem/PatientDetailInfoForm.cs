@@ -60,9 +60,9 @@ namespace ReservationManagementSystem {
         /// テキストボックスにデータを入力する
         /// </summary>
         private void FillData() {
-            TextboxId.Text = patient.PatientId;
-            TextboxName.Text = patient.Name;
-            DateTimePickerDoB.Text = patient.BirthDate;
+            LabelId.Text = patient.PatientId;
+            LabelName.Text = patient.Name;
+            LabelDoB.Text = patient.BirthDate;
         }
 
         /// <summary>
@@ -92,6 +92,7 @@ namespace ReservationManagementSystem {
             DataGridViewReserveList.Columns["PatientName"].Visible = false;
             DataGridViewReserveList.Columns["StatusId"].Visible = false;
             DataGridViewReserveList.Columns["Exam"].Visible = false;
+
             // add button detail to dgv
             DataGridViewButtonColumn buttonDetail = new DataGridViewButtonColumn {
                 Text = rm.GetString("Detail"),
@@ -100,15 +101,12 @@ namespace ReservationManagementSystem {
                 Width = 100
             };
             DataGridViewReserveList.Columns.Add(buttonDetail);
+
             // handle event click button detail
             DataGridViewReserveList.CellContentClick += ButtonDetail_Click;
-            // hide textbox cursor
-            TextboxId.Enter += (s, e) => { TextboxId.Parent.Focus(); };
-            TextboxName.Enter += TextboxName_Enter;
+
             // show button reserve according to reservation's status
             ButtonReserve.Enabled = !HasReservation();
-            // set border color for dtp
-            DateTimePickerDoB.BorderColor = Color.Black;
         }
 
         private bool HasReservation() {
@@ -118,14 +116,6 @@ namespace ReservationManagementSystem {
             return false;
         }
 
-        private void TextboxName_Enter(object sender, EventArgs e) {
-            if (!editNameStatus) {
-                TextboxName.Parent.Focus();
-            } else {
-                TextboxName.Focus();
-            }
-        }
-
         /// <summary>
         /// 予約詳細画面に遷移する
         /// </summary>
@@ -133,8 +123,7 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void ButtonDetail_Click(object sender, DataGridViewCellEventArgs e) {
             var dgvReservetList = (DataGridView)sender;
-            if (dgvReservetList.Columns[e.ColumnIndex] is DataGridViewButtonColumn
-                && e.RowIndex >= 0) {
+            if (dgvReservetList.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0) {
                 int reservationId = (int)dgvReservetList.Rows[e.RowIndex].Cells["ReservationId"].Value;
                 ReservationDetailForm reservationDetailForm = new ReservationDetailForm(this, reservationId);
                 reservationDetailForm.ShowDialog();
@@ -180,18 +169,24 @@ namespace ReservationManagementSystem {
         private void ButtonEditName_Click(object sender, EventArgs e) {
             if (!editNameStatus) {
                 editNameStatus = !editNameStatus;
-                TextboxName.BackColor = System.Drawing.Color.White;
-                TextboxName.ReadOnly = false;
                 ButtonEditName.BackgroundImage = Properties.Resources.done;
                 ButtonCancelEditName.Visible = true;
+
+                LabelName.Visible = false;
+                TextBoxName.Visible = true;
+                TextBoxName.Text = patient.Name;
             } else {
-                string newName = TextboxName.Text;
+                string newName = TextBoxName.Text;
                 if (!string.IsNullOrWhiteSpace(newName) && (newName.Length <= 48)) {
                     editNameStatus = !editNameStatus;
-                    TextboxName.BackColor = System.Drawing.Color.WhiteSmoke;
-                    TextboxName.ReadOnly = true;
+
                     ButtonEditName.BackgroundImage = Properties.Resources.edit;
                     ButtonCancelEditName.Visible = false;
+
+                    TextBoxName.Visible = false;
+                    LabelName.Visible = true;
+                    LabelName.Text = newName;
+
                     if (!newName.Equals(patient.Name)) {
                         patient.Name = newName;
                         patientDAO.Update(patient);
@@ -200,7 +195,7 @@ namespace ReservationManagementSystem {
                 } else {
                     DialogResult dialogResult = MessageBox.Show(rm.GetString("EditNameFailureMsg"), rm.GetString("EditFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     if (dialogResult == DialogResult.OK) {
-                        TextboxName.Focus();
+                        TextBoxName.Focus();
                     }
                 }
             }
@@ -208,26 +203,34 @@ namespace ReservationManagementSystem {
 
         private void ButtonCancelEditName_Click(object sender, EventArgs e) {
             editNameStatus = !editNameStatus;
-            TextboxName.Text = patient.Name;
-            TextboxName.BackColor = System.Drawing.Color.WhiteSmoke;
-            TextboxName.ReadOnly = true;
             ButtonEditName.BackgroundImage = Properties.Resources.edit;
             ButtonCancelEditName.Visible = false;
+
+            TextBoxName.Visible = false;
+            LabelName.Visible = true;
         }
 
         private void ButtonEditDoB_Click(object sender, EventArgs e) {
             if (!editDoBStatus) {
                 editDoBStatus = !editDoBStatus;
-                DateTimePickerDoB.Enabled = true;
                 ButtonEditDoB.BackgroundImage = Properties.Resources.done;
                 ButtonCancelEditDoB.Visible = true;
+
+                LabelDoB.Visible = false;
+                DateTimePickerDoB.Visible = true;
+                DateTimePickerDoB.Text = patient.BirthDate;
             } else {
                 if (IsValidDateOfBirth()) {
                     string newDoB = DateTimePickerDoB.Value.ToString("yyyy-MM-dd");
                     editDoBStatus = !editDoBStatus;
-                    DateTimePickerDoB.Enabled = false;
+
                     ButtonEditDoB.BackgroundImage = Properties.Resources.edit;
                     ButtonCancelEditDoB.Visible = false;
+
+                    DateTimePickerDoB.Visible = false;
+                    LabelDoB.Visible = true;
+                    LabelDoB.Text = newDoB;
+
                     if (!newDoB.Equals(patient.BirthDate)) {
                         patient.BirthDate = newDoB;
                         patientDAO.Update(patient);
@@ -236,16 +239,17 @@ namespace ReservationManagementSystem {
                 } else {
                     MessageBox.Show(rm.GetString("EditBirthDateFailureMsg"), rm.GetString("EditFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 
         private void ButtonCancelEditDoB_Click(object sender, EventArgs e) {
             editDoBStatus = !editDoBStatus;
-            DateTimePickerDoB.Text = patient.BirthDate;
-            DateTimePickerDoB.Enabled = false;
+
             ButtonEditDoB.BackgroundImage = Properties.Resources.edit;
             ButtonCancelEditDoB.Visible = false;
+
+            DateTimePickerDoB.Visible = false;
+            LabelDoB.Visible = true;
         }
 
         /// <summary>
@@ -260,6 +264,7 @@ namespace ReservationManagementSystem {
             }
             return false;
         }
+
         /// <summary>
         /// 
         /// </summary>
