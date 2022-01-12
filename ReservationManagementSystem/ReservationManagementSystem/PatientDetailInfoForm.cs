@@ -158,9 +158,9 @@ namespace ReservationManagementSystem {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonReserve_Click(object sender, EventArgs e) {
-            ReservationRegisterForm reserveRegisterForm = new ReservationRegisterForm {
-                PatientId = this.PatientId
-            };
+            ReservationRegisterForm reserveRegisterForm = new ReservationRegisterForm(this.PatientId);
+               
+          
             this.Hide();
             reserveRegisterForm.FormClosed += (s, args) => this.Close();
             reserveRegisterForm.ShowDialog();

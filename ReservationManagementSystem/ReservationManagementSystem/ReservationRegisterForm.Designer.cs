@@ -38,6 +38,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.LabelTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LabelID = new System.Windows.Forms.Label();
+            this.LabelName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ButtonReserve
@@ -49,23 +53,23 @@
             // 
             // ComboBoxSubExam
             // 
-            this.ComboBoxSubExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.ComboBoxSubExam, "ComboBoxSubExam");
+            this.ComboBoxSubExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxSubExam.FormattingEnabled = true;
             this.ComboBoxSubExam.Name = "ComboBoxSubExam";
             // 
             // ComboBoxMajorExam
             // 
-            this.ComboBoxMajorExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.ComboBoxMajorExam, "ComboBoxMajorExam");
+            this.ComboBoxMajorExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxMajorExam.FormattingEnabled = true;
             this.ComboBoxMajorExam.Name = "ComboBoxMajorExam";
             this.ComboBoxMajorExam.SelectedIndexChanged += new System.EventHandler(this.ComboBoxMajorExam_SelectedIndexChanged);
             // 
             // DateTimePickerReservationDate
             // 
-            this.DateTimePickerReservationDate.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.DateTimePickerReservationDate, "DateTimePickerReservationDate");
+            this.DateTimePickerReservationDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DateTimePickerReservationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateTimePickerReservationDate.Name = "DateTimePickerReservationDate";
             this.DateTimePickerReservationDate.ValueChanged += new System.EventHandler(this.DateTimePickerReservationDate_ValueChanged);
@@ -96,10 +100,36 @@
             resources.ApplyResources(this.LabelTitle, "LabelTitle");
             this.LabelTitle.Name = "LabelTitle";
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // LabelID
+            // 
+            resources.ApplyResources(this.LabelID, "LabelID");
+            this.LabelID.Name = "LabelID";
+            this.LabelID.UseMnemonic = false;
+            // 
+            // LabelName
+            // 
+            resources.ApplyResources(this.LabelName, "LabelName");
+            this.LabelName.Name = "LabelName";
+            // 
             // ReservationRegisterForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LabelName);
+            this.Controls.Add(this.LabelID);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ButtonReserve);
             this.Controls.Add(this.ComboBoxSubExam);
             this.Controls.Add(this.ComboBoxMajorExam);
@@ -126,5 +156,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Label LabelTitle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LabelID;
+        private System.Windows.Forms.Label LabelName;
     }
 }
