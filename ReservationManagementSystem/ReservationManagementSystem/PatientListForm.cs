@@ -18,6 +18,7 @@ namespace ReservationManagementSystem
         private IPagedList<PatientEntity> patientPagedList;                   // ページ一覧
         private PatientDAO patientDAO = new PatientDAO();                     // 患者DAOインストール
         private Button buttonClear = new Button();                            // ボタンクリア
+        private bool flag = false;                                            // ユーザーが検索したかどうかを確認する
         ResourceManager rm = new ResourceManager(typeof(PatientListForm));
 
         public PatientListForm()
@@ -105,6 +106,13 @@ namespace ReservationManagementSystem
             }
             else
             {
+                if (flag)
+                {
+                    patientList = patients;
+                    pageNumber = 1;
+                    flag = false;
+                    PagingPatientList(patientList);
+                }
                 buttonClear.Visible = false;
             }
         }
@@ -203,6 +211,7 @@ namespace ReservationManagementSystem
             if (!string.IsNullOrWhiteSpace(keyword))
             {
                 patientList = patientDAO.FindByIdOrName(keyword);
+                flag = true;
                 pageNumber = 1;
                 PagingPatientList(patientList);
             }
@@ -240,6 +249,7 @@ namespace ReservationManagementSystem
                 {
                     patientList = patientDAO.FindByIdOrName(keyword);
                     pageNumber = 1;
+                    flag = true;
                     PagingPatientList(patientList);
                 }
             }

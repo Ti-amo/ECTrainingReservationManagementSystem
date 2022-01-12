@@ -74,7 +74,9 @@ namespace ReservationManagementSystem {
             reservationPagedList = reservations.ToPagedList(pageNumber, pageSize);
             ButtonPrevious.Enabled = reservationPagedList.HasPreviousPage;
             ButtonNext.Enabled = reservationPagedList.HasNextPage;
-            LabelPageNumber.Text = string.Format("{0}/{1}", pageNumber, reservationPagedList.PageCount);
+            TextboxPageNumber.Text = pageNumber + "";
+            TextboxPageNumber.SelectionStart = TextboxPageNumber.TextLength;
+            LabelTotalPages.Text = string.Format("/{1}", pageNumber, reservationPagedList.PageCount);
             // fill data to datagridview
             DataGridViewReserveList.DataSource = reservationPagedList.ToList();
         }
@@ -137,6 +139,17 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void ButtonPrevious_Click(object sender, EventArgs e) {
             if (reservationPagedList.HasPreviousPage) {
+                if (!string.IsNullOrWhiteSpace(TextboxPageNumber.Text) && int.TryParse(TextboxPageNumber.Text, out int enteredPageNumber))
+                {
+                    if (enteredPageNumber == 1)
+                    {
+                        pageNumber = enteredPageNumber + 1;
+                    }
+                    else if (enteredPageNumber > 1 && enteredPageNumber <= reservationPagedList.PageCount)
+                    {
+                        pageNumber = enteredPageNumber;
+                    }
+                }
                 PagingReservationtList(reservations, --pageNumber);
             }
         }
@@ -148,6 +161,17 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void ButtonNext_Click(object sender, EventArgs e) {
             if (reservationPagedList.HasNextPage) {
+                if (!string.IsNullOrWhiteSpace(TextboxPageNumber.Text) && int.TryParse(TextboxPageNumber.Text, out int enteredPageNumber))
+                {
+                    if (enteredPageNumber == reservationPagedList.PageCount)
+                    {
+                        pageNumber = enteredPageNumber - 1;
+                    }
+                    else if (enteredPageNumber > 0 && enteredPageNumber < reservationPagedList.PageCount)
+                    {
+                        pageNumber = enteredPageNumber;
+                    }
+                }
                 PagingReservationtList(reservations, ++pageNumber);
             }
         }
@@ -276,6 +300,30 @@ namespace ReservationManagementSystem {
             if (dgvReserveList.Rows.Count == 0) {
                 using (Graphics grfx = e.Graphics) {
                     grfx.DrawString(emptyResultText, dgvReserveList.Font, Brushes.Black, new PointF((dgvReserveList.Width - dgvReserveList.Font.Size * emptyResultText.Length) / 2, dgvReserveList.Height / 2));
+                }
+            }
+        }
+
+        /// <summary>
+        /// handle event press enter page number
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextboxPageNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(TextboxPageNumber.Text)
+                    && int.TryParse(TextboxPageNumber.Text, out int enteredPageNumber)
+                    && enteredPageNumber > 0 && enteredPageNumber <= reservationPagedList.PageCount)
+                {
+                    pageNumber = enteredPageNumber;
+                    PagingReservationtList(reservations, pageNumber);
+                }
+                else
+                {
+                    TextboxPageNumber.Text = pageNumber + "";
+                    TextboxPageNumber.SelectionStart = TextboxPageNumber.TextLength;
                 }
             }
         }
