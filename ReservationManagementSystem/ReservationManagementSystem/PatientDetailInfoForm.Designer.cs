@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientDetailInfoForm));
             this.ContainerPatientInfo = new System.Windows.Forms.Panel();
+            this.DateTimePickerDoB = new System.Windows.Forms.DateTimePicker();
+            this.TextBoxName = new System.Windows.Forms.TextBox();
+            this.LabelDoB = new System.Windows.Forms.Label();
+            this.LabelName = new System.Windows.Forms.Label();
+            this.LabelId = new System.Windows.Forms.Label();
             this.ButtonCancelEditDoB = new System.Windows.Forms.Button();
             this.ButtonCancelEditName = new System.Windows.Forms.Button();
             this.LabelTitleInfo = new System.Windows.Forms.Label();
@@ -46,11 +51,6 @@
             this.ButtonPrevious = new System.Windows.Forms.Button();
             this.DataGridViewReserveList = new System.Windows.Forms.DataGridView();
             this.LabelHistory = new System.Windows.Forms.Label();
-            this.LabelId = new System.Windows.Forms.Label();
-            this.LabelName = new System.Windows.Forms.Label();
-            this.LabelDoB = new System.Windows.Forms.Label();
-            this.TextBoxName = new System.Windows.Forms.TextBox();
-            this.DateTimePickerDoB = new System.Windows.Forms.DateTimePicker();
             this.ContainerPatientInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReserveList)).BeginInit();
@@ -76,6 +76,32 @@
             this.ContainerPatientInfo.Controls.Add(this.label2);
             resources.ApplyResources(this.ContainerPatientInfo, "ContainerPatientInfo");
             this.ContainerPatientInfo.Name = "ContainerPatientInfo";
+            // 
+            // DateTimePickerDoB
+            // 
+            resources.ApplyResources(this.DateTimePickerDoB, "DateTimePickerDoB");
+            this.DateTimePickerDoB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateTimePickerDoB.Name = "DateTimePickerDoB";
+            // 
+            // TextBoxName
+            // 
+            resources.ApplyResources(this.TextBoxName, "TextBoxName");
+            this.TextBoxName.Name = "TextBoxName";
+            // 
+            // LabelDoB
+            // 
+            resources.ApplyResources(this.LabelDoB, "LabelDoB");
+            this.LabelDoB.Name = "LabelDoB";
+            // 
+            // LabelName
+            // 
+            resources.ApplyResources(this.LabelName, "LabelName");
+            this.LabelName.Name = "LabelName";
+            // 
+            // LabelId
+            // 
+            resources.ApplyResources(this.LabelId, "LabelId");
+            this.LabelId.Name = "LabelId";
             // 
             // ButtonCancelEditDoB
             // 
@@ -191,32 +217,6 @@
             // 
             resources.ApplyResources(this.LabelHistory, "LabelHistory");
             this.LabelHistory.Name = "LabelHistory";
-            // 
-            // LabelId
-            // 
-            resources.ApplyResources(this.LabelId, "LabelId");
-            this.LabelId.Name = "LabelId";
-            // 
-            // LabelName
-            // 
-            resources.ApplyResources(this.LabelName, "LabelName");
-            this.LabelName.Name = "LabelName";
-            // 
-            // LabelDoB
-            // 
-            resources.ApplyResources(this.LabelDoB, "LabelDoB");
-            this.LabelDoB.Name = "LabelDoB";
-            // 
-            // TextBoxName
-            // 
-            resources.ApplyResources(this.TextBoxName, "TextBoxName");
-            this.TextBoxName.Name = "TextBoxName";
-            // 
-            // DateTimePickerDoB
-            // 
-            resources.ApplyResources(this.DateTimePickerDoB, "DateTimePickerDoB");
-            this.DateTimePickerDoB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimePickerDoB.Name = "DateTimePickerDoB";
             // 
             // PatientDetailInfoForm
             // 
