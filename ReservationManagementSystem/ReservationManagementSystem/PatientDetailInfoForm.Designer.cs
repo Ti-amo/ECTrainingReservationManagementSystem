@@ -46,11 +46,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.LabelPageNumber = new System.Windows.Forms.Label();
+            this.LabelTotalPages = new System.Windows.Forms.Label();
             this.ButtonNext = new System.Windows.Forms.Button();
             this.ButtonPrevious = new System.Windows.Forms.Button();
             this.DataGridViewReserveList = new System.Windows.Forms.DataGridView();
             this.LabelHistory = new System.Windows.Forms.Label();
+            this.TextboxPageNumber = new System.Windows.Forms.TextBox();
             this.ContainerPatientInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReserveList)).BeginInit();
@@ -175,7 +176,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.LabelPageNumber);
+            this.panel2.Controls.Add(this.TextboxPageNumber);
+            this.panel2.Controls.Add(this.LabelTotalPages);
             this.panel2.Controls.Add(this.ButtonNext);
             this.panel2.Controls.Add(this.ButtonPrevious);
             this.panel2.Controls.Add(this.DataGridViewReserveList);
@@ -183,10 +185,10 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // LabelPageNumber
+            // LabelTotalPages
             // 
-            resources.ApplyResources(this.LabelPageNumber, "LabelPageNumber");
-            this.LabelPageNumber.Name = "LabelPageNumber";
+            resources.ApplyResources(this.LabelTotalPages, "LabelTotalPages");
+            this.LabelTotalPages.Name = "LabelTotalPages";
             // 
             // ButtonNext
             // 
@@ -217,6 +219,12 @@
             // 
             resources.ApplyResources(this.LabelHistory, "LabelHistory");
             this.LabelHistory.Name = "LabelHistory";
+            // 
+            // TextboxPageNumber
+            // 
+            resources.ApplyResources(this.TextboxPageNumber, "TextboxPageNumber");
+            this.TextboxPageNumber.Name = "TextboxPageNumber";
+            this.TextboxPageNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxPageNumber_KeyDown);
             // 
             // PatientDetailInfoForm
             // 
@@ -249,7 +257,7 @@
         private System.Windows.Forms.DataGridView DataGridViewReserveList;
         private System.Windows.Forms.Label LabelHistory;
         private System.Windows.Forms.Label LabelLine;
-        private System.Windows.Forms.Label LabelPageNumber;
+        private System.Windows.Forms.Label LabelTotalPages;
         private System.Windows.Forms.Button ButtonReserve;
         private System.Windows.Forms.Button ButtonEditDoB;
         private System.Windows.Forms.Button ButtonEditName;
@@ -260,5 +268,6 @@
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.TextBox TextBoxName;
         private System.Windows.Forms.DateTimePicker DateTimePickerDoB;
+        private System.Windows.Forms.TextBox TextboxPageNumber;
     }
 }
