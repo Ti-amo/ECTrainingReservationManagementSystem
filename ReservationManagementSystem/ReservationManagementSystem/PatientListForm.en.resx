@@ -133,7 +133,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Patient List</value>
   </data>
-  <data name="BirthDate" xml:space="preserve">
+    <data name="BirthDate" xml:space="preserve">
     <value>Birth date</value>
   </data>
   <data name="Detail" xml:space="preserve">

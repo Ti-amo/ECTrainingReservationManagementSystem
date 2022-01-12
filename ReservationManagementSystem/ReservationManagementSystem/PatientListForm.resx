@@ -117,298 +117,310 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Name" xml:space="preserve">
-    <value>氏名</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ButtonSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>710, 443</value>
+  <data name="ButtonSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="ButtonSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>607, 13</value>
+  </data>
+  <data name="ButtonSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 30</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ButtonSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ButtonSearch.Text" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="&gt;&gt;ButtonSearch.Name" xml:space="preserve">
+    <value>ButtonSearch</value>
+  </data>
+  <data name="&gt;&gt;ButtonSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonSearch.Parent" xml:space="preserve">
+    <value>ContainerPanel</value>
+  </data>
+  <data name="&gt;&gt;ButtonSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TextboxSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="TextboxSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 17</value>
+  </data>
+  <data name="TextboxSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 23</value>
+  </data>
   <data name="TextboxSearch.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;TextboxSearch.Name" xml:space="preserve">
     <value>TextboxSearch</value>
   </data>
-  <data name="&gt;&gt;ButtonPrevious.Name" xml:space="preserve">
-    <value>ButtonPrevious</value>
-  </data>
-  <data name="ButtonSearch.Text" xml:space="preserve">
-    <value>検索</value>
-  </data>
-  <data name="ButtonNext.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="&gt;&gt;ButtonSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;DataGridViewPatientList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Detail" xml:space="preserve">
-    <value>詳細</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TextboxSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 57</value>
-  </data>
-  <data name="ButtonPrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="&gt;&gt;TextboxSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TextboxSearch.Parent" xml:space="preserve">
     <value>ContainerPanel</value>
   </data>
-  <data name="&gt;&gt;ContainerPanel.Name" xml:space="preserve">
-    <value>ContainerPanel</value>
-  </data>
-  <data name="&gt;&gt;ButtonNext.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="EmptyPatientMsg" xml:space="preserve">
-    <value>患者は見つかりませんでした。</value>
-  </data>
-  <data name="&gt;&gt;ContainerPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>710, 386</value>
-  </data>
-  <data name="&gt;&gt;DataGridViewPatientList.Name" xml:space="preserve">
-    <value>DataGridViewPatientList</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LabelTitle.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="ButtonPrevious.Text" xml:space="preserve">
-    <value>&lt;</value>
-  </data>
-  <data name="LabelPageNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>535, 341</value>
-  </data>
   <data name="&gt;&gt;TextboxSearch.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;ButtonSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ButtonNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="ContainerPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;DataGridViewPatientList.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LabelPageNumber.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelPageNumber.Text" xml:space="preserve">
-    <value>1/10</value>
-  </data>
-  <data name="&gt;&gt;ButtonNext.Name" xml:space="preserve">
-    <value>ButtonNext</value>
-  </data>
-  <data name="ButtonPrevious.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="&gt;&gt;ButtonNext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ContainerPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ContainerPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>710, 57</value>
-  </data>
-  <data name="&gt;&gt;LabelPageNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="ButtonPrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="DataGridViewPatientList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>653, 209</value>
-  </data>
-  <data name="BirthDate" xml:space="preserve">
-    <value>生年月日</value>
-  </data>
-  <data name="LabelTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 20.25pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;LabelPageNumber.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 27</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="LabelPageNumber.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;LabelPageNumber.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
-    <value>LabelTitle</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ButtonNext.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="LabelPageNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 16</value>
-  </data>
-  <data name="ButtonSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="&gt;&gt;ButtonPrevious.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="ContainerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="PatientId" xml:space="preserve">
-    <value>患者ID</value>
+  <data name="ContainerPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;ButtonPrevious.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;ButtonSearch.Name" xml:space="preserve">
-    <value>ButtonSearch</value>
-  </data>
-  <data name="ButtonSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ButtonNext.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextboxSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonPrevious.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ContainerPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>710, 57</value>
   </data>
   <data name="ContainerPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="LabelTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;ContainerPanel.Name" xml:space="preserve">
+    <value>ContainerPanel</value>
   </data>
-  <data name="ButtonNext.Text" xml:space="preserve">
-    <value>&gt;</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>患者一覧</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ContainerPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ButtonNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="LabelPageNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="ButtonSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>607, 13</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ContainerPanel.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="DataGridViewPatientList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 71</value>
-  </data>
-  <data name="ButtonSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="DataGridViewPatientList.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LabelTitle.Text" xml:space="preserve">
-    <value>患者一覧</value>
   </data>
   <data name="&gt;&gt;ContainerPanel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ButtonSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 30</value>
-  </data>
-  <data name="ButtonPrevious.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;LabelPageNumber.Name" xml:space="preserve">
-    <value>LabelPageNumber</value>
-  </data>
-  <data name="ButtonNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>607, 339</value>
-  </data>
   <data name="LabelTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
   </data>
-  <data name="&gt;&gt;DataGridViewPatientList.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="LabelTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>PatientListForm</value>
-  </data>
-  <data name="TextboxSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 23</value>
+  <data name="LabelTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 20.25pt, style=Bold</value>
   </data>
   <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 20</value>
   </data>
-  <data name="ButtonPrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 339</value>
+  <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 27</value>
   </data>
-  <data name="TextboxSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 17</value>
+  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelTitle.Text" xml:space="preserve">
+    <value>患者一覧</value>
+  </data>
+  <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
+    <value>LabelTitle</value>
+  </data>
+  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTitle.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;LabelTitle.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="DataGridViewPatientList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;ButtonSearch.Parent" xml:space="preserve">
-    <value>ContainerPanel</value>
+  <data name="DataGridViewPatientList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 71</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <data name="DataGridViewPatientList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 209</value>
+  </data>
+  <data name="DataGridViewPatientList.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewPatientList.Name" xml:space="preserve">
+    <value>DataGridViewPatientList</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewPatientList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewPatientList.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewPatientList.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ButtonNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ButtonNext.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="ButtonNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>607, 339</value>
+  </data>
+  <data name="ButtonNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="ButtonNext.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ButtonNext.Text" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="&gt;&gt;ButtonNext.Name" xml:space="preserve">
+    <value>ButtonNext</value>
+  </data>
+  <data name="&gt;&gt;ButtonNext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonNext.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;ButtonNext.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TextboxPageNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>524, 339</value>
+  </data>
+  <data name="TextboxPageNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 23</value>
+  </data>
+  <data name="TextboxPageNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="TextboxPageNumber.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TextboxPageNumber.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;TextboxPageNumber.Name" xml:space="preserve">
+    <value>TextboxPageNumber</value>
+  </data>
+  <data name="&gt;&gt;TextboxPageNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextboxPageNumber.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;TextboxPageNumber.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelTotalPages.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="LabelTotalPages.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="LabelTotalPages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>555, 341</value>
+  </data>
+  <data name="LabelTotalPages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 16</value>
+  </data>
+  <data name="LabelTotalPages.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="LabelTotalPages.Text" xml:space="preserve">
+    <value>/10</value>
+  </data>
+  <data name="&gt;&gt;LabelTotalPages.Name" xml:space="preserve">
+    <value>LabelTotalPages</value>
+  </data>
+  <data name="&gt;&gt;LabelTotalPages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTotalPages.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;LabelTotalPages.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ButtonPrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ButtonPrevious.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="ButtonPrevious.Location" type="System.Drawing.Point, System.Drawing">
+    <value>426, 339</value>
+  </data>
+  <data name="ButtonPrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="ButtonPrevious.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ButtonPrevious.Text" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="&gt;&gt;ButtonPrevious.Name" xml:space="preserve">
+    <value>ButtonPrevious</value>
+  </data>
+  <data name="&gt;&gt;ButtonPrevious.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonPrevious.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;ButtonPrevious.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 57</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>710, 386</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>710, 443</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>患者一覧</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>PatientListForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
