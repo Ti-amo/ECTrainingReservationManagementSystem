@@ -14,14 +14,21 @@ using System.Windows.Forms;
 namespace ReservationManagementSystem {
     public partial class ReservationRegisterForm : Form {
         private ExamDAO examDAO = new ExamDAO();
+        private PatientDAO patientDAO = new PatientDAO();
         public string PatientId { get; set; }
+        private PatientEntity patient = new PatientEntity();
         ResourceManager rm = new ResourceManager(typeof(ReservationRegisterForm));
 
-        public ReservationRegisterForm() {
+        public ReservationRegisterForm(string patientId) {
+            this.PatientId = patientId;
             InitializeComponent();
             FillDataComboBoxMajorItem();
+            FillDataPatient();
+            
+            
         }
-
+       
+       
         private void FillDataComboBoxMajorItem() {
             List<ExamItem> listMajorExam = examDAO.GetMajorExamList();
             List<Object> items = new List<Object>();
@@ -90,5 +97,17 @@ namespace ReservationManagementSystem {
             }
             return false;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void FillDataPatient()
+        {
+            patient = patientDAO.Find(PatientId);
+            LabelID.Text = patient.PatientId;
+            LabelName.Text = patient.Name;
+        }
+
     }
 }
