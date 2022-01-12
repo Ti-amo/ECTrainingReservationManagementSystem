@@ -133,19 +133,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Patient List</value>
   </data>
-  <data name="BirthDate" xml:space="preserve">
-    <value>Birth date</value>
-  </data>
-  <data name="Detail" xml:space="preserve">
-    <value>Detail</value>
-  </data>
-  <data name="EmptyPatientMsg" xml:space="preserve">
-    <value>No patient was found.</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>Full name</value>
-  </data>
-  <data name="PatientId" xml:space="preserve">
-    <value>Patient ID</value>
-  </data>
 </root>

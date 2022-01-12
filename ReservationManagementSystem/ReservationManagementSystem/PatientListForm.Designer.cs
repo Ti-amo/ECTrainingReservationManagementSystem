@@ -37,7 +37,8 @@ namespace ReservationManagementSystem
             this.DataGridViewPatientList = new System.Windows.Forms.DataGridView();
             this.ButtonNext = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LabelPageNumber = new System.Windows.Forms.Label();
+            this.TextboxPageNumber = new System.Windows.Forms.TextBox();
+            this.LabelTotalPages = new System.Windows.Forms.Label();
             this.ButtonPrevious = new System.Windows.Forms.Button();
             this.ContainerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPatientList)).BeginInit();
@@ -46,9 +47,9 @@ namespace ReservationManagementSystem
             // 
             // ContainerPanel
             // 
-            resources.ApplyResources(this.ContainerPanel, "ContainerPanel");
             this.ContainerPanel.Controls.Add(this.ButtonSearch);
             this.ContainerPanel.Controls.Add(this.TextboxSearch);
+            resources.ApplyResources(this.ContainerPanel, "ContainerPanel");
             this.ContainerPanel.Name = "ContainerPanel";
             // 
             // ButtonSearch
@@ -62,6 +63,8 @@ namespace ReservationManagementSystem
             // 
             resources.ApplyResources(this.TextboxSearch, "TextboxSearch");
             this.TextboxSearch.Name = "TextboxSearch";
+            this.TextboxSearch.TextChanged += new System.EventHandler(this.TextboxSearch_TextChanged);
+            this.TextboxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxSearch_KeyDown);
             // 
             // LabelTitle
             // 
@@ -87,18 +90,26 @@ namespace ReservationManagementSystem
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.TextboxPageNumber);
             this.panel1.Controls.Add(this.ButtonNext);
-            this.panel1.Controls.Add(this.LabelPageNumber);
+            this.panel1.Controls.Add(this.LabelTotalPages);
             this.panel1.Controls.Add(this.ButtonPrevious);
             this.panel1.Controls.Add(this.DataGridViewPatientList);
             this.panel1.Controls.Add(this.LabelTitle);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // LabelPageNumber
+            // TextboxPageNumber
             // 
-            resources.ApplyResources(this.LabelPageNumber, "LabelPageNumber");
-            this.LabelPageNumber.Name = "LabelPageNumber";
+            this.TextboxPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.TextboxPageNumber, "TextboxPageNumber");
+            this.TextboxPageNumber.Name = "TextboxPageNumber";
+            this.TextboxPageNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxPageNumber_KeyDown);
+            // 
+            // LabelTotalPages
+            // 
+            resources.ApplyResources(this.LabelTotalPages, "LabelTotalPages");
+            this.LabelTotalPages.Name = "LabelTotalPages";
             // 
             // ButtonPrevious
             // 
@@ -133,7 +144,8 @@ namespace ReservationManagementSystem
         private System.Windows.Forms.DataGridView DataGridViewPatientList;
         private System.Windows.Forms.Button ButtonNext;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label LabelPageNumber;
+        private System.Windows.Forms.Label LabelTotalPages;
         private System.Windows.Forms.Button ButtonPrevious;
+        private System.Windows.Forms.TextBox TextboxPageNumber;
     }
 }
