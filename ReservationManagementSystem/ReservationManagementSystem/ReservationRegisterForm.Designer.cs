@@ -53,23 +53,23 @@
             // 
             // ComboBoxSubExam
             // 
-            this.ComboBoxSubExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.ComboBoxSubExam, "ComboBoxSubExam");
+            this.ComboBoxSubExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxSubExam.FormattingEnabled = true;
             this.ComboBoxSubExam.Name = "ComboBoxSubExam";
             // 
             // ComboBoxMajorExam
             // 
-            this.ComboBoxMajorExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.ComboBoxMajorExam, "ComboBoxMajorExam");
+            this.ComboBoxMajorExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxMajorExam.FormattingEnabled = true;
             this.ComboBoxMajorExam.Name = "ComboBoxMajorExam";
             this.ComboBoxMajorExam.SelectedIndexChanged += new System.EventHandler(this.ComboBoxMajorExam_SelectedIndexChanged);
             // 
             // DateTimePickerReservationDate
             // 
-            this.DateTimePickerReservationDate.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.DateTimePickerReservationDate, "DateTimePickerReservationDate");
+            this.DateTimePickerReservationDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DateTimePickerReservationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateTimePickerReservationDate.Name = "DateTimePickerReservationDate";
             this.DateTimePickerReservationDate.ValueChanged += new System.EventHandler(this.DateTimePickerReservationDate_ValueChanged);
