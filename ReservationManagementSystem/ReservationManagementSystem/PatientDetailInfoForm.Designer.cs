@@ -189,7 +189,6 @@
             // 
             resources.ApplyResources(this.TextboxPageNumber, "TextboxPageNumber");
             this.TextboxPageNumber.Name = "TextboxPageNumber";
-            this.TextboxPageNumber.TabStop = false;
             this.TextboxPageNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxPageNumber_KeyDown);
             // 
             // LabelTotalPages
