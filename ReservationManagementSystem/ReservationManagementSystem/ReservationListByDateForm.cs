@@ -14,6 +14,7 @@ using ReservationManagementSystem.Entity;
 
 namespace ReservationManagementSystem {
     public partial class ReservationListByDateForm : Form {
+        private readonly Utility utility = new Utility();
         private List<ReservationEntity> reservations = new List<ReservationEntity>();　// 患者一覧
         private int pageNumber = 1;                                     　 // ページ番号
         private int pageSize = 8;
@@ -57,7 +58,8 @@ namespace ReservationManagementSystem {
             DataGridViewReservationList.Columns["ReservationId"].DisplayIndex = 1;
             DataGridViewReservationList.Columns["PatientName"].DisplayIndex = 2;
             DataGridViewReservationList.Columns["StatusName"].DisplayIndex = 3;
-            SetColorByStatus(DataGridViewReservationList.Columns["StatusId"].Index);
+            utility.SetColorByStatus(DataGridViewReservationList.Columns["StatusId"].Index, DataGridViewReservationList);
+            DataGridViewReservationList.ClearSelection();
         }
 
         /// <summary>
@@ -171,27 +173,6 @@ namespace ReservationManagementSystem {
             pageNumber = 1;
             PagingReservationList(reservations);
         }
-        /// <summary>
-        ///  Set color with Reservation StatusId
-        /// </summary>
-        /// <param name="cellIndex"></param>
-        private void SetColorByStatus(int cellIndex)
-        {
-            foreach (DataGridViewRow row in DataGridViewReservationList.Rows)
-            {
-                if (row.Cells[cellIndex].Value.ToString().Contains("1"))
-                {
-                    row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#95ef5d");
-                } else if (row.Cells[cellIndex].Value.ToString().Contains("2"))
-                {
-                    row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#f1f772");
-                } else
-                {
-                    row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#d5a6bd");
-                }
-            }
-        }
-
         /// <summary>
         /// handle event press enter page number
         /// </summary>
