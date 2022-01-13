@@ -128,7 +128,7 @@
     <value>Reservation Detail</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 408</value>
+    <value>99, 403</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 24</value>
@@ -137,7 +137,7 @@
     <value>Major exam:</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 338</value>
+    <value>147, 338</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 24</value>
@@ -146,7 +146,7 @@
     <value>Status:</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 276</value>
+    <value>27, 276</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 24</value>
@@ -155,7 +155,7 @@
     <value>Reservation date:</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 212</value>
+    <value>135, 212</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 24</value>
@@ -164,7 +164,7 @@
     <value>Patient:</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 148</value>
+    <value>51, 148</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 24</value>
@@ -173,7 +173,7 @@
     <value>Reservation ID:</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 466</value>
+    <value>123, 466</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 24</value>
@@ -181,47 +181,62 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Sub exam:</value>
   </data>
+  <data name="ButtonUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>395, 644</value>
+  </data>
   <data name="ButtonUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 52</value>
+    <value>184, 63</value>
   </data>
   <data name="ButtonUpdate.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
   <data name="ButtonExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 52</value>
+    <value>181, 63</value>
   </data>
   <data name="ButtonExport.Text" xml:space="preserve">
     <value>Export</value>
   </data>
   <data name="ButtonCompleteReception.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 578</value>
+    <value>173, 543</value>
   </data>
   <data name="ButtonCompleteReception.Size" type="System.Drawing.Size, System.Drawing">
-    <value>258, 52</value>
+    <value>266, 64</value>
   </data>
   <data name="ButtonCompleteReception.Text" xml:space="preserve">
     <value>Complete reception</value>
   </data>
   <data name="ButtonCompleteTreatment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>498, 578</value>
+    <value>480, 543</value>
   </data>
   <data name="ButtonCompleteTreatment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 52</value>
+    <value>278, 64</value>
   </data>
   <data name="ButtonCompleteTreatment.Text" xml:space="preserve">
     <value>Complete treatment</value>
   </data>
+  <data name="ButtonDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>651, 644</value>
+  </data>
   <data name="ButtonDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 52</value>
+    <value>159, 63</value>
   </data>
   <data name="ButtonDelete.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="ButtonCompleteUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 61</value>
+  </data>
   <data name="ButtonCompleteUpdate.Text" xml:space="preserve">
     <value>Complete</value>
   </data>
+  <data name="ButtonCancelUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 60</value>
+  </data>
   <data name="ButtonCancelUpdate.Text" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>954, 759</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Reservation Detail</value>
