@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace ReservationManagementSystem {
     public partial class PatientDetailInfoForm : Form {
+        private readonly Utility utility = new Utility();
         public string PatientId { get; set; }                                          // 患者ID
         private PatientEntity patient = new PatientEntity();                           // 患者
         private int pageNumber = 1;                                                    // ページ番号
@@ -79,6 +80,8 @@ namespace ReservationManagementSystem {
             LabelTotalPages.Text = string.Format("/{0}", reservationPagedList.PageCount);
             // fill data to datagridview
             DataGridViewReserveList.DataSource = reservationPagedList.ToList();
+            utility.SetColorByStatus(DataGridViewReserveList.Columns["StatusId"].Index, DataGridViewReserveList);
+            DataGridViewReserveList.ClearSelection();
         }
 
         /// <summary>
@@ -303,7 +306,6 @@ namespace ReservationManagementSystem {
                 }
             }
         }
-
         /// <summary>
         /// handle event press enter page number
         /// </summary>

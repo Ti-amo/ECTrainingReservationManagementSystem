@@ -14,6 +14,7 @@ using ReservationManagementSystem.Entity;
 
 namespace ReservationManagementSystem {
     public partial class ReservationListByDateForm : Form {
+        private readonly Utility utility = new Utility();
         private List<ReservationEntity> reservations = new List<ReservationEntity>();　// 患者一覧
         private int pageNumber = 1;                                     　 // ページ番号
         private int pageSize = 8;
@@ -53,6 +54,12 @@ namespace ReservationManagementSystem {
             LabelTotalPages.Text = string.Format("/{0}", reservationList.PageCount);
             // fill data to datagridview
             DataGridViewReservationList.DataSource = reservationList.ToList();
+            DataGridViewReservationList.Columns["ReservationDate"].DisplayIndex = 0;
+            DataGridViewReservationList.Columns["ReservationId"].DisplayIndex = 1;
+            DataGridViewReservationList.Columns["PatientName"].DisplayIndex = 2;
+            DataGridViewReservationList.Columns["StatusName"].DisplayIndex = 3;
+            utility.SetColorByStatus(DataGridViewReservationList.Columns["StatusId"].Index, DataGridViewReservationList);
+            DataGridViewReservationList.ClearSelection();
         }
 
         /// <summary>
@@ -155,14 +162,17 @@ namespace ReservationManagementSystem {
                 PagingReservationList(reservations, ++pageNumber);
             }
         }
-
+        /// <summary>
+        /// Set data when date changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DateTimePickerReservationDate_ValueChanged(object sender, EventArgs e) {
             string date = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
             reservations = reservationDAO.FindByDate(date);
             pageNumber = 1;
             PagingReservationList(reservations);
         }
-
         /// <summary>
         /// handle event press enter page number
         /// </summary>
