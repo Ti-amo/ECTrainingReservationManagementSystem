@@ -173,13 +173,13 @@
     <value>Patient Name:</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 158</value>
+    <value>81, 155</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 24</value>
+    <value>142, 24</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>ID:</value>
+    <value>Patient ID:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Register Reservation</value>
