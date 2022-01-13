@@ -51,6 +51,11 @@ namespace ReservationManagementSystem {
             LabelPageNumber.Text = string.Format("{0}/{1}", pageNumber, reservationList.PageCount);
             // fill data to datagridview
             DataGridViewReservationList.DataSource = reservationList.ToList();
+            DataGridViewReservationList.Columns["ReservationDate"].DisplayIndex = 0;
+            DataGridViewReservationList.Columns["ReservationId"].DisplayIndex = 1;
+            DataGridViewReservationList.Columns["PatientName"].DisplayIndex = 2;
+            DataGridViewReservationList.Columns["StatusName"].DisplayIndex = 3;
+            SetColorByStatus(DataGridViewReservationList.Columns["StatusId"].Index);
         }
 
         /// <summary>
@@ -130,12 +135,37 @@ namespace ReservationManagementSystem {
                 PagingReservationList(reservations, ++pageNumber);
             }
         }
-
+        /// <summary>
+        /// Set data when date changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DateTimePickerReservationDate_ValueChanged(object sender, EventArgs e) {
             string date = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
             reservations = reservationDAO.FindByDate(date);
             pageNumber = 1;
             PagingReservationList(reservations);
+        }
+        /// <summary>
+        ///  Set color with Reservation StatusId
+        /// </summary>
+        /// <param name="cellIndex"></param>
+        private void SetColorByStatus(int cellIndex)
+        {
+            foreach (DataGridViewRow row in DataGridViewReservationList.Rows)
+            {
+                if (row.Cells[cellIndex].Value.ToString().Contains("1"))
+                {
+                    row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#95ef5d");
+                } else if (row.Cells[cellIndex].Value.ToString().Contains("2"))
+                {
+                    row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#f1f772");
+                } else
+                {
+                    row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#d5a6bd");
+                }
+                
+            }
         }
     }
 }
