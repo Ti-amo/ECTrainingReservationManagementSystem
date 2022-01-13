@@ -76,7 +76,7 @@ namespace ReservationManagementSystem {
             ButtonNext.Enabled = reservationPagedList.HasNextPage;
             TextboxPageNumber.Text = pageNumber + "";
             TextboxPageNumber.SelectionStart = TextboxPageNumber.TextLength;
-            LabelTotalPages.Text = string.Format("/{1}", pageNumber, reservationPagedList.PageCount);
+            LabelTotalPages.Text = string.Format("/{0}", reservationPagedList.PageCount);
             // fill data to datagridview
             DataGridViewReserveList.DataSource = reservationPagedList.ToList();
         }
