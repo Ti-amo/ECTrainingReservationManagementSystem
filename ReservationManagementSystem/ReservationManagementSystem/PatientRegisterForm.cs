@@ -110,7 +110,7 @@ namespace ReservationManagementSystem {
                 ExamItem examItem = new ExamItem {
                     SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString())
                 };
-                reservationEntity.Exam = examItem;
+                reservationEntity.Exam.Add(examItem);
                 reservationDAO.Insert(reservationEntity);
                 DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK) {

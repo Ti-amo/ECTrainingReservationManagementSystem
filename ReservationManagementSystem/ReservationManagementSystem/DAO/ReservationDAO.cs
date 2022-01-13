@@ -46,8 +46,6 @@ namespace ReservationManagementSystem.DAO {
                             FROM m_reservation r 
                             INNER JOIN m_patient p ON p.patient_id = r.patient_id 
                             INNER JOIN m_status s ON s.status_id = r.status_id 
-                            INNER JOIN m_sub_examination se ON se.sub_id = r.sub_id 
-                            INNER JOIN m_major_examination me ON me.major_id = se.major_id 
                             WHERE reservation_id = @reservation_id";
 
             // コマンドの作成
@@ -68,19 +66,48 @@ namespace ReservationManagementSystem.DAO {
                     PatientName = (string)dataReader["name"],
                     StatusId = (int)dataReader["status_id"]
                 };
-                reservationEntity.Exam = new ExamItem {
+                if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
+                    reservationEntity.StatusName = (string)dataReader["status_name"];
+                } else {
+                    reservationEntity.StatusName = (string)dataReader["status_name_en"];
+                }
+            }
+
+            command.Dispose();
+            dataReader.Close();
+
+            // SQL文：SELECT句
+            query = @"SELECT * 
+                    FROM t_reservation_exam re 
+                    INNER JOIN m_sub_examination se ON se.sub_id = re.sub_id 
+                    INNER JOIN m_major_examination me ON me.major_id = se.major_id 
+                    WHERE reservation_id = @reservation_id";
+
+            // コマンドの作成
+            command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@reservation_id", reservationId);
+
+            // データリーダーの作成
+            dataReader = command.ExecuteReader();
+
+            reservationEntity.Exam = new List<ExamItem>();
+            // データを１行ずつ抽出する
+            while (dataReader.Read()) {
+                // １診療項目ずつ抽出する
+                ExamItem examItem = new ExamItem {
                     MajorExamId = (int)dataReader["major_id"],
                     SubExamId = (int)dataReader["sub_id"]
                 };
                 if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
-                    reservationEntity.StatusName = (string)dataReader["status_name"];
-                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name"];
-                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name"];
+                    examItem.MajorExamName = (string)dataReader["major_name"];
+                    examItem.SubExamName = (string)dataReader["sub_name"];
                 } else {
-                    reservationEntity.StatusName = (string)dataReader["status_name_en"];
-                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name_en"];
-                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name_en"];
+                    examItem.MajorExamName = (string)dataReader["major_name_en"];
+                    examItem.SubExamName = (string)dataReader["sub_name_en"];
                 }
+
+                // 診療項目をリストに格納する
+                reservationEntity.Exam.Add(examItem);
             }
 
             command.Dispose();
@@ -95,7 +122,7 @@ namespace ReservationManagementSystem.DAO {
         /// <returns>予約ID</returns>
         public int FindLatestReservation() {
             // SQL文：SELECT句
-            string query = @"SELECT TOP 1 *
+            string query = @"SELECT TOP 1 * 
                             FROM m_reservation 
                             ORDER BY created DESC";
 
@@ -131,8 +158,6 @@ namespace ReservationManagementSystem.DAO {
                             FROM m_reservation r 
                             INNER JOIN m_patient p ON p.patient_id = r.patient_id 
                             INNER JOIN m_status s ON s.status_id = r.status_id 
-                            INNER JOIN m_sub_examination se ON se.sub_id = r.sub_id 
-                            INNER JOIN m_major_examination me ON me.major_id = se.major_id 
                             WHERE r.patient_id = @patient_id 
                             ORDER BY reservation_date DESC";
 
@@ -155,18 +180,10 @@ namespace ReservationManagementSystem.DAO {
                     PatientName = (string)dataReader["name"],
                     StatusId = (int)dataReader["status_id"]
                 };
-                reservationEntity.Exam = new ExamItem {
-                    MajorExamId = (int)dataReader["major_id"],
-                    SubExamId = (int)dataReader["sub_id"]
-                };
                 if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
                     reservationEntity.StatusName = (string)dataReader["status_name"];
-                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name"];
-                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name"];
                 } else {
                     reservationEntity.StatusName = (string)dataReader["status_name_en"];
-                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name_en"];
-                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name_en"];
                 }
 
                 // 予約をリストに格納する
@@ -175,6 +192,45 @@ namespace ReservationManagementSystem.DAO {
 
             command.Dispose();
             dataReader.Close();
+
+            foreach (ReservationEntity reservationEntity in reservationList) {
+                // SQL文：SELECT句
+                query = @"SELECT * 
+                        FROM t_reservation_exam re 
+                        INNER JOIN m_sub_examination se ON se.sub_id = re.sub_id 
+                        INNER JOIN m_major_examination me ON me.major_id = se.major_id 
+                        WHERE reservation_id = @reservation_id";
+
+                // コマンドの作成
+                command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
+
+                // データリーダーの作成
+                dataReader = command.ExecuteReader();
+
+                reservationEntity.Exam = new List<ExamItem>();
+                // データを１行ずつ抽出する
+                while (dataReader.Read()) {
+                    // １診療項目ずつ抽出する
+                    ExamItem examItem = new ExamItem {
+                        MajorExamId = (int)dataReader["major_id"],
+                        SubExamId = (int)dataReader["sub_id"]
+                    };
+                    if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
+                        examItem.MajorExamName = (string)dataReader["major_name"];
+                        examItem.SubExamName = (string)dataReader["sub_name"];
+                    } else {
+                        examItem.MajorExamName = (string)dataReader["major_name_en"];
+                        examItem.SubExamName = (string)dataReader["sub_name_en"];
+                    }
+
+                    // 診療項目をリストに格納する
+                    reservationEntity.Exam.Add(examItem);
+                }
+
+                command.Dispose();
+                dataReader.Close();
+            }
 
             return reservationList;
         }
@@ -190,8 +246,6 @@ namespace ReservationManagementSystem.DAO {
                             FROM m_reservation r 
                             INNER JOIN m_patient p ON p.patient_id = r.patient_id 
                             INNER JOIN m_status s ON s.status_id = r.status_id 
-                            INNER JOIN m_sub_examination se ON se.sub_id = r.sub_id 
-                            INNER JOIN m_major_examination me ON me.major_id = se.major_id 
                             WHERE reservation_date = CAST(@reservation_date AS Date)";
 
             // コマンドの作成
@@ -213,18 +267,10 @@ namespace ReservationManagementSystem.DAO {
                     PatientName = (string)dataReader["name"],
                     StatusId = (int)dataReader["status_id"]
                 };
-                reservationEntity.Exam = new ExamItem {
-                    MajorExamId = (int)dataReader["major_id"],
-                    SubExamId = (int)dataReader["sub_id"]
-                };
                 if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
                     reservationEntity.StatusName = (string)dataReader["status_name"];
-                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name"];
-                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name"];
                 } else {
                     reservationEntity.StatusName = (string)dataReader["status_name_en"];
-                    reservationEntity.Exam.MajorExamName = (string)dataReader["major_name_en"];
-                    reservationEntity.Exam.SubExamName = (string)dataReader["sub_name_en"];
                 }
 
                 // 予約をリストに格納する
@@ -233,6 +279,45 @@ namespace ReservationManagementSystem.DAO {
 
             command.Dispose();
             dataReader.Close();
+
+            foreach (ReservationEntity reservationEntity in reservationList) {
+                // SQL文：SELECT句
+                query = @"SELECT * 
+                        FROM t_reservation_exam re 
+                        INNER JOIN m_sub_examination se ON se.sub_id = re.sub_id 
+                        INNER JOIN m_major_examination me ON me.major_id = se.major_id 
+                        WHERE reservation_id = @reservation_id";
+
+                // コマンドの作成
+                command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
+
+                // データリーダーの作成
+                dataReader = command.ExecuteReader();
+
+                reservationEntity.Exam = new List<ExamItem>();
+                // データを１行ずつ抽出する
+                while (dataReader.Read()) {
+                    // １診療項目ずつ抽出する
+                    ExamItem examItem = new ExamItem {
+                        MajorExamId = (int)dataReader["major_id"],
+                        SubExamId = (int)dataReader["sub_id"]
+                    };
+                    if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
+                        examItem.MajorExamName = (string)dataReader["major_name"];
+                        examItem.SubExamName = (string)dataReader["sub_name"];
+                    } else {
+                        examItem.MajorExamName = (string)dataReader["major_name_en"];
+                        examItem.SubExamName = (string)dataReader["sub_name_en"];
+                    }
+
+                    // 診療項目をリストに格納する
+                    reservationEntity.Exam.Add(examItem);
+                }
+
+                command.Dispose();
+                dataReader.Close();
+            }
 
             return reservationList;
         }
@@ -247,8 +332,8 @@ namespace ReservationManagementSystem.DAO {
             int id = int.Parse(reservationEntity.PatientId.Remove(0, 2));
 
             // SQL文：INSERT句
-            string query = @"INSERT INTO m_reservation (patient_id, reservation_date, sub_id)
-							VALUES (@patient_id, CAST(@reservation_date AS Date), @sub_id)";
+            string query = @"INSERT INTO m_reservation (patient_id, reservation_date) 
+                            VALUES (@patient_id, CAST(@reservation_date AS Date))";
 
             // トランザクションの作成
             transaction = connection.BeginTransaction();
@@ -257,12 +342,33 @@ namespace ReservationManagementSystem.DAO {
             command = new SqlCommand(query, connection, transaction);
             command.Parameters.AddWithValue("@patient_id", id);
             command.Parameters.AddWithValue("@reservation_date", reservationEntity.ReservationDate);
-            command.Parameters.AddWithValue("@sub_id", reservationEntity.Exam.SubExamId);
-
             int recordNumber = command.ExecuteNonQuery(); // 挿入されたレコード数
+
             transaction.Commit();
             transaction.Dispose();
             command.Dispose();
+
+            // 最新の予約IDを抽出する
+            reservationEntity.ReservationId = FindLatestReservation();
+
+            foreach (ExamItem examItem in reservationEntity.Exam) {
+                // SQL文：INSERT句
+                query = @"INSERT INTO t_reservation_exam (reservation_id, sub_id) 
+                        VALUES (@reservation_id, @sub_id)";
+
+                // トランザクションの作成
+                transaction = connection.BeginTransaction();
+
+                // コマンドの作成
+                command = new SqlCommand(query, connection, transaction);
+                command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
+                command.Parameters.AddWithValue("@sub_id", examItem.SubExamId);
+                command.ExecuteNonQuery();
+
+                transaction.Commit();
+                transaction.Dispose();
+                command.Dispose();
+            }
 
             return recordNumber;
         }
@@ -275,8 +381,8 @@ namespace ReservationManagementSystem.DAO {
         public int Update(ReservationEntity reservationEntity) {
             // SQL文：UPDATE句
             string query = @"UPDATE m_reservation 
-							SET reservation_date = CAST(@reservation_date AS Date), sub_id = @sub_id 
-							WHERE reservation_id = @reservation_id";
+                            SET reservation_date = CAST(@reservation_date AS Date) 
+                            WHERE reservation_id = @reservation_id";
 
             // トランザクションの作成
             transaction = connection.BeginTransaction();
@@ -285,12 +391,46 @@ namespace ReservationManagementSystem.DAO {
             command = new SqlCommand(query, connection, transaction);
             command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
             command.Parameters.AddWithValue("@reservation_date", reservationEntity.ReservationDate);
-            command.Parameters.AddWithValue("@sub_id", reservationEntity.Exam.SubExamId);
-
             int recordNumber = command.ExecuteNonQuery(); // 更新されたレコード数
+
             transaction.Commit();
             transaction.Dispose();
             command.Dispose();
+
+            // SQL文：DELETE句
+            query = @"DELETE FROM t_reservation_exam 
+                    WHERE reservation_id = @reservation_id";
+
+            // トランザクションの作成
+            transaction = connection.BeginTransaction();
+
+            // コマンドの作成
+            command = new SqlCommand(query, connection, transaction);
+            command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
+            command.ExecuteNonQuery();
+
+            transaction.Commit();
+            transaction.Dispose();
+            command.Dispose();
+
+            foreach (ExamItem examItem in reservationEntity.Exam) {
+                // SQL文：INSERT句
+                query = @"INSERT INTO t_reservation_exam (reservation_id, sub_id) 
+                        VALUES (@reservation_id, @sub_id)";
+
+                // トランザクションの作成
+                transaction = connection.BeginTransaction();
+
+                // コマンドの作成
+                command = new SqlCommand(query, connection, transaction);
+                command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
+                command.Parameters.AddWithValue("@sub_id", examItem.SubExamId);
+                command.ExecuteNonQuery();
+
+                transaction.Commit();
+                transaction.Dispose();
+                command.Dispose();
+            }
 
             return recordNumber;
         }
@@ -302,7 +442,7 @@ namespace ReservationManagementSystem.DAO {
         /// <returns>削除されたレコード数</returns>
         public int Delete(ReservationEntity reservationEntity) {
             // SQL文：DELETE句
-            string query = @"DELETE FROM m_reservation 
+            string query = @"DELETE FROM t_reservation_exam 
                             WHERE reservation_id = @reservation_id";
 
             // トランザクションの作成
@@ -311,8 +451,24 @@ namespace ReservationManagementSystem.DAO {
             // コマンドの作成
             command = new SqlCommand(query, connection, transaction);
             command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
+            command.ExecuteNonQuery();
 
+            transaction.Commit();
+            transaction.Dispose();
+            command.Dispose();
+
+            // SQL文：DELETE句
+            query = @"DELETE FROM m_reservation 
+                    WHERE reservation_id = @reservation_id";
+
+            // トランザクションの作成
+            transaction = connection.BeginTransaction();
+
+            // コマンドの作成
+            command = new SqlCommand(query, connection, transaction);
+            command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
             int recordNumber = command.ExecuteNonQuery(); // 削除されたレコード数
+
             transaction.Commit();
             transaction.Dispose();
             command.Dispose();
@@ -328,8 +484,8 @@ namespace ReservationManagementSystem.DAO {
         public int ChangeStatus(ReservationEntity reservationEntity) {
             // SQL文：UPDATE句
             string query = @"UPDATE m_reservation 
-							SET status_id = @status_id 
-							WHERE reservation_id = @reservation_id";
+                            SET status_id = @status_id 
+                            WHERE reservation_id = @reservation_id";
 
             // トランザクションの作成
             transaction = connection.BeginTransaction();
@@ -338,8 +494,8 @@ namespace ReservationManagementSystem.DAO {
             command = new SqlCommand(query, connection, transaction);
             command.Parameters.AddWithValue("@reservation_id", reservationEntity.ReservationId);
             command.Parameters.AddWithValue("@status_id", reservationEntity.StatusId);
-
             int recordNumber = command.ExecuteNonQuery(); // 更新されたレコード数
+
             transaction.Commit();
             transaction.Dispose();
             command.Dispose();

@@ -202,8 +202,8 @@ namespace ReservationManagementSystem.DAO {
             command = new SqlCommand(query, connection, transaction);
             command.Parameters.AddWithValue("@name", patientEntity.Name);
             command.Parameters.AddWithValue("@birth_date", patientEntity.BirthDate);
-
             int recordNumber = command.ExecuteNonQuery(); // 挿入されたレコード数
+
             transaction.Commit();
             transaction.Dispose();
             command.Dispose();
@@ -230,8 +230,8 @@ namespace ReservationManagementSystem.DAO {
             command.Parameters.AddWithValue("@id", patientEntity.PatientId);
             command.Parameters.AddWithValue("@name", patientEntity.Name);
             command.Parameters.AddWithValue("@birth_date", patientEntity.BirthDate);
-
             int recordNumber = command.ExecuteNonQuery(); // 更新されたレコード数
+
             transaction.Commit();
             transaction.Dispose();
             command.Dispose();
@@ -274,8 +274,8 @@ namespace ReservationManagementSystem.DAO {
             // コマンドの作成
             command = new SqlCommand(query, connection, transaction);
             command.Parameters.AddWithValue("@id", patientEntity.PatientId);
-
             int recordNumber = command.ExecuteNonQuery(); // 削除されたレコード数
+
             transaction.Commit();
             transaction.Dispose();
             command.Dispose();
