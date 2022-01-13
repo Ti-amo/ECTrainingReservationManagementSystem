@@ -46,7 +46,7 @@ namespace ReservationManagementSystem
             ButtonNext.Enabled = patientPagedList.HasNextPage;
             TextboxPageNumber.Text = pageNumber + "";
             TextboxPageNumber.SelectionStart = TextboxPageNumber.TextLength;
-            LabelTotalPages.Text = string.Format("/{1}", pageNumber, patientPagedList.PageCount);
+            LabelTotalPages.Text = string.Format("/{0}", patientPagedList.PageCount);
             // fill data to datagridview
             DataGridViewPatientList.DataSource = patientPagedList.ToList();
         }

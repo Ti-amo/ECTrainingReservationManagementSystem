@@ -56,6 +56,7 @@ namespace ReservationManagementSystem
             // 
             resources.ApplyResources(this.ButtonSearch, "ButtonSearch");
             this.ButtonSearch.Name = "ButtonSearch";
+            this.ButtonSearch.TabStop = false;
             this.ButtonSearch.UseVisualStyleBackColor = true;
             this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
@@ -63,6 +64,7 @@ namespace ReservationManagementSystem
             // 
             resources.ApplyResources(this.TextboxSearch, "TextboxSearch");
             this.TextboxSearch.Name = "TextboxSearch";
+            this.TextboxSearch.TabStop = false;
             this.TextboxSearch.TextChanged += new System.EventHandler(this.TextboxSearch_TextChanged);
             this.TextboxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxSearch_KeyDown);
             // 
@@ -85,6 +87,7 @@ namespace ReservationManagementSystem
             // 
             resources.ApplyResources(this.ButtonNext, "ButtonNext");
             this.ButtonNext.Name = "ButtonNext";
+            this.ButtonNext.TabStop = false;
             this.ButtonNext.UseVisualStyleBackColor = true;
             this.ButtonNext.Click += new System.EventHandler(this.ButtonNext_Click);
             // 
@@ -101,9 +104,10 @@ namespace ReservationManagementSystem
             // 
             // TextboxPageNumber
             // 
-            this.TextboxPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.TextboxPageNumber, "TextboxPageNumber");
+            this.TextboxPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextboxPageNumber.Name = "TextboxPageNumber";
+            this.TextboxPageNumber.TabStop = false;
             this.TextboxPageNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxPageNumber_KeyDown);
             // 
             // LabelTotalPages
@@ -115,6 +119,7 @@ namespace ReservationManagementSystem
             // 
             resources.ApplyResources(this.ButtonPrevious, "ButtonPrevious");
             this.ButtonPrevious.Name = "ButtonPrevious";
+            this.ButtonPrevious.TabStop = false;
             this.ButtonPrevious.UseVisualStyleBackColor = true;
             this.ButtonPrevious.Click += new System.EventHandler(this.ButtonPrevious_Click);
             // 

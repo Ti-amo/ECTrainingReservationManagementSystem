@@ -46,12 +46,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TextboxPageNumber = new System.Windows.Forms.TextBox();
             this.LabelTotalPages = new System.Windows.Forms.Label();
             this.ButtonNext = new System.Windows.Forms.Button();
             this.ButtonPrevious = new System.Windows.Forms.Button();
             this.DataGridViewReserveList = new System.Windows.Forms.DataGridView();
             this.LabelHistory = new System.Windows.Forms.Label();
-            this.TextboxPageNumber = new System.Windows.Forms.TextBox();
             this.ContainerPatientInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReserveList)).BeginInit();
@@ -185,6 +185,13 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
+            // TextboxPageNumber
+            // 
+            resources.ApplyResources(this.TextboxPageNumber, "TextboxPageNumber");
+            this.TextboxPageNumber.Name = "TextboxPageNumber";
+            this.TextboxPageNumber.TabStop = false;
+            this.TextboxPageNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxPageNumber_KeyDown);
+            // 
             // LabelTotalPages
             // 
             resources.ApplyResources(this.LabelTotalPages, "LabelTotalPages");
@@ -194,6 +201,7 @@
             // 
             resources.ApplyResources(this.ButtonNext, "ButtonNext");
             this.ButtonNext.Name = "ButtonNext";
+            this.ButtonNext.TabStop = false;
             this.ButtonNext.UseVisualStyleBackColor = true;
             this.ButtonNext.Click += new System.EventHandler(this.ButtonNext_Click);
             // 
@@ -201,6 +209,7 @@
             // 
             resources.ApplyResources(this.ButtonPrevious, "ButtonPrevious");
             this.ButtonPrevious.Name = "ButtonPrevious";
+            this.ButtonPrevious.TabStop = false;
             this.ButtonPrevious.UseVisualStyleBackColor = true;
             this.ButtonPrevious.Click += new System.EventHandler(this.ButtonPrevious_Click);
             // 
@@ -219,12 +228,6 @@
             // 
             resources.ApplyResources(this.LabelHistory, "LabelHistory");
             this.LabelHistory.Name = "LabelHistory";
-            // 
-            // TextboxPageNumber
-            // 
-            resources.ApplyResources(this.TextboxPageNumber, "TextboxPageNumber");
-            this.TextboxPageNumber.Name = "TextboxPageNumber";
-            this.TextboxPageNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxPageNumber_KeyDown);
             // 
             // PatientDetailInfoForm
             // 
