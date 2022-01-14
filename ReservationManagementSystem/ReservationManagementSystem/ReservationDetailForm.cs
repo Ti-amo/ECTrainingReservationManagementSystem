@@ -4,6 +4,7 @@ using ReservationManagementSystem.DAO;
 using ReservationManagementSystem.Entity;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Resources;
@@ -31,6 +32,7 @@ namespace ReservationManagementSystem {
             this.reservationId = reservationId;
 
             InitializeControl();
+            SetColorForButton();
         }
 
         public ReservationDetailForm(PatientDetailInfoForm patientDetailInfoForm, int reservationId) : this(reservationId) {
@@ -39,6 +41,16 @@ namespace ReservationManagementSystem {
 
         public ReservationDetailForm(ReservationListByDateForm reservationListByDateForm, int reservationId) : this(reservationId) {
             this.reservationListByDateForm = reservationListByDateForm;
+        }
+        private void SetColorForButton()
+        {
+            ButtonCompleteReception.BackColor = ColorTranslator.FromHtml("#f1f772");
+            ButtonCompleteTreatment.BackColor = ColorTranslator.FromHtml("#d5a6bd");
+            ButtonUpdate.BackColor = ColorTranslator.FromHtml("#0074d9");
+            ButtonExport.BackColor = ColorTranslator.FromHtml("#adb5bd");
+            ButtonDelete.BackColor = ColorTranslator.FromHtml("#ff4136");
+            ButtonUpdate.ForeColor = Color.White;
+            ButtonDelete.ForeColor = Color.White;
         }
 
         private void InitializeControl() {

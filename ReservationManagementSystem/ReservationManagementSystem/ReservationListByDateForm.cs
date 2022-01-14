@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Resources;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PagedList;
@@ -15,6 +16,8 @@ using ReservationManagementSystem.Entity;
 namespace ReservationManagementSystem {
     public partial class ReservationListByDateForm : Form {
         private readonly Utility utility = new Utility();
+        private StatusItem statusItem = new StatusItem();
+        List<CheckBox> checkBoxList = new List<CheckBox>();
         private List<ReservationEntity> reservations = new List<ReservationEntity>();　// 患者一覧
         private int pageNumber = 1;                                     　 // ページ番号
         private int pageSize = 8;
@@ -29,6 +32,7 @@ namespace ReservationManagementSystem {
         private void ReservationListByDateForm_Load(object sender, EventArgs e) {
             reservations = reservationDAO.FindByDate(DateTime.Now.ToString("yyyy-MM-dd"));
             SetupControls();
+            CreateCheckListBoxStatus();
         }
 
         public void ReloadForm() {
@@ -37,8 +41,61 @@ namespace ReservationManagementSystem {
 
             reservations = reservationDAO.FindByDate(DateTime.Now.ToString("yyyy-MM-dd"));
             SetupControls();
+            CreateCheckListBoxStatus();
         }
-
+        private void CreateCheckListBoxStatus()
+        {
+            checkBoxList.Clear();
+            foreach (var item in statusItem.StatusList())
+            {
+                CheckBox checkBox = new CheckBox();
+                checkBox.Width = 110;
+                checkBox.Padding = new Padding(4,2,4,2);
+                if (item.StatusId == 1)
+                {
+                    checkBox.BackColor = ColorTranslator.FromHtml("#95ef5d");
+                }
+                else if (item.StatusId == 2)
+                {
+                    checkBox.BackColor = ColorTranslator.FromHtml("#f1f772");
+                }
+                else
+                {
+                    checkBox.BackColor = ColorTranslator.FromHtml("#d5a6bd");
+                }
+                checkBox.Text = Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP") ? item.StatusName : item.StatusNameEn;
+                checkBox.CheckedChanged += new EventHandler(ChangeCheck);
+                panelStatus.Controls.Add(checkBox);
+                checkBoxList.Add(checkBox);
+            }
+        }
+        private void ChangeCheck(object sender, EventArgs e)
+        {
+            List<ReservationEntity> reservationsByStatus = new List<ReservationEntity>();
+            int count = 0;
+            foreach (var checkbox in checkBoxList)
+            {
+                if (checkbox.Checked)
+                {
+                    count++;
+                    foreach (var item in statusItem.StatusList())
+                    {
+                        if (item.StatusName.Contains(checkbox.Text) || item.StatusNameEn.Contains(checkbox.Text))
+                        {
+                            foreach (var reservation in reservations)
+                            {
+                                if (reservation.StatusId == item.StatusId) reservationsByStatus.Add(reservation);
+                            }
+                        }
+                    }
+                }
+            }
+            pageNumber = 1;
+            if (count > 0)
+            {
+                PagingReservationList(reservationsByStatus);
+            } else PagingReservationList(reservations);
+        }
         /// <summary>
         /// ページ付けを実行する
         /// </summary>

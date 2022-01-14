@@ -33,14 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ContainerPanel = new System.Windows.Forms.Panel();
+            this.LabelTitle = new System.Windows.Forms.Label();
             this.DateTimePickerReservationDate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelStatus = new System.Windows.Forms.FlowLayoutPanel();
             this.TextboxPageNumber = new System.Windows.Forms.TextBox();
             this.ButtonNext = new System.Windows.Forms.Button();
             this.LabelTotalPages = new System.Windows.Forms.Label();
             this.ButtonPrevious = new System.Windows.Forms.Button();
             this.DataGridViewReservationList = new System.Windows.Forms.DataGridView();
-            this.LabelTitle = new System.Windows.Forms.Label();
             this.ContainerPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReservationList)).BeginInit();
@@ -48,9 +49,14 @@
             // 
             // ContainerPanel
             // 
-            this.ContainerPanel.Controls.Add(this.DateTimePickerReservationDate);
             resources.ApplyResources(this.ContainerPanel, "ContainerPanel");
+            this.ContainerPanel.Controls.Add(this.LabelTitle);
             this.ContainerPanel.Name = "ContainerPanel";
+            // 
+            // LabelTitle
+            // 
+            resources.ApplyResources(this.LabelTitle, "LabelTitle");
+            this.LabelTitle.Name = "LabelTitle";
             // 
             // DateTimePickerReservationDate
             // 
@@ -62,14 +68,20 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.panelStatus);
+            this.panel1.Controls.Add(this.DateTimePickerReservationDate);
             this.panel1.Controls.Add(this.TextboxPageNumber);
             this.panel1.Controls.Add(this.ButtonNext);
             this.panel1.Controls.Add(this.LabelTotalPages);
             this.panel1.Controls.Add(this.ButtonPrevious);
             this.panel1.Controls.Add(this.DataGridViewReservationList);
-            this.panel1.Controls.Add(this.LabelTitle);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // panelStatus
+            // 
+            resources.ApplyResources(this.panelStatus, "panelStatus");
+            this.panelStatus.Name = "panelStatus";
             // 
             // TextboxPageNumber
             // 
@@ -131,11 +143,6 @@
             this.DataGridViewReservationList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridViewReservationList.Paint += new System.Windows.Forms.PaintEventHandler(this.DataGridViewReservationList_Paint);
             // 
-            // LabelTitle
-            // 
-            resources.ApplyResources(this.LabelTitle, "LabelTitle");
-            this.LabelTitle.Name = "LabelTitle";
-            // 
             // ReservationListByDateForm
             // 
             resources.ApplyResources(this, "$this");
@@ -145,6 +152,7 @@
             this.Name = "ReservationListByDateForm";
             this.Load += new System.EventHandler(this.ReservationListByDateForm_Load);
             this.ContainerPanel.ResumeLayout(false);
+            this.ContainerPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewReservationList)).EndInit();
@@ -163,5 +171,6 @@
         private System.Windows.Forms.DataGridView DataGridViewReservationList;
         private System.Windows.Forms.Label LabelTitle;
         private System.Windows.Forms.TextBox TextboxPageNumber;
+        private System.Windows.Forms.FlowLayoutPanel panelStatus;
     }
 }

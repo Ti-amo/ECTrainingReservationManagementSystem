@@ -426,4 +426,19 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>生年月日</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="EmptyPatientMsg" xml:space="preserve">
+    <value>患者は見つかりませんでした。</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>氏名</value>
+  </data>
+  <data name="PatientId" xml:space="preserve">
+    <value>患者ID</value>
+  </data>
 </root>
