@@ -132,7 +132,7 @@ namespace ReservationManagementSystem {
 
             DataGridViewReservationList.Columns["PatientId"].Visible = false;
             DataGridViewReservationList.Columns["StatusId"].Visible = false;
-            DataGridViewReservationList.Columns["Exam"].Visible = false;
+            
             // add button detail
             DataGridViewButtonColumn buttonDetail = new DataGridViewButtonColumn {
                 Text = rm.GetString("Detail"),
