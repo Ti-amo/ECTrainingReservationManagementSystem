@@ -46,8 +46,8 @@ namespace ReservationManagementSystem {
             LabelPatient.Text = reservationEntity.PatientName + " - " + reservationEntity.PatientId;
             LabelReservationDate.Text = reservationEntity.ReservationDate;
             LabelStatus.Text = reservationEntity.StatusName;
-            LabelMajorExam.Text = reservationEntity.Exam.MajorExamName;
-            LabelSubExam.Text = reservationEntity.Exam.SubExamName;
+            LabelMajorExam.Text = reservationEntity.Exam[0].MajorExamName;
+            LabelSubExam.Text = reservationEntity.Exam[0].SubExamName;
 
             if (reservationEntity.StatusId == 1) {
                 ButtonUpdate.Enabled = true;
@@ -117,10 +117,10 @@ namespace ReservationManagementSystem {
                         pdfTable.AddCell(new Phrase(reservationEntity.ReservationDate, fontTable));
 
                         pdfTable.AddCell(new Phrase(rm.GetString("MajorExam"), fontTable));
-                        pdfTable.AddCell(new Phrase(reservationEntity.Exam.MajorExamName, fontTable));
+                        pdfTable.AddCell(new Phrase(reservationEntity.Exam[0].MajorExamName, fontTable));
 
                         pdfTable.AddCell(new Phrase(rm.GetString("SubExam"), fontTable));
-                        pdfTable.AddCell(new Phrase(reservationEntity.Exam.SubExamName, fontTable));
+                        pdfTable.AddCell(new Phrase(reservationEntity.Exam[0].SubExamName, fontTable));
 
                         using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create)) {
                             Document pdfDoc = new Document(PageSize.A6.Rotate(), 20f, 20f, 20f, 20f);
@@ -180,7 +180,7 @@ namespace ReservationManagementSystem {
         private void ButtonCompleteUpdate_Click(object sender, EventArgs e) {
             if (DateTimePickerReservationDate.Text.Equals(reservationEntity.ReservationDate) || DateTimePickerReservationDate.Value >= DateTime.Today) {
                 reservationEntity.ReservationDate = DateTimePickerReservationDate.Text;
-                reservationEntity.Exam.SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString());
+                reservationEntity.Exam[0].SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString());
 
                 reservationDAO.Update(reservationEntity);
                 MessageBox.Show(rm.GetString("EditSuccessMsg"), rm.GetString("EditSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -212,16 +212,16 @@ namespace ReservationManagementSystem {
             ComboBoxMajorExam.ValueMember = "Value";
             ComboBoxMajorExam.DisplayMember = "Text";
             ComboBoxMajorExam.DataSource = majorItems;
-            ComboBoxMajorExam.SelectedIndex = reservationEntity.Exam.MajorExamId - 1;
+            ComboBoxMajorExam.SelectedIndex = reservationEntity.Exam[0].MajorExamId - 1;
 
             LabelSubExam.Visible = false;
             ComboBoxSubExam.Visible = true;
-            List<ExamItem> subExamList = examDAO.GetSubExamList(reservationEntity.Exam.MajorExamId);
+            List<ExamItem> subExamList = examDAO.GetSubExamList(reservationEntity.Exam[0].MajorExamId);
             List<Object> subItems = new List<Object>();
             int index = 0;
             for (int i = 0; i < subExamList.Count; i++) {
                 subItems.Add(new { Value = subExamList[i].SubExamId, Text = subExamList[i].SubExamName });
-                if (subExamList[i].SubExamId == reservationEntity.Exam.SubExamId)
+                if (subExamList[i].SubExamId == reservationEntity.Exam[0].SubExamId)
                     index = i;
             }
             ComboBoxSubExam.ValueMember = "Value";

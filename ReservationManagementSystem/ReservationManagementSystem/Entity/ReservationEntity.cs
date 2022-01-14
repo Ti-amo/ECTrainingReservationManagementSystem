@@ -39,6 +39,6 @@ namespace ReservationManagementSystem.Entity {
         /// <summary>
         /// 診療項目
         /// </summary>
-        public ExamItem Exam { get; set; }
+        public List<ExamItem> Exam { get; set; } = new List<ExamItem>();
     }
 }
