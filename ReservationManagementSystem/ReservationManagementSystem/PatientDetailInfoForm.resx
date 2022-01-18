@@ -1131,4 +1131,37 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Detail" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="EditBirthDateFailureMsg" xml:space="preserve">
+    <value>本日の前に患者の生年月日を入力してください。</value>
+  </data>
+  <data name="EditBirthDateSuccessMsg" xml:space="preserve">
+    <value>患者の生年月日が変更されました。</value>
+  </data>
+  <data name="EditFailureTitle" xml:space="preserve">
+    <value>変更失敗</value>
+  </data>
+  <data name="EditNameFailureMsg" xml:space="preserve">
+    <value>患者の氏名（48文字以下）を入力してください。</value>
+  </data>
+  <data name="EditNameSuccessMsg" xml:space="preserve">
+    <value>患者の氏名が変更されました。</value>
+  </data>
+  <data name="EditSuccessTitle" xml:space="preserve">
+    <value>変更成功</value>
+  </data>
+  <data name="ReservationDate" xml:space="preserve">
+    <value>予約日付</value>
+  </data>
+  <data name="ReservationId" xml:space="preserve">
+    <value>予約ID</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状態</value>
+  </data>
+  <data name="EmptyReservationMsg" xml:space="preserve">
+    <value>予約はありません。</value>
+  </data>
 </root>
