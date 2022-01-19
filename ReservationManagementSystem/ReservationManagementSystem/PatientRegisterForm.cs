@@ -15,7 +15,6 @@ namespace ReservationManagementSystem {
     public partial class PatientRegisterForm : Form {
         private readonly ExamDAO examDAO = new ExamDAO();
         ResourceManager rm = new ResourceManager(typeof(PatientRegisterForm));
-        private List<ExamItem> listExamItem = new List<ExamItem>();
         private int countExam = 1;
         private int maxExam = 3;
 
@@ -113,13 +112,14 @@ namespace ReservationManagementSystem {
                 reservationEntity.PatientId = patientDAO.FindLatestPatient();
                 reservationEntity.ReservationDate = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
                 //listExamItem
-                listExamItem.Add(new ExamItem { SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString()) });
+                //ExamItemを追加する
+                reservationEntity.Exam.Add(new ExamItem { SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString()) });
                 if (countExam > 1)
                 {
                     for (int i = 2; i <= countExam; i++)
                     {
                         var comboBox = (ComboBox)tableLayoutPanelExam.Controls["ComboBoxSubExamChild" + i.ToString()];
-                        listExamItem.Add(new ExamItem { SubExamId = int.Parse(comboBox.SelectedValue.ToString()) });
+                        reservationEntity.Exam.Add(new ExamItem { SubExamId = int.Parse(comboBox.SelectedValue.ToString()) });
                     }
                 }
                 // 1 examItem
@@ -128,10 +128,7 @@ namespace ReservationManagementSystem {
                 //    SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString())
                 //};
                 //reservationEntity.Exam.Add(examItem);
-                foreach (ExamItem item in listExamItem)
-                {
-                    reservationEntity.Exam.Add(item);
-                }
+                
                 reservationDAO.Insert(reservationEntity);
                 DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
