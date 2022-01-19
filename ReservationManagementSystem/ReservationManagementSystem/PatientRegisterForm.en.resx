@@ -203,4 +203,22 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Register Patient</value>
   </data>
+  <data name="BirthDateFailureMsg" xml:space="preserve">
+    <value>Please enter the patient's birth date before today.</value>
+  </data>
+  <data name="NameFailureMsg" xml:space="preserve">
+    <value>Please enter the patient's name (48 characters or less).</value>
+  </data>
+  <data name="RegisterFailureTitle" xml:space="preserve">
+    <value>Register Failure</value>
+  </data>
+  <data name="RegisterSuccessMsg" xml:space="preserve">
+    <value>The reservation has been registered.</value>
+  </data>
+  <data name="RegisterSuccessTitle" xml:space="preserve">
+    <value>Register Success</value>
+  </data>
+  <data name="ReservationDateFailureMsg" xml:space="preserve">
+    <value>Please enter reservation date after today.</value>
+  </data>
 </root>
