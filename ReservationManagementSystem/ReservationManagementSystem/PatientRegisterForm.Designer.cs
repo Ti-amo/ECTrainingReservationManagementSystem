@@ -34,14 +34,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelMajorExam = new System.Windows.Forms.Label();
+            this.labelSubExam = new System.Windows.Forms.Label();
             this.TextBoxName = new System.Windows.Forms.TextBox();
             this.DatetimePickerBirthDate = new System.Windows.Forms.DateTimePicker();
             this.DateTimePickerReservationDate = new System.Windows.Forms.DateTimePicker();
             this.ComboBoxMajorExam = new System.Windows.Forms.ComboBox();
             this.ComboBoxSubExam = new System.Windows.Forms.ComboBox();
             this.ButtonReserve = new System.Windows.Forms.Button();
+            this.tableLayoutPanelExam = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonAddExam = new System.Windows.Forms.Button();
+            this.buttonRemoveExam = new System.Windows.Forms.Button();
+            this.tableLayoutPanelExam.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelTitle
@@ -70,15 +74,15 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
             // 
-            // label4
+            // labelMajorExam
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.labelMajorExam, "labelMajorExam");
+            this.labelMajorExam.Name = "labelMajorExam";
             // 
-            // label5
+            // labelSubExam
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.labelSubExam, "labelSubExam");
+            this.labelSubExam.Name = "labelSubExam";
             // 
             // TextBoxName
             // 
@@ -99,16 +103,16 @@
             // 
             // ComboBoxMajorExam
             // 
-            this.ComboBoxMajorExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.ComboBoxMajorExam, "ComboBoxMajorExam");
+            this.ComboBoxMajorExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxMajorExam.FormattingEnabled = true;
             this.ComboBoxMajorExam.Name = "ComboBoxMajorExam";
             this.ComboBoxMajorExam.SelectedIndexChanged += new System.EventHandler(this.MajorExamChanged);
             // 
             // ComboBoxSubExam
             // 
-            this.ComboBoxSubExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.ComboBoxSubExam, "ComboBoxSubExam");
+            this.ComboBoxSubExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxSubExam.FormattingEnabled = true;
             this.ComboBoxSubExam.Name = "ComboBoxSubExam";
             // 
@@ -119,24 +123,48 @@
             this.ButtonReserve.UseVisualStyleBackColor = true;
             this.ButtonReserve.Click += new System.EventHandler(this.ButtonReserve_Click);
             // 
+            // tableLayoutPanelExam
+            // 
+            resources.ApplyResources(this.tableLayoutPanelExam, "tableLayoutPanelExam");
+            this.tableLayoutPanelExam.Controls.Add(this.ComboBoxSubExam, 1, 1);
+            this.tableLayoutPanelExam.Controls.Add(this.labelSubExam, 0, 1);
+            this.tableLayoutPanelExam.Controls.Add(this.ComboBoxMajorExam, 1, 0);
+            this.tableLayoutPanelExam.Controls.Add(this.labelMajorExam, 0, 0);
+            this.tableLayoutPanelExam.Name = "tableLayoutPanelExam";
+            // 
+            // buttonAddExam
+            // 
+            resources.ApplyResources(this.buttonAddExam, "buttonAddExam");
+            this.buttonAddExam.Name = "buttonAddExam";
+            this.buttonAddExam.UseVisualStyleBackColor = true;
+            this.buttonAddExam.Click += new System.EventHandler(this.buttonAddExam_Click);
+            // 
+            // buttonRemoveExam
+            // 
+            resources.ApplyResources(this.buttonRemoveExam, "buttonRemoveExam");
+            this.buttonRemoveExam.Name = "buttonRemoveExam";
+            this.buttonRemoveExam.UseVisualStyleBackColor = true;
+            this.buttonRemoveExam.Click += new System.EventHandler(this.buttonRemoveExam_Click);
+            // 
             // PatientRegisterForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonRemoveExam);
+            this.Controls.Add(this.buttonAddExam);
+            this.Controls.Add(this.tableLayoutPanelExam);
             this.Controls.Add(this.ButtonReserve);
-            this.Controls.Add(this.ComboBoxSubExam);
-            this.Controls.Add(this.ComboBoxMajorExam);
             this.Controls.Add(this.DateTimePickerReservationDate);
             this.Controls.Add(this.DatetimePickerBirthDate);
             this.Controls.Add(this.TextBoxName);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LabelTitle);
             this.Name = "PatientRegisterForm";
+            this.tableLayoutPanelExam.ResumeLayout(false);
+            this.tableLayoutPanelExam.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,13 +177,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelMajorExam;
+        private System.Windows.Forms.Label labelSubExam;
         private System.Windows.Forms.TextBox TextBoxName;
         private System.Windows.Forms.DateTimePicker DatetimePickerBirthDate;
         private System.Windows.Forms.DateTimePicker DateTimePickerReservationDate;
         private System.Windows.Forms.ComboBox ComboBoxMajorExam;
         private System.Windows.Forms.ComboBox ComboBoxSubExam;
         private System.Windows.Forms.Button ButtonReserve;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelExam;
+        private System.Windows.Forms.Button buttonAddExam;
+        private System.Windows.Forms.Button buttonRemoveExam;
     }
 }
