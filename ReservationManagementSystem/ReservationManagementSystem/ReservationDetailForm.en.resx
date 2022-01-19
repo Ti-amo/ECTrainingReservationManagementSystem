@@ -119,126 +119,225 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 48</value>
+    <value>201, 34</value>
   </data>
   <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 41</value>
+    <value>282, 27</value>
   </data>
   <data name="LabelTitle.Text" xml:space="preserve">
     <value>Reservation Detail</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 403</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 24</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Major exam:</value>
+  <data name="DateTimePickerReservationDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 166</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 338</value>
+    <value>107, 206</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 24</value>
+    <value>64, 16</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Status:</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 276</value>
+    <value>27, 169</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 24</value>
+    <value>144, 16</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Reservation date:</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 212</value>
+    <value>99, 132</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 24</value>
+    <value>72, 16</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Patient:</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 148</value>
+    <value>43, 96</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 24</value>
+    <value>128, 16</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Reservation ID:</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 466</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 24</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Sub exam:</value>
-  </data>
   <data name="ButtonUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 644</value>
+    <value>266, 396</value>
   </data>
   <data name="ButtonUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 63</value>
+    <value>150, 50</value>
   </data>
   <data name="ButtonUpdate.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="ButtonExport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 396</value>
+  </data>
   <data name="ButtonExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 63</value>
+    <value>150, 50</value>
   </data>
   <data name="ButtonExport.Text" xml:space="preserve">
     <value>Export</value>
   </data>
   <data name="ButtonCompleteReception.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 543</value>
+    <value>89, 326</value>
   </data>
   <data name="ButtonCompleteReception.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 64</value>
+    <value>230, 50</value>
   </data>
   <data name="ButtonCompleteReception.Text" xml:space="preserve">
     <value>Complete reception</value>
   </data>
   <data name="ButtonCompleteTreatment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 543</value>
+    <value>369, 326</value>
   </data>
   <data name="ButtonCompleteTreatment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 64</value>
+    <value>230, 50</value>
   </data>
   <data name="ButtonCompleteTreatment.Text" xml:space="preserve">
     <value>Complete treatment</value>
   </data>
   <data name="ButtonDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>651, 644</value>
+    <value>479, 396</value>
   </data>
   <data name="ButtonDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 63</value>
+    <value>150, 50</value>
   </data>
   <data name="ButtonDelete.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="LabelReservationID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 96</value>
+  </data>
+  <data name="LabelPatient.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 132</value>
+  </data>
+  <data name="LabelStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 206</value>
+  </data>
+  <data name="LabelReservationDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 169</value>
+  </data>
+  <data name="ButtonCompleteUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>509, 96</value>
+  </data>
   <data name="ButtonCompleteUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 61</value>
+    <value>120, 40</value>
   </data>
   <data name="ButtonCompleteUpdate.Text" xml:space="preserve">
     <value>Complete</value>
   </data>
+  <data name="ButtonCancelUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>509, 147</value>
+  </data>
   <data name="ButtonCancelUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 60</value>
+    <value>120, 40</value>
   </data>
   <data name="ButtonCancelUpdate.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="TableLayoutPanelView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 240</value>
+  </data>
+  <data name="TableLayoutPanelUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 240</value>
+  </data>
+  <data name="ButtonAddExam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>554, 240</value>
+  </data>
+  <data name="ButtonAddExam.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ButtonRemoveExam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>554, 271</value>
+  </data>
+  <data name="ButtonRemoveExam.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>954, 759</value>
+    <value>676, 461</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Reservation Detail</value>
+  </data>
+  <data name="DeleteConfirmMsg" xml:space="preserve">
+    <value>Are you sure you want to delete this reservation?</value>
+  </data>
+  <data name="DeleteSuccessMsg" xml:space="preserve">
+    <value>The reservation has been deleted.</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>Delete Reservation</value>
+  </data>
+  <data name="EditFailureTitle" xml:space="preserve">
+    <value>Edit Failure</value>
+  </data>
+  <data name="EditSuccessMsg" xml:space="preserve">
+    <value>The reservation has been edited.</value>
+  </data>
+  <data name="EditSuccessTitle" xml:space="preserve">
+    <value>Edit Success</value>
+  </data>
+  <data name="ExportFailureMsg" xml:space="preserve">
+    <value>The reservation ticket cannot be export.</value>
+  </data>
+  <data name="ExportFailureTitle" xml:space="preserve">
+    <value>Export Failure</value>
+  </data>
+  <data name="ExportSuccessMsg" xml:space="preserve">
+    <value>The reservation ticket has been export.</value>
+  </data>
+  <data name="ExportSuccessTitle" xml:space="preserve">
+    <value>Export Success</value>
+  </data>
+  <data name="FileExistsMsg" xml:space="preserve">
+    <value>The reservation ticket already exists.</value>
+  </data>
+  <data name="MajorExam" xml:space="preserve">
+    <value>Major exam </value>
+  </data>
+  <data name="PatientId" xml:space="preserve">
+    <value>Patient ID</value>
+  </data>
+  <data name="PatientName" xml:space="preserve">
+    <value>Patient name</value>
+  </data>
+  <data name="ReceptionSuccessMsg" xml:space="preserve">
+    <value>The reception has been completed.</value>
+  </data>
+  <data name="ReceptionTitle" xml:space="preserve">
+    <value>Complete Reception</value>
+  </data>
+  <data name="ReservationDate" xml:space="preserve">
+    <value>Reservation date</value>
+  </data>
+  <data name="ReservationDateFailureMsg" xml:space="preserve">
+    <value>Please enter reservation date after today.</value>
+  </data>
+  <data name="ReservationId" xml:space="preserve">
+    <value>Reservation ID</value>
+  </data>
+  <data name="ReservationTicket" xml:space="preserve">
+    <value>Reservation Ticket</value>
+  </data>
+  <data name="SubExam" xml:space="preserve">
+    <value>Sub exam </value>
+  </data>
+  <data name="TreatmentMsg" xml:space="preserve">
+    <value>The treatment has been completed.</value>
+  </data>
+  <data name="TreatmentTitle" xml:space="preserve">
+    <value>Complete Treatment</value>
+  </data>
+  <data name="ReceptionFailureMsg" xml:space="preserve">
+    <value>The reservation date hasn't come yet.</value>
+  </data>
+  <data name="Examination" xml:space="preserve">
+    <value>Examination</value>
   </data>
 </root>

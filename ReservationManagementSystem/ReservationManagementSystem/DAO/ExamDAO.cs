@@ -361,5 +361,71 @@ namespace ReservationManagementSystem.DAO {
 
             return recordNumber;
         }
+
+        /// <summary>
+        /// 診療大項目の名がすでに存在するかどうかを確認する
+        /// </summary>
+        /// <param name="examItem">診療大項目の名</param>
+        /// <returns>true：存在する、false：存在しない</returns>
+        public Boolean IsExistedMajorExamName(ExamItem examItem) {
+            // SQL文：SELECT句
+            string query = @"SELECT * 
+							FROM m_major_examination 
+                            WHERE major_name = @major_name OR major_name_en = @major_name_en";
+
+            // コマンドの作成
+            command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@major_name", examItem.MajorExamNameJp);
+            command.Parameters.AddWithValue("@major_name_en", examItem.MajorExamNameEn);
+
+            // データリーダーの作成
+            dataReader = command.ExecuteReader();
+
+            int count = 0;
+            // データを１行ずつ抽出する
+            while (dataReader.Read()) {
+                count++;
+            }
+
+            command.Dispose();
+            dataReader.Close();
+
+            if (count == 0)
+                return false;
+            return true;
+        }
+
+        /// <summary>
+        /// 診療小項目の名がすでに存在するかどうかを確認する
+        /// </summary>
+        /// <param name="examItem">診療小項目の名</param>
+        /// <returns>true：存在する、false：存在しない</returns>
+        public Boolean IsExistedSubExamName(ExamItem examItem) {
+            // SQL文：SELECT句
+            string query = @"SELECT * 
+							FROM m_sub_examination 
+                            WHERE sub_name = @sub_name OR sub_name_en = @sub_name_en";
+
+            // コマンドの作成
+            command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@sub_name", examItem.SubExamNameJp);
+            command.Parameters.AddWithValue("@sub_name_en", examItem.SubExamNameEn);
+
+            // データリーダーの作成
+            dataReader = command.ExecuteReader();
+
+            int count = 0;
+            // データを１行ずつ抽出する
+            while (dataReader.Read()) {
+                count++;
+            }
+
+            command.Dispose();
+            dataReader.Close();
+
+            if (count == 0)
+                return false;
+            return true;
+        }
     }
 }
