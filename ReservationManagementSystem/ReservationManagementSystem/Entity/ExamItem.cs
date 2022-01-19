@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReservationManagementSystem.Entity {
-    public class ExamItem {
+namespace ReservationManagementSystem.Entity
+{
+    public class ExamItem
+    {
         /// <summary>
         /// 診療大項目ID
         /// </summary>
