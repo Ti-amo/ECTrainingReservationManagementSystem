@@ -15,15 +15,23 @@ namespace ReservationManagementSystem
         public ManageExamForm2()
         {
             InitializeComponent();
-            FillDataDropDownListMajorItem_Add();
-            FillDataDropDownListMajorItem_Delete();
-
-
         }
 
         private void ManageExamForm2_Load(object sender, EventArgs e)
         {
-            
+            LoadForm();
+        }
+        private void LoadForm()
+        {
+            FillDataDropDownListMajorItem_Add();
+            FillDataDropDownListMajorItem_Delete();
+
+        }
+        private void ReloadForm()
+        {
+            this.Controls.Clear();
+            InitializeComponent();
+            LoadForm();
         }
 
         private void FillDataDropDownListMajorItem_Add()
@@ -113,18 +121,19 @@ namespace ReservationManagementSystem
                 examItem.MajorExamId = (int)id;
                 examItem.SubExamNameEn = TextboxSubItemName_Eng.Text;
                 examItem.SubExamNameJp = TextboxSubItemName_Ja.Text;
-                if (String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || (TextboxSubItemName_Ja.Text.Length > 25) || (TextboxSubItemName_Ja.Text.Length > 40))
+                if (String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || (TextboxSubItemName_Ja.Text.Length > 25) || (TextboxSubItemName_Ja.Text.Length > 40)|| examDAO.IsExistedSubExamName(examItem))
                 {
                     MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("RegisterFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    { }
-                }
+                    
+                }             
                 else
                 {
                     examDAO.InsertSubExam(examItem);
                     DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
-                        this.Close();
+                        //this.Close();
+                        this.ReloadForm();
                     }
                 }
             }
@@ -134,10 +143,9 @@ namespace ReservationManagementSystem
                 examItem.MajorExamNameJp = TextboxMajorItemName_Ja.Text;
                 examItem.SubExamNameEn = TextboxSubItemName_Eng.Text;
                 examItem.SubExamNameJp = TextboxSubItemName_Ja.Text;
-                if (String.IsNullOrWhiteSpace(TextboxMajorItemName_Ja.Text) || String.IsNullOrWhiteSpace(TextboxMajorItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || (TextboxMajorItemName_Ja.Text.Length > 5) || (TextboxMajorItemName_Eng.Text.Length > 15) || (TextboxSubItemName_Ja.Text.Length > 25) || (TextboxSubItemName_Ja.Text.Length > 40))
+                if (String.IsNullOrWhiteSpace(TextboxMajorItemName_Ja.Text) || String.IsNullOrWhiteSpace(TextboxMajorItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || (TextboxMajorItemName_Ja.Text.Length > 5) || (TextboxMajorItemName_Eng.Text.Length > 15) || (TextboxSubItemName_Ja.Text.Length > 25) || (TextboxSubItemName_Ja.Text.Length > 40)|| examDAO.IsExistedMajorExamName(examItem)|| examDAO.IsExistedSubExamName(examItem))
                 {
-                    MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("RegisterFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    { }
+                    MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("RegisterFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);                
                 }
                 else
                 {
@@ -145,7 +153,8 @@ namespace ReservationManagementSystem
                     DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
-                        this.Close();
+                        //this.Close();
+                        this.ReloadForm();
                     }
                 }
             } 
@@ -160,15 +169,12 @@ namespace ReservationManagementSystem
             DialogResult result = MessageBox.Show(rm.GetString("DeleteConfirmMsg"), rm.GetString("DeleteTitle"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                examDAO.DeleteSubExam(examItem);
-               // DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-               /* if (result == DialogResult.OK)
-                {
-                    this.Close();
-                }*/
-               // reservationDAO.Delete(reservationEntity);
+                examDAO.DeleteSubExam(examItem);        
                 MessageBox.Show(rm.GetString("DeleteSuccessMsg"), rm.GetString("DeleteTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                //this.Close();
+                this.ReloadForm();
+         
+                
             }
             
             

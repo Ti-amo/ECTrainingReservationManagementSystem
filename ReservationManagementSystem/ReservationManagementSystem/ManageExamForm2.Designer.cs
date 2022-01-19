@@ -77,7 +77,6 @@ namespace ReservationManagementSystem
             // 
             resources.ApplyResources(this.PanelAdd, "PanelAdd");
             this.PanelAdd.BackColor = System.Drawing.Color.White;
-            this.PanelAdd.Controls.Add(this.PanelDelete);
             this.PanelAdd.Controls.Add(this.TextboxMajorItemName_Ja);
             this.PanelAdd.Controls.Add(this.ButtonEdit);
             this.PanelAdd.Controls.Add(this.ButtonAdd);
@@ -95,13 +94,13 @@ namespace ReservationManagementSystem
             // 
             // PanelDelete
             // 
-            resources.ApplyResources(this.PanelDelete, "PanelDelete");
             this.PanelDelete.BackColor = System.Drawing.Color.White;
             this.PanelDelete.Controls.Add(this.ButtonDelete);
             this.PanelDelete.Controls.Add(this.label5);
             this.PanelDelete.Controls.Add(this.DropDownListSubItem_Delete);
             this.PanelDelete.Controls.Add(this.DropDownListMajorItem_Delete);
             this.PanelDelete.Controls.Add(this.label4);
+            resources.ApplyResources(this.PanelDelete, "PanelDelete");
             this.PanelDelete.Name = "PanelDelete";
             // 
             // ButtonDelete
@@ -172,9 +171,9 @@ namespace ReservationManagementSystem
             // 
             // DropDownListMajorItem_Add
             // 
-            resources.ApplyResources(this.DropDownListMajorItem_Add, "DropDownListMajorItem_Add");
             this.DropDownListMajorItem_Add.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DropDownListMajorItem_Add.FormattingEnabled = true;
+            resources.ApplyResources(this.DropDownListMajorItem_Add, "DropDownListMajorItem_Add");
             this.DropDownListMajorItem_Add.Name = "DropDownListMajorItem_Add";
             // 
             // label11
@@ -223,6 +222,7 @@ namespace ReservationManagementSystem
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.PanelDelete);
             this.Controls.Add(this.PanelAdd);
             this.Controls.Add(this.ToggleButtonStatus);
             this.Controls.Add(this.label3);
