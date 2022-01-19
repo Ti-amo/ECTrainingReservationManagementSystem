@@ -106,29 +106,47 @@ namespace ReservationManagementSystem
             ExamDAO examDAO = new ExamDAO();
             ExamItem examItem = new ExamItem();
             var id = DropDownListMajorItem_Add.SelectedValue;
-            if (DropDownListMajorItem_Add.Visible)
-            {            
+            
+                if (DropDownListMajorItem_Add.Visible)
+            {  
+                
                 examItem.MajorExamId = (int)id;
                 examItem.SubExamNameEn = TextboxSubItemName_Eng.Text;
                 examItem.SubExamNameJp = TextboxSubItemName_Ja.Text;
-                examDAO.InsertSubExam(examItem);
-                DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (result == DialogResult.OK)
+                if (String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || (TextboxSubItemName_Ja.Text.Length > 25) || (TextboxSubItemName_Ja.Text.Length > 40))
                 {
-                    this.Close();
+                    MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("RegisterFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    { }
+                }
+                else
+                {
+                    examDAO.InsertSubExam(examItem);
+                    DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
+                    }
                 }
             }
-            else
+                else
             {
                 examItem.MajorExamNameEn = TextboxMajorItemName_Eng.Text;
                 examItem.MajorExamNameJp = TextboxMajorItemName_Ja.Text;
                 examItem.SubExamNameEn = TextboxSubItemName_Eng.Text;
                 examItem.SubExamNameJp = TextboxSubItemName_Ja.Text;
-                examDAO.InsertMajorExam(examItem);
-                DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (result == DialogResult.OK)
+                if (String.IsNullOrWhiteSpace(TextboxMajorItemName_Ja.Text) || String.IsNullOrWhiteSpace(TextboxMajorItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || (TextboxMajorItemName_Ja.Text.Length > 5) || (TextboxMajorItemName_Eng.Text.Length > 15) || (TextboxSubItemName_Ja.Text.Length > 25) || (TextboxSubItemName_Ja.Text.Length > 40))
                 {
-                    this.Close();
+                    MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("RegisterFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    { }
+                }
+                else
+                {
+                    examDAO.InsertMajorExam(examItem);
+                    DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
+                    }
                 }
             } 
                 
@@ -138,14 +156,22 @@ namespace ReservationManagementSystem
         {
             ExamDAO examDAO = new ExamDAO();
             ExamItem examItem = new ExamItem();
-            //examItem.MajorExamId = (int)DropDownListMajorItem_Delete.SelectedValue;
             examItem.SubExamId = (int)DropDownListSubItem_Delete.SelectedValue;
-            examDAO.DeleteSubExam(examItem);
-            DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (result == DialogResult.OK)
+            DialogResult result = MessageBox.Show(rm.GetString("DeleteConfirmMsg"), rm.GetString("DeleteTitle"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
+                examDAO.DeleteSubExam(examItem);
+               // DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+               /* if (result == DialogResult.OK)
+                {
+                    this.Close();
+                }*/
+               // reservationDAO.Delete(reservationEntity);
+                MessageBox.Show(rm.GetString("DeleteSuccessMsg"), rm.GetString("DeleteTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
+            
+            
         }
     }
 }
