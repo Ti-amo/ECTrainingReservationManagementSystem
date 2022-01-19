@@ -112,20 +112,26 @@ namespace ReservationManagementSystem {
                 //予約登録
                 reservationEntity.PatientId = patientDAO.FindLatestPatient();
                 reservationEntity.ReservationDate = DateTimePickerReservationDate.Value.ToString("yyyy-MM-dd");
-                //listExamItem.Add(new ExamItem { SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString()) });
-                //if (countExam > 1)
-                //{
-                //    for (int i = 2; i <= countExam; i++)
-                //    {
-                //        var comboBox = (ComboBox)tableLayoutPanel1.Controls["ComboBoxSubExamChild" + i.ToString()];
-                //        listExamItem.Add(new ExamItem { SubExamId = int.Parse(comboBox.SelectedValue.ToString()) });
-                //    }
-                //}
-                ExamItem examItem = new ExamItem
+                //listExamItem
+                listExamItem.Add(new ExamItem { SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString()) });
+                if (countExam > 1)
                 {
-                    SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString())
-                };
-                reservationEntity.Exam.Add(examItem);
+                    for (int i = 2; i <= countExam; i++)
+                    {
+                        var comboBox = (ComboBox)tableLayoutPanelExam.Controls["ComboBoxSubExamChild" + i.ToString()];
+                        listExamItem.Add(new ExamItem { SubExamId = int.Parse(comboBox.SelectedValue.ToString()) });
+                    }
+                }
+                // 1 examItem
+                //ExamItem examItem = new ExamItem
+                //{
+                //    SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString())
+                //};
+                //reservationEntity.Exam.Add(examItem);
+                foreach (ExamItem item in listExamItem)
+                {
+                    reservationEntity.Exam.Add(item);
+                }
                 reservationDAO.Insert(reservationEntity);
                 DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
@@ -219,7 +225,6 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void buttonRemoveExam_Click(object sender, EventArgs e)
         {
-            
             tableLayoutPanelExam.Controls.Remove(tableLayoutPanelExam.GetControlFromPosition(0, countExam * 2 - 1));
             tableLayoutPanelExam.Controls.Remove(tableLayoutPanelExam.GetControlFromPosition(1, countExam * 2 - 1));
             tableLayoutPanelExam.Controls.Remove(tableLayoutPanelExam.GetControlFromPosition(0, countExam * 2 - 2));
