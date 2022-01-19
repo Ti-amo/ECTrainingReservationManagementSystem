@@ -33,6 +33,7 @@
             this.ButtonReservationList = new System.Windows.Forms.Button();
             this.ButtonPatientList = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ButtonExam = new System.Windows.Forms.Button();
             this.ButtonLanguage = new System.Windows.Forms.Button();
             this.ImageLogo = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
@@ -64,12 +65,20 @@
             // 
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.ButtonExam);
             this.panel2.Controls.Add(this.ButtonLanguage);
             this.panel2.Controls.Add(this.ImageLogo);
             this.panel2.Controls.Add(this.ButtonReservationList);
             this.panel2.Controls.Add(this.ButtonPatientRegister);
             this.panel2.Controls.Add(this.ButtonPatientList);
             this.panel2.Name = "panel2";
+            // 
+            // ButtonExam
+            // 
+            resources.ApplyResources(this.ButtonExam, "ButtonExam");
+            this.ButtonExam.Name = "ButtonExam";
+            this.ButtonExam.UseVisualStyleBackColor = true;
+            this.ButtonExam.Click += new System.EventHandler(this.ButtonExam_Click);
             // 
             // ButtonLanguage
             // 
@@ -106,6 +115,7 @@
         private System.Windows.Forms.Button ButtonPatientList;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button ButtonLanguage;
+        private System.Windows.Forms.Button ButtonExam;
     }
 }
 

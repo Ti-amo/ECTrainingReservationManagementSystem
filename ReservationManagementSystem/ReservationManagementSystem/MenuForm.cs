@@ -82,5 +82,16 @@ namespace ReservationManagementSystem {
             ResourceManager rm = new ResourceManager(typeof(MenuForm));
             MessageBox.Show(rm.GetString("ChangeLanguageMsg"), rm.GetString("ChangeLanguageTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonExam_Click(object sender, EventArgs e)
+        {
+            ManageExamForm2 manageExamForm = new ManageExamForm2();
+            manageExamForm.Show();
+        }
     }
 }

@@ -17,6 +17,16 @@ namespace ReservationManagementSystem.Entity {
         public string MajorExamName { get; set; }
 
         /// <summary>
+        /// 診療大項目の日本語名
+        /// </summary>
+        public string MajorExamNameJp { get; set; }
+
+        /// <summary>
+        /// 診療大項目の英語名
+        /// </summary>
+        public string MajorExamNameEn { get; set; }
+
+        /// <summary>
         /// 診療小項目ID
         /// </summary>
         public int SubExamId { get; set; }
@@ -25,5 +35,15 @@ namespace ReservationManagementSystem.Entity {
         /// 診療小項目名
         /// </summary>
         public string SubExamName { get; set; }
+
+        /// <summary>
+        /// 診療小項目の日本語名
+        /// </summary>
+        public string SubExamNameJp { get; set; }
+
+        /// <summary>
+        /// 診療小項目の英語名
+        /// </summary>
+        public string SubExamNameEn { get; set; }
     }
 }

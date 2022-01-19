@@ -76,6 +76,18 @@
     <Compile Include="FlatDateTimePicker.Designer.cs">
       <DependentUpon>FlatDateTimePicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageExamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageExamForm.Designer.cs">
+      <DependentUpon>ManageExamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageExamForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageExamForm2.Designer.cs">
+      <DependentUpon>ManageExamForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,7 +132,16 @@
     <Compile Include="ReservationRegisterForm.Designer.cs">
       <DependentUpon>ReservationRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="ManageExamForm.resx">
+      <DependentUpon>ManageExamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageExamForm2.resx">
+      <DependentUpon>ManageExamForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.en.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +228,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle_right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
