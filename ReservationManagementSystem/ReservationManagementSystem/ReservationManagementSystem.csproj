@@ -70,6 +70,18 @@
     <Compile Include="Entity\ExamItem.cs" />
     <Compile Include="Entity\PatientEntity.cs" />
     <Compile Include="Entity\ReservationEntity.cs" />
+    <Compile Include="ExamItemAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamItemAddForm.Designer.cs">
+      <DependentUpon>ExamItemAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamItemDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamItemDeleteForm.Designer.cs">
+      <DependentUpon>ExamItemDeleteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FlatDateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -136,6 +148,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="ExamItemAddForm.en.resx">
+      <DependentUpon>ExamItemAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamItemAddForm.resx">
+      <DependentUpon>ExamItemAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamItemDeleteForm.en.resx">
+      <DependentUpon>ExamItemDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamItemDeleteForm.resx">
+      <DependentUpon>ExamItemDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageExamForm.resx">
       <DependentUpon>ManageExamForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\toggle_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

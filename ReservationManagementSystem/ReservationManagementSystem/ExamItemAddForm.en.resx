@@ -117,39 +117,66 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ButtonAdd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt, style=Bold</value>
+  <data name="ButtonAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 28</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 16</value>
+  <data name="ButtonAdd.Text" xml:space="preserve">
+    <value>Register</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Exam's Items</value>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>526, 47</value>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 16</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>English name</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 16</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Formal name</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Sub Exam</value>
+  </data>
+  <data name="LabelLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 16</value>
+  </data>
+  <data name="LabelLanguage.Text" xml:space="preserve">
+    <value>English name</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 16</value>
+    <value>96, 16</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Add</value>
+    <value>Formal name</value>
   </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>600, 47</value>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 16</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 16</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="ToggleButtonStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>559, 47</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Major Exam</value>
   </data>
 </root>
