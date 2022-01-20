@@ -125,7 +125,7 @@
     <value>MS Gothic, 12pt</value>
   </data>
   <data name="DateTimePickerDoB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 151</value>
+    <value>328, 153</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="DateTimePickerDoB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -160,7 +160,7 @@
     <value>MS Gothic, 12pt</value>
   </data>
   <data name="TextBoxName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 112</value>
+    <value>327, 112</value>
   </data>
   <data name="TextBoxName.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 23</value>

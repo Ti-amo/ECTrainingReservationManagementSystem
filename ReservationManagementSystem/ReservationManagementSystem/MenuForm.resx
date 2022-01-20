@@ -366,4 +366,10 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ChangeLanguageTitle" xml:space="preserve">
+    <value>言語の変更</value>
+  </data>
+  <data name="ChangeLanguageMsg" xml:space="preserve">
+    <value>アプリの言語が変更されました。</value>
+  </data>
 </root>
