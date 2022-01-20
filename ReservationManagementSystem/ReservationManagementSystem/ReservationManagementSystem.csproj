@@ -139,6 +139,12 @@
     <EmbeddedResource Include="ManageExamForm.resx">
       <DependentUpon>ManageExamForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageExamForm2.aa.resx">
+      <DependentUpon>ManageExamForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageExamForm2.en.resx">
+      <DependentUpon>ManageExamForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageExamForm2.resx">
       <DependentUpon>ManageExamForm2.cs</DependentUpon>
     </EmbeddedResource>

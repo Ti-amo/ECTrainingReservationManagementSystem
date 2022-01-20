@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ReservationManagementSystem.DAO {
-    class ExamDAO {
+namespace ReservationManagementSystem.DAO
+{
+    class ExamDAO
+    {
         /// <summary>
         /// データベースとのコネクション
         /// </summary>
@@ -27,9 +29,11 @@ namespace ReservationManagementSystem.DAO {
         /// </summary>
         private SqlDataReader dataReader;
 
-        public ExamDAO() {
+        public ExamDAO()
+        {
             // データベース接続の作成
-            connection = new SqlConnection {
+            connection = new SqlConnection
+            {
                 ConnectionString = ConfigurationManager.ConnectionStrings["reservationdb"].ConnectionString
             };
             connection.Open();
@@ -39,7 +43,8 @@ namespace ReservationManagementSystem.DAO {
         /// すべての診療大項目を抽出する
         /// </summary>
         /// <returns>診療大項目のリスト</returns>
-        public List<ExamItem> GetMajorExamList() {
+        public List<ExamItem> GetMajorExamList()
+        {
             // SQL文：SELECT句
             string query = @"SELECT * 
 							FROM m_major_examination";
@@ -52,14 +57,19 @@ namespace ReservationManagementSystem.DAO {
 
             List<ExamItem> majorExamList = new List<ExamItem>();
             // データを１行ずつ抽出する
-            while (dataReader.Read()) {
-                ExamItem majorExamItem = new ExamItem {
+            while (dataReader.Read())
+            {
+                ExamItem majorExamItem = new ExamItem
+                {
                     MajorExamId = (int)dataReader["major_id"],
                     MajorExamName = (string)dataReader["major_name"]
                 };
-                if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
+                if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP"))
+                {
                     majorExamItem.MajorExamName = (string)dataReader["major_name"];
-                } else {
+                }
+                else
+                {
                     majorExamItem.MajorExamName = (string)dataReader["major_name_en"];
                 }
 
@@ -77,7 +87,8 @@ namespace ReservationManagementSystem.DAO {
         /// </summary>
         /// <param name="majorId">診療大項目ID</param>
         /// <returns>診療小項目のリスト</returns>
-        public List<ExamItem> GetSubExamList(int majorId) {
+        public List<ExamItem> GetSubExamList(int majorId)
+        {
             // SQL文：SELECT句
             string query = @"SELECT * 
 							FROM m_sub_examination se 
@@ -93,15 +104,20 @@ namespace ReservationManagementSystem.DAO {
 
             List<ExamItem> subExamList = new List<ExamItem>();
             // データを１行ずつ抽出する
-            while (dataReader.Read()) {
-                ExamItem subExamItem = new ExamItem {
+            while (dataReader.Read())
+            {
+                ExamItem subExamItem = new ExamItem
+                {
                     MajorExamId = (int)dataReader["major_id"],
                     SubExamId = (int)dataReader["sub_id"]
                 };
-                if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP")) {
+                if (Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP"))
+                {
                     subExamItem.MajorExamName = (string)dataReader["major_name"];
                     subExamItem.SubExamName = (string)dataReader["sub_name"];
-                } else {
+                }
+                else
+                {
                     subExamItem.MajorExamName = (string)dataReader["major_name_en"];
                     subExamItem.SubExamName = (string)dataReader["sub_name_en"];
                 }
