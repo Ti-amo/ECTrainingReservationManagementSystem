@@ -61,7 +61,7 @@ namespace ReservationManagementSystem {
         /// </summary>
         /// <returns></returns>
         private bool ValidateBirthDate() {
-            DateTime birthDate = DateTime.Parse(DatetimePickerBirthDate.Text).Date;
+            DateTime birthDate = DateTime.Parse(DateTimePickerBirthDate.Text).Date;
             DateTime localDate = DateTime.Now.Date;
 
             if (birthDate <= localDate) {
@@ -96,7 +96,7 @@ namespace ReservationManagementSystem {
             ReservationEntity reservationEntity = new ReservationEntity();
 
             patientEntity.Name = TextBoxName.Text;
-            patientEntity.BirthDate = DatetimePickerBirthDate.Value.ToString("yyyy-MM-dd");
+            patientEntity.BirthDate = DateTimePickerBirthDate.Value.ToString("yyyy-MM-dd");
 
             if (String.IsNullOrWhiteSpace(TextBoxName.Text) || (TextBoxName.Text.Length > 48)) {
                 MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("RegisterFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -122,12 +122,6 @@ namespace ReservationManagementSystem {
                         reservationEntity.Exam.Add(new ExamItem { SubExamId = int.Parse(comboBox.SelectedValue.ToString()) });
                     }
                 }
-                // 1 examItem
-                //ExamItem examItem = new ExamItem
-                //{
-                //    SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString())
-                //};
-                //reservationEntity.Exam.Add(examItem);
                 
                 reservationDAO.Insert(reservationEntity);
                 DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -140,6 +134,7 @@ namespace ReservationManagementSystem {
                 }
             }
         }
+
         /// <summary>
         /// 診療項目を追加する
         /// </summary>
@@ -208,13 +203,13 @@ namespace ReservationManagementSystem {
             };
 
             //tableLayoutPanelExamに診療を追加する
-            tableLayoutPanelExam.RowCount++;
+            tableLayoutPanelExam.RowCount += 2;
             tableLayoutPanelExam.Controls.Add(labelMajorExamChild, 0, countExam * 2 - 2);
             tableLayoutPanelExam.Controls.Add(ComboBoxMajorExamChild, 1, countExam * 2 - 2);
-            tableLayoutPanelExam.RowCount++;
             tableLayoutPanelExam.Controls.Add(labelSubExamChild, 0, countExam * 2 - 1);
             tableLayoutPanelExam.Controls.Add(ComboBoxSubExamChild, 1, countExam * 2 - 1);
         }
+
         /// <summary>
         /// 診療項目を削除する
         /// </summary>
@@ -226,6 +221,8 @@ namespace ReservationManagementSystem {
             tableLayoutPanelExam.Controls.Remove(tableLayoutPanelExam.GetControlFromPosition(1, countExam * 2 - 1));
             tableLayoutPanelExam.Controls.Remove(tableLayoutPanelExam.GetControlFromPosition(0, countExam * 2 - 2));
             tableLayoutPanelExam.Controls.Remove(tableLayoutPanelExam.GetControlFromPosition(1, countExam * 2 - 2));
+            tableLayoutPanelExam.RowCount -= 2;
+
             countExam--;
             if (countExam < 3)
             {

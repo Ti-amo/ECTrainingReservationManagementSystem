@@ -32,7 +32,6 @@
             this.ButtonReserve = new System.Windows.Forms.Button();
             this.DateTimePickerReservationDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.LabelTitle = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
@@ -43,6 +42,8 @@
             this.labelSubExam = new System.Windows.Forms.Label();
             this.buttonAddExam = new System.Windows.Forms.Button();
             this.buttonRemoveExam = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanelExam.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,18 +60,11 @@
             this.DateTimePickerReservationDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DateTimePickerReservationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateTimePickerReservationDate.Name = "DateTimePickerReservationDate";
-            this.DateTimePickerReservationDate.ValueChanged += new System.EventHandler(this.DateTimePickerReservationDate_ValueChanged);
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            // 
-            // splitter1
-            // 
-            resources.ApplyResources(this.splitter1, "splitter1");
-            this.splitter1.Name = "splitter1";
-            this.splitter1.TabStop = false;
             // 
             // LabelTitle
             // 
@@ -135,10 +129,22 @@
             this.buttonRemoveExam.UseVisualStyleBackColor = true;
             this.buttonRemoveExam.Click += new System.EventHandler(this.buttonRemoveExam_Click);
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
             // ReservationRegisterForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonRemoveExam);
             this.Controls.Add(this.buttonAddExam);
             this.Controls.Add(this.tableLayoutPanelExam);
@@ -147,7 +153,6 @@
             this.Controls.Add(this.ButtonReserve);
             this.Controls.Add(this.DateTimePickerReservationDate);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.LabelTitle);
             this.Name = "ReservationRegisterForm";
             this.tableLayoutPanelExam.ResumeLayout(false);
@@ -162,7 +167,6 @@
         private System.Windows.Forms.Button ButtonReserve;
         private System.Windows.Forms.DateTimePicker DateTimePickerReservationDate;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Label LabelTitle;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelID;
@@ -173,5 +177,7 @@
         private System.Windows.Forms.Label labelMajorExam;
         private System.Windows.Forms.Button buttonAddExam;
         private System.Windows.Forms.Button buttonRemoveExam;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

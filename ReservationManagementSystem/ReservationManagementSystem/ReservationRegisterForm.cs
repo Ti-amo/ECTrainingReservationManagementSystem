@@ -30,7 +30,6 @@ namespace ReservationManagementSystem {
             tableLayoutPanelExam.Padding = new Padding(0, 5, 0, 5);
         }
        
-       
         private void FillDataComboBoxMajorItem() {
             List<ExamItem> listMajorExam = examDAO.GetMajorExamList();
             List<Object> items = new List<Object>();
@@ -40,11 +39,6 @@ namespace ReservationManagementSystem {
             ComboBoxMajorExam.DisplayMember = "Text";
             ComboBoxMajorExam.ValueMember = "Value";
             ComboBoxMajorExam.DataSource = items;
-            //ComboBoxMajorExam.SelectedIndex = 0;
-        }
-
-        private void DateTimePickerReservationDate_ValueChanged(object sender, EventArgs e) {
-
         }
 
         private void ComboBoxMajorExam_SelectedIndexChanged(object sender, EventArgs e) {
@@ -79,12 +73,6 @@ namespace ReservationManagementSystem {
                         reservationEntity.Exam.Add(new ExamItem { SubExamId = int.Parse(comboBox.SelectedValue.ToString()) });
                     }
                 }
-                // 1 examItem
-                //ExamItem examItem = new ExamItem
-                //{
-                //    SubExamId = int.Parse(ComboBoxSubExam.SelectedValue.ToString())
-                //};
-                //reservationEntity.Exam.Add(examItem);
 
                 reservationDAO.Insert(reservationEntity);
                 DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -111,12 +99,14 @@ namespace ReservationManagementSystem {
             }
             return false;
         }
+
         private void FillDataPatient()
         {
             patient = patientDAO.Find(PatientId);
-            labelID.Text += "    " + patient.PatientId;
-            labelName.Text += "    " + patient.Name;
+            labelID.Text = patient.PatientId;
+            labelName.Text = patient.Name;
         }
+
         private void buttonAddExam_Click(object sender, EventArgs e)
         {
             countExam++;
@@ -180,13 +170,13 @@ namespace ReservationManagementSystem {
             };
 
             //tableLayoutPanelExamに診療を追加する
-            tableLayoutPanelExam.RowCount++;
+            tableLayoutPanelExam.RowCount += 2;
             tableLayoutPanelExam.Controls.Add(labelMajorExamChild, 0, countExam * 2 - 2);
             tableLayoutPanelExam.Controls.Add(ComboBoxMajorExamChild, 1, countExam * 2 - 2);
-            tableLayoutPanelExam.RowCount++;
             tableLayoutPanelExam.Controls.Add(labelSubExamChild, 0, countExam * 2 - 1);
             tableLayoutPanelExam.Controls.Add(ComboBoxSubExamChild, 1, countExam * 2 - 1);
         }
+
         /// <summary>
         /// 診療項目を削除する
         /// </summary>
@@ -198,6 +188,8 @@ namespace ReservationManagementSystem {
             tableLayoutPanelExam.Controls.Remove(tableLayoutPanelExam.GetControlFromPosition(1, countExam * 2 - 1));
             tableLayoutPanelExam.Controls.Remove(tableLayoutPanelExam.GetControlFromPosition(0, countExam * 2 - 2));
             tableLayoutPanelExam.Controls.Remove(tableLayoutPanelExam.GetControlFromPosition(1, countExam * 2 - 2));
+            tableLayoutPanelExam.RowCount -= 2;
+
             countExam--;
             if (countExam < 3)
             {

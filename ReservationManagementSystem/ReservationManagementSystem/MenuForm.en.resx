@@ -137,7 +137,7 @@
     <value>Patient List</value>
   </data>
   <data name="ButtonExam.Text" xml:space="preserve">
-    <value>Exam's Items</value>
+    <value>Examination Items</value>
   </data>
   <data name="ButtonLanguage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -150,5 +150,11 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Menu</value>
+  </data>
+  <data name="ChangeLanguageMsg" xml:space="preserve">
+    <value>The language of app has changed.</value>
+  </data>
+  <data name="ChangeLanguageTitle" xml:space="preserve">
+    <value>Change Language</value>
   </data>
 </root>
