@@ -10,8 +10,9 @@ namespace ReservationManagementSystem
     public partial class ExamItemDeleteForm : Form
     {
         private ExamDAO examDAO = new ExamDAO();
-        private ResourceManager rm = new ResourceManager(typeof(ReservationRegisterForm));
+        private ResourceManager rm = new ResourceManager(typeof(ExamItemDeleteForm));
         public bool deleteStatus = false;
+
         public ExamItemDeleteForm()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace ReservationManagementSystem
         private void FillDataDropDownListMajorItem_Delete()
         {
             List<ExamItem> listMajorExam_Delete = examDAO.GetAllMajorExamList();
-            if(listMajorExam_Delete.Count == 0)
+            if (listMajorExam_Delete.Count == 0)
             {
                 PanelNotification.Visible = true;
 
@@ -69,7 +70,7 @@ namespace ReservationManagementSystem
         private void SetNotification(bool btnDeleteStatus, bool lbSubItemStatus, bool ddlSubItemStatus, bool lbNotiStatus)
         {
             ButtonDeleteSubExam.Visible = btnDeleteStatus;
-            LabelSubItem.Visible = lbSubItemStatus;
+            LabelSubExam.Visible = lbSubItemStatus;
             DropDownListSubItem_Delete.Visible = ddlSubItemStatus;
             LabelNotification.Visible = lbNotiStatus;
         }
@@ -81,7 +82,7 @@ namespace ReservationManagementSystem
         /// <param name="e"></param>
         private void DropDownListMajorItem_Delete_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(DropDownListMajorItem_Delete.DataSource != null)
+            if (DropDownListMajorItem_Delete.DataSource != null)
             {
                 List<ExamItem> subExamList = examDAO.GetSubExamList(int.Parse(DropDownListMajorItem_Delete.SelectedValue.ToString()));
                 if (subExamList.Count == 0)
@@ -139,7 +140,7 @@ namespace ReservationManagementSystem
         /// <param name="e"></param>
         private void ButtonDeleteMajorExam_Click(object sender, EventArgs e)
         {
-            if(DropDownListMajorItem_Delete.Items.Count != 0)
+            if (DropDownListMajorItem_Delete.Items.Count != 0)
             {
                 ExamItem examItem = new ExamItem();
                 examItem.MajorExamId = (int)DropDownListMajorItem_Delete.SelectedValue;

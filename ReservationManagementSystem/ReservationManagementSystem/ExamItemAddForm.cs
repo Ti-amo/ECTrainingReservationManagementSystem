@@ -10,7 +10,7 @@ namespace ReservationManagementSystem
     public partial class ExamItemAddForm : Form
     {
         private ExamDAO examDAO = new ExamDAO();
-        private ResourceManager rm = new ResourceManager(typeof(ReservationRegisterForm));
+        private ResourceManager rm = new ResourceManager(typeof(ExamItemAddForm));
         private bool editStatus = false;
         public bool addStatus = false;
 
@@ -109,13 +109,13 @@ namespace ReservationManagementSystem
                 examItem.SubExamNameJp = TextboxSubItemName_Ja.Text;
                 if (String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || (TextboxSubItemName_Ja.Text.Length > 25) || (TextboxSubItemName_Ja.Text.Length > 40) || examDAO.IsExistedSubExamName(examItem))
                 {
-                    MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("RegisterFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("AddFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
                 else
                 {
                     examDAO.InsertSubExam(examItem);
-                    DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show(rm.GetString("AddSuccessMsg"), rm.GetString("AddSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
                         addStatus = true;
@@ -131,12 +131,12 @@ namespace ReservationManagementSystem
                 examItem.SubExamNameJp = TextboxSubItemName_Ja.Text;
                 if (String.IsNullOrWhiteSpace(TextboxMajorItemName_Ja.Text) || String.IsNullOrWhiteSpace(TextboxMajorItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || (TextboxMajorItemName_Ja.Text.Length > 5) || (TextboxMajorItemName_Eng.Text.Length > 15) || (TextboxSubItemName_Ja.Text.Length > 25) || (TextboxSubItemName_Ja.Text.Length > 40) || examDAO.IsExistedMajorExamName(examItem) || examDAO.IsExistedSubExamName(examItem))
                 {
-                    MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("RegisterFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("AddFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     examDAO.InsertMajorExam(examItem);
-                    DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show(rm.GetString("AddSuccessMsg"), rm.GetString("AddSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
                         addStatus = true;

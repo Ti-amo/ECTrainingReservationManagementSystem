@@ -130,7 +130,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ButtonDeleteSubExam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 250</value>
+    <value>244, 221</value>
   </data>
   <data name="ButtonDeleteSubExam.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 26</value>
@@ -151,55 +151,46 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ButtonDeleteSubExam.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
-  <data name="LabelSubItem.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="LabelSubExam.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="LabelSubItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="LabelSubExam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 162</value>
   </data>
-  <data name="LabelSubItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
+  <data name="LabelSubExam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
-  <data name="LabelSubItem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelSubItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 186</value>
-  </data>
-  <data name="LabelSubItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 16</value>
-  </data>
-  <data name="LabelSubItem.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelSubExam.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="LabelSubItem.Text" xml:space="preserve">
+  <data name="LabelSubExam.Text" xml:space="preserve">
     <value>診療小項目</value>
   </data>
-  <data name="&gt;&gt;LabelSubItem.Name" xml:space="preserve">
-    <value>LabelSubItem</value>
+  <data name="&gt;&gt;LabelSubExam.Name" xml:space="preserve">
+    <value>LabelSubExam</value>
   </data>
-  <data name="&gt;&gt;LabelSubItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelSubExam.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelSubItem.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelSubExam.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;LabelSubItem.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;LabelSubExam.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="DropDownListSubItem_Delete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="DropDownListSubItem_Delete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 178</value>
+    <value>189, 159</value>
   </data>
   <data name="DropDownListSubItem_Delete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="DropDownListSubItem_Delete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 24</value>
+    <value>350, 24</value>
   </data>
   <data name="DropDownListSubItem_Delete.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -214,19 +205,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DropDownListSubItem_Delete.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="DropDownListMajorItem_Delete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="DropDownListMajorItem_Delete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 120</value>
+    <value>189, 101</value>
   </data>
   <data name="DropDownListMajorItem_Delete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="DropDownListMajorItem_Delete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 24</value>
+    <value>150, 24</value>
   </data>
   <data name="DropDownListMajorItem_Delete.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -241,42 +232,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DropDownListMajorItem_Delete.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
-  <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="LabelMajorExam.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="LabelMajorExam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 104</value>
   </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
+  <data name="LabelMajorExam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 128</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 16</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelMajorExam.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="LabelMajorExam.Text" xml:space="preserve">
     <value>診療大項目</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="&gt;&gt;LabelMajorExam.Name" xml:space="preserve">
+    <value>LabelMajorExam</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelMajorExam.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelMajorExam.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelMajorExam.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="ButtonDeleteMajorExam.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -289,7 +271,7 @@
     <value>NoControl</value>
   </data>
   <data name="ButtonDeleteMajorExam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>390, 250</value>
+    <value>425, 221</value>
   </data>
   <data name="ButtonDeleteMajorExam.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 26</value>
@@ -322,16 +304,16 @@
     <value>NoControl</value>
   </data>
   <data name="LabelNotification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 186</value>
+    <value>62, 162</value>
   </data>
   <data name="LabelNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 16</value>
+    <value>344, 16</value>
   </data>
   <data name="LabelNotification.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
   <data name="LabelNotification.Text" xml:space="preserve">
-    <value>この診療大項目には小項目がありません。</value>
+    <value>この診療大項目には診療小項目がありません。</value>
   </data>
   <data name="LabelNotification.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -361,7 +343,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelNotifi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 106</value>
+    <value>172, 136</value>
   </data>
   <data name="LabelNotifi.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 16</value>
@@ -394,7 +376,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 35</value>
+    <value>205, 65</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 50</value>
@@ -415,7 +397,7 @@
     <value>1</value>
   </data>
   <data name="PanelNotification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 59</value>
+    <value>44, 63</value>
   </data>
   <data name="PanelNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>513, 228</value>
@@ -435,9 +417,9 @@
   <data name="&gt;&gt;PanelNotification.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>
@@ -458,5 +440,14 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteConfirmMsg" xml:space="preserve">
+    <value>この診療項目を削除してもよろしいですか？</value>
+  </data>
+  <data name="DeleteSuccessMsg" xml:space="preserve">
+    <value>診療項目が削除されました。</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>診療項目の削除</value>
   </data>
 </root>
