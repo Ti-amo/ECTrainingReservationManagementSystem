@@ -12,6 +12,7 @@ namespace ReservationManagementSystem
         private ExamDAO examDAO = new ExamDAO();
         private ResourceManager rm = new ResourceManager(typeof(ReservationRegisterForm));
         private bool editStatus = false;
+        public bool addStatus = false;
 
         public ExamItemAddForm()
         {
@@ -28,32 +29,41 @@ namespace ReservationManagementSystem
             FillDataDropDownListMajorItem_Add();
         }
 
-        private void ReloadForm()
+        public void ReloadForm()
         {
-            this.Controls.Clear();
-            InitializeComponent();
             LoadForm();
+
+            TextboxMajorItemName_Ja.Text = "";
+            TextboxMajorItemName_Eng.Text = "";
+            TextboxSubItemName_Ja.Text = "";
+            TextboxSubItemName_Eng.Text = "";
         }
 
         /// <summary>
-        /// 
+        /// 診療大項目一覧をDropdownlistに入れる
         /// </summary>
         private void FillDataDropDownListMajorItem_Add()
         {
-            List<ExamItem> listMajorExam_Add = examDAO.GetMajorExamList();
-            List<Object> items = new List<Object>();
-            foreach (var item in listMajorExam_Add)
+            List<ExamItem> listMajorExam_Add = examDAO.GetAllMajorExamList();
+            if(listMajorExam_Add.Count == 0)
             {
-                items.Add(new { Text = item.MajorExamName, Value = item.MajorExamId });
+                DropDownListMajorItem_Add.DataSource = null;
             }
-            DropDownListMajorItem_Add.DisplayMember = "Text";
-            DropDownListMajorItem_Add.ValueMember = "Value";
-            DropDownListMajorItem_Add.DataSource = items;
-
+            else
+            {
+                List<Object> items = new List<Object>();
+                foreach (var item in listMajorExam_Add)
+                {
+                    items.Add(new { Text = item.MajorExamName, Value = item.MajorExamId });
+                }
+                DropDownListMajorItem_Add.DisplayMember = "Text";
+                DropDownListMajorItem_Add.ValueMember = "Value";
+                DropDownListMajorItem_Add.DataSource = items;
+            }
         }
 
         /// <summary>
-        /// 
+        /// 新しい診療大項目を追加する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -108,7 +118,7 @@ namespace ReservationManagementSystem
                     DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
-                        //this.Close();
+                        addStatus = true;
                         this.ReloadForm();
                     }
                 }
@@ -129,7 +139,7 @@ namespace ReservationManagementSystem
                     DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
-                        //this.Close();
+                        addStatus = true;
                         this.ReloadForm();
                     }
                 }

@@ -30,12 +30,22 @@ namespace ReservationManagementSystem
                 this.PanelContainer.Controls.Clear();
                 this.PanelContainer.Controls.Add(examItemDeleteForm);
                 examItemDeleteForm.Show();
+                if (examItemAddForm.addStatus)
+                {
+                    examItemAddForm.addStatus = false;
+                    examItemDeleteForm.ReloadForm();
+                }
             }
             else
             {
                 this.PanelContainer.Controls.Clear();
                 this.PanelContainer.Controls.Add(examItemAddForm);
                 examItemAddForm.Show();
+                if (examItemDeleteForm.deleteStatus)
+                {
+                    examItemDeleteForm.deleteStatus = false;
+                    examItemAddForm.ReloadForm();
+                }
             }
         }
     }

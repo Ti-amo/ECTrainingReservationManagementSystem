@@ -55,6 +55,7 @@ namespace ReservationManagementSystem
             // PanelContainer
             // 
             resources.ApplyResources(this.PanelContainer, "PanelContainer");
+            this.PanelContainer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PanelContainer.Name = "PanelContainer";
             // 
             // ToggleButtonStatus

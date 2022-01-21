@@ -30,24 +30,31 @@ namespace ReservationManagementSystem
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamItemDeleteForm));
-            this.ButtonDelete = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.ButtonDeleteSubExam = new System.Windows.Forms.Button();
+            this.LabelSubItem = new System.Windows.Forms.Label();
             this.DropDownListSubItem_Delete = new System.Windows.Forms.ComboBox();
             this.DropDownListMajorItem_Delete = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ButtonDeleteMajorExam = new System.Windows.Forms.Button();
+            this.LabelNotification = new System.Windows.Forms.Label();
+            this.PanelNotification = new System.Windows.Forms.Panel();
+            this.LabelNotifi = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PanelNotification.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // ButtonDelete
+            // ButtonDeleteSubExam
             // 
-            resources.ApplyResources(this.ButtonDelete, "ButtonDelete");
-            this.ButtonDelete.Name = "ButtonDelete";
-            this.ButtonDelete.UseVisualStyleBackColor = true;
-            this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
+            resources.ApplyResources(this.ButtonDeleteSubExam, "ButtonDeleteSubExam");
+            this.ButtonDeleteSubExam.Name = "ButtonDeleteSubExam";
+            this.ButtonDeleteSubExam.UseVisualStyleBackColor = true;
+            this.ButtonDeleteSubExam.Click += new System.EventHandler(this.ButtonDeleteSubExam_Click);
             // 
-            // label5
+            // LabelSubItem
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.LabelSubItem, "LabelSubItem");
+            this.LabelSubItem.Name = "LabelSubItem";
             // 
             // DropDownListSubItem_Delete
             // 
@@ -69,18 +76,55 @@ namespace ReservationManagementSystem
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
+            // ButtonDeleteMajorExam
+            // 
+            resources.ApplyResources(this.ButtonDeleteMajorExam, "ButtonDeleteMajorExam");
+            this.ButtonDeleteMajorExam.Name = "ButtonDeleteMajorExam";
+            this.ButtonDeleteMajorExam.UseVisualStyleBackColor = true;
+            this.ButtonDeleteMajorExam.Click += new System.EventHandler(this.ButtonDeleteMajorExam_Click);
+            // 
+            // LabelNotification
+            // 
+            resources.ApplyResources(this.LabelNotification, "LabelNotification");
+            this.LabelNotification.Name = "LabelNotification";
+            // 
+            // PanelNotification
+            // 
+            resources.ApplyResources(this.PanelNotification, "PanelNotification");
+            this.PanelNotification.Controls.Add(this.LabelNotifi);
+            this.PanelNotification.Controls.Add(this.pictureBox1);
+            this.PanelNotification.Name = "PanelNotification";
+            // 
+            // LabelNotifi
+            // 
+            resources.ApplyResources(this.LabelNotifi, "LabelNotifi");
+            this.LabelNotifi.Name = "LabelNotifi";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.BackgroundImage = global::ReservationManagementSystem.Properties.Resources.sad;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // ExamItemDeleteForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.ButtonDelete);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.PanelNotification);
+            this.Controls.Add(this.LabelNotification);
+            this.Controls.Add(this.ButtonDeleteMajorExam);
+            this.Controls.Add(this.ButtonDeleteSubExam);
+            this.Controls.Add(this.LabelSubItem);
             this.Controls.Add(this.DropDownListSubItem_Delete);
             this.Controls.Add(this.DropDownListMajorItem_Delete);
             this.Controls.Add(this.label4);
             this.Name = "ExamItemDeleteForm";
             this.Load += new System.EventHandler(this.ExamItemDeleteForm_Load);
+            this.PanelNotification.ResumeLayout(false);
+            this.PanelNotification.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,10 +132,15 @@ namespace ReservationManagementSystem
 
         #endregion
 
-        private System.Windows.Forms.Button ButtonDelete;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button ButtonDeleteSubExam;
+        private System.Windows.Forms.Label LabelSubItem;
         private System.Windows.Forms.ComboBox DropDownListSubItem_Delete;
         private System.Windows.Forms.ComboBox DropDownListMajorItem_Delete;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button ButtonDeleteMajorExam;
+        private System.Windows.Forms.Label LabelNotification;
+        private System.Windows.Forms.Panel PanelNotification;
+        private System.Windows.Forms.Label LabelNotifi;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
