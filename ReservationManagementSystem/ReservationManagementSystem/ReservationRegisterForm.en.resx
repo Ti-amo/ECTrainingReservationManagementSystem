@@ -221,4 +221,10 @@
   <data name="ReservationDateFailureMsg" xml:space="preserve">
     <value>Please enter reservation date after today.</value>
   </data>
+  <data name="NotificationMsg" xml:space="preserve">
+    <value>There are no major exam. Please add new one!</value>
+  </data>
+  <data name="NotificatitonTitle" xml:space="preserve">
+    <value>Notification</value>
+  </data>
 </root>

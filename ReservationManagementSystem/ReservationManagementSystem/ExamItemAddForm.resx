@@ -534,6 +534,9 @@
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ExamItemAddForm</value>
   </data>
@@ -554,5 +557,11 @@
   </data>
   <data name="NameFailureMsg" xml:space="preserve">
     <value>診療項目名は正しくないか、すでに存在しています。</value>
+  </data>
+  <data name="NotificationMsg" xml:space="preserve">
+    <value>診療大項目はありません。追加してください！</value>
+  </data>
+  <data name="NotificatitonTitle" xml:space="preserve">
+    <value>通知</value>
   </data>
 </root>

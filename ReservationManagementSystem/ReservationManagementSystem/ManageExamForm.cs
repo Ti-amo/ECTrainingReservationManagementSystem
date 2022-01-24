@@ -7,9 +7,11 @@ namespace ReservationManagementSystem
     {
         private ExamItemDeleteForm examItemDeleteForm = new ExamItemDeleteForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
         private ExamItemAddForm examItemAddForm = new ExamItemAddForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-        public ManageExamForm()
+        public ManageExamForm(bool flag = true)
         {
             InitializeComponent();
+
+            examItemAddForm.flagShowNotification = flag;
         }
 
         private void ManageExamForm2_Load(object sender, EventArgs e)

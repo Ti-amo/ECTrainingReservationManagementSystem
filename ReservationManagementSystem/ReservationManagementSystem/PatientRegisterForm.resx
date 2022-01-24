@@ -600,9 +600,9 @@
   <data name="&gt;&gt;DateTimePickerBirthDate.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -644,5 +644,11 @@
   </data>
   <data name="ReservationDateFailureMsg" xml:space="preserve">
     <value>本日の後に予約日付を入力してください。</value>
+  </data>
+  <data name="NotificationMsg" xml:space="preserve">
+    <value>診療大項目はありません。追加してください！</value>
+  </data>
+  <data name="NotificatitonTitle" xml:space="preserve">
+    <value>通知</value>
   </data>
 </root>
