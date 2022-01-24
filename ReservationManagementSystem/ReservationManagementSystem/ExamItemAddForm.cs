@@ -40,6 +40,22 @@ namespace ReservationManagementSystem
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lbLanguageStatus"></param>
+        /// <param name="tbMajorItemName_EngStatus"></param>
+        /// <param name="ddlMajorItemStatus"></param>
+        /// <param name="tbMajorItemName_JaStatus"></param>
+        private void SetVisibleStatusOfControls(bool lbLanguageStatus, bool tbMajorItemName_EngStatus, 
+            bool ddlMajorItemStatus, bool tbMajorItemName_JaStatus)
+        {
+            LabelLanguage.Visible = lbLanguageStatus;
+            TextboxMajorItemName_Eng.Visible = tbMajorItemName_EngStatus;
+            DropDownListMajorItem_Add.Visible = ddlMajorItemStatus;
+            TextboxMajorItemName_Ja.Visible = tbMajorItemName_JaStatus;
+        }
+
+        /// <summary>
         /// 診療大項目一覧をDropdownlistに入れる
         /// </summary>
         private void FillDataDropDownListMajorItem_Add()
@@ -48,9 +64,15 @@ namespace ReservationManagementSystem
             if(listMajorExam_Add.Count == 0)
             {
                 DropDownListMajorItem_Add.DataSource = null;
+                SetVisibleStatusOfControls(true, true, false, true);
+                ButtonEdit.Visible = false;
+                // MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
+                SetVisibleStatusOfControls(false, false, true, false);
+                ButtonEdit.Visible = true;
+
                 List<Object> items = new List<Object>();
                 foreach (var item in listMajorExam_Add)
                 {
@@ -72,20 +94,14 @@ namespace ReservationManagementSystem
             if (!editStatus)
             {
                 ButtonEdit.BackgroundImage = Properties.Resources.close;
-                LabelLanguage.Visible = true;
-                TextboxMajorItemName_Eng.Visible = true;
-                DropDownListMajorItem_Add.Visible = false;
-                TextboxMajorItemName_Ja.Visible = true;
+                SetVisibleStatusOfControls(true, true, false, true);
             }
             else
             {
                 ButtonEdit.BackgroundImage = Properties.Resources.add;
-                LabelLanguage.Visible = false;
+                SetVisibleStatusOfControls(false, false, true, false);
                 TextboxMajorItemName_Eng.Text = "";
-                TextboxMajorItemName_Eng.Visible = false;
-                DropDownListMajorItem_Add.Visible = true;
                 TextboxMajorItemName_Ja.Text = "";
-                TextboxMajorItemName_Ja.Visible = false;
             }
             editStatus = !editStatus;
         }
