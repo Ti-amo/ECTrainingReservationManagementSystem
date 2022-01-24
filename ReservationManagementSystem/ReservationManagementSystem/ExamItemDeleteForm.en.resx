@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ButtonDeleteSubExam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 250</value>
+    <value>185, 218</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ButtonDeleteSubExam.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -131,11 +131,57 @@
   <data name="ButtonDeleteSubExam.Text" xml:space="preserve">
     <value>Delete sub exam</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Major Exam</value>
+  <data name="LabelSubExam.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelSubExam.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSubExam.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="LabelSubExam.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelSubExam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 154</value>
+  </data>
+  <data name="LabelSubExam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="LabelSubExam.Text" xml:space="preserve">
+    <value>Sub exam</value>
+  </data>
+  <data name="DropDownListSubItem_Delete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 151</value>
+  </data>
+  <data name="DropDownListMajorItem_Delete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 96</value>
+  </data>
+  <data name="LabelMajorExam.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="LabelMajorExam.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelMajorExam.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="LabelMajorExam.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelMajorExam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 99</value>
+  </data>
+  <data name="LabelMajorExam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 16</value>
+  </data>
+  <data name="LabelMajorExam.Text" xml:space="preserve">
+    <value>Major exam</value>
   </data>
   <data name="ButtonDeleteMajorExam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>350, 250</value>
+    <value>381, 218</value>
   </data>
   <data name="ButtonDeleteMajorExam.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 26</value>
@@ -143,10 +189,34 @@
   <data name="ButtonDeleteMajorExam.Text" xml:space="preserve">
     <value>Delete major exam</value>
   </data>
-  <data name="LabelNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 16</value>
+  <data name="LabelNotification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 154</value>
   </data>
   <data name="LabelNotification.Text" xml:space="preserve">
-    <value>There are no sub items in this major exam.</value>
+    <value>There are no sub exams in this major exam.</value>
+  </data>
+  <data name="LabelNotifi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 134</value>
+  </data>
+  <data name="LabelNotifi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 16</value>
+  </data>
+  <data name="LabelNotifi.Text" xml:space="preserve">
+    <value>There are no examination items.</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>198, 65</value>
+  </data>
+  <data name="PanelNotification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 54</value>
+  </data>
+  <data name="DeleteConfirmMsg" xml:space="preserve">
+    <value>Are you sure you want to delete this examination?</value>
+  </data>
+  <data name="DeleteSuccessMsg" xml:space="preserve">
+    <value>The examination has been deleted.</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>Delete Examination</value>
   </data>
 </root>

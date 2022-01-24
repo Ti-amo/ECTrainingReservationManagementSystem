@@ -88,17 +88,17 @@
     <Compile Include="FlatDateTimePicker.Designer.cs">
       <DependentUpon>FlatDateTimePicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageExamFormTemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageExamFormTemp.Designer.cs">
+      <DependentUpon>ManageExamFormTemp.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageExamForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManageExamForm.Designer.cs">
       <DependentUpon>ManageExamForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManageExamForm2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageExamForm2.Designer.cs">
-      <DependentUpon>ManageExamForm2.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
@@ -160,17 +160,14 @@
     <EmbeddedResource Include="ExamItemDeleteForm.resx">
       <DependentUpon>ExamItemDeleteForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageExamForm.resx">
+    <EmbeddedResource Include="ManageExamFormTemp.resx">
+      <DependentUpon>ManageExamFormTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageExamForm.en.resx">
       <DependentUpon>ManageExamForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageExamForm2.aa.resx">
-      <DependentUpon>ManageExamForm2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageExamForm2.en.resx">
-      <DependentUpon>ManageExamForm2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageExamForm2.resx">
-      <DependentUpon>ManageExamForm2.cs</DependentUpon>
+    <EmbeddedResource Include="ManageExamForm.resx">
+      <DependentUpon>ManageExamForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.en.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>

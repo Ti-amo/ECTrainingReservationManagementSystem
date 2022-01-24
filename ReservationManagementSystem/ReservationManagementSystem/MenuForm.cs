@@ -90,7 +90,7 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void ButtonExam_Click(object sender, EventArgs e)
         {
-            ManageExamForm2 manageExamForm = new ManageExamForm2();
+            ManageExamForm manageExamForm = new ManageExamForm();
             manageExamForm.Show();
         }
     }

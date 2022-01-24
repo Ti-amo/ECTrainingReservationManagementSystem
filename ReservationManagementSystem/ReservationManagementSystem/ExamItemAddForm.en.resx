@@ -117,19 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="TextboxMajorItemName_Ja.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 70</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ButtonAdd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ButtonAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>415, 291</value>
+  </data>
   <data name="ButtonAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 28</value>
   </data>
   <data name="ButtonAdd.Text" xml:space="preserve">
-    <value>Register</value>
+    <value>Add</value>
+  </data>
+  <data name="TextboxSubItemName_Eng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 240</value>
+  </data>
+  <data name="TextboxSubItemName_Ja.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 200</value>
+  </data>
+  <data name="TextboxMajorItemName_Eng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 110</value>
+  </data>
+  <data name="DropDownListMajorItem_Add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 70</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 243</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 16</value>
@@ -140,6 +161,9 @@
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 203</value>
+  </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 16</value>
   </data>
@@ -149,11 +173,17 @@
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 163</value>
+  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 16</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Sub Exam</value>
+  </data>
+  <data name="LabelLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 113</value>
   </data>
   <data name="LabelLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 16</value>
@@ -164,6 +194,9 @@
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 73</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 16</value>
   </data>
@@ -173,10 +206,28 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 33</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 16</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Major Exam</value>
+  </data>
+  <data name="ButtonEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>474, 70</value>
+  </data>
+  <data name="AddFailureTitle" xml:space="preserve">
+    <value>Add Failure</value>
+  </data>
+  <data name="AddSuccessMsg" xml:space="preserve">
+    <value>The examination has been added.</value>
+  </data>
+  <data name="AddSuccessTitle" xml:space="preserve">
+    <value>Add Success</value>
+  </data>
+  <data name="NameFailureMsg" xml:space="preserve">
+    <value>The examination's name is incorrect or already exists.</value>
   </data>
 </root>

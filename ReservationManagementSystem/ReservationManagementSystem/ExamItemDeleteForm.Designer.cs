@@ -31,10 +31,10 @@ namespace ReservationManagementSystem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamItemDeleteForm));
             this.ButtonDeleteSubExam = new System.Windows.Forms.Button();
-            this.LabelSubItem = new System.Windows.Forms.Label();
+            this.LabelSubExam = new System.Windows.Forms.Label();
             this.DropDownListSubItem_Delete = new System.Windows.Forms.ComboBox();
             this.DropDownListMajorItem_Delete = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LabelMajorExam = new System.Windows.Forms.Label();
             this.ButtonDeleteMajorExam = new System.Windows.Forms.Button();
             this.LabelNotification = new System.Windows.Forms.Label();
             this.PanelNotification = new System.Windows.Forms.Panel();
@@ -51,10 +51,10 @@ namespace ReservationManagementSystem
             this.ButtonDeleteSubExam.UseVisualStyleBackColor = true;
             this.ButtonDeleteSubExam.Click += new System.EventHandler(this.ButtonDeleteSubExam_Click);
             // 
-            // LabelSubItem
+            // LabelSubExam
             // 
-            resources.ApplyResources(this.LabelSubItem, "LabelSubItem");
-            this.LabelSubItem.Name = "LabelSubItem";
+            resources.ApplyResources(this.LabelSubExam, "LabelSubExam");
+            this.LabelSubExam.Name = "LabelSubExam";
             // 
             // DropDownListSubItem_Delete
             // 
@@ -71,10 +71,10 @@ namespace ReservationManagementSystem
             this.DropDownListMajorItem_Delete.Name = "DropDownListMajorItem_Delete";
             this.DropDownListMajorItem_Delete.SelectedIndexChanged += new System.EventHandler(this.DropDownListMajorItem_Delete_SelectedIndexChanged);
             // 
-            // label4
+            // LabelMajorExam
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.LabelMajorExam, "LabelMajorExam");
+            this.LabelMajorExam.Name = "LabelMajorExam";
             // 
             // ButtonDeleteMajorExam
             // 
@@ -115,11 +115,11 @@ namespace ReservationManagementSystem
             this.Controls.Add(this.PanelNotification);
             this.Controls.Add(this.LabelNotification);
             this.Controls.Add(this.ButtonDeleteMajorExam);
-            this.Controls.Add(this.ButtonDeleteSubExam);
-            this.Controls.Add(this.LabelSubItem);
-            this.Controls.Add(this.DropDownListSubItem_Delete);
             this.Controls.Add(this.DropDownListMajorItem_Delete);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.ButtonDeleteSubExam);
+            this.Controls.Add(this.LabelSubExam);
+            this.Controls.Add(this.DropDownListSubItem_Delete);
+            this.Controls.Add(this.LabelMajorExam);
             this.Name = "ExamItemDeleteForm";
             this.Load += new System.EventHandler(this.ExamItemDeleteForm_Load);
             this.PanelNotification.ResumeLayout(false);
@@ -133,10 +133,10 @@ namespace ReservationManagementSystem
         #endregion
 
         private System.Windows.Forms.Button ButtonDeleteSubExam;
-        private System.Windows.Forms.Label LabelSubItem;
+        private System.Windows.Forms.Label LabelSubExam;
         private System.Windows.Forms.ComboBox DropDownListSubItem_Delete;
         private System.Windows.Forms.ComboBox DropDownListMajorItem_Delete;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LabelMajorExam;
         private System.Windows.Forms.Button ButtonDeleteMajorExam;
         private System.Windows.Forms.Label LabelNotification;
         private System.Windows.Forms.Panel PanelNotification;
