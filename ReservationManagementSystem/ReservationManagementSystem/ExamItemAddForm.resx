@@ -561,7 +561,7 @@
   <data name="NotificationMsg" xml:space="preserve">
     <value>診療大項目はありません。追加してください！</value>
   </data>
-  <data name="NotificatitonTitle" xml:space="preserve">
+  <data name="NotificationTitle" xml:space="preserve">
     <value>通知</value>
   </data>
 </root>

@@ -233,7 +233,7 @@
   <data name="NotificationMsg" xml:space="preserve">
     <value>There are no major exam. Please add new one!</value>
   </data>
-  <data name="NotificatitonTitle" xml:space="preserve">
+  <data name="NotificationTitle" xml:space="preserve">
     <value>Notification</value>
   </data>
 </root>

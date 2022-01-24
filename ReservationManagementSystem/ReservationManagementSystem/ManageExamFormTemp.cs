@@ -9,11 +9,6 @@ namespace ReservationManagementSystem
             InitializeComponent();
         }
 
-        private void ManageExamForm_Load(object sender, System.EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// 
         /// </summary>
