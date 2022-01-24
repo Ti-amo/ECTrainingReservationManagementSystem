@@ -13,6 +13,8 @@ namespace ReservationManagementSystem
         private ResourceManager rm = new ResourceManager(typeof(ExamItemAddForm));
         private bool editStatus = false;
         public bool addStatus = false;
+        private bool showNotificationStatus = false;
+        public bool flagShowNotification = true;
 
         public ExamItemAddForm()
         {
@@ -26,7 +28,25 @@ namespace ReservationManagementSystem
 
         private void LoadForm()
         {
-            FillDataDropDownListMajorItem_Add();
+            List<ExamItem> listMajorExam_Add = examDAO.GetAllMajorExamList();
+            if (listMajorExam_Add.Count == 0)
+            {
+                SetVisibleStatusOfControls(true, true, false, true);
+                ButtonEdit.Visible = false;
+                if (flagShowNotification)
+                {
+                    showNotificationStatus = true;
+                }
+
+                FillDataDropDownListMajorItem_Add(null);
+            }
+            else
+            {
+                SetVisibleStatusOfControls(false, false, true, false);
+                ButtonEdit.Visible = true;
+
+                FillDataDropDownListMajorItem_Add(listMajorExam_Add);
+            }
         }
 
         public void ReloadForm()
@@ -37,22 +57,61 @@ namespace ReservationManagementSystem
             TextboxMajorItemName_Eng.Text = "";
             TextboxSubItemName_Ja.Text = "";
             TextboxSubItemName_Eng.Text = "";
+
+            ShowNotification();
+        }
+
+        /// <summary>
+        /// called whenever the form is first displayed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form_Shown(object sender, EventArgs e)
+        {
+            ShowNotification();
+        }
+
+        /// <summary>
+        /// called if major exam has no items
+        /// </summary>
+        private void ShowNotification()
+        {
+            if (showNotificationStatus)
+            {
+                MessageBox.Show(rm.GetString("NotificationMsg"), rm.GetString("NotificationTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                showNotificationStatus = false;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lbLanguageStatus"></param>
+        /// <param name="tbMajorItemName_EngStatus"></param>
+        /// <param name="ddlMajorItemStatus"></param>
+        /// <param name="tbMajorItemName_JaStatus"></param>
+        private void SetVisibleStatusOfControls(bool lbLanguageStatus, bool tbMajorItemName_EngStatus, 
+            bool ddlMajorItemStatus, bool tbMajorItemName_JaStatus)
+        {
+            LabelLanguage.Visible = lbLanguageStatus;
+            TextboxMajorItemName_Eng.Visible = tbMajorItemName_EngStatus;
+            DropDownListMajorItem_Add.Visible = ddlMajorItemStatus;
+            TextboxMajorItemName_Ja.Visible = tbMajorItemName_JaStatus;
         }
 
         /// <summary>
         /// 診療大項目一覧をDropdownlistに入れる
         /// </summary>
-        private void FillDataDropDownListMajorItem_Add()
+        private void FillDataDropDownListMajorItem_Add(List<ExamItem> listMajorExam)
         {
-            List<ExamItem> listMajorExam_Add = examDAO.GetAllMajorExamList();
-            if(listMajorExam_Add.Count == 0)
+            if(listMajorExam == null)
             {
                 DropDownListMajorItem_Add.DataSource = null;
             }
             else
             {
                 List<Object> items = new List<Object>();
-                foreach (var item in listMajorExam_Add)
+                foreach (var item in listMajorExam)
                 {
                     items.Add(new { Text = item.MajorExamName, Value = item.MajorExamId });
                 }
@@ -72,20 +131,14 @@ namespace ReservationManagementSystem
             if (!editStatus)
             {
                 ButtonEdit.BackgroundImage = Properties.Resources.close;
-                LabelLanguage.Visible = true;
-                TextboxMajorItemName_Eng.Visible = true;
-                DropDownListMajorItem_Add.Visible = false;
-                TextboxMajorItemName_Ja.Visible = true;
+                SetVisibleStatusOfControls(true, true, false, true);
             }
             else
             {
                 ButtonEdit.BackgroundImage = Properties.Resources.add;
-                LabelLanguage.Visible = false;
+                SetVisibleStatusOfControls(false, false, true, false);
                 TextboxMajorItemName_Eng.Text = "";
-                TextboxMajorItemName_Eng.Visible = false;
-                DropDownListMajorItem_Add.Visible = true;
                 TextboxMajorItemName_Ja.Text = "";
-                TextboxMajorItemName_Ja.Visible = false;
             }
             editStatus = !editStatus;
         }

@@ -137,6 +137,7 @@ namespace ReservationManagementSystem
             this.Controls.Add(this.label1);
             this.Name = "ExamItemAddForm";
             this.Load += new System.EventHandler(this.ExamItemAddForm_Load);
+            this.Shown += new System.EventHandler(this.Form_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

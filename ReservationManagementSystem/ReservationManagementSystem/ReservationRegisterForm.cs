@@ -20,18 +20,45 @@ namespace ReservationManagementSystem {
         ResourceManager rm = new ResourceManager(typeof(ReservationRegisterForm));
         private int countExam = 1;
         private int maxExam = 3;
+        private bool showNotificationStatus = false;
 
         public ReservationRegisterForm(string patientId) {
             this.PatientId = patientId;
             InitializeComponent();
-            FillDataComboBoxMajorItem();
             FillDataPatient();
             buttonRemoveExam.Visible = false;
             tableLayoutPanelExam.Padding = new Padding(0, 5, 0, 5);
-        }
-       
-        private void FillDataComboBoxMajorItem() {
+
+            this.Shown += Form_Shown;
+
             List<ExamItem> listMajorExam = examDAO.GetMajorExamList();
+            if(listMajorExam.Count != 0)
+            {
+                FillDataComboBoxMajorItem(listMajorExam);
+            }
+            else
+            {
+                showNotificationStatus = true;
+            }
+        }
+
+        private void Form_Shown(Object sender, EventArgs e)
+        {
+            if (showNotificationStatus)
+            {
+                DialogResult result = MessageBox.Show(rm.GetString("NotificationMsg"), rm.GetString("NotificationTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    ManageExamForm manageExamForm = new ManageExamForm(false);
+                    this.Hide();
+                    manageExamForm.FormClosed += (s, args) => this.Close();
+                    manageExamForm.Show();
+                }
+            }
+        }
+
+
+        private void FillDataComboBoxMajorItem(List<ExamItem> listMajorExam) {
             List<Object> items = new List<Object>();
             foreach (var item in listMajorExam) {
                 items.Add(new { Text = item.MajorExamName, Value = item.MajorExamId });
