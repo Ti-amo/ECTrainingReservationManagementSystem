@@ -36,6 +36,7 @@
             this.ButtonExam = new System.Windows.Forms.Button();
             this.ButtonLanguage = new System.Windows.Forms.Button();
             this.ImageLogo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageLogo)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.ButtonExam);
             this.panel2.Controls.Add(this.ButtonLanguage);
             this.panel2.Controls.Add(this.ImageLogo);
@@ -95,6 +97,13 @@
             this.ImageLogo.Name = "ImageLogo";
             this.ImageLogo.TabStop = false;
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Name = "label1";
+            // 
             // MenuForm
             // 
             resources.ApplyResources(this, "$this");
@@ -103,6 +112,7 @@
             this.Name = "MenuForm";
             this.Load += new System.EventHandler(this.MenuForm_Load);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageLogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -116,6 +126,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button ButtonLanguage;
         private System.Windows.Forms.Button ButtonExam;
+        private System.Windows.Forms.Label label1;
     }
 }
 

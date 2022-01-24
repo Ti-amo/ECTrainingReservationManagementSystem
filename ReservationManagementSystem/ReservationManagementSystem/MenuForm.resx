@@ -126,13 +126,13 @@
     <value>MS Gothic, 12pt</value>
   </data>
   <data name="ButtonPatientRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 326</value>
+    <value>307, 335</value>
   </data>
   <data name="ButtonPatientRegister.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ButtonPatientRegister.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 69</value>
+    <value>267, 55</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ButtonPatientRegister.TabIndex" type="System.Int32, mscorlib">
@@ -151,7 +151,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;ButtonPatientRegister.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ButtonReservationList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -160,13 +160,13 @@
     <value>MS Gothic, 12pt</value>
   </data>
   <data name="ButtonReservationList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 426</value>
+    <value>307, 415</value>
   </data>
   <data name="ButtonReservationList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ButtonReservationList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 69</value>
+    <value>267, 55</value>
   </data>
   <data name="ButtonReservationList.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -184,7 +184,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;ButtonReservationList.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ButtonPatientList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -193,13 +193,13 @@
     <value>MS Gothic, 12pt</value>
   </data>
   <data name="ButtonPatientList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 226</value>
+    <value>307, 260</value>
   </data>
   <data name="ButtonPatientList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ButtonPatientList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 69</value>
+    <value>267, 55</value>
   </data>
   <data name="ButtonPatientList.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -217,10 +217,43 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;ButtonPatientList.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Reference Sans Serif, 24pt</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>245, 10</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 49</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>予約管理系システム</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="ButtonExam.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -232,13 +265,13 @@
     <value>NoControl</value>
   </data>
   <data name="ButtonExam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 526</value>
+    <value>307, 495</value>
   </data>
   <data name="ButtonExam.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ButtonExam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 69</value>
+    <value>267, 55</value>
   </data>
   <data name="ButtonExam.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -256,7 +289,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;ButtonExam.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ButtonLanguage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -265,13 +298,13 @@
     <value>MS Gothic, 12pt</value>
   </data>
   <data name="ButtonLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 626</value>
+    <value>307, 575</value>
   </data>
   <data name="ButtonLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ButtonLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 69</value>
+    <value>267, 55</value>
   </data>
   <data name="ButtonLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -289,19 +322,19 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;ButtonLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ImageLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="ImageLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 5</value>
+    <value>216, 80</value>
   </data>
   <data name="ImageLogo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ImageLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 191</value>
+    <value>450, 153</value>
   </data>
   <data name="ImageLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -319,16 +352,16 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;ImageLogo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-3, 2</value>
+    <value>-3, -1</value>
   </data>
   <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>982, 729</value>
+    <value>873, 657</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -349,10 +382,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 20</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>980, 732</value>
+    <value>871, 729</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
