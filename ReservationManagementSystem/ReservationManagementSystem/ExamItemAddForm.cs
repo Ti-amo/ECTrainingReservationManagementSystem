@@ -57,6 +57,7 @@ namespace ReservationManagementSystem
             TextboxMajorItemName_Eng.Text = "";
             TextboxSubItemName_Ja.Text = "";
             TextboxSubItemName_Eng.Text = "";
+            ButtonEdit.BackgroundImage = Properties.Resources.add;
 
             ShowNotification();
         }
@@ -193,6 +194,7 @@ namespace ReservationManagementSystem
                     if (result == DialogResult.OK)
                     {
                         addStatus = true;
+                        editStatus = false;
                         this.ReloadForm();
                     }
                 }
