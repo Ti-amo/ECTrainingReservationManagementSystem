@@ -14,7 +14,7 @@ namespace ReservationManagementSystem
             examItemAddForm.flagShowNotification = flag;
         }
 
-        private void ManageExamForm2_Load(object sender, EventArgs e)
+        private void ManageExamForm_Load(object sender, EventArgs e)
         {
             this.PanelContainer.Controls.Add(examItemAddForm);
             examItemAddForm.Show();

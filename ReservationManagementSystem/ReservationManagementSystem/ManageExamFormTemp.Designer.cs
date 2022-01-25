@@ -68,7 +68,6 @@ namespace ReservationManagementSystem
             // 
             // TabPageAdd
             // 
-            resources.ApplyResources(this.TabPageAdd, "TabPageAdd");
             this.TabPageAdd.Controls.Add(this.TextboxMajorItemName_Ja);
             this.TabPageAdd.Controls.Add(this.label10);
             this.TabPageAdd.Controls.Add(this.ButtonAdd);
@@ -83,6 +82,7 @@ namespace ReservationManagementSystem
             this.TabPageAdd.Controls.Add(this.label2);
             this.TabPageAdd.Controls.Add(this.DropDownListMajorItem_Add);
             this.TabPageAdd.Controls.Add(this.label1);
+            resources.ApplyResources(this.TabPageAdd, "TabPageAdd");
             this.TabPageAdd.Name = "TabPageAdd";
             this.TabPageAdd.UseVisualStyleBackColor = true;
             // 
@@ -151,9 +151,9 @@ namespace ReservationManagementSystem
             // 
             // DropDownListMajorItem_Add
             // 
-            resources.ApplyResources(this.DropDownListMajorItem_Add, "DropDownListMajorItem_Add");
             this.DropDownListMajorItem_Add.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DropDownListMajorItem_Add.FormattingEnabled = true;
+            resources.ApplyResources(this.DropDownListMajorItem_Add, "DropDownListMajorItem_Add");
             this.DropDownListMajorItem_Add.Name = "DropDownListMajorItem_Add";
             // 
             // label1
@@ -163,13 +163,13 @@ namespace ReservationManagementSystem
             // 
             // TabPageDelete
             // 
-            resources.ApplyResources(this.TabPageDelete, "TabPageDelete");
             this.TabPageDelete.Controls.Add(this.label9);
             this.TabPageDelete.Controls.Add(this.ButtonDelete);
             this.TabPageDelete.Controls.Add(this.label8);
             this.TabPageDelete.Controls.Add(this.label7);
             this.TabPageDelete.Controls.Add(this.DropDownListSubItem_Delete);
             this.TabPageDelete.Controls.Add(this.DropDownListMajorItem_Delete);
+            resources.ApplyResources(this.TabPageDelete, "TabPageDelete");
             this.TabPageDelete.Name = "TabPageDelete";
             this.TabPageDelete.UseVisualStyleBackColor = true;
             // 
@@ -196,26 +196,25 @@ namespace ReservationManagementSystem
             // 
             // DropDownListSubItem_Delete
             // 
-            resources.ApplyResources(this.DropDownListSubItem_Delete, "DropDownListSubItem_Delete");
             this.DropDownListSubItem_Delete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DropDownListSubItem_Delete.FormattingEnabled = true;
+            resources.ApplyResources(this.DropDownListSubItem_Delete, "DropDownListSubItem_Delete");
             this.DropDownListSubItem_Delete.Name = "DropDownListSubItem_Delete";
             // 
             // DropDownListMajorItem_Delete
             // 
-            resources.ApplyResources(this.DropDownListMajorItem_Delete, "DropDownListMajorItem_Delete");
             this.DropDownListMajorItem_Delete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DropDownListMajorItem_Delete.FormattingEnabled = true;
+            resources.ApplyResources(this.DropDownListMajorItem_Delete, "DropDownListMajorItem_Delete");
             this.DropDownListMajorItem_Delete.Name = "DropDownListMajorItem_Delete";
             // 
-            // ManageExamForm2
+            // ManageExamFormTemp
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.Controls.Add(this.tabControl1);
-            this.Name = "ManageExamForm2";
-            this.Load += new System.EventHandler(this.ManageExamForm_Load);
+            this.Name = "ManageExamFormTemp";
             this.tabControl1.ResumeLayout(false);
             this.TabPageAdd.ResumeLayout(false);
             this.TabPageAdd.PerformLayout();

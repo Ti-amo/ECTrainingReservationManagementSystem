@@ -80,7 +80,7 @@ namespace ReservationManagementSystem
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ManageExamForm";
-            this.Load += new System.EventHandler(this.ManageExamForm2_Load);
+            this.Load += new System.EventHandler(this.ManageExamForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

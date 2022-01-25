@@ -117,563 +117,257 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TextboxMajorItemName_Ja.Location" type="System.Drawing.Point, System.Drawing">
     <value>268, 116</value>
   </data>
-  <data name="&gt;&gt;TextboxSubItemName_Eng.Name" xml:space="preserve">
-    <value>TextboxSubItemName_Eng</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;TabPageAdd.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ButtonDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>436, 301</value>
-  </data>
-  <data name="&gt;&gt;TextboxSubItemName_Ja.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="DropDownListMajorItem_Add.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LabelLanguage.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="ButtonEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 116</value>
-  </data>
-  <data name="TextboxSubItemName_Eng.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ButtonAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>英語</value>
-  </data>
-  <data name="TabPageAdd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 65</value>
-  </data>
-  <data name="TextboxSubItemName_Eng.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 293</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="TextboxSubItemName_Eng.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TextboxMajorItemName_Ja.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 23</value>
   </data>
-  <data name="ButtonAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TextboxMajorItemName_Ja.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+  <data name="TextboxMajorItemName_Ja.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TextboxMajorItemName_Ja.Name" xml:space="preserve">
+    <value>TextboxMajorItemName_Ja</value>
+  </data>
+  <data name="&gt;&gt;TextboxMajorItemName_Ja.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextboxMajorItemName_Ja.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;TextboxMajorItemName_Ja.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="TabPageDelete.TabIndex" type="System.Int32, mscorlib">
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt, style=Bold</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 35</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 16</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>診療項目追加</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="ButtonAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>454, 336</value>
   </data>
-  <data name="DropDownListMajorItem_Add.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 116</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>710, 443</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="ButtonAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ManageExamFormTemp</value>
-  </data>
-  <data name="&gt;&gt;LabelLanguage.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="TabPageAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>678, 389</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>診療項目追加</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;ButtonDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLanguage.Name" xml:space="preserve">
-    <value>LabelLanguage</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 146</value>
-  </data>
-  <data name="DropDownListMajorItem_Add.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
-  </data>
-  <data name="&gt;&gt;TabPageDelete.Name" xml:space="preserve">
-    <value>TabPageDelete</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 16</value>
-  </data>
-  <data name="&gt;&gt;DropDownListMajorItem_Delete.Name" xml:space="preserve">
-    <value>DropDownListMajorItem_Delete</value>
-  </data>
-  <data name="&gt;&gt;TabPageAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DropDownListMajorItem_Add.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>日本語</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;ButtonAdd.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt, style=Bold</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+  <data name="ButtonAdd.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="TabPageAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
-  </data>
-  <data name="ButtonEdit.Text" xml:space="preserve">
-    <value>＋</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="TabPageDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
-  </data>
-  <data name="ButtonDelete.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="ButtonAdd.Text" xml:space="preserve">
     <value>追加</value>
   </data>
+  <data name="&gt;&gt;ButtonAdd.Name" xml:space="preserve">
+    <value>ButtonAdd</value>
+  </data>
+  <data name="&gt;&gt;ButtonAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonAdd.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;ButtonAdd.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ButtonEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>488, 116</value>
+  </data>
+  <data name="ButtonEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 23</value>
+  </data>
+  <data name="ButtonEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="ButtonEdit.Text" xml:space="preserve">
+    <value>＋</value>
+  </data>
+  <data name="&gt;&gt;ButtonEdit.Name" xml:space="preserve">
+    <value>ButtonEdit</value>
+  </data>
   <data name="&gt;&gt;ButtonEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ButtonDelete.Name" xml:space="preserve">
-    <value>ButtonDelete</value>
+  <data name="&gt;&gt;ButtonEdit.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
   </data>
   <data name="&gt;&gt;ButtonEdit.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;TextboxMajorItemName_Ja.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="TextboxSubItemName_Eng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 293</value>
   </data>
-  <data name="&gt;&gt;TextboxMajorItemName_Ja.Parent" xml:space="preserve">
+  <data name="TextboxSubItemName_Eng.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 23</value>
+  </data>
+  <data name="TextboxSubItemName_Eng.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;TextboxSubItemName_Eng.Name" xml:space="preserve">
+    <value>TextboxSubItemName_Eng</value>
+  </data>
+  <data name="&gt;&gt;TextboxSubItemName_Eng.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextboxSubItemName_Eng.Parent" xml:space="preserve">
     <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;TextboxSubItemName_Eng.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TextboxSubItemName_Ja.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 249</value>
+  </data>
+  <data name="TextboxSubItemName_Ja.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 23</value>
+  </data>
+  <data name="TextboxSubItemName_Ja.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;TextboxSubItemName_Ja.Name" xml:space="preserve">
+    <value>TextboxSubItemName_Ja</value>
+  </data>
+  <data name="&gt;&gt;TextboxSubItemName_Ja.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextboxSubItemName_Ja.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;TextboxSubItemName_Ja.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 300</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 16</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>英語</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 256</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>日本語</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 16</value>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TabPageDelete.Text" xml:space="preserve">
-    <value>削除</value>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>149, 212</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 80</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 16</value>
   </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ManageExamForm2</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>診療小項目</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="TextboxMajorItemName_Ja.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 23</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="&gt;&gt;TabPageAdd.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="DropDownListMajorItem_Delete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 138</value>
-  </data>
-  <data name="&gt;&gt;DropDownListMajorItem_Delete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DropDownListSubItem_Delete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 24</value>
-  </data>
-  <data name="&gt;&gt;DropDownListMajorItem_Add.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>TabPageAdd</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;ButtonEdit.Name" xml:space="preserve">
-    <value>ButtonEdit</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextboxMajorItemName_Ja.Name" xml:space="preserve">
-    <value>TextboxMajorItemName_Ja</value>
-  </data>
-  <data name="DropDownListMajorItem_Delete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 24</value>
-  </data>
-  <data name="&gt;&gt;TextboxMajorItemName_Eng.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="&gt;&gt;DropDownListMajorItem_Delete.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 16</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 226</value>
-  </data>
-  <data name="&gt;&gt;TabPageDelete.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="TabPageDelete.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 256</value>
-  </data>
-  <data name="LabelLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 168</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="TextboxSubItemName_Ja.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 23</value>
-  </data>
-  <data name="&gt;&gt;TabPageDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonAdd.Name" xml:space="preserve">
-    <value>ButtonAdd</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DropDownListMajorItem_Delete.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>TabPageDelete</value>
-  </data>
-  <data name="&gt;&gt;ButtonEdit.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 35</value>
-  </data>
-  <data name="&gt;&gt;TabPageAdd.Name" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="LabelLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 16</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 16</value>
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;DropDownListSubItem_Delete.Name" xml:space="preserve">
-    <value>DropDownListSubItem_Delete</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LabelLanguage.Text" xml:space="preserve">
-    <value>英語</value>
-  </data>
-  <data name="DropDownListSubItem_Delete.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>診療大項目</value>
-  </data>
-  <data name="&gt;&gt;TextboxSubItemName_Eng.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;TextboxMajorItemName_Ja.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>診療項目削除</value>
-  </data>
-  <data name="TextboxMajorItemName_Eng.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;DropDownListMajorItem_Delete.Parent" xml:space="preserve">
-    <value>TabPageDelete</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;TextboxSubItemName_Ja.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;DropDownListSubItem_Delete.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="LabelLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ButtonDelete.Parent" xml:space="preserve">
-    <value>TabPageDelete</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>TabPageDelete</value>
-  </data>
-  <data name="ButtonEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 23</value>
-  </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS Gothic, 12pt, style=Bold</value>
+  <data name="TextboxMajorItemName_Eng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 161</value>
   </data>
   <data name="TextboxMajorItemName_Eng.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 23</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>日本語</value>
-  </data>
-  <data name="&gt;&gt;TextboxMajorItemName_Eng.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="TextboxMajorItemName_Eng.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="TextboxMajorItemName_Eng.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;TextboxMajorItemName_Eng.Name" xml:space="preserve">
     <value>TextboxMajorItemName_Eng</value>
   </data>
-  <data name="&gt;&gt;TextboxSubItemName_Eng.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="TabPageDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>678, 389</value>
-  </data>
-  <data name="&gt;&gt;TabPageDelete.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="TextboxMajorItemName_Ja.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 16</value>
-  </data>
-  <data name="TabPageAdd.Text" xml:space="preserve">
-    <value>追加</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>診療大項目</value>
-  </data>
-  <data name="ButtonDelete.Text" xml:space="preserve">
-    <value>削除</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="TabPageAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;DropDownListMajorItem_Add.Name" xml:space="preserve">
-    <value>DropDownListMajorItem_Add</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 16</value>
-  </data>
-  <data name="&gt;&gt;ButtonDelete.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>診療小項目</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;LabelLanguage.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
-  </data>
-  <data name="&gt;&gt;TextboxSubItemName_Eng.Type" xml:space="preserve">
+  <data name="&gt;&gt;TextboxMajorItemName_Eng.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 124</value>
-  </data>
-  <data name="ButtonDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="DropDownListSubItem_Delete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 218</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>TabPageDelete</value>
-  </data>
-  <data name="&gt;&gt;TextboxSubItemName_Ja.Name" xml:space="preserve">
-    <value>TextboxSubItemName_Ja</value>
-  </data>
-  <data name="TextboxMajorItemName_Eng.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 161</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="TextboxSubItemName_Ja.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 249</value>
-  </data>
-  <data name="TextboxMajorItemName_Ja.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ButtonEdit.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;TextboxMajorItemName_Eng.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
   </data>
   <data name="&gt;&gt;TextboxMajorItemName_Eng.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -681,49 +375,355 @@
   <data name="LabelLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>686, 419</value>
+  <data name="LabelLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 168</value>
   </data>
-  <data name="&gt;&gt;ButtonAdd.Parent" xml:space="preserve">
-    <value>TabPageAdd</value>
+  <data name="LabelLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 16</value>
   </data>
-  <data name="&gt;&gt;DropDownListSubItem_Delete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="LabelLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="LabelLanguage.Text" xml:space="preserve">
+    <value>英語</value>
+  </data>
+  <data name="LabelLanguage.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;LabelLanguage.Name" xml:space="preserve">
+    <value>LabelLanguage</value>
   </data>
   <data name="&gt;&gt;LabelLanguage.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;LabelLanguage.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;LabelLanguage.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 124</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="DropDownListMajorItem_Add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 116</value>
+  </data>
+  <data name="DropDownListMajorItem_Add.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 24</value>
+  </data>
+  <data name="DropDownListMajorItem_Add.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;DropDownListMajorItem_Add.Name" xml:space="preserve">
+    <value>DropDownListMajorItem_Add</value>
+  </data>
   <data name="&gt;&gt;DropDownListMajorItem_Add.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="&gt;&gt;DropDownListMajorItem_Add.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;DropDownListMajorItem_Add.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 80</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 16</value>
   </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>診療大項目</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="TabPageAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="TabPageAdd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>678, 389</value>
+  </data>
+  <data name="TabPageAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TabPageAdd.Text" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="&gt;&gt;TabPageAdd.Name" xml:space="preserve">
+    <value>TabPageAdd</value>
+  </data>
+  <data name="&gt;&gt;TabPageAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageAdd.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPageAdd.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt, style=Bold</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 65</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 16</value>
   </data>
-  <data name="&gt;&gt;TextboxSubItemName_Ja.ZOrder" xml:space="preserve">
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;DropDownListSubItem_Delete.Parent" xml:space="preserve">
-    <value>TabPageDelete</value>
+  <data name="label9.Text" xml:space="preserve">
+    <value>診療項目削除</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
   </data>
   <data name="&gt;&gt;label9.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 300</value>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>TabPageDelete</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ButtonDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>436, 301</value>
+  </data>
+  <data name="ButtonDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="ButtonDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ButtonDelete.Text" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="&gt;&gt;ButtonDelete.Name" xml:space="preserve">
+    <value>ButtonDelete</value>
+  </data>
+  <data name="&gt;&gt;ButtonDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonDelete.Parent" xml:space="preserve">
+    <value>TabPageDelete</value>
+  </data>
+  <data name="&gt;&gt;ButtonDelete.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 226</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 16</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
     <value>診療小項目</value>
   </data>
-  <data name="TextboxSubItemName_Ja.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>TabPageDelete</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 146</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 16</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>診療大項目</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>TabPageDelete</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="DropDownListSubItem_Delete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 218</value>
+  </data>
+  <data name="DropDownListSubItem_Delete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 24</value>
+  </data>
+  <data name="DropDownListSubItem_Delete.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;DropDownListSubItem_Delete.Name" xml:space="preserve">
+    <value>DropDownListSubItem_Delete</value>
+  </data>
+  <data name="&gt;&gt;DropDownListSubItem_Delete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DropDownListSubItem_Delete.Parent" xml:space="preserve">
+    <value>TabPageDelete</value>
+  </data>
+  <data name="&gt;&gt;DropDownListSubItem_Delete.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="DropDownListMajorItem_Delete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 138</value>
+  </data>
+  <data name="DropDownListMajorItem_Delete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 24</value>
+  </data>
+  <data name="DropDownListMajorItem_Delete.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;DropDownListMajorItem_Delete.Name" xml:space="preserve">
+    <value>DropDownListMajorItem_Delete</value>
+  </data>
+  <data name="&gt;&gt;DropDownListMajorItem_Delete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DropDownListMajorItem_Delete.Parent" xml:space="preserve">
+    <value>TabPageDelete</value>
+  </data>
+  <data name="&gt;&gt;DropDownListMajorItem_Delete.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="TabPageDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="TabPageDelete.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>678, 389</value>
+  </data>
+  <data name="TabPageDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TabPageDelete.Text" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="&gt;&gt;TabPageDelete.Name" xml:space="preserve">
+    <value>TabPageDelete</value>
+  </data>
+  <data name="&gt;&gt;TabPageDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageDelete.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPageDelete.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>686, 419</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>710, 443</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS Gothic, 12pt</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ManageExamFormTemp</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ManageExamFormTemp</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

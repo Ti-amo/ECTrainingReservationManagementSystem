@@ -33,10 +33,10 @@
             this.ButtonReservationList = new System.Windows.Forms.Button();
             this.ButtonPatientList = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.ButtonExam = new System.Windows.Forms.Button();
             this.ButtonLanguage = new System.Windows.Forms.Button();
             this.ImageLogo = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageLogo)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,13 @@
             this.panel2.Controls.Add(this.ButtonPatientList);
             this.panel2.Name = "panel2";
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Name = "label1";
+            // 
             // ButtonExam
             // 
             resources.ApplyResources(this.ButtonExam, "ButtonExam");
@@ -96,13 +103,6 @@
             this.ImageLogo.Image = global::ReservationManagementSystem.Properties.Resources.Boom;
             this.ImageLogo.Name = "ImageLogo";
             this.ImageLogo.TabStop = false;
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Name = "label1";
             // 
             // MenuForm
             // 
