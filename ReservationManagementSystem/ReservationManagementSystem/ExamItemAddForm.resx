@@ -564,4 +564,7 @@
   <data name="NotificationTitle" xml:space="preserve">
     <value>通知</value>
   </data>
+  <data name="LengthOfNameErrMsg" xml:space="preserve">
+    <value>正式名称の長さは30文字で、英語名は50文字以下です。もう一度ご入力ください。</value>
+  </data>
 </root>
