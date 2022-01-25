@@ -236,4 +236,7 @@
   <data name="NotificationTitle" xml:space="preserve">
     <value>Notification</value>
   </data>
+  <data name="LengthOfNameErrMsg" xml:space="preserve">
+    <value>The length of formal name is 30 characters and english name is 50 characters or less. Please enter again.</value>
+  </data>
 </root>

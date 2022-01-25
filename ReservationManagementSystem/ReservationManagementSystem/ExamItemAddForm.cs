@@ -161,10 +161,14 @@ namespace ReservationManagementSystem
                 examItem.MajorExamId = (int)id;
                 examItem.SubExamNameEn = TextboxSubItemName_Eng.Text;
                 examItem.SubExamNameJp = TextboxSubItemName_Ja.Text;
-                if (String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || (TextboxSubItemName_Ja.Text.Length > 25) || (TextboxSubItemName_Ja.Text.Length > 40) || examDAO.IsExistedSubExamName(examItem))
+                if (String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || examDAO.IsExistedSubExamName(examItem))
                 {
                     MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("AddFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                }
+                else if ((TextboxSubItemName_Ja.Text.Length > 30) || (TextboxSubItemName_Eng.Text.Length > 50))
+                {
+                    MessageBox.Show(rm.GetString("LengthOfNameErrMsg"), rm.GetString("AddFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -183,9 +187,13 @@ namespace ReservationManagementSystem
                 examItem.MajorExamNameJp = TextboxMajorItemName_Ja.Text;
                 examItem.SubExamNameEn = TextboxSubItemName_Eng.Text;
                 examItem.SubExamNameJp = TextboxSubItemName_Ja.Text;
-                if (String.IsNullOrWhiteSpace(TextboxMajorItemName_Ja.Text) || String.IsNullOrWhiteSpace(TextboxMajorItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || (TextboxMajorItemName_Ja.Text.Length > 5) || (TextboxMajorItemName_Eng.Text.Length > 15) || (TextboxSubItemName_Ja.Text.Length > 25) || (TextboxSubItemName_Ja.Text.Length > 40) || examDAO.IsExistedMajorExamName(examItem) || examDAO.IsExistedSubExamName(examItem))
+                if (String.IsNullOrWhiteSpace(TextboxMajorItemName_Ja.Text) || String.IsNullOrWhiteSpace(TextboxMajorItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || String.IsNullOrWhiteSpace(TextboxSubItemName_Eng.Text) || examDAO.IsExistedMajorExamName(examItem) || examDAO.IsExistedSubExamName(examItem))
                 {
                     MessageBox.Show(rm.GetString("NameFailureMsg"), rm.GetString("AddFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if ((TextboxMajorItemName_Ja.Text.Length > 30) || (TextboxMajorItemName_Eng.Text.Length > 50) || (TextboxSubItemName_Ja.Text.Length > 30) || (TextboxSubItemName_Eng.Text.Length > 50))
+                {
+                    MessageBox.Show(rm.GetString("LengthOfNameErrMsg"), rm.GetString("AddFailureTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
