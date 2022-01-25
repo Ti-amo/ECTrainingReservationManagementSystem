@@ -147,7 +147,12 @@ namespace ReservationManagementSystem
                     PatientId = patientId
                 };
                 this.Hide();
-                patientDetailInfoForm.FormClosed += (s, args) => this.Close();
+                patientDetailInfoForm.FormClosed += (s, args) => {
+                    patientList = patientDAO.FindByIdOrName(TextboxSearch.Text);
+                    patients = patientDAO.FindAll();
+                    PagingPatientList(patientList);
+                    this.Show();
+                };
                 patientDetailInfoForm.Show();
             }
         }

@@ -50,7 +50,7 @@ namespace ReservationManagementSystem {
                 if (result == DialogResult.OK)
                 {
                     ManageExamForm manageExamForm = new ManageExamForm(false);
-                    this.Hide();
+                    this.Close();
                     manageExamForm.FormClosed += (s, args) => this.Close();
                     manageExamForm.Show();
                 }
