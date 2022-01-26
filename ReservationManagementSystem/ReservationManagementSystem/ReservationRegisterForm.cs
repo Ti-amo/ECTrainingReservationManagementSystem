@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace ReservationManagementSystem {
     public partial class ReservationRegisterForm : Form {
+        private readonly Utility util = new Utility();
         private ExamDAO examDAO = new ExamDAO();
         private PatientDAO patientDAO = new PatientDAO();
         public string PatientId { get; set; }
@@ -49,6 +50,7 @@ namespace ReservationManagementSystem {
                 DialogResult result = MessageBox.Show(rm.GetString("NotificationMsg"), rm.GetString("NotificationTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
+                    util.CloseForm("ManageExamForm");
                     ManageExamForm manageExamForm = new ManageExamForm(false);
                     this.Close();
                     manageExamForm.FormClosed += (s, args) => this.Close();
@@ -104,10 +106,11 @@ namespace ReservationManagementSystem {
                 reservationDAO.Insert(reservationEntity);
                 DialogResult result = MessageBox.Show(rm.GetString("RegisterSuccessMsg"), rm.GetString("RegisterSuccessTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK) {
-                    this.Close();
                     // 予約詳細画面に進む
                     ReservationDetailForm reservationDetailForm = new ReservationDetailForm(reservationDAO.FindLatestReservation());
                     reservationDetailForm.Show();
+
+                    this.Close();
                 }
             }
 

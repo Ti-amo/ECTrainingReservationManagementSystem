@@ -12,6 +12,7 @@ namespace ReservationManagementSystem
 {
     public partial class PatientListForm : Form
     {
+        private readonly Utility util = new Utility();
         private List<PatientEntity> patients = new List<PatientEntity>();　   // DBから取り出した患者一覧
         private List<PatientEntity> patientList = new List<PatientEntity>();　// ページネーションの患者リスト
         private int pageNumber = 1;                                     　    // ページ番号
@@ -151,7 +152,10 @@ namespace ReservationManagementSystem
                     patientList = patientDAO.FindByIdOrName(TextboxSearch.Text);
                     patients = patientDAO.FindAll();
                     PagingPatientList(patientList);
-                    this.Show();
+                    if (util.CheckFormIsOpen("ReservationDetailForm") || util.CheckFormIsOpen("ManageExamForm"))
+                        this.Close();
+                    else
+                        this.Show();
                 };
                 patientDetailInfoForm.Show();
             }
