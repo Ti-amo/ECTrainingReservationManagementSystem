@@ -208,7 +208,7 @@ namespace ReservationManagementSystem {
                 Width = 350,
                 DropDownStyle = ComboBoxStyle.DropDownList
             };
-            List<ExamItem> listSubExam = examDAO.GetSubExamList(1);
+            List<ExamItem> listSubExam = examDAO.GetSubExamList(listMajorExam[0].MajorExamId);
             items = new List<Object>();
             foreach (var item in listSubExam)
             {

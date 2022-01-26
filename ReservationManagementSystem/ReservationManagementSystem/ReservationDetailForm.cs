@@ -410,7 +410,7 @@ namespace ReservationManagementSystem {
                 DropDownStyle = ComboBoxStyle.DropDownList
             };
             TableLayoutPanelUpdate.Controls.Add(comboBoxSubExam, 1, 2 * examCount + 1);
-            List<ExamItem> subExamList = examDAO.GetSubExamList(1);
+            List<ExamItem> subExamList = examDAO.GetSubExamList(majorExamList[0].MajorExamId);
             List<Object> subItems = new List<Object>();
             foreach (ExamItem subExam in subExamList) {
                 subItems.Add(new { Value = subExam.SubExamId, Text = subExam.SubExamName });
