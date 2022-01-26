@@ -13,6 +13,7 @@ using ReservationManagementSystem.Entity;
 
 namespace ReservationManagementSystem {
     public partial class PatientRegisterForm : Form {
+        private readonly Utility util = new Utility();
         private readonly ExamDAO examDAO = new ExamDAO();
         ResourceManager rm = new ResourceManager(typeof(PatientRegisterForm));
         private int countExam = 1;
@@ -42,8 +43,9 @@ namespace ReservationManagementSystem {
             if (showNotificationStatus)
             {
                 DialogResult result = MessageBox.Show(rm.GetString("NotificationMsg"), rm.GetString("NotificationTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if(result == DialogResult.OK)
+                if (result == DialogResult.OK)
                 {
+                    util.CloseForm("ManageExamForm");
                     ManageExamForm manageExamForm = new ManageExamForm(false);
                     this.Hide();
                     manageExamForm.FormClosed += (s, args) => this.Close();

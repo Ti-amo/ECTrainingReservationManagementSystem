@@ -27,6 +27,19 @@ namespace ReservationManagementSystem {
             }
             return IsOpen;
         }
+
+        public void CloseForm(string formName)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == formName)
+                {
+                    f.Close();
+                    break;
+                }
+            }
+        }
+
         /// <summary>
         /// Set color with Reservation StatusId
         /// </summary>
