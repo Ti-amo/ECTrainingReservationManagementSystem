@@ -43,24 +43,18 @@ namespace ReservationManagementSystem {
             SetupControls();
             CreateCheckListBoxStatus();
         }
-        private void CreateCheckListBoxStatus()
-        {
+
+        private void CreateCheckListBoxStatus() {
             checkBoxList.Clear();
-            foreach (var item in statusItem.StatusList())
-            {
+            foreach (var item in statusItem.StatusList()) {
                 CheckBox checkBox = new CheckBox();
                 checkBox.Width = 110;
-                checkBox.Padding = new Padding(4,2,4,2);
-                if (item.StatusId == 1)
-                {
+                checkBox.Padding = new Padding(4, 2, 4, 2);
+                if (item.StatusId == 1) {
                     checkBox.BackColor = ColorTranslator.FromHtml("#95ef5d");
-                }
-                else if (item.StatusId == 2)
-                {
+                } else if (item.StatusId == 2) {
                     checkBox.BackColor = ColorTranslator.FromHtml("#f1f772");
-                }
-                else
-                {
+                } else {
                     checkBox.BackColor = ColorTranslator.FromHtml("#d5a6bd");
                 }
                 checkBox.Text = Thread.CurrentThread.CurrentCulture.Name.Equals("ja-JP") ? item.StatusName : item.StatusNameEn;
@@ -69,21 +63,16 @@ namespace ReservationManagementSystem {
                 checkBoxList.Add(checkBox);
             }
         }
-        private void ChangeCheck(object sender, EventArgs e)
-        {
+
+        private void ChangeCheck(object sender, EventArgs e) {
             List<ReservationEntity> reservationsByStatus = new List<ReservationEntity>();
             int count = 0;
-            foreach (var checkbox in checkBoxList)
-            {
-                if (checkbox.Checked)
-                {
+            foreach (var checkbox in checkBoxList) {
+                if (checkbox.Checked) {
                     count++;
-                    foreach (var item in statusItem.StatusList())
-                    {
-                        if (item.StatusName.Contains(checkbox.Text) || item.StatusNameEn.Contains(checkbox.Text))
-                        {
-                            foreach (var reservation in reservations)
-                            {
+                    foreach (var item in statusItem.StatusList()) {
+                        if (item.StatusName.Contains(checkbox.Text) || item.StatusNameEn.Contains(checkbox.Text)) {
+                            foreach (var reservation in reservations) {
                                 if (reservation.StatusId == item.StatusId) reservationsByStatus.Add(reservation);
                             }
                         }
@@ -91,11 +80,11 @@ namespace ReservationManagementSystem {
                 }
             }
             pageNumber = 1;
-            if (count > 0)
-            {
+            if (count > 0) {
                 PagingReservationList(reservationsByStatus);
             } else PagingReservationList(reservations);
         }
+
         /// <summary>
         /// ページ付けを実行する
         /// </summary>
@@ -132,7 +121,7 @@ namespace ReservationManagementSystem {
 
             DataGridViewReservationList.Columns["PatientId"].Visible = false;
             DataGridViewReservationList.Columns["StatusId"].Visible = false;
-            
+
             // add button detail
             DataGridViewButtonColumn buttonDetail = new DataGridViewButtonColumn {
                 Text = rm.GetString("Detail"),
@@ -182,14 +171,10 @@ namespace ReservationManagementSystem {
         /// <param name="e"></param>
         private void ButtonPrevious_Click(object sender, EventArgs e) {
             if (reservationList.HasPreviousPage) {
-                if (!string.IsNullOrWhiteSpace(TextboxPageNumber.Text) && int.TryParse(TextboxPageNumber.Text, out int enteredPageNumber))
-                {
-                    if (enteredPageNumber == 1)
-                    {
+                if (!string.IsNullOrWhiteSpace(TextboxPageNumber.Text) && int.TryParse(TextboxPageNumber.Text, out int enteredPageNumber)) {
+                    if (enteredPageNumber == 1) {
                         pageNumber = enteredPageNumber + 1;
-                    }
-                    else if (enteredPageNumber > 1 && enteredPageNumber <= reservationList.PageCount)
-                    {
+                    } else if (enteredPageNumber > 1 && enteredPageNumber <= reservationList.PageCount) {
                         pageNumber = enteredPageNumber;
                     }
                 }
@@ -203,22 +188,18 @@ namespace ReservationManagementSystem {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonNext_Click(object sender, EventArgs e) {
-            if (reservationList.HasNextPage)
-            {
-                if (!string.IsNullOrWhiteSpace(TextboxPageNumber.Text) && int.TryParse(TextboxPageNumber.Text, out int enteredPageNumber))
-                {
-                    if (enteredPageNumber == reservationList.PageCount)
-                    {
+            if (reservationList.HasNextPage) {
+                if (!string.IsNullOrWhiteSpace(TextboxPageNumber.Text) && int.TryParse(TextboxPageNumber.Text, out int enteredPageNumber)) {
+                    if (enteredPageNumber == reservationList.PageCount) {
                         pageNumber = enteredPageNumber - 1;
-                    }
-                    else if (enteredPageNumber > 0 && enteredPageNumber < reservationList.PageCount)
-                    {
+                    } else if (enteredPageNumber > 0 && enteredPageNumber < reservationList.PageCount) {
                         pageNumber = enteredPageNumber;
                     }
                 }
                 PagingReservationList(reservations, ++pageNumber);
             }
         }
+
         /// <summary>
         /// Set data when date changed
         /// </summary>
@@ -229,25 +210,26 @@ namespace ReservationManagementSystem {
             reservations = reservationDAO.FindByDate(date);
             pageNumber = 1;
             PagingReservationList(reservations);
+
+            foreach (var checkBox in checkBoxList) {
+                checkBox.Checked = false;
+            }
+
         }
+
         /// <summary>
         /// handle event press enter page number
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TextboxPageNumber_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
+        private void TextboxPageNumber_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
                 if (!string.IsNullOrWhiteSpace(TextboxPageNumber.Text)
                     && int.TryParse(TextboxPageNumber.Text, out int enteredPageNumber)
-                    && enteredPageNumber > 0 && enteredPageNumber <= reservationList.PageCount)
-                {
+                    && enteredPageNumber > 0 && enteredPageNumber <= reservationList.PageCount) {
                     pageNumber = enteredPageNumber;
                     PagingReservationList(reservations, pageNumber);
-                }
-                else
-                {
+                } else {
                     TextboxPageNumber.Text = pageNumber + "";
                     TextboxPageNumber.SelectionStart = TextboxPageNumber.TextLength;
                 }
